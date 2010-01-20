@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: cover.aux
+A level-1 auxiliary file: contents.aux
+A level-1 auxiliary file: chap1.aux
+A level-1 auxiliary file: chap2.aux
+A level-1 auxiliary file: appa.aux
+A level-1 auxiliary file: appb.aux
+A level-1 auxiliary file: biblio.aux
+The style file: plain.bst
+Database file #1: main.bib
+Warning--I didn't find a database entry for "patterson:risc"
+Warning--I didn't find a database entry for "rad83"
+Warning--I didn't find a database entry for "ellis:bulldog"
+Warning--I didn't find a database entry for "pet87"
+Warning--I didn't find a database entry for "coutant:precision-compilers"
+Warning--I didn't find a database entry for "gib86"
+Warning--I didn't find a database entry for "thornton:cdc6600"
+Warning--I didn't find a database entry for "magenheimer:precision"
+Warning--I didn't find a database entry for "byte:i860"
+Warning--I didn't find a database entry for "colwell:vliw"
+You've used 0 entries,
+            2118 wiz_defined-function locations,
+            520 strings with 4418 characters,
+and the built_in function-call counts, 20 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 4
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 2
+purify$ -- 0
+quote$ -- 0
+skip$ -- 0
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 3
+(There were 10 warnings)
