@@ -1,10 +1,11 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2009.10.31)  19 JAN 2010 23:32
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2009.10.31)  20 JAN 2010 00:20
 entering extended mode
  %&-line parsing enabled.
 **\input main.tex
 (./main.tex (./mitthesis.cls
 Document Class: mitthesis 1999/10/20
 \vithesis=\count79
+Course VI/VIII thesis style.
 (/usr/share/texmf-texlive/tex/latex/base/report.cls
 Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size12.clo
@@ -27,7 +28,7 @@ Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
 
 Package: `setspace' 6.7 <2000/12/01>
 )
-Thesis document copyright MIT unless otherwise (manually) specified
+Copyright given to author, permission to copy/distribute given to MIT.
 \@titlesupervisor=\box26
 \@abstractsupervisor=\box27
 \c@savepage=\count89
@@ -220,21 +221,29 @@ Appendix B.
 [23] [24])
 \openout2 = `biblio.aux'.
 
- (./biblio.tex
-No file main.bbl.
-) (./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
+ (./biblio.tex (./main.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 5.
+
+)) [25
+
+
+
+
+
+] (./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
 (./appa.aux) (./appb.aux) (./biblio.aux))
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 550 strings out of 94102
- 5869 string characters out of 1165832
- 54792 words of memory out of 1500000
- 3830 multiletter control sequences out of 10000+50000
+ 556 strings out of 94102
+ 5927 string characters out of 1165832
+ 54806 words of memory out of 1500000
+ 3834 multiletter control sequences out of 10000+50000
  9880 words of font info for 35 fonts, out of 1200000 for 2000
  637 hyphenation exceptions out of 8191
  28i,8n,23p,173b,243s stack positions out of 5000i,500n,6000p,200000b,5000s
 
-Output written on main.dvi (24 pages, 26964 bytes).
+Output written on main.dvi (25 pages, 27132 bytes).
