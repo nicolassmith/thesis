@@ -1,7 +1,7 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=prv_main 2010.1.19)  20 JAN 2010 00:13
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=prv__region_ 2010.1.20)  20 JAN 2010 19:07
 entering extended mode
  %&-line parsing enabled.
-**&prv_main _region_.tex
+**&prv__region_ _region_.tex
 (./_region_.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -19,7 +19,8 @@ mitthesis.cls    1999/10/20
 setspace.sty    2000/12/01 6.7 Contributed and Supported LaTeX2e package
   lgrind.sty    1997/01/30 v3.4 LGrind environment and supporting stuff
         .
-No file _region_.aux.
+(./_region_.aux (./cover.aux) (./contents.aux) (./ch-intro.aux) (./appa.aux)
+(./appb.aux) (./biblio.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
@@ -32,7 +33,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-(/usr/share/texmf/tex/latex/preview/preview.sty
+ (/usr/share/texmf/tex/latex/preview/preview.sty
 Package: preview 2006/08/25 11.84 (AUCTeX/preview-latex)
 
 (/usr/share/texmf/tex/latex/preview/prtightpage.def
@@ -51,6 +52,7 @@ No auxiliary output files.
 \pr@output=\toks14
 
 Preview: Fontsize 12pt
+Preview: PDFoutput 1
 )  !name(main.tex) !offset(-3)  (./cover.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
 
@@ -101,7 +103,7 @@ l.106 \begin{abstractpage}
                           
 Not a real error.
 
-[1] (./abstract.tex)
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./abstract.tex)
 ! Preview: Snippet 2 started.
 <-><->
       
@@ -133,8 +135,7 @@ Not a real error.
 
 [3
 
-]
-No file _region_.toc.
+] (./_region_.toc)
 ! Preview: Snippet 4 started.
 <-><->
       
@@ -142,7 +143,7 @@ l.8 \listoffigures
                   
 Not a real error.
 
-! Preview: Snippet 4 ended.(7651328+317047x28417720).
+! Preview: Snippet 4 ended.(6225920+317047x28417720).
 <-><->
       
 l.8 \listoffigures
@@ -151,8 +152,7 @@ Not a real error.
 
 [4
 
-]
-No file _region_.lof.
+] (./_region_.lof)
 ! Preview: Snippet 5 started.
 <-><->
       
@@ -169,9 +169,7 @@ Not a real error.
 
 [5
 
-]
-No file _region_.lot.
-) (./chap1.tex
+] (./_region_.lot)) (./ch-intro.tex
 ! Preview: Snippet 6 started.
 <-><->
       
@@ -180,7 +178,7 @@ l.7 \chapter
 Not a real error.
 
 Chapter 1.
-! Preview: Snippet 6 ended.(11911168+0x28417720).
+! Preview: Snippet 6 ended.(10485760+0x28417720).
 <-><->
       
 l.7 \chapter{Introduction}
@@ -226,7 +224,7 @@ Not a real error.
 
 [8]
 
-LaTeX Warning: Reference `ch1:opts' on page 8 undefined on input line 20.
+LaTeX Warning: Citation `rumpus' on page 11 undefined on input line 26.
 
 ! Preview: Snippet 9 started.
 <-><->
@@ -246,23 +244,24 @@ Not a real error.
 
 ]
 
-LaTeX Warning: Citation `patterson:risc' on page 8 undefined on input line 32.
+LaTeX Warning: Citation `patterson:risc' on page 11 undefined on input line 32.
 
 
-LaTeX Warning: Citation `rad83' on page 8 undefined on input line 32.
+
+LaTeX Warning: Citation `rad83' on page 11 undefined on input line 32.
 
 
-LaTeX Warning: Citation `ellis:bulldog' on page 8 undefined on input line 40.
+LaTeX Warning: Citation `ellis:bulldog' on page 11 undefined on input line 40.
 
 
-LaTeX Warning: Citation `pet87' on page 8 undefined on input line 40.
+LaTeX Warning: Citation `pet87' on page 11 undefined on input line 40.
 
 
-LaTeX Warning: Citation `coutant:precision-compilers' on page 8 undefined on in
-put line 40.
+LaTeX Warning: Citation `coutant:precision-compilers' on page 11 undefined on i
+nput line 40.
 
 
-LaTeX Warning: Citation `gib86' on page 8 undefined on input line 44.
+LaTeX Warning: Citation `gib86' on page 11 undefined on input line 44.
 
 ! Preview: Snippet 10 started.
 <-><->
@@ -279,9 +278,6 @@ l.55 ...ardware speedups possible by using a $\mu$
 Not a real error.
 
 [10]
-
-LaTeX Warning: Reference `ch1:opts' on page 9 undefined on input line 60.
-
 ! Preview: Snippet 11 started.
 <-><->
       
@@ -311,12 +307,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 76.
 
-LaTeX Warning: Reference `exponent-format' on page 9 undefined on input line 76
-.
+LaTeX Warning: Reference `exponent-format' on page 12 undefined on input line 7
+6.
 
 
-LaTeX Warning: Reference `mantissa-format' on page 9 undefined on input line 76
-.
+LaTeX Warning: Reference `mantissa-format' on page 12 undefined on input line 7
+6.
 
 ! Preview: Snippet 12 ended.(623265+0x311300).
 <-><->
@@ -327,7 +323,7 @@ Not a real error.
 
 [12]
 
-LaTeX Warning: Reference `unnorm-math' on page 9 undefined on input line 77.
+LaTeX Warning: Reference `unnorm-math' on page 12 undefined on input line 77.
 
 ! Preview: Snippet 13 started.
 <-><->
@@ -355,8 +351,8 @@ l.89 multiplies\footnote
 Not a real error.
 
 
-LaTeX Warning: Citation `thornton:cdc6600' on page 9 undefined on input line 92
-.
+LaTeX Warning: Citation `thornton:cdc6600' on page 12 undefined on input line 9
+2.
 
 ! Preview: Snippet 14 ended.(623265+0x311300).
 <-><->
@@ -550,7 +546,7 @@ Not a real error.
 
 [26]
 
-LaTeX Warning: Reference `opt:be' on page 10 undefined on input line 131.
+LaTeX Warning: Reference `opt:be' on page 13 undefined on input line 131.
 
 ! Preview: Snippet 27 started.
 <-><->
@@ -602,7 +598,7 @@ Not a real error.
 
 ]
 
-LaTeX Warning: Reference `range-tracking' on page 10 undefined on input line 16
+LaTeX Warning: Reference `range-tracking' on page 13 undefined on input line 16
 0.
 
 ! Preview: Snippet 30 started.
@@ -714,7 +710,7 @@ Not a real error.
 
 [36]
 
-LaTeX Warning: Citation `magenheimer:precision' on page 11 undefined on input l
+LaTeX Warning: Citation `magenheimer:precision' on page 14 undefined on input l
 ine 204.
 
 ! Preview: Snippet 37 started.
@@ -760,7 +756,7 @@ l.211 provide parallelism\footnote
 Not a real error.
 
 
-LaTeX Warning: Citation `byte:i860' on page 11 undefined on input line 214.
+LaTeX Warning: Citation `byte:i860' on page 14 undefined on input line 214.
 
 ! Preview: Snippet 39 ended.(623265+0x311300).
 <-><->
@@ -786,11 +782,11 @@ Not a real error.
 
 [40]
 
-LaTeX Warning: Citation `ellis:bulldog' on page 11 undefined on input line 227.
+LaTeX Warning: Citation `ellis:bulldog' on page 14 undefined on input line 227.
 
 
 
-LaTeX Warning: Citation `colwell:vliw' on page 11 undefined on input line 227.
+LaTeX Warning: Citation `colwell:vliw' on page 14 undefined on input line 227.
 
 ! Preview: Snippet 41 started.
 <-><->
@@ -810,11 +806,9 @@ Not a real error.
 
 ]
 
-LaTeX Warning: Citation `gib86' on page 12 undefined on input line 248.
+LaTeX Warning: Citation `gib86' on page 15 undefined on input line 248.
 
-)
-No file chap2.tex.
-(./appa.tex
+) (./appa.tex
 ! Preview: Snippet 42 started.
 <-><->
       
@@ -823,7 +817,7 @@ l.1 \chapter
 Not a real error.
 
 Appendix A.
-! Preview: Snippet 42 ended.(10485760+0x28417720).
+! Preview: Snippet 42 ended.(11911168+0x28417720).
 <-><->
       
 l.1 \chapter{Tables}
@@ -862,7 +856,7 @@ l.1 \chapter
 Not a real error.
 
 Appendix B.
-! Preview: Snippet 44 ended.(11911168+317047x28417720).
+! Preview: Snippet 44 ended.(10485760+317047x28417720).
 <-><->
       
 l.1 \chapter{Figures}
@@ -910,20 +904,44 @@ Not a real error.
 [46
 
 
-]) (./biblio.tex
-No file _region_.bbl.
-)
+]) (./biblio.tex (./_region_.bbl
+! Preview: Snippet 47 started.
+<-><->
+      
+l.3 \begin{thebibliography}{1}
+                              
+Not a real error.
+
+! Preview: Snippet 47 ended.(6193152+317047x28417720).
+<-><->
+      
+l.3 \begin{thebibliography}{1}
+                              
+Not a real error.
+
+[47
+
+]))
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 243 strings out of 93650
- 3239 string characters out of 1160831
- 57027 words of memory out of 1500000
- 3978 multiletter control sequences out of 10000+50000
+ 280 strings out of 93649
+ 3660 string characters out of 1160776
+ 56954 words of memory out of 1500000
+ 3994 multiletter control sequences out of 10000+50000
  10715 words of font info for 38 fonts, out of 1200000 for 2000
  637 hyphenation exceptions out of 8191
- 28i,10n,23p,161b,267s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 28i,10n,23p,179b,267s stack positions out of 5000i,500n,6000p,200000b,5000s
+</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf
+-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type
+1/bluesky/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr12.p
+fb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf-
+texlive/fonts/type1/bluesky/cm/cmsy10.pfb>
+Output written on _region_.pdf (47 pages, 51450 bytes).
+PDF statistics:
+ 178 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on _region_.dvi (46 pages, 8456 bytes).

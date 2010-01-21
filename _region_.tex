@@ -1,11 +1,11 @@
-\message{ !name(main.tex)}% -*- Mode:TeX -*-
+\message{ !name(\string~/git/thesis/_region_.tex)}\message{ !name(main.tex)}% -*- Mode:TeX -*-
 
 %% The documentclass options along with the pagestyle can be used to generate
 %% a technical report, a draft copy, or a regular thesis.  You may need to
 %% re-specify the pagestyle after you \include  cover.tex.  For more
 %% information, see the first few lines of mitthesis.cls. 
 
-%\documentclass[12pt,vi,twoside]{mitthesis}
+\documentclass[12pt,vi,twoside]{mitthesis}
 %%
 %%  If you want your thesis copyright to you instead of MIT, use the
 %%  ``vi'' option, as above.
@@ -16,7 +16,7 @@
 %% Page Intentionally Left Blank'', use the ``leftblank'' option, as
 %% above. 
 
-\documentclass[12pt,twoside]{mitthesis}
+%\documentclass[12pt,twoside]{mitthesis}
 \usepackage{lgrind}
 \pagestyle{plain}
 
@@ -28,8 +28,8 @@
 \include{cover}
 \pagestyle{plain}
 \include{contents}
-\include{chap1}
-\include{chap2}
+\include{ch-intro}
+%\include{chap2}
 \appendix
 \include{appa}
 \include{appb}
@@ -37,4 +37,4 @@
 \end{document}
 
 
-\message{ !name(main.tex) !offset(-40) }
+\message{ !name(\string~/git/thesis/_region_.tex) !offset(-40) }

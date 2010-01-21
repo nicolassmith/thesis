@@ -1,11 +1,11 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2009.10.31)  20 JAN 2010 17:59
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.31)  20 JAN 2010 19:07
 entering extended mode
  %&-line parsing enabled.
-**&latex prv_main.ini \nonstopmode\nofiles\PassOptionsToPackage{active,tightpag
-e,auctex}{preview}\AtBeginDocument{\ifx\ifPreview\undefined\RequirePackage[disp
-laymath,floats,graphics,textmath,sections,footnotes]{preview}[2004/11/05]\fi} \
-input main.tex
-(./prv_main.ini
+**&pdflatex prv__region_.ini \nonstopmode\nofiles\PassOptionsToPackage{active,t
+ightpage,auctex}{preview}\AtBeginDocument{\ifx\ifPreview\undefined\RequirePacka
+ge[displaymath,floats,graphics,textmath,sections,footnotes]{preview}[2004/11/05
+]\fi} \input _region_.tex
+(./prv__region_.ini
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, croatian, ukrainian, russian, bulgarian, czech, slovak, danish, dut
@@ -18,7 +18,8 @@ ded.
 (/usr/share/texmf-texlive/tex/latex/tools/.tex File ignored))
 No auxiliary output files.
 
-(./main.tex (./mitthesis.cls
+(./_region_.tex  !name(~/git/thesis/_region_.tex)  !name(main.tex)
+(./mitthesis.cls
 Document Class: mitthesis 1999/10/20
 \vithesis=\count79
 Course VI/VIII thesis style.
@@ -68,9 +69,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 23.
  )
-Beginning to dump on file prv_main.fmt
- (format=prv_main 2010.1.20)
-6350 strings of total length 89169
+Beginning to dump on file prv__region_.fmt
+ (format=prv__region_ 2010.1.20)
+6351 strings of total length 89224
 51283 memory locations dumped; current usage is 215&49085
 3788 multiletter control sequences
 \font\nullfont=nullfont
@@ -150,3 +151,8 @@ Hyphenation trie of length 162367 has 4671 ops out of 35111
   377 for language 1
   181 for language 0
 No pages of output.
+PDF statistics:
+ 0 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
