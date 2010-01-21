@@ -8,56 +8,44 @@ A level-1 auxiliary file: appb.aux
 A level-1 auxiliary file: biblio.aux
 The style file: plain.bst
 Database file #1: mainb.bib
-Warning--I didn't find a database entry for "rumpus"
-Warning--I didn't find a database entry for "patterson:risc"
-Warning--I didn't find a database entry for "rad83"
-Warning--I didn't find a database entry for "ellis:bulldog"
-Warning--I didn't find a database entry for "pet87"
-Warning--I didn't find a database entry for "coutant:precision-compilers"
-Warning--I didn't find a database entry for "gib86"
-Warning--I didn't find a database entry for "thornton:cdc6600"
-Warning--I didn't find a database entry for "magenheimer:precision"
-Warning--I didn't find a database entry for "byte:i860"
-Warning--I didn't find a database entry for "colwell:vliw"
-You've used 1 entry,
+You've used 2 entries,
             2118 wiz_defined-function locations,
-            527 strings with 4654 characters,
-and the built_in function-call counts, 355 in all, are:
-= -- 29
-> -- 28
+            520 strings with 4605 characters,
+and the built_in function-call counts, 561 in all, are:
+= -- 49
+> -- 35
 < -- 0
-+ -- 11
-- -- 10
-* -- 27
-:= -- 72
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 8
++ -- 15
+- -- 12
+* -- 35
+:= -- 111
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 12
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 10
-empty$ -- 18
-format.name$ -- 10
-if$ -- 64
+cite$ -- 2
+duplicate$ -- 20
+empty$ -- 35
+format.name$ -- 12
+if$ -- 105
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 9
-num.names$ -- 2
-pop$ -- 8
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 14
+num.names$ -- 4
+pop$ -- 12
 preamble$ -- 2
-purify$ -- 7
+purify$ -- 10
 quote$ -- 0
-skip$ -- 6
+skip$ -- 13
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 11
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 8
 warning$ -- 0
-while$ -- 2
-width$ -- 2
-write$ -- 13
-(There were 11 warnings)
+while$ -- 4
+width$ -- 3
+write$ -- 23

@@ -2,6 +2,11 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{1}
 
+\bibitem{article-minimal}
+L[eslie]~A. Aamport.
+\newblock The gnats and gnus document preparation system.
+\newblock {\em \mbox{G-Animal's} Journal}, 1986.
+
 \bibitem{Corbitt}
 Thomas Corbitt, David Ottaway, Edith Innerhofer, Jason Pelc, and Nergis
   Mavalvala.
