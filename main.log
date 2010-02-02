@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.31)  20 JAN 2010 21:55
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.31)  1 FEB 2010 21:46
 entering extended mode
  %&-line parsing enabled.
 **\input main.tex
@@ -44,8 +44,8 @@ Package: lgrind 1997/01/30 v3.4 LGrind environment and supporting stuff
 \tb@x=\box30
 \TBw@d=\dimen103
 \@ts=\dimen104
-) (./main.aux (./cover.aux) (./contents.aux) (./ch-intro.aux)
-(./appa.aux) (./appb.aux) (./biblio.aux))
+) (./main.aux (./cover.aux) (./contents.aux) (./appa.aux)
+(./appb.aux) (./biblio.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -90,11 +90,11 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
 
 ] (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 2.
+(Font)              <12> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
+(Font)              <8> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
+(Font)              <6> on input line 3.
 )
 \tf@toc=\write3
 \openout3 = `main.toc'.
@@ -111,50 +111,27 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
-) [11]
-\openout2 = `ch-intro.aux'.
-
-
-(./ch-intro.tex [12
-
+) [11] [12
 
 
 ]
 Chapter 1.
-[13]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 75.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 75.
+[13] [14
 
+]
+Chapter 2.
+[15] [16
 
-LaTeX Warning: Reference `exponent-format' on page 14 undefined on input line 7
-5.
+]
+Chapter 3.
+[17] [18
 
-
-LaTeX Warning: Reference `mantissa-format' on page 14 undefined on input line 7
-5.
-
-
-LaTeX Warning: Reference `unnorm-math' on page 14 undefined on input line 76.
-
-[14] [15]
-
-LaTeX Warning: Reference `opt:be' on page 16 undefined on input line 130.
-
-
-LaTeX Warning: Reference `range-tracking' on page 16 undefined on input line 15
-9.
-
-[16]
-Underfull \vbox (badness 1389) has occurred while \output is active []
-
- [17]
-[18]) [19]
+]
+Chapter 4.
+[19]
 \openout2 = `appa.aux'.
 
  (./appa.tex [20
-
 
 
 ]
@@ -179,32 +156,23 @@ Appendix B.
 
 
 ] (./main.aux (./cover.aux)
-(./contents.aux) (./ch-intro.aux) (./appa.aux) (./appb.aux) (./biblio.aux))
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./contents.aux) (./appa.aux) (./appb.aux) (./biblio.aux)) ) 
 Here is how much of TeX's memory you used:
- 543 strings out of 94101
- 5787 string characters out of 1165809
- 54806 words of memory out of 1500000
- 3825 multiletter control sequences out of 10000+50000
- 9880 words of font info for 35 fonts, out of 1200000 for 2000
+ 523 strings out of 94101
+ 5539 string characters out of 1165809
+ 53806 words of memory out of 1500000
+ 3814 multiletter control sequences out of 10000+50000
+ 9404 words of font info for 33 fonts, out of 1200000 for 2000
  637 hyphenation exceptions out of 8191
- 28i,8n,21p,173b,243s stack positions out of 5000i,500n,6000p,200000b,5000s
-</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf
--texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type
-1/bluesky/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi12
-.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/tex
-mf-texlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/typ
-e1/bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr17.
-pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf
--texlive/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/
-bluesky/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti12.p
-fb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt10.pfb>
-Output written on main.pdf (25 pages, 98659 bytes).
+ 28i,7n,21p,173b,245s stack positions out of 5000i,500n,6000p,200000b,5000s
+</usr/share/texmf-t
+exlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/
+bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr17.pfb
+></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf-
+texlive/fonts/type1/bluesky/cm/cmti12.pfb>
+Output written on main.pdf (25 pages, 50599 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

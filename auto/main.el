@@ -10,7 +10,6 @@
      "twoside"
      "cover"
      "contents"
-     "ch-intro"
      "appa"
      "appb"
      "biblio")))

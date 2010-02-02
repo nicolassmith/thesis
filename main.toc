@@ -1,13 +1,17 @@
-\contentsline {chapter}{\numberline {1}Introduction}{13}
-\contentsline {section}{\numberline {1.1}Motivations for micro-optimization}{13}
-\contentsline {section}{\numberline {1.2}Description of micro-optimization}{14}
-\contentsline {subsection}{\numberline {1.2.1}Post Multiply Normalization}{15}
-\contentsline {subsection}{\numberline {1.2.2}Block Exponent}{15}
-\contentsline {section}{\numberline {1.3}Integer optimizations}{16}
-\contentsline {subsection}{\numberline {1.3.1}Conversion to fixed point}{16}
-\contentsline {subsection}{\numberline {1.3.2}Small Constant Multiplications}{17}
-\contentsline {section}{\numberline {1.4}Other optimizations}{18}
-\contentsline {subsection}{\numberline {1.4.1}Low-level parallelism}{18}
-\contentsline {subsection}{\numberline {1.4.2}Pipeline optimizations}{19}
+\contentsline {chapter}{\numberline {1}Gravitational Radiation}{13}
+\contentsline {chapter}{\numberline {2}Experimental Efforts for Detection}{15}
+\contentsline {section}{\numberline {2.1}iLIGO Interferometers}{15}
+\contentsline {chapter}{\numberline {3}Interferometer Retrofitting}{17}
+\contentsline {section}{\numberline {3.1}Increased Input Laser Power}{17}
+\contentsline {section}{\numberline {3.2}Non-modulated Signal Extraction}{17}
+\contentsline {subsection}{\numberline {3.2.1}Laser Noise Coupling}{17}
+\contentsline {subsection}{\numberline {3.2.2}The Need for a Mode Cleaner at the Output Port}{17}
+\contentsline {chapter}{\numberline {4}The Output Mode Cleaner}{19}
+\contentsline {section}{\numberline {4.1}Optical Design}{19}
+\contentsline {section}{\numberline {4.2}Mechanical Design and Seismic Isolation}{19}
+\contentsline {section}{\numberline {4.3}Servomechanisms}{19}
+\contentsline {section}{\numberline {4.4}Noise Sources Introduced by OMC}{19}
+\contentsline {subsection}{\numberline {4.4.1}OMC Length Noise}{19}
+\contentsline {subsection}{\numberline {4.4.2}Beam Jitter Noise}{19}
 \contentsline {chapter}{\numberline {A}Tables}{21}
 \contentsline {chapter}{\numberline {B}Figures}{23}
