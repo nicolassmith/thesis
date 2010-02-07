@@ -1,51 +1,10 @@
-This is BibTeX, Version 0.99c (Web2C 7.5.6)
-The top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99cThe top-level auxiliary file: C:\Documents and Settings\Nick\My Documents\git\thesis\main.aux
 A level-1 auxiliary file: cover.aux
 A level-1 auxiliary file: contents.aux
-A level-1 auxiliary file: ch-intro.aux
 A level-1 auxiliary file: appa.aux
 A level-1 auxiliary file: appb.aux
 A level-1 auxiliary file: biblio.aux
 The style file: plain.bst
+I found no \citation commands---while reading file C:\Documents and Settings\Nick\My Documents\git\thesis\main.aux
 Database file #1: mainb.bib
-You've used 2 entries,
-            2118 wiz_defined-function locations,
-            520 strings with 4605 characters,
-and the built_in function-call counts, 561 in all, are:
-= -- 49
-> -- 35
-< -- 0
-+ -- 15
-- -- 12
-* -- 35
-:= -- 111
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 12
-chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 20
-empty$ -- 35
-format.name$ -- 12
-if$ -- 105
-int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 14
-num.names$ -- 4
-pop$ -- 12
-preamble$ -- 2
-purify$ -- 10
-quote$ -- 0
-skip$ -- 13
-stack$ -- 0
-substring$ -- 11
-swap$ -- 2
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 8
-warning$ -- 0
-while$ -- 4
-width$ -- 3
-write$ -- 23
+(There was 1 error message)
