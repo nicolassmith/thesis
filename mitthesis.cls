@@ -430,13 +430,24 @@ reserved.\par\permission}}
 % to \supervisor
 \newbox\@titlesupervisor 	\newbox\@abstractsupervisor
 
-\def\supervisor#1#2{\setbox\@titlesupervisor\vbox
-  {\unvbox\@titlesupervisor \vskip 10pt% plus 1fil minus 1fil
+%\def\supervisor#1#2{\setbox\@titlesupervisor\vbox
+%  {\unvbox\@titlesupervisor \vskip 10pt% plus 1fil minus 1fil
+%  \def\baselinestretch{1}\large
+%  \signature{Certified by}{#1 \\ #2 \\ Thesis Supervisor}}
+%  \setbox\@abstractsupervisor\vbox{\unvbox\@abstractsupervisor
+%  \vskip\baselineskip \def\baselinestretch{1}\@normalsize 
+%  \par\noindent Thesis Supervisor: #1 \\ Title: #2}}
+
+% taken from: http://ftp.univie.ac.at/packages/tex/obsolete/macros/latex209/contrib/mitthesis/mitthesis.sty
+
+\def\supervisor{\@ifnextchar[{\@supervisor}{\@supervisor[Thesis Supervisor]}}
+\def\@supervisor[#1]#2#3{\setbox\@titlesupervisor\vbox
+  {\unvbox\@titlesupervisor \vskip 10pt plus 1fil minus 1fil
   \def\baselinestretch{1}\large
-  \signature{Certified by}{#1 \\ #2 \\ Thesis Supervisor}}
+  \signature{Certified by}{#2 \\ #3 \\ #1}}
   \setbox\@abstractsupervisor\vbox{\unvbox\@abstractsupervisor
   \vskip\baselineskip \def\baselinestretch{1}\@normalsize 
-  \par\noindent Thesis Supervisor: #1 \\ Title: #2}}
+  \par\noindent #1: #2 \\ Title: #3}}
 
 % department chairman, not thesis committee chairman
 \def\chairman#1#2{\gdef\@chairmanname{#1}\gdef\@chairmantitle{#2}}

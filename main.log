@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.2.6)  6 FEB 2010 20:59
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.2.6)  28 FEB 2010 13:14
 entering extended mode
 **C:/Documents*and*Settings/Nick/My*Documents/git/thesis/main.tex
 ("C:/Documents and Settings/Nick/My Documents/git/thesis/main.tex"
@@ -69,13 +69,13 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 
 ("C:\Documents and Settings\Nick\My Documents\git\thesis\cover.tex"
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 88.
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
  [1
 
 
@@ -158,17 +158,17 @@ LaTeX Warning: Empty `thebibliography' environment on input line 5.
 ("C:\Documents and Settings\Nick\My Documents\git\thesis\appb.aux")
 ("C:\Documents and Settings\Nick\My Documents\git\thesis\biblio.aux")) ) 
 Here is how much of TeX's memory you used:
- 522 strings out of 495285
- 8324 string characters out of 3180344
- 54550 words of memory out of 3000000
- 3735 multiletter control sequences out of 15000+200000
+ 524 strings out of 495285
+ 8345 string characters out of 3180344
+ 54572 words of memory out of 3000000
+ 3737 multiletter control sequences out of 15000+200000
  9057 words of font info for 32 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  28i,7n,21p,226b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.8/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.
 8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (25 pages, 72121 bytes).
+Output written on main.pdf (25 pages, 72265 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
