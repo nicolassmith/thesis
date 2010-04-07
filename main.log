@@ -1,18 +1,15 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.2.6)  6 FEB 2010 20:59
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.31)  17 FEB 2010 18:52
 entering extended mode
-**C:/Documents*and*Settings/Nick/My*Documents/git/thesis/main.tex
-("C:/Documents and Settings/Nick/My Documents/git/thesis/main.tex"
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, german, ngerman, german-x-2009-06-19, ngerm
-an-x-2009-06-19, french, loaded.
-("C:\Documents and Settings\Nick\My Documents\git\thesis\mitthesis.cls"
+ %&-line parsing enabled.
+**\input main.tex
+(./main.tex (./mitthesis.cls
 Document Class: mitthesis 1999/10/20
 \vithesis=\count79
 Course VI/VIII thesis style.
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\report.cls"
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\size12.clo"
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+File: size12.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@chapter=\count81
@@ -26,8 +23,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-("C:\Documents and Settings\Nick\My Documents\git\thesis\setspace.sty"
+) (./setspace.sty
 Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
 
 Package: `setspace' 6.7 <2000/12/01>
@@ -36,7 +32,7 @@ Copyright given to author, permission to copy/distribute given to MIT.
 \@titlesupervisor=\box26
 \@abstractsupervisor=\box27
 \c@savepage=\count89
-) ("C:\Documents and Settings\Nick\My Documents\git\thesis\lgrind.sty"
+) (./lgrind.sty
 Package: lgrind 1997/01/30 v3.4 LGrind environment and supporting stuff
 \lc@unt=\count90
 \ln@xt=\count91
@@ -48,13 +44,10 @@ Package: lgrind 1997/01/30 v3.4 LGrind environment and supporting stuff
 \tb@x=\box30
 \TBw@d=\dimen103
 \@ts=\dimen104
-)
-("C:\Documents and Settings\Nick\My Documents\git\thesis\main.aux"
-("C:\Documents and Settings\Nick\My Documents\git\thesis\cover.aux")
-("C:\Documents and Settings\Nick\My Documents\git\thesis\contents.aux")
-("C:\Documents and Settings\Nick\My Documents\git\thesis\appa.aux")
-("C:\Documents and Settings\Nick\My Documents\git\thesis\appb.aux")
-("C:\Documents and Settings\Nick\My Documents\git\thesis\biblio.aux"))
+) (./main.aux (./cover.aux) (./contents.aux) (./appa.aux)
+(./appb.aux) (./biblio.aux))
+\openout1 = `main.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
@@ -67,11 +60,12 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
+\openout2 = `cover.aux'.
 
-("C:\Documents and Settings\Nick\My Documents\git\thesis\cover.tex"
+ (./cover.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\omscmr.fd"
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
@@ -80,19 +74,21 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
 
 
 
-{C:/Documents and Settings/All Users/Application Data/MiKTeX/2.8/pdftex/config/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] ("C:\Documents and Settings\Nick\My Documents\git\thesis\abstract.tex") [3
+] (./abstract.tex) [3
 
 ] [4
 
-])
-[5] ("C:\Documents and Settings\Nick\My Documents\git\thesis\contents.tex" [6
+]) [5]
+\openout2 = `contents.aux'.
+
+ (./contents.tex
+[6
 
 
 
-]
-("C:\Documents and Settings\Nick\My Documents\git\thesis\main.toc"
+] (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -101,16 +97,20 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
  [7])
 \tf@toc=\write3
- [8]
-("C:\Documents and Settings\Nick\My Documents\git\thesis\main.lof")
+\openout3 = `main.toc'.
+
+ [8] (./main.lof)
 \tf@lof=\write4
+\openout4 = `main.lof'.
+
  [9
 
 ] [10
 
-]
-("C:\Documents and Settings\Nick\My Documents\git\thesis\main.lot")
+] (./main.lot)
 \tf@lot=\write5
+\openout5 = `main.lot'.
+
 ) [11] [12
 
 
@@ -124,24 +124,37 @@ Chapter 2.
 
 ]
 Chapter 3.
+
+Overfull \hbox (0.46774pt too wide) in paragraph at lines 44--44
+[]\OT1/cmr/bx/n/17.28 Quantum Shot Noise Re-duc-tion with Squeezed
+ []
+
 [17] [18
 
 ]
 Chapter 4.
-[19] ("C:\Documents and Settings\Nick\My Documents\git\thesis\appa.tex" [20
+[19]
+\openout2 = `appa.aux'.
+
+ (./appa.tex [20
 
 
 ]
 Appendix A.
-[21]) ("C:\Documents and Settings\Nick\My Documents\git\thesis\appb.tex" [22
+[21])
+\openout2 = `appb.aux'.
+
+ (./appb.tex [22
 
 
 
 
 ]
 Appendix B.
-[23] [24]) ("C:\Documents and Settings\Nick\My Documents\git\thesis\biblio.tex"
-("C:\Documents and Settings\Nick\My Documents\git\thesis\main.bbl"
+[23] [24])
+\openout2 = `biblio.aux'.
+
+ (./biblio.tex (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 5.
 
@@ -151,26 +164,23 @@ LaTeX Warning: Empty `thebibliography' environment on input line 5.
 
 
 
-] ("C:\Documents and Settings\Nick\My Documents\git\thesis\main.aux"
-("C:\Documents and Settings\Nick\My Documents\git\thesis\cover.aux")
-("C:\Documents and Settings\Nick\My Documents\git\thesis\contents.aux")
-("C:\Documents and Settings\Nick\My Documents\git\thesis\appa.aux")
-("C:\Documents and Settings\Nick\My Documents\git\thesis\appb.aux")
-("C:\Documents and Settings\Nick\My Documents\git\thesis\biblio.aux")) ) 
+] (./main.aux (./cover.aux) (./contents.aux) (./appa.aux) (./appb.aux)
+(./biblio.aux)) ) 
 Here is how much of TeX's memory you used:
- 522 strings out of 495285
- 8324 string characters out of 3180344
- 54550 words of memory out of 3000000
- 3735 multiletter control sequences out of 15000+200000
- 9057 words of font info for 32 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 28i,7n,21p,226b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.8/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.
-8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (25 pages, 72121 bytes).
+ 519 strings out of 94101
+ 5492 string characters out of 1165809
+ 54806 words of memory out of 1500000
+ 3811 multiletter control sequences out of 10000+50000
+ 9057 words of font info for 32 fonts, out of 1200000 for 2000
+ 637 hyphenation exceptions out of 8191
+ 28i,7n,21p,173b,245s stack positions out of 5000i,500n,6000p,200000b,5000s
+</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></
+usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf-texl
+ive/fonts/type1/bluesky/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/blue
+sky/cm/cmsy10.pfb>
+Output written on main.pdf (25 pages, 46892 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
+ 0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

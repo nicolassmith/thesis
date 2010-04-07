@@ -5,10 +5,10 @@
 \contentsline {section}{\numberline {3.1}Increased Input Laser Power}{17}
 \contentsline {section}{\numberline {3.2}Re-engineered Thermal Compensation}{17}
 \contentsline {section}{\numberline {3.3}Non-modulated Signal Extraction}{17}
-\contentsline {subsection}{\numberline {3.3.1}Optical Gain as Compared to RF Modulated Extraction}{17}
+\contentsline {subsection}{\numberline {3.3.1}Optical SNR as Compared to RF Modulated Extraction}{17}
 \contentsline {subsection}{\numberline {3.3.2}Laser Noise Coupling}{17}
 \contentsline {subsection}{\numberline {3.3.3}The Need for a Mode Cleaner at the Output Port}{17}
-\contentsline {subsection}{\numberline {3.3.4}Quantum Shot Noise Reduction with Squeezed Light Injection}{17}
+\contentsline {section}{\numberline {3.4}Quantum Shot Noise Reduction with Squeezed Light Injection}{17}
 \contentsline {chapter}{\numberline {4}The Output Mode Cleaner}{19}
 \contentsline {section}{\numberline {4.1}Optical Design}{19}
 \contentsline {subsection}{\numberline {4.1.1}Optical Parameters}{19}
