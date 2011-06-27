@@ -1,6 +1,5 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.5.10)  14 JUN 2010 20:06
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.5.2)  27 JUN 2011 15:35
 entering extended mode
- restricted \write18 enabled.
  %&-line parsing enabled.
 **\input main.tex
 (./main.tex (./mitthesis.cls
@@ -75,17 +74,17 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+] [2
 
-] (./abstract.tex) [3
+] (./abstract.tex)
+[3
 
 ] [4
 
 ]) [5]
 \openout2 = `contents.aux'.
 
- (./contents.tex
-[6
+ (./contents.tex [6
 
 
 
@@ -108,7 +107,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ] [10
 
-] (./main.lot)
+]
+(./main.lot)
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
@@ -125,6 +125,11 @@ Chapter 2.
 
 ]
 Chapter 3.
+
+Overfull \hbox (23.13979pt too wide) in paragraph at lines 40--40
+\OT1/cmr/bx/n/17.28 Fields, and the Need for an Out-put Mode Cleaner 
+ []
+
 [17] [18
 
 ]
@@ -137,7 +142,7 @@ Chapter 5.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-Overfull \vbox (8.6034pt too high) has occurred while \output is active []
+Overfull \vbox (53.48674pt too high) has occurred while \output is active []
 
 
 [22]
@@ -178,20 +183,12 @@ LaTeX Warning: Empty `thebibliography' environment on input line 5.
 ] (./main.aux (./cover.aux) (./contents.aux) (./appa.aux) (./appb.aux)
 (./biblio.aux)) ) 
 Here is how much of TeX's memory you used:
- 521 strings out of 495061
- 5501 string characters out of 1182621
+ 520 strings out of 495062
+ 5491 string characters out of 1182645
  54547 words of memory out of 3000000
  3712 multiletter control sequences out of 15000+50000
  9057 words of font info for 32 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 28i,7n,21p,177b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (29 pages, 74289 bytes).
-PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28i,7n,21p,207b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+Output written on main.dvi (29 pages, 16032 bytes).
