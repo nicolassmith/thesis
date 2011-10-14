@@ -1,0 +1,14 @@
+*.log
+*.orig 
+*.rej 
+*.aux 
+*.dvi 
+*.pdf 
+*~ 
+*.blg 
+*.lof 
+*.lot 
+*.bbl
+_region_.*
+auto/*
+*.toc
