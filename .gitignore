@@ -5,6 +5,7 @@
 *.dvi 
 *.pdf 
 *~ 
+.*~
 *.blg 
 *.lof 
 *.lot 
