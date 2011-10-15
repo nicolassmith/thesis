@@ -1,8 +1,9 @@
 chapters = gw modalmodel
 main = main
 auxiliary = cover contents biblio
+viewer = evince
 
-pdf : $(main).pdf
+pdf : clean $(main).pdf
 
 $(main).dvi : $(main).tex $(addsuffix .tex,$(auxiliary)) 
 	latex $<
@@ -20,10 +21,10 @@ ch-%.dvi: ch-%.tex
 .PHONY: view clean pdf
 
 view : $(main).pdf
-	okular $<
+	$(viewer) $<
 
 view-% : ch-%.pdf
-	okular $<
+	$(viewer) $<
 
 clean : 
 	-rm -f *.log *.orig *.rej *.aux *.dvi *.pdf *~ *.blg *.lof *.lot *.bbl *.toc .*~
