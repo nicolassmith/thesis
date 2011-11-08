@@ -6,7 +6,7 @@ ch-temp = ch-temp
 
 pdf : clean $(main).pdf
 
-$(main).dvi : $(main).tex $(addsuffix .tex,$(auxiliary)) 
+$(main).dvi : $(main).tex $(addsuffix .tex,$(auxiliary)) $(addsuffix .tex,$(addprefix ch-,$(chapters))) 
 	latex $<
 	-bibtex $(main)
 	latex $<
