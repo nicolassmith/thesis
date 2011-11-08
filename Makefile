@@ -1,12 +1,14 @@
 chapters = gw modalmodel
 main = main
-auxiliary = cover contents biblio macros
+auxiliary = cover contents biblio
 viewer = evince
-ch-temp = ch-temp
 
-pdf : clean $(main).pdf
+maindeps = $(main).tex macros.tex
+maininclude = mainb.bib $(addsuffix .tex,$(auxiliary))
 
-$(main).dvi : $(main).tex $(addsuffix .tex,$(auxiliary)) $(addsuffix .tex,$(addprefix ch-,$(chapters))) 
+pdf : $(main).pdf
+
+$(main).dvi : $(maindeps) $(addsuffix .tex,$(addprefix ch-,$(chapters))) $(maininclude)
 	latex $<
 	-bibtex $(main)
 	latex $<
@@ -15,24 +17,22 @@ $(main).dvi : $(main).tex $(addsuffix .tex,$(auxiliary)) $(addsuffix .tex,$(addp
 %.pdf : %.dvi
 	dvipdf $<
 
-ch-%.dvi: ch-%.tex clean-ch clean
-	latex --jobname=$(ch-temp) "\includeonly{ch-$*}\input{$(main)}"
-	latex --jobname=$(ch-temp) "\includeonly{ch-$*}\input{$(main)}"
-	mv $(ch-temp).dvi ch-$*.dvi
+ch-%.dvi: ch-%.tex $(maindeps)
+	-rm -f *.aux
+	latex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
+	latex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
+	mv ch-$*-temp.dvi ch-$*.dvi
 
-.PHONY: view clean pdf clean-ch
+.PHONY: view clean pdf
 .SECONDARY: 
 
 view : $(main).pdf
-	$(viewer) $< &
+	$(viewer) $< 2> /dev/null &
 
 view-% : ch-%.pdf
-	$(viewer) $< &
+	$(viewer) $< 2> /dev/null &
 
 clean : 
 	-rm -f *.log *.orig *.rej *.aux *.dvi *.pdf *~ *.blg *.lof *.lot *.bbl *.toc .*~
 	-rm -rf _region_.*
 	-rm -rf auto
-
-clean-ch :
-	-rm ch-*.aux $(ch-temp).aux $(ch-temp).log
