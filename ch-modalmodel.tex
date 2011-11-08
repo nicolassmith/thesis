@@ -6,4 +6,48 @@
 
 \chapter{Modal Model of a Laser Field}
 
-Modal model stuff.
+This chapter will describe a formalism which treats the laser field propagating in an optical interferometer as a vector space where common optical components, such as mirrors and optical modulators are treated as operators in the vector space. %NL%
+This treatment allows the analysis of complicated optical paths, which include paths that loop onto themselves (as in the case of resonant cavities) to be reduced to a problem of matrix manipulation. %NL%
+This is is highly powerful technique which is used extensively in modeling of gravitational-wave interferometers.
+
+To just get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated at $\pm\Omega$. %NL%
+Thus, if the electric field of a propagating electromagnetic wave along the propagation axis ($z$) is written as
+\begin{align*}
+\geom{E}(z,t) &= A_c e^{i[\omega_0t -kz]}\geom{x} + A_+e^{[i(\omega_0+\Omega)t -kz]}\geom{x} + A_-e^{i[(\omega_0-\Omega)t -kz]}\geom{x}\\
+&= \left( A_c + A_+ e^{i\Omega t}+A_-e^{-i\Omega t}\right) e^{i[\omega_0 t-kz]}\geom{x},
+\end{align*}
+where $A_c$, $A_+$ and $A_-$ are the carrier, upper sideband and lower sideband amplitudes respectively, $k=\omega_0/c$ is the wavenumber, and $\vect{x}$ is the \emph{geometrical} basis vector poiting along the axis of polarization, then we are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in \ref{eq:dotequals} is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
+The right side of the equation is not written in terms of vectors and thus is not truly equal to the left side. %NL%
+The dot can be ignored if one doesn't mind their math to be a bit sloppy.} 
+\begin{equation}
+\label{eq:dotequals}
+\vect{E} \doteq \ms A_c \\ A_+ \\ A_- \me.
+\end{equation}
+
+By inspection it is clear that we are using the following basis vectors to span our vector space:
+\begin{align}
+\vect{v}_1&=e^{i[\omega_0 t-kz]}\vect{x}\notag, \\
+\vect{v}_2&=e^{i\Omega t}e^{i[\omega_0 t-kz]}\vect{x}, \\
+\vect{v}_3&=e^{-i\Omega t}e^{i[\omega_0 t-kz]}\vect{x}\notag.
+\end{align}
+It is important to emphesize that the vectors used in this formalism are in general not simple euclidian vectors, but rather abstract vectors representing different aspects of the electric field of an electromagnetic wave. %NL%
+In this simple case, the main aspect which distinguishes the three basis vectors is the frequency of periodic oscillations. %NL%
+
+
+Now that we are familiar with using this vector space to represent the desired wave amplitudes, let's examine how we may use an operator to represent some optical component. %NL%
+An electro-optic modulator (EOM) can act as a phase modulator for a laser field when a voltage is applied. %NL%
+When a periodic signal is applied at frequency $\Omega$, given an input field amplitude $E_{\text{input}}=Ae^{i\omega_0 t}$ the output amplitude is
+\newcommand{\gammahalf}{\frac{i\Gamma}{2}}
+\begin{equation}
+E_{\text{output}} = Ae^{i\omega_0 t + i\Gamma \cos{\Omega t}}\approx Ae^{i\omega_0 t}\left(1+\gammahalf e^{i\Omega t}+\gammahalf e^{-i\Omega t}\right),
+\end{equation}
+where $\Gamma$ is known as the modulation depth. %NL%
+One can show that in the example vector space we are considering, this EOM can be represented as the following operator
+\begin{equation}
+\oper{O} \doteq 
+\ms 
+1          & \gammahalf & \gammahalf \\
+\gammahalf & 1          & 0          \\
+\gammahalf & 0          & 1 \\
+\me
+\end{equation}
