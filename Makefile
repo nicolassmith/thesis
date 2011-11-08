@@ -1,14 +1,16 @@
 chapters = gw modalmodel
 main = main
 auxiliary = cover contents biblio
+bib = mainb
 viewer = evince
 
 maindeps = $(main).tex macros.tex
-maininclude = mainb.bib $(addsuffix .tex,$(auxiliary))
+texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
+maininclude = $(bib).bib $(addsuffix .tex,$(auxiliary)) $(texchapters)
 
 pdf : $(main).pdf
 
-$(main).dvi : $(maindeps) $(addsuffix .tex,$(addprefix ch-,$(chapters))) $(maininclude)
+$(main).dvi : $(maindeps) $(maininclude)
 	latex $<
 	-bibtex $(main)
 	latex $<
@@ -17,6 +19,7 @@ $(main).dvi : $(maindeps) $(addsuffix .tex,$(addprefix ch-,$(chapters))) $(maini
 %.pdf : %.dvi
 	dvipdf $<
 
+# temp is needed because latex goes into some .aux infinite loop without it
 ch-%.dvi: ch-%.tex $(maindeps)
 	-rm -f *.aux
 	latex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
