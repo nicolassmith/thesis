@@ -15,7 +15,8 @@ $(main).dvi : $(main).tex $(addsuffix .tex,$(auxiliary))
 %.pdf : %.dvi
 	dvipdf $<
 
-ch-%.dvi: ch-%.tex clean-ch
+ch-%.dvi: ch-%.tex clean-ch clean
+	latex --jobname=$(ch-temp) "\includeonly{ch-$*}\input{$(main)}"
 	latex --jobname=$(ch-temp) "\includeonly{ch-$*}\input{$(main)}"
 	mv $(ch-temp).dvi ch-$*.dvi
 
