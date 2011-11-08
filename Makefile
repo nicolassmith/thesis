@@ -20,14 +20,14 @@ $(main).dvi : $(maindeps) $(maininclude)
 	dvipdf $<
 
 # temp is needed because latex goes into some .aux infinite loop without it
-ch-%.dvi: ch-%.tex $(maindeps)
+ch-%.dvi : ch-%.tex $(maindeps)
 	-rm -f *.aux
 	latex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	latex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	mv ch-$*-temp.dvi ch-$*.dvi
 
-.PHONY: view clean pdf
-.SECONDARY: 
+.PHONY : view clean pdf
+.SECONDARY : 
 
 view : $(main).pdf
 	$(viewer) $< 2> /dev/null &
