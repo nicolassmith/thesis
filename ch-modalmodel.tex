@@ -16,7 +16,7 @@ Thus, if the electric field of a propagating electromagnetic wave along the prop
 \geom{E}(z,t) &= A_c e^{i[\omega_0t -kz]}\geom{x} + A_+e^{[i(\omega_0+\Omega)t -kz]}\geom{x} + A_-e^{i[(\omega_0-\Omega)t -kz]}\geom{x}\\
 &= \left( A_c + A_+ e^{i\Omega t}+A_-e^{-i\Omega t}\right) e^{i[\omega_0 t-kz]}\geom{x},
 \end{align*}
-where $A_c$, $A_+$ and $A_-$ are the carrier, upper sideband and lower sideband amplitudes respectively, $k=\omega_0/c$ is the wavenumber, and $\vect{x}$ is the \emph{geometrical} basis vector poiting along the axis of polarization, then we are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in \ref{eq:dotequals} is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
+where $A_c$, $A_+$ and $A_-$ are the carrier, upper sideband and lower sideband amplitudes respectively, $k=\omega_0/c$ is the wavenumber, and $\vect{x}$ is the \emph{geometrical} basis vector poiting along the axis of polarization, then we are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in (\ref{eq:dotequals}) is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
 The right side of the equation is not written in terms of vectors and thus is not truly equal to the left side. %NL%
 The dot can be ignored if one doesn't mind their math to be a bit sloppy.} 
 \begin{equation}
@@ -26,9 +26,9 @@ The dot can be ignored if one doesn't mind their math to be a bit sloppy.}
 
 By inspection it is clear that we are using the following basis vectors to span our vector space:
 \begin{align}
-\vect{v}_1&=e^{i[\omega_0 t-kz]}\vect{x}\notag, \\
-\vect{v}_2&=e^{i\Omega t}e^{i[\omega_0 t-kz]}\vect{x}, \\
-\vect{v}_3&=e^{-i\Omega t}e^{i[\omega_0 t-kz]}\vect{x}\notag.
+\vect{v_1}&=e^{i[\omega_0 t-kz]}\geom{x}\notag, \\
+\vect{v_2}&=e^{i\Omega t}e^{i[\omega_0 t-kz]}\geom{x}, \\
+\vect{v_3}&=e^{-i\Omega t}e^{i[\omega_0 t-kz]}\geom{x}\notag.
 \end{align}
 It is important to emphesize that the vectors used in this formalism are in general not simple euclidian vectors, but rather abstract vectors representing different aspects of the electric field of an electromagnetic wave. %NL%
 In this simple case, the main aspect which distinguishes the three basis vectors is the frequency of periodic oscillations. %NL%
@@ -39,6 +39,7 @@ An electro-optic modulator (EOM) can act as a phase modulator for a laser field 
 When a periodic signal is applied at frequency $\Omega$, given an input field amplitude $Ae^{i\omega_0 t}$ the output amplitude is
 \newcommand{\gammahalf}{\frac{i\Gamma}{2}}
 \begin{equation}
+\label{eq:inputfield}
 Ae^{i\omega_0 t + i\Gamma \cos{\Omega t}}\approx Ae^{i\omega_0 t}\left(1+\gammahalf e^{i\Omega t}+\gammahalf e^{-i\Omega t}\right),
 \end{equation}
 where $\Gamma$ is known as the modulation depth and is assumed to be small. %NL%
@@ -49,5 +50,17 @@ One can show that in the example vector space we are considering, this EOM can b
 1          & \gammahalf & \gammahalf \\
 \gammahalf & 1          & 0          \\
 \gammahalf & 0          & 1 \\
-\me
+\me.
 \end{equation}
+It is then clear that the act of $\oper{O}$ operating on an input field constructed as the one used in (\ref{eq:inputfield}) gives the desired output field:
+\begin{equation}
+\oper{O}\vect{E_{\text{input}}} \doteq \ms 
+1          & \gammahalf & \gammahalf \\
+\gammahalf & 1          & 0          \\
+\gammahalf & 0          & 1 \\
+\me
+\ms A \\ 0 \\ 0 \me = A \ms  1 \\ \gammahalf \\ \gammahalf \me.
+\end{equation}
+
+The vector space we have chosen... %NL%
+can be extended to arbitrary precision, energy conservation...
