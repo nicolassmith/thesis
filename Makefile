@@ -1,6 +1,6 @@
 chapters = gw modalmodel
 main = main
-auxiliary = cover contents biblio
+auxiliary = cover contents biblio macros
 viewer = evince
 ch-temp = ch-temp
 
