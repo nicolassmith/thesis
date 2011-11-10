@@ -4,9 +4,10 @@
 %%% TeX-master: "main"
 %%% End: 
 
-\chapter{Modal Model of a Laser Field}
+\chapter{Vector Space Model of Laser Beams}
 
-This chapter will describe a formalism which treats the laser field components propagating in an optical interferometer as a vector space where common optical components, such as mirrors and optical modulators are treated as operators. %NL%
+\section{Introduction}
+This chapter will describe a formalism which treats the laser field components propagating in an optical interferometer as a complex vector space where common optical components, such as mirrors and optical modulators are treated as operators in this space. %NL%
 This treatment allows the analysis of complicated optical paths, which include paths that loop onto themselves (as in the case of resonant cavities) to be reduced to a problem of matrix manipulation. %NL%
 This is is highly powerful technique which is used extensively in modeling of gravitational-wave interferometers.
 
@@ -32,7 +33,9 @@ By inspection it is clear that our representation uses the following basis vecto
 \end{align}
 It is important to emphesize that the vectors used in this formalism are in general not simple euclidian vectors, but rather abstract vectors representing different components of the electric field of an electromagnetic wave. %NL%
 In this simple case, the main aspect which distinguishes the three basis vectors is the frequency of periodic oscillations. %NL%
-
+This treatment is alalogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a state vector, where the basis vectors are orthonormal state vectors. %NL%
+In our formalism, the components of the laser field will take the place of the state vectors. %NL%
+We will use Dirac bra-ket notation because of this strong analogy.
 
 Now that we are familiar with using this vector space to represent the desired wave amplitudes, let's examine how we may use an operator to represent some optical component. %NL%
 An electro-optic modulator (EOM) can act as a phase modulator for a laser field when a voltage is applied. %NL%
@@ -54,6 +57,7 @@ One can show that in the example vector space we are considering, this EOM can b
 \end{equation}
 It is then clear that the act of $\oper{M_\phi}$ operating on an input field constructed as the one used in (\ref{eq:inputfield}) gives the desired output field:
 \begin{equation}
+\vect{E_{output}}=
 \oper{M_\phi}\vect{E_{\text{input}}} \doteq \ms 
 1          & \gammahalf & \gammahalf \\
 \gammahalf & 1          & 0          \\
@@ -75,4 +79,7 @@ where $\vect{r}$ is the basis vector representing the $r$th order sideband compo
 Also, $J_{-k}(x)=(-1)^kJ_k(x)$. %NL%
 The ability to calculate to arbitrary precision will continue to hold true when we expand the treatment to include other components of a propagating laser field, such as the transverse beam modes. %NL%
 As long as the solutions are converging, the precision is only limited by the choice of when the vector space is truncated, i.e. %NL%
-to what order the calculation the calculation is taken.
+to what order the calculation is taken.
+
+\section{Expanding the Vector Space}
+Our example 
