@@ -13,3 +13,4 @@
 _region_.*
 auto/*
 *.toc
+*.out
