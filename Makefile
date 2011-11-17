@@ -11,23 +11,20 @@ maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters)
 
 pdf : $(main).pdf
 
-$(main).dvi : $(maindeps) $(maininclude)
-	latex $<
+$(main).pdf : $(maindeps) $(maininclude)
+	pdflatex $<
 	-bibtex $(main)
-	latex $<
-	latex $<
-
-%.pdf : %.dvi
-	dvipdf $<
+	pdflatex $<
+	pdflatex $<
 
 # temp is needed because latex goes into some .aux infinite loop without it
-ch-%.dvi : ch-%.tex $(maindeps)
+ch-%.pdf : ch-%.tex $(maindeps)
 	-rm -f *.aux
-	latex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
+	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	-bibtex ch-$*-temp
-	latex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
-	latex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
-	mv ch-$*-temp.dvi ch-$*.dvi
+	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
+	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
+	mv ch-$*-temp.pdf ch-$*.pdf
 
 .PHONY : view clean pdf
 .SECONDARY : 
