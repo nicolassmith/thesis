@@ -4,12 +4,12 @@
 %%% TeX-master: "main"
 %%% End: 
 
-\chapter{Vector Space Model of Laser Beams}
+\chapter{Vector Space Model of Optical Systems}
 
 \section{Introduction}
 This chapter will describe a formalism which treats the laser field components propagating in an optical interferometer as a complex vector space where common optical components, such as mirrors and optical modulators are treated as operators in this space. %NL%
 This treatment allows the analysis of complicated optical paths, which include paths that loop onto themselves (as in the case of resonant cavities) to be reduced to a problem of matrix manipulation. %NL%
-This is is highly powerful technique which is used extensively in modeling of gravitational-wave interferometers.\cite{Vinet1986,Hefetz:97,Sigg:00}
+This is is highly powerful technique which is used extensively in modeling the behavior of gravitational-wave interferometers.\cite{Vinet1986,Hefetz:97,Sigg:00}
 
 To just get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated at $\pm\Omega$. %NL%
 Thus, if the electric field of a propagating electromagnetic wave along the propagation axis ($z$) is written as
@@ -71,14 +71,25 @@ The vector space we have chosen represents only the first order sidebands genera
 Also, we have only expanded the effect of phase modulation to terms linear in $\Gamma$. %NL%
 There is, however, no fundamental reason that the analysis cannot be used to arbitrary precision. %NL%
 The number of components of the vector space can be expanded to account for an arbitrary number of higher order sidebands, and the matrix elements used for $\oper{M_\phi}$ can take their exact values. %NL%
-The general form of the phase modulation operator is\footnote{This can be shown using the so-called Jacobi-Anger identity, $e^{ix\cos\theta}=\sum_{k=-\infty}^\infty i^kJ_k(x)e^{ik\theta}$.}:
+The general form of the phase modulation operator is:
 \begin{equation}
 \oper{M_\phi} = \sum_{r,s=-\infty}^\infty\vect{r} i^{s-r} J_{s-r}(\Gamma) \form{s},
 \end{equation}
-where $\vect{r}$ is the basis vector representing the $r$th order sideband component (which includes a $e^{ir\Omega t}$ time dependence), and $J_k(x)$ is the bessel function of the first kind. %NL%
-Also, $J_{-k}(x)=(-1)^kJ_k(x)$. %NL%
-The ability to calculate to arbitrary precision will continue to hold true when we expand the treatment to include other components of a propagating laser field, such as the transverse beam modes. %NL%
+where $\vect{r}$ is the basis vector representing the $r$th order sideband component (which includes a $e^{ir\Omega t}$ time dependence), and $J_k(x)$ is the bessel function of the first kind.\footnote{This can be shown using the so-called Jacobi-Anger identity, $e^{ix\cos\theta}=\sum_{k=-\infty}^\infty i^kJ_k(x)e^{ik\theta}$. %NL%
+Also, $J_{-k}(x)=(-1)^kJ_k(x)$, thus $\oper{M_\phi}$ is symmetric.} The ability to calculate to arbitrary precision will continue to hold true when we expand the treatment to include other components of a propagating laser field, such as the transverse beam modes. %NL%
 As long as the solutions are converging, the precision is only limited by the choice of when the vector space is truncated, i.e.\ to what order the calculation is taken.
 
 \section{Expanding the Vector Space}
-Our example 
+So far our example prescribes an elegant way to deal with optical components (e.g.\ the modulator) which transfer energy from one component of the electric field (the carrier) to other components (the sidebands). %NL%
+This type of approach is also applicable to the components of the electric field corresponding the the transverse spatial modes of the beam, as shown by \citet{Hefetz:97}.
+
+When the paraxial approximation applies it is possible to expand the electromagnetic field into a superposition of modes represented by a gaussian function of the transverse coordinate, multiplied by polynomials. %NL%
+Common choices for the polynomial functions are the Hermite or Laguerre polynomials\cite[chap.16]{Siegman}. %NL%
+This formalism associates the modal components with eigenmodes of what is described as the ``perfectly aligned and undistorted optical path''. %NL%
+In other words, this formalism describes how the introduction of misalignments and beam distortions alter a laser beam propagating in the system by treating misalignments (or higher order beam distortions) as matrix elements which transfer energy between different spatial modes. %NL%
+The misalignments are generally treated as small, and thus, the operators of the optical components differ from the identity operator by small corrections. %NL%
+The misaligned solutions of beam propagation are thus treated as pertubations of the aligned solutions. %NL%
+This is slightly novel due to the fact that, normally, some fundamental gaussian laser mode is defined to have some beam particular waist $w_0$, and a focused beam with a different beam waist can be written as a series of higher order components. %NL%
+While in this formalism, the fundamental gaussian mode may have a beam waist value that changes due to the presence of a lens, but the beam on both sides of the lens would be represented by the same modal state vector.
+
+PUT FIGURE HERE THAT DESCRIBES WHAT IS AN IDENTITY AND WHAT IS NOT.
