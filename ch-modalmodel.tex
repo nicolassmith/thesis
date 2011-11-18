@@ -17,7 +17,7 @@ Thus, if the electric field of a propagating electromagnetic wave along the prop
 \geom{E}(z,t) &= A_0 e^{i[\omega_0t -kz]}\geom{x} + A_1e^{[i(\omega_0+\Omega)t -kz]}\geom{x} + A_{-1}e^{i[(\omega_0-\Omega)t -kz]}\geom{x}\\
 &= \left( A_0 + A_1 e^{i\Omega t}+A_{-1}e^{-i\Omega t}\right) e^{i[\omega_0 t-kz]}\geom{x},
 \end{align*}
-where $A_0$, $A_1$ and $A_{-1}$ are the carrier, first order upper sideband and first order lower sideband amplitudes respectively, $k=\omega_0/c$ is the wavenumber, and $\geom{x}$ is the \emph{geometrical} basis vector poiting along the axis of polarization, then we are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in (\ref{eq:dotequals}) is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
+where $A_0$, $A_1$ and $A_{-1}$ are the carrier, first order upper sideband and first order lower sideband amplitudes respectively, $k=\omega_0/c$ is the wavenumber, and $\geom{x}$ is the \emph{geometrical} basis vector pointing along the axis of polarization, then we are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in (\ref{eq:dotequals}) is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
 The right side of the equation is not written in terms of vectors and thus is not truly equal to the left side. %NL%
 The dot can be ignored if one doesn't mind their math to be a bit sloppy.} 
 \begin{equation}
@@ -31,9 +31,9 @@ By inspection it is clear that our representation uses the following basis vecto
 \vect{1}&\doteq e^{i\Omega t}e^{i[\omega_0 t-kz]}\geom{x}, \\
 \vect{-1}&\doteq e^{-i\Omega t}e^{i[\omega_0 t-kz]}\geom{x}\notag.
 \end{align}
-It is important to emphesize that the vectors used in this formalism are in general not simple euclidian vectors, but rather abstract vectors representing different components of the electric field of an electromagnetic wave. %NL%
+It is important to emphasize that the vectors used in this formalism are in general not simple euclidean vectors, but rather abstract vectors representing different components of the electric field of an electromagnetic wave. %NL%
 In this simple case, the main aspect which distinguishes the three basis vectors is the frequency of periodic oscillations. %NL%
-This treatment is alalogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a state vector, where the basis vectors are orthonormal state vectors. %NL%
+This treatment is analogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a state vector, where the basis vectors are orthonormal state vectors. %NL%
 In our formalism, the components of the laser field will take the place of the state vectors. %NL%
 We will use Dirac bra-ket notation because of this strong analogy.
 
@@ -48,17 +48,17 @@ Ae^{i\omega_0 t + i\Gamma \cos{\Omega t}}\approx Ae^{i\omega_0 t}\left(1+\gammah
 where $\Gamma$ is known as the modulation depth and is assumed to be small. %NL%
 One can show that in the example vector space we are considering, this EOM can be represented as the following operator
 \begin{equation}
-\oper{M_\phi} \doteq 
+\oper{\Phi}(\Gamma) \doteq 
 \ms 
 1          & \gammahalf & \gammahalf \\
 \gammahalf & 1          & 0          \\
 \gammahalf & 0          & 1 \\
 \me.
 \end{equation}
-It is then clear that the act of $\oper{M_\phi}$ operating on an input field constructed as the one used in (\ref{eq:inputfield}) gives the desired output field:
+It is then clear that the act of $\oper{\Phi}(\Gamma)$ operating on an input field constructed as the one used in (\ref{eq:inputfield}) gives the desired output field:
 \begin{equation}
 \vect{E_{output}}=
-\oper{M_\phi}\vect{E_{\text{input}}} \doteq \ms 
+\oper{\Phi}(\Gamma)\vect{E_{\text{input}}} \doteq \ms 
 1          & \gammahalf & \gammahalf \\
 \gammahalf & 1          & 0          \\
 \gammahalf & 0          & 1 \\
@@ -70,27 +70,66 @@ So far, we have kept our example relatively simple. %NL%
 The vector space we have chosen represents only the first order sidebands generated on the carrier frequency. %NL%
 Also, we have only expanded the effect of phase modulation to terms linear in $\Gamma$. %NL%
 There is, however, no fundamental reason that the analysis cannot be used to arbitrary precision. %NL%
-The number of components of the vector space can be expanded to account for an arbitrary number of higher order sidebands, and the matrix elements used for $\oper{M_\phi}$ can take their exact values. %NL%
+The number of components of the vector space can be expanded to account for an arbitrary number of higher order sidebands, and the matrix elements used for $\oper{\Phi}(\Gamma)$ can take their exact values. %NL%
 The general form of the phase modulation operator is:
 \begin{equation}
-\oper{M_\phi} = \sum_{r,s=-\infty}^\infty\vect{r} i^{s-r} J_{s-r}(\Gamma) \form{s},
+\oper{\Phi}(\Gamma) = \sum_{r,s=-\infty}^\infty\vect{r} i^{s-r} J_{s-r}(\Gamma) \form{s},
 \end{equation}
-where $\vect{r}$ is the basis vector representing the $r$th order sideband component (which includes a $e^{ir\Omega t}$ time dependence), and $J_k(x)$ is the bessel function of the first kind.\footnote{This can be shown using the so-called Jacobi-Anger identity, $e^{ix\cos\theta}=\sum_{k=-\infty}^\infty i^kJ_k(x)e^{ik\theta}$. %NL%
-Also, $J_{-k}(x)=(-1)^kJ_k(x)$, thus $\oper{M_\phi}$ is symmetric.} The ability to calculate to arbitrary precision will continue to hold true when we expand the treatment to include other components of a propagating laser field, such as the transverse beam modes. %NL%
+where $\vect{r}$ is the basis vector representing the $r$th order sideband component (which includes a $e^{ir\Omega t}$ time dependence), and $J_k(x)$ is the Bessel function of the first kind.\footnote{This can be shown using the so-called Jacobi-Anger identity, $e^{ix\cos\theta}=\sum_{k=-\infty}^\infty i^kJ_k(x)e^{ik\theta}$. %NL%
+Also, $J_{-k}(x)=(-1)^kJ_k(x)$, thus $\oper{\Phi}(\Gamma)$ is symmetric.} The ability to calculate to arbitrary precision will continue to hold true when we expand the treatment to include other components of a propagating laser field, such as the transverse beam modes. %NL%
 As long as the solutions are converging, the precision is only limited by the choice of when the vector space is truncated, i.e.\ to what order the calculation is taken.
 
-\section{Expanding the Vector Space}
+\section{The Modal Space}
 So far our example prescribes an elegant way to deal with optical components (e.g.\ the modulator) which transfer energy from one component of the electric field (the carrier) to other components (the sidebands). %NL%
 This type of approach is also applicable to the components of the electric field corresponding the the transverse spatial modes of the beam, as shown by \citet{Hefetz:97}.
 
-When the paraxial approximation applies it is possible to expand the electromagnetic field into a superposition of modes represented by a gaussian function of the transverse coordinate, multiplied by polynomials. %NL%
+When the paraxial approximation applies it is possible to expand the electromagnetic field into a superposition of modes represented by a Gaussian function of the transverse coordinate, multiplied by polynomials. %NL%
 Common choices for the polynomial functions are the Hermite or Laguerre polynomials \cite[chap.16]{Siegman}. %NL%
 This formalism associates the modal components with eigenmodes of what is described as the ``perfectly aligned and undistorted optical path''. %NL%
 In other words, this formalism describes how the introduction of misalignments and beam distortions alter a laser beam propagating in the system by treating misalignments (or higher order beam distortions) as matrix elements which transfer energy between different spatial modes. %NL%
 The misalignments are generally treated as small, and thus, the operators of the optical components differ from the identity operator by small corrections. %NL%
-The misaligned solutions of beam propagation are thus treated as pertubations of the aligned solutions. %NL%
-This is slightly novel due to the fact that, normally, some fundamental gaussian laser mode is defined to have some beam particular waist $w_0$, and a focused beam with a different beam waist can be written as a series of higher order components with the original beam waist $w_0$. %NL%
-While in this formalism, the fundamental gaussian mode may have a beam waist value that changes due to the presence of a lens, but the beam on both sides of the lens would be represented by the same modal state vector.
+The misaligned solutions of beam propagation are thus treated as perturbations of the aligned solutions. %NL%
+This is slightly novel due to the fact that, normally, some fundamental Gaussian laser mode is defined to have some beam particular waist $w_0$, and a focused beam with a different beam waist can be written as a series of higher order components with the original beam waist $w_0$. %NL%
+While in this formalism, the fundamental Gaussian mode may have a beam waist value that changes due to the presence of a lens, but the beam on both sides of the lens would be represented by the same modal state vector. %NL%
+This means that most optical components will be represented as operators which are functions of some misalignment or distortion parameter, but reduce to the identity operator when the misalignment is zero.
 
 {\color{red} PUT FIGURE HERE THAT DESCRIBES WHAT IS AN IDENTITY AND WHAT IS NOT.}
 
+Choosing the common Hermite-Gaussian basis, we can use basis vectors which are separable into the mode order of the beam along the $x$ and $y$ transverse axes of the beam. %NL%
+A general field vector can be decomposed in the modal space as
+\begin{equation}
+\vect{E} = \sum_{m,n=0}^\infty A_{mn}\vect{nm}\doteq\sum_{m,n=0}^\infty A_{mn}U_m(x,z)U_n(y,z)e^{-ikz},
+\end{equation}
+where $U_m(x,z)$ is the $m$th 1-D Hermite-Gauss mode (see \ref{ap:HGmode}). %NL%
+The basis modes are also referred to as the Transverse Electric and Magnetic modes of order $mn$ (\TEM{mn}).
+
+In the modal space, a simple example operator would be a mirror that has been tilted by an angle $\theta_x$ about the y axis. %NL%
+Peaking ahead, this misalignment will transfer energy from the \TEM{00} mode to the first higher order mode (in the x axis), the \TEM{10} mode. %NL%
+This is understandable intuitively because a \TEM{00} beam shifted from the optical axis is primarily composed of \TEM{00} and \TEM{10} components, and the misalignment of the mirror will lead to a shifted beam after the beam is allowed to propagate away from the mirror. %NL%
+Due to the mirror misalignment, the phase of the beam at the plane of the mirror has been advanced on one side and retarded on the other side, relative to the aligned beam. %NL%
+This can be represented as a phase muliplication of $\exp[-2ik\theta_x x]$. %NL%
+\citet{Hefetz:97} shows that in our modal basis representation this is satisfied by the operator
+\begin{equation}
+\oper{M}(\Theta_x) = \exp\left[ -2i\Theta_x\sum_{m,n,k,l=0}^\infty \vect{mn} \delta_{nl} \left( \sqrt k \delta_{m[k-1]}+\sqrt m \delta_{m[k+1]} \right) \form{kl}\right],
+\end{equation}
+where $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, or the ratio of the misalginment angle to the beam divergence angle. %NL%
+One can see that the $k$ index is connected to the $m$ index that differs by one mode number, this will provide the correct transfer of energy from the \TEM{00} mode to the \TEM{10} mode as discussed above. %NL%
+We can use the following matrix representation of our space to look at this explicitly:
+\begin{align}
+\vect{E} &\doteq \ms \inprod{00}{E} \\ \inprod{10}{E} \\ \inprod{01}{E} \me
+& \oper{O} &\doteq \ms 
+\matrixel{00}{\oper{O}}{00} & \matrixel{00}{\oper{O}}{10} & \matrixel{00}{\oper{O}}{01} \\
+\matrixel{10}{\oper{O}}{00} & \matrixel{10}{\oper{O}}{10} & \matrixel{10}{\oper{O}}{01} \\
+\matrixel{01}{\oper{O}}{00} & \matrixel{01}{\oper{O}}{10} & \matrixel{01}{\oper{O}}{01} \me
+\end{align}
+
+In this representation, 
+\[
+\oper{M}(\Theta_x) = \exp \left( -2i 
+\ms 
+0 & \Theta_x & 0 \\
+\Theta_x & 0 & 0 \\
+0 & 0 & 0 
+\me
+\right)
+\]
