@@ -1,9 +1,11 @@
-chapters = gw modalmodel
+main-chapters = intro modalmodel omc beacon
+ap-chapters = ap-miscon ap-gaussmodes ap-matrices ap-notes
 main = main
 auxiliary = cover contents
 bib = mainb
 viewer = evince
 
+chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
 maindeps = $(main).tex macros.tex $(bibdep)
 texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
