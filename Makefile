@@ -24,6 +24,7 @@ ch-%.pdf : ch-%.tex $(maindeps)
 	-rm -f *.aux
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	-bibtex ch-$*-temp
+#	pdflatex $(main).tex
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	mv ch-$*-temp.pdf ch-$*.pdf
