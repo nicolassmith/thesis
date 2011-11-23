@@ -12,7 +12,7 @@ This treatment allows the analysis of complicated optical paths, which include p
 This is is highly powerful technique which is used extensively in modeling the behavior of gravitational-wave interferometers \cite{Vinet1986,Hefetz:97,Sigg:00}.
 
 \section{Frequency components of a laser field}
-To just get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated at $\pm\Omega$. %NL%
+To just get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated in frequency by $\pm\Omega$. %NL%
 Thus, if the electric field of a propagating electromagnetic wave along the propagation axis ($z$) is written as
 \begin{align*}
 \geom{E}(z,t) &= A_0 e^{i[\omega_0t -kz]}\geom{x} + A_1e^{[i(\omega_0+\Omega)t -kz]}\geom{x} + A_{-1}e^{i[(\omega_0-\Omega)t -kz]}\geom{x}\\
@@ -34,9 +34,15 @@ By inspection it is clear that our representation uses the following basis vecto
 \end{align}
 It is important to emphasize that the vectors used in this formalism are in general not simple euclidean vectors, but rather abstract vectors representing different components of the electric field of an electromagnetic wave. %NL%
 In this simple case, the main aspect which distinguishes the three basis vectors is the frequency of periodic oscillations. %NL%
-\com{orthonormal?} This treatment is analogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a state vector, where the basis vectors are orthonormal state vectors. %NL%
+The inner product of two basis vectors is:
+\[
+\inprod{r}{s} = \int_{\text{many cycles}}{\left( e^{i\omega_{r}t}\right)^*}e^{i\omega_{s}t} = \delta_{rs},
+\]
+where $\omega_r$ is the sideband frequency of the $r$th sideband. %NL%
+This treatment is analogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a vector in a space spanned by a set of orthonormal basis state vectors. %NL%
 In our formalism, the components of the laser field will take the place of the state vectors. %NL%
-We will use Dirac bra-ket notation because of this strong analogy.
+We will use Dirac bra-ket notation because of this strong analogy.\footnote{One significant difference between quantum mechanics and this formalism is that the quantum state vector of a system must always have unit length, to ensure the state has a probability of 1. %NL%
+The length of the vector in this formalism is just the electric field amplitude, and can take any value.}
 
 Now that we are familiar with using this vector space to represent the desired wave amplitudes, let's examine how we may use an operator to represent some optical component. %NL%
 An electro-optic modulator (EOM) can act as a phase modulator for a laser field when a voltage is applied. %NL%
@@ -90,9 +96,11 @@ This formalism associates the modal components with eigenmodes of what is descri
 In other words, this formalism describes how the introduction of misalignments and beam distortions alter a laser beam propagating in the system by treating misalignments (or higher order beam distortions) as matrix elements which transfer energy between different spatial modes. %NL%
 The misalignments are generally treated as small, and thus, the operators of the optical components differ from the identity operator by small corrections. %NL%
 The misaligned solutions of beam propagation are thus treated as perturbations of the aligned solutions. %NL%
-This is slightly novel due to the fact that, normally, some fundamental Gaussian laser mode is defined to have some beam particular waist $w_0$, and a focused beam with a different beam waist can be written as a series of higher order components with the original beam waist $w_0$. %NL%
-While in this formalism, the fundamental Gaussian mode may have a beam waist value that changes due to the presence of a lens, but the beam on both sides of the lens would be represented by the same modal state vector. %NL%
-This means that most optical components will be represented as operators which are functions of some misalignment or distortion parameter, but reduce to the identity operator when the misalignment is zero.
+
+
+The treatment of modes in this formalism is slightly novel due to the fact that, normally, some fundamental Gaussian laser mode is defined to have some beam particular waist $w_0$, and a focused beam with a different beam waist can be written as a series of higher order components with the original beam waist $w_0$. %NL%
+While in this formalism, the fundamental Gaussian mode may have a beam waist value that changes due to the presence of a lens, but the beam on both sides of the lens would be represented by the same modal state vector (modulo some phase rotation due to propagation). %NL%
+It is only the presence of misalignments and distortions that cause significant off-diagonal matrix elements.
 
 \com{PUT FIGURE HERE THAT DESCRIBES WHAT IS AN IDENTITY AND WHAT IS NOT. note: free space is not an identity}
 
@@ -151,5 +159,19 @@ So for small misalignments, the effect of rotating a mirror is to take energy fr
 It is also useful to note that the resulting \TEM{10} field has a quadruature which is rotated by $\pi/2$ with respect to the initial \TEM{00} field.
 
 \section{The combined vector space}
+To treat the general problem of laser fields propagating through an optical system, it will be useful to consider both frequency and modal components simultaneously. %NL%
+This combination was covered in detail by \citet{Sigg:00}.
 
+Mathematically, the combined space is a tensor product of the spaces discussed above. %NL%
+The resulting basis vectors will be labeled by four indices, two from the modal space, one from the frequency space, and for completeness, a final index to represent the polarization. %NL%
+We can use the following notation for the basis vectors:
+\begin{equation}
+\vect{mn;r;p}=\vect{mn}_{\text{modal}}\otimes\vect{r}_{\text{frequency}}\otimes\vect{p}_{\text{polarization}}.
+\end{equation}
+It is understood that the electric field represented by one of these basis vectors is
+\[
+\vect{mn;r;p} \doteq e^{\left[ i\left( \omega_0+\omega_r\right)t\right]} U_{mn}\geom{\epsilon}_p,
+\]
+where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_{mn}$ is shorhand for $U_m(x,z)\times U_n(y,z)$; and $\geom{\epsilon}_p$ for $p\in \{1,2\}$ are the polarization vectors in the $x$ and $y$ direction, respectively.
+\com{Make the example of the free space propagation operator}
 \section{Photodetection}
