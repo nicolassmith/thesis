@@ -5,7 +5,9 @@
 \newcommand{\form}[1]{\left< #1 \right| }
 \newcommand{\geom}[1]{\vec{#1}}
 \newcommand{\oper}[1]{\mathsf{#1}}
-\newcommand{\inprod}[2]{\left< #1 \vphantom{#2} \right|
+%\newcommand{\inprod}[2]{\left< #1 \vphantom{#2} \right|
+% \left. #2 \vphantom{#1} \right>}
+\newcommand{\inprod}[2]{\left. \left< #1 \vphantom{#2} \right. \right|
  \left. #2 \vphantom{#1} \right>}
 \newcommand{\matrixel}[3]{\left< #1 \vphantom{#2#3} \right|
  #2 \left| #3 \vphantom{#1#2} \right>}
