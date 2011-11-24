@@ -36,7 +36,8 @@ It is important to emphasize that the vectors used in this formalism are in gene
 In this simple case, the main aspect which distinguishes the three basis vectors is the frequency of periodic oscillations. %NL%
 The inner product of two basis vectors is:
 \[
-\inprod{r}{s} = \int_{\text{many cycles}}{\left( e^{i\omega_{r}t}\right)^*}e^{i\omega_{s}t} = \delta_{rs},
+\inprod{r}{s} = \int\limits_{\text{many cycles}}\! \! \! \! \! \! \! \! \!
+dt \; \: {\left( e^{i\omega_{r}t}\right)^*}e^{i\omega_{s}t} = \delta_{rs},
 \]
 where $\omega_r$ is the sideband frequency of the $r$th sideband. %NL%
 This treatment is analogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a vector in a space spanned by a set of orthonormal basis state vectors. %NL%
@@ -101,8 +102,6 @@ The misaligned solutions of beam propagation are thus treated as perturbations o
 The treatment of modes in this formalism is slightly novel due to the fact that, normally, some fundamental Gaussian laser mode is defined to have some beam particular waist $w_0$, and a focused beam with a different beam waist can be written as a series of higher order components with the original beam waist $w_0$. %NL%
 While in this formalism, the fundamental Gaussian mode may have a beam waist value that changes due to the presence of a lens, but the beam on both sides of the lens would be represented by the same modal state vector (modulo some phase rotation due to propagation). %NL%
 It is only the presence of misalignments and distortions that cause significant off-diagonal matrix elements.
-
-\com{PUT FIGURE HERE THAT DESCRIBES WHAT IS AN IDENTITY AND WHAT IS NOT. note: free space is not an identity}
 
 Choosing the common Hermite-Gaussian basis, we can use basis vectors which are separable into the mode order of the beam along the $x$ and $y$ transverse axes of the beam. %NL%
 A general field vector can be decomposed in the modal space as
@@ -172,6 +171,16 @@ It is understood that the electric field represented by one of these basis vecto
 \[
 \vect{mn;r;p} \doteq e^{\left[ i\left( \omega_0+\omega_r\right)t\right]} U_{mn}\geom{\epsilon}_p,
 \]
-where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_{mn}$ is shorhand for $U_m(x,z)\times U_n(y,z)$; and $\geom{\epsilon}_p$ for $p\in \{1,2\}$ are the polarization vectors in the $x$ and $y$ direction, respectively.
-\com{Make the example of the free space propagation operator}
+where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_{mn}$ is shorhand for $U_m(x,z)\times U_n(y,z)$; and $\geom{\epsilon}_p$ for $p\in \{1,2\}$ are the polarization unit vectors in the $x$ and $y$ direction, respectively.
+
+An example of an operator in the combined space is the free space propagation operator:
+\begin{equation}
+\oper{P}(\Delta z) = \\
+\sum_{mnkl}\vect{mn;r;p}
+\delta_{mk}\delta_{nl}\delta_{rs}\delta_{pq}
+\exp  \left[i(m+n+1)\eta(\Delta z)
+-i\frac{\omega_0+\omega_r}{c}\Delta z\right] 
+\form{kl;s;q}
+\end{equation}
+
 \section{Photodetection}
