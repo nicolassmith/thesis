@@ -174,13 +174,13 @@ It is understood that the electric field represented by one of these basis vecto
 where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_{mn}$ is shorhand for $U_m(x,z)\times U_n(y,z)$; and $\geom{\epsilon}_p$ for $p\in \{1,2\}$ are the polarization unit vectors in the $x$ and $y$ direction, respectively.
 
 An example of an operator in the combined space is the free space propagation operator:
-\begin{equation}
-\oper{P}(\Delta z) = \\
-\sum_{mnkl}\vect{mn;r;p}
+\begin{align}
+\oper{P}(\Delta z,\eta) = & \\
+\sum_{\substack{mnkl\\rs\\pq}}& \vect{mn;r;p}
 \delta_{mk}\delta_{nl}\delta_{rs}\delta_{pq}
-\exp  \left[i(m+n+1)\eta(\Delta z)
+\exp  \left[i(m+n+1)\eta
 -i\frac{\omega_0+\omega_r}{c}\Delta z\right] 
-\form{kl;s;q}
-\end{equation}
-
+\form{kl;s;q} \notag
+\end{align}
+where $\eta$ is the Gouy phase shift.
 \section{Photodetection}
