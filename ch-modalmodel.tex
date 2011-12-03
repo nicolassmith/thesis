@@ -180,7 +180,14 @@ An example of an operator in the combined space is the free space propagation op
 \delta_{mk}\delta_{nl}\delta_{rs}\delta_{pq}
 \exp  \left[i(m+n+1)\eta
 -i\frac{\omega_0+\omega_r}{c}\Delta z\right] 
-\form{kl;s;q} \notag
+\form{kl;s;q}, \notag
 \end{align}
-where $\eta$ is the Gouy phase shift.
+using parameters
+\begin{align*}
+\Delta z &= z_{\text{end}}-z_{\text{start}} \\
+\eta &= \arctan \left( \frac{(z_{\text{end}}-z_0)\lambda}{\pi w_0^2}\right)- 
+        \arctan \left( \frac{(z_{\text{start}}-z_0)\lambda}{\pi w_0^2}\right)
+\end{align*}
+for starting and ending positions $z_{\text{start}}$ and $z_{\text{end}}$, where $z_0$ is the position of the beam waist, and $w_0$ is the beam radius at the waist. %NL%
+The parameter $\eta$ is commonly refered to as the Gouy phase shift.
 \section{Photodetection}
