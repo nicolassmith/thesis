@@ -12,6 +12,7 @@ This treatment allows the analysis of complicated optical paths, which include p
 This is is highly powerful technique which is used extensively in modeling the behavior of gravitational-wave interferometers \cite{Vinet1986,Hefetz:97,Sigg:00}.
 
 \section{Frequency components of a laser field}
+\label{sec:freqspace}
 To just get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated in frequency by $\pm\Omega$. %NL%
 Thus, if the electric field of a propagating electromagnetic wave along the propagation axis ($z$) is written as
 \begin{align*}
@@ -88,11 +89,13 @@ Also, $J_{-k}(x)=(-1)^kJ_k(x)$, thus $\oper{\Phi}(\Gamma)$ is symmetric.} The ab
 As long as the solutions are converging, the precision is only limited by the choice of when the vector space is truncated, i.e.\ to what order the calculation is taken.
 
 \section{The modal space}
+\label{sec:modalspace}
 So far our example prescribes an elegant way to deal with optical components (e.g.\ the modulator) which transfer energy from one component of the electric field (the carrier) to other components (the sidebands). %NL%
 This type of approach is also applicable to the components of the electric field corresponding the the transverse spatial modes of the beam, as shown by \citet{Hefetz:97}.
 
 When the paraxial approximation applies it is possible to expand the electromagnetic field into a superposition of modes represented by a Gaussian function of the transverse coordinate, multiplied by polynomials. %NL%
-Common choices for the polynomial functions are the Hermite or Laguerre polynomials \cite[chap.16]{Siegman}. %NL%
+Common choices for the polynomial functions are the Hermite or Laguerre polynomials \cite[chap. %NL%
+16]{Siegman}. %NL%
 This formalism associates the modal components with eigenmodes of what is described as the ``perfectly aligned and undistorted optical path''. %NL%
 In other words, this formalism describes how the introduction of misalignments and beam distortions alter a laser beam propagating in the system by treating misalignments (or higher order beam distortions) as matrix elements which transfer energy between different spatial modes. %NL%
 The misalignments are generally treated as small, and thus, the operators of the optical components differ from the identity operator by small corrections. %NL%
@@ -175,6 +178,7 @@ where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_
 
 An example of an operator in the combined space is the free space propagation operator:
 \begin{align}
+\label{eq:Propagator}
 \oper{P}(\Delta z,\eta) = & \\
 \sum_{\substack{mnkl\\rs\\pq}}& \vect{mn;r;p}
 \delta_{mk}\delta_{nl}\delta_{rs}\delta_{pq}
@@ -189,5 +193,12 @@ using parameters
         \arctan \left( \frac{(z_{\text{start}}-z_0)\lambda}{\pi w_0^2}\right)
 \end{align*}
 for starting and ending positions $z_{\text{start}}$ and $z_{\text{end}}$, where $z_0$ is the position of the beam waist, and $w_0$ is the beam radius at the waist. %NL%
-The parameter $\eta$ is commonly refered to as the Gouy phase shift.
+The parameter $\eta$ is commonly refered to as the Gouy phase shift. %NL%
+As one can see by the presence of the Kronecker deltas in (\ref{eq:Propagator}), all the components of the input field are directly propagated to the output field without mixing. %NL%
+There is, however a phase shift which depends on the tranverse mode order (the Gouy shift) and the wavelength ($\omega_r/c$).
+
+More complicated operators exist which mix simultaneously mode and frequency components. %NL%
+One example is that of a mirror which is dithered at a given frequency in angle. %NL%
+It is in a sense a combination of the misaligned mirror operator in section \ref{sec:modalspace} and the phase modulation operator in section \ref{sec:freqspace}. %NL%
+This operator is derived by \citet{Sigg:00}.
 \section{Photodetection}
