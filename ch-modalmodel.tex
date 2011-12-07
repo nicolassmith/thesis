@@ -38,7 +38,7 @@ In this simple case, the main aspect which distinguishes the three basis vectors
 The inner product of two basis vectors is:
 \[
 \inprod{r}{s} = \int\limits_{\text{many cycles}}\! \! \! \! \! \! \! \! \!
-dt \; \: {\left( e^{i\omega_{r}t}\right)^*}e^{i\omega_{s}t} = \delta_{rs},
+\dd t \; \: {\left( e^{i\omega_{r}t}\right)^*}e^{i\omega_{s}t} = \delta_{rs},
 \]
 where $\omega_r$ is the sideband frequency of the $r$th sideband. %NL%
 This treatment is analogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a vector in a space spanned by a set of orthonormal basis state vectors. %NL%
@@ -234,5 +234,10 @@ In the case of a QPD, the face of the photodetector is split into four equal seg
 \com{make QPD figure.} Different linear combinations of the photocurrents of these segments can yield different information about the laser beam. %NL%
 For example, the vertical displacement of a beam can be determined by subtracting current of the top segments from the bottom segments.
 
-In the language of tranverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode. %NL%
-More precisly, it measures the mixing of all modes that are separated by one mode order, \com{can you show this?}.
+In the language of tranverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisly, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components.
+
+The shape and linear combination of the photodiode segments is treated in the literature\cite{Hefetz:97} as a pupil function $p(x,y)$, where the photodiode measures
+\begin{equation}
+P=\iint\limits_{\text{PD area}}E^\dagger(x,y)p(x,y)E(x,y)\dd x \dd y,
+\end{equation}
+so for example for a photodetector split along the $y$ axis, $p(x,y)=1$ for $x>0$ and $-1$ for $x<0$.
