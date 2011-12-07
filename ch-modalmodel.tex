@@ -202,8 +202,34 @@ One example is that of a mirror which is dithered at a given frequency in angle.
 It is in a sense a combination of the misaligned mirror operator in section \ref{sec:modalspace} and the phase modulation operator in section \ref{sec:freqspace}. %NL%
 This operator is derived by \citet{Sigg:00}.
 \section{Photodetection}
-A photodetector is a device which is sensitive to the power in the laser field, or
+A photodetector is a device which is sensitive to the power in the laser field. %NL%
+This is typically photodiode which converts the laser power into an electric current. %NL%
+In terms of the electric field we may write the power as
 \begin{equation}
 P=\frac{\epsilon_0 c}{2}|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
 \end{equation}
-This is typically a solid state device which converts the laser power into an electric current.
+When using the vector space formalism, this represents the time averaged power detected by the photodiode. %NL%
+The time dependent component of the laser power can be thought of as the mixing of different frequency components of the electric field. %NL%
+To achieve this in the vector space formalism, we must use an operator which has matrix elements connecting different frequency components. %NL%
+For demodulation at frequency $\omega_d$, the  operator takes the form: 
+\begin{equation}
+\oper{D}(\omega_d) = \sum_{rs} \vect{r} \delta(\omega_r,\omega_s-\omega_d) \form{s},
+\end{equation}
+where we have defined a delta function as
+\begin{equation}
+\delta(x,y) = 
+\begin{cases}
+0 & \text{if $x \neq y$}, \\
+1 & \text{if $x = y$}.
+\end{cases}
+\end{equation}
+
+\com{power at a given frequency? Make sure it's real valued.}
+
+Photodetectors are sometimes split into many segments, such as is the case with a so called quadrant photo-detector (QPD). %NL%
+In the case of a QPD, the face of the photodetector is split into four equal segments as seen in figure \ref{fig:QPD}. %NL%
+\com{make QPD figure.} Different linear combinations of the photocurrents of these segments can yield different information about the laser beam. %NL%
+For example, the vertical displacement of a beam can be determined by subtracting current of the top segments from the bottom segments.
+
+In the language of tranverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode. %NL%
+More precisly, it measures the mixing of all modes that are separated by one mode order,
