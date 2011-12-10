@@ -177,7 +177,7 @@ It is understood that the electric field represented by one of these basis vecto
 \vect{mn;r;p} \doteq e^{\left[ i\left( \omega_0+\omega_r\right)t\right]} U_{mn}\geom{\epsilon}_p,
 \]
 where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_{mn}$ is shorhand for $U_m(x,z)\times U_n(y,z)$; and $\geom{\epsilon}_p$ for $p\in \{1,2\}$ are the polarization unit vectors in the $x$ and $y$ direction, respectively. %NL%
-\com{talk about how we can do more than regularly spaced frequencies.}
+\com{talk about how we can do more than regularly spaced frequencies.} 
 
 An example of an operator in the combined space is the free space propagation operator:
 \begin{align}
@@ -209,7 +209,11 @@ A photodetector is a device which is sensitive to the power in the laser field. 
 This is typically photodiode which converts the laser power into an electric current. %NL%
 In terms of the electric field we may write the power as
 \begin{equation}
-P=\frac{\epsilon_0 c}{2}|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
+P=\frac{\epsilon_0 c}{2}\int \! %NL%
+\! %NL%
+\dd t \int \! %NL%
+\! %NL%
+\dd A|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
 \end{equation}
 When using the vector space formalism, this represents the time averaged power detected by the photodiode. %NL%
 The time dependent component of the laser power can be thought of as the mixing of different frequency components of the electric field. %NL%
@@ -218,7 +222,7 @@ For demodulation at frequency $\omega_d$, the  operator takes the form:
 \begin{equation}
 \oper{D}(\omega_d) = \sum_{rs} \vect{r} \delta(\omega_r,\omega_s-\omega_d) \form{s},
 \end{equation}
-where we have defined a delta function as
+where we use a delta function defined as
 \begin{equation}
 \delta(x,y) = 
 \begin{cases}
@@ -234,10 +238,22 @@ In the case of a QPD, the face of the photodetector is split into four equal seg
 \com{make QPD figure.} Different linear combinations of the photocurrents of these segments can yield different information about the laser beam. %NL%
 For example, the vertical displacement of a beam can be determined by subtracting current of the top segments from the bottom segments.
 
-In the language of tranverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisly, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components.
-
-The shape and linear combination of the photodiode segments is treated in the literature\cite{Hefetz:97} as a pupil function $p(x,y)$, where the photodiode measures
+The shape and linear combination of the photodiode segments is treated in the literature\cite{Hefetz:97} as a pupil function $p(x,y)$, \com{how does hefetz do the units?} where the photodiode measures
 \begin{equation}
 P=\iint\limits_{\text{PD area}}E^\dagger(x,y)p(x,y)E(x,y)\dd x \dd y,
 \end{equation}
 so for example for a photodetector split along the $y$ axis, $p(x,y)=1$ for $x>0$ and $-1$ for $x<0$.
+
+% show how this is equivalent to an operator
+
+In the language of tranverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisly, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components.
+
+% explain the ideal 10 and 20 detectors (what is the ideal 20 detector?) Maybe calculate some matrix elements of a real bullseye detector.
+% maybe put the numerical values of split detector into appendix
+
+\section{Application to compicated optical systems}
+The real utility of this formalism arises when the optical system contains branches that branch and loop onto themselves, as is the case with resonant cavities. %NL%
+The fact that the operators can simultaneously handle the transverse modes and frequency components reduces much of the complexity of the problem through abstraction. %NL%
+
+
+%a simple ring cavity
