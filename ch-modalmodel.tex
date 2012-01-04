@@ -14,12 +14,13 @@ This is is highly powerful technique which is used extensively in modeling the b
 \section{Frequency components of a laser field}
 \label{sec:freqspace}
 To just get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated in frequency by $\pm\Omega$. %NL%
-Thus, if the electric field of a propagating electromagnetic wave along the propagation axis ($z$) is written as
+Consider an electromagnetic wave propagating in the z direction, at some point along the propagation axis, the electric field may be written as
 \begin{align*}
-\geom{E}(z,t) &= A_0 e^{i[\omega_0t -kz]}\geom{x} + A_1e^{[i(\omega_0+\Omega)t -kz]}\geom{x} + A_{-1}e^{i[(\omega_0-\Omega)t -kz]}\geom{x}\\
-&= \left( A_0 + A_1 e^{i\Omega t}+A_{-1}e^{-i\Omega t}\right) e^{i[\omega_0 t-kz]}\geom{x},
+\geom{E}(t) &= A_0 e^{i\omega_0t}\geom{x} + A_1e^{i(\omega_0+\Omega)t}\geom{x} + A_{-1}e^{i(\omega_0-\Omega)t}\geom{x}\\
+&= \left( A_0 + A_1 e^{i\Omega t}+A_{-1}e^{-i\Omega t}\right) e^{i\omega_0 t}\geom{x},
 \end{align*}
-where $A_0$, $A_1$ and $A_{-1}$ are the carrier, first order upper sideband and first order lower sideband amplitudes respectively, $k=\omega_0/c$ is the wavenumber, and $\geom{x}$ is the \emph{geometrical} basis vector pointing along the axis of polarization, then we are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in (\ref{eq:dotequals}) is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
+where $A_0$, $A_1$ and $A_{-1}$ are the carrier, first order upper sideband and first order lower sideband amplitudes respectively, $k=\omega_0/c$ is the wave-number, and $\geom{x}$ is the \emph{geometrical} basis vector pointing along the axis of polarization. %NL%
+We are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in (\ref{eq:dotequals}) is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
 The right side of the equation is not written in terms of vectors and thus is not truly equal to the left side. %NL%
 The dot can be ignored if one doesn't mind their math to be a bit sloppy.} 
 \begin{equation}
@@ -27,14 +28,8 @@ The dot can be ignored if one doesn't mind their math to be a bit sloppy.}
 \vect{E} \doteq \ms A_0 \\ A_1 \\ A_{-1} \me.
 \end{equation}
 
-By inspection it is clear that our representation uses the following basis vectors to span our vector space:
-\begin{align}
-\vect{0}&\doteq e^{i[\omega_0 t-kz]}\geom{x}\notag, \\
-\vect{1}&\doteq e^{i\Omega t}e^{i[\omega_0 t-kz]}\geom{x}, \\
-\vect{-1}&\doteq e^{-i\Omega t}e^{i[\omega_0 t-kz]}\geom{x}\notag.
-\end{align}
+The basis vectors in this representation are given by the three periodically time varying components of the electric field, namely the carrier, upper and lower sidebands. %NL%
 It is important to emphasize that the vectors used in this formalism are in general not simple euclidean vectors, but rather abstract vectors representing different components of the electric field of an electromagnetic wave. %NL%
-In this simple case, the main aspect which distinguishes the three basis vectors is the frequency of periodic oscillations. %NL%
 The inner product of two basis vectors is:
 \[
 \inprod{r}{s} = \int\limits_{\text{many cycles}}\! \! \! \! \! \! \! \! \!
@@ -44,7 +39,7 @@ where $\omega_r$ is the sideband frequency of the $r$th sideband. %NL%
 This treatment is analogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a vector in a space spanned by a set of orthonormal basis state vectors. %NL%
 In our formalism, the components of the laser field will take the place of the state vectors. %NL%
 We will use Dirac bra-ket notation because of this strong analogy.\footnote{One significant difference between quantum mechanics and this formalism is that the quantum state vector of a system must always have unit length, to ensure the state has a probability of 1. %NL%
-The length of the vector in this formalism is just the electric field amplitude, and can take any value.}
+The length of the vector in this formalism is just a field amplitude, and can take any value.}
 
 Now that we are familiar with using this vector space to represent the desired wave amplitudes, let's examine how we may use an operator to represent some optical component. %NL%
 An electro-optic modulator (EOM) can act as a phase modulator for a laser field when a voltage is applied. %NL%
@@ -118,12 +113,12 @@ The basis modes are also referred to as the Transverse Electric and Magnetic mod
 
 In the modal space, a simple example operator would be a mirror that has been tilted by an angle $\theta_x$ about the y axis. %NL%
 Due to the mirror misalignment, the phase of the beam at the plane of the mirror has been advanced on one side and retarded on the other side, relative to the aligned beam. %NL%
-This can be represented as a phase muliplication of $\exp[-2ik\theta_x x]$. %NL%
+This can be represented as a phase multiplication of $\exp[-2ik\theta_x x]$. %NL%
 \citet{Hefetz:97} show that in the modal basis this is satisfied by the operator
 \begin{equation}
 \oper{M}(\Theta_x) = \exp\left[ -2i\Theta_x\sum_{m,n,k,l=0}^\infty \vect{mn} \delta_{nl} \left( \sqrt k \delta_{m[k-1]}+\sqrt m \delta_{m[k+1]} \right) \form{kl}\right],
 \end{equation}
-where $\delta_{mn}$ is the Kroneker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, or the ratio of the misalginment angle to the beam divergence angle. %NL%
+where $\delta_{mn}$ is the Kroneker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, or the ratio of the misalignment angle to the beam divergence angle. %NL%
 One can see that the $k$ index is connected to the $m$ index that differs by one mode number, this will provide the correct transfer of energy from the \TEM{00} mode to the \TEM{10} mode as discussed above. %NL%
 We can use a matrix representation with three components representing the \TEM{00}, \TEM{10} and \TEM{01} amplitudes, explicitly for field $\vect{E}$ and operator $\oper{O}$:
 \begin{align}
@@ -160,7 +155,7 @@ and for small $\Theta_x$,\footnote{Note that $\theta_x$ being small is also requ
 \me .
 \]
 So for small misalignments, the effect of rotating a mirror is to take energy from the \TEM{00} component of the field, and transfer it to the \TEM{10} component, the opposite also being true when the initial field already has a non-zero \TEM{10} component. %NL%
-It is also useful to note that the resulting \TEM{10} field has a quadruature which is rotated by $\pi/2$ with respect to the initial \TEM{00} field.
+It is also useful to note that the resulting \TEM{10} field has a quadrature which is rotated by $\pi/2$ with respect to the initial \TEM{00} field.
 
 \section{The combined vector space}
 To treat the general problem of laser fields propagating through an optical system, it will be useful to consider both frequency and modal components simultaneously. %NL%
@@ -176,8 +171,10 @@ It is understood that the electric field represented by one of these basis vecto
 \[
 \vect{mn;r;p} \doteq e^{\left[ i\left( \omega_0+\omega_r\right)t\right]} U_{mn}\geom{\epsilon}_p,
 \]
-where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_{mn}$ is shorhand for $U_m(x,z)\times U_n(y,z)$; and $\geom{\epsilon}_p$ for $p\in \{1,2\}$ are the polarization unit vectors in the $x$ and $y$ direction, respectively. %NL%
-\com{talk about how we can do more than regularly spaced frequencies.} 
+where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_{mn}$ is shorthand for $U_m(x,z)\times U_n(y,z)$; and $\geom{\epsilon}_p$ for $p\in \{1,2\}$ are the polarization unit vectors in the $x$ and $y$ direction, respectively. %NL%
+Note that this treatment handles sidebands slightly different from how they are handled elsewhere, for example, \citet{Sigg:00} treat radio frequency modulation sidebands differently from audio frequency sidebands, and also only treat audio frequency sidebands which are regularly spaced. %NL%
+Using the treatment outlined here in which all sidebands are treated equally and may have arbitrary spacing, we are able to more simply investigate cross modulation products of several modulation sidebands, as well as situations where signal detection frequencies are comparable to modulation frequencies. %NL%
+This is accompanied by the sacrifice of potentially having many more matrix elements.
 
 An example of an operator in the combined space is the free space propagation operator:
 \begin{align}
@@ -196,9 +193,9 @@ using parameters
         \arctan \left( \frac{(z_{\text{start}}-z_0)\lambda}{\pi w_0^2}\right)
 \end{align*}
 for starting and ending positions $z_{\text{start}}$ and $z_{\text{end}}$, where $z_0$ is the position of the beam waist, and $w_0$ is the beam radius at the waist. %NL%
-The parameter $\eta$ is commonly refered to as the Gouy phase shift. %NL%
+The parameter $\eta$ is commonly referred to as the Gouy phase shift. %NL%
 As one can see by the presence of the Kronecker deltas in (\ref{eq:Propagator}), all the components of the input field are directly propagated to the output field without mixing. %NL%
-There is, however a phase shift which depends on the tranverse mode order (the Gouy shift) and the wavelength ($\omega_r/c$).
+There is, however a phase shift which depends on the transverse mode order (the Gouy shift) and the wavelength ($\omega_r/c$).
 
 More complicated operators exist which mix simultaneously mode and frequency components. %NL%
 One example is that of a mirror which is dithered at a given frequency in angle. %NL%
@@ -207,16 +204,11 @@ This operator is derived by \citet{Sigg:00}.
 \section{Photodetection}
 A photodetector is a device which is sensitive to the power in the laser field. %NL%
 This is typically photodiode which converts the laser power into an electric current. %NL%
-In terms of the electric field we may write the power as
+In terms of the electric field we may write the time averaged power incident on a photodiode as
 \begin{equation}
-P=\frac{\epsilon_0 c}{2}\int \! %NL%
-\! %NL%
-\dd t \int \! %NL%
-\! %NL%
-\dd A|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
+\bar{P}=\frac{\epsilon_0 c}{2}\int \! \! \dd t \int \! \! \dd A|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
 \end{equation}
-When using the vector space formalism, this represents the time averaged power detected by the photodiode. %NL%
-The time dependent component of the laser power can be thought of as the mixing of different frequency components of the electric field. %NL%
+The time dependent components of the laser power can be thought of as the mixing of different frequency components of the electric field. %NL%
 To achieve this in the vector space formalism, we must use an operator which has matrix elements connecting different frequency components. %NL%
 For demodulation at frequency $\omega_d$, the  operator takes the form: 
 \begin{equation}
@@ -246,13 +238,13 @@ so for example for a photodetector split along the $y$ axis, $p(x,y)=1$ for $x>0
 
 % show how this is equivalent to an operator
 
-In the language of tranverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisly, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components.
+In the language of transverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisely, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} \com{Instead of a footnote, how about a figure comparing split photodiode to a linear weighted photodiode.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components.
 
 % explain the ideal 10 and 20 detectors (what is the ideal 20 detector?) Maybe calculate some matrix elements of a real bullseye detector.
 % maybe put the numerical values of split detector into appendix
 
-\section{Application to compicated optical systems}
-The real utility of this formalism arises when the optical system contains branches that branch and loop onto themselves, as is the case with resonant cavities. %NL%
+\section{Application to complicated optical systems}
+The true utility of this formalism arises when the optical system contains paths that branch and loop onto themselves, as is the case with resonant cavities. %NL%
 The fact that the operators can simultaneously handle the transverse modes and frequency components reduces much of the complexity of the problem through abstraction. %NL%
 
 
