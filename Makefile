@@ -1,4 +1,4 @@
-main-chapters = intro modalmodel omc beacon
+main-chapters = intro modalmodel omc beacon modematching
 ap-chapters = ap-miscon ap-gaussmodes ap-matrices ap-notes
 main = main
 auxiliary = cover contents
