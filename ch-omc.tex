@@ -2,21 +2,70 @@
 
 \section{Motivation for an OMC}
 
+\section{Optical and mechanical design of the OMC}
+
 \section{Characterization of the H1 OMC}
 
 \subsection{Cavity FSR and higher order mode spacing}
 
-\com{Show figure of OMC interrogator, and desribe experimental setup.}
+\com{Show diagram of OMC interrogator, and desribe experimental setup.}
 
-\com{Notes about the variability of the HOM spacing due to OTAS.}
+Figure \ref{fig:OMCintdiagram} shows a diagram of the experimental setup used to measure the Free Spectral Range (FSR) and higher order mode spacing of the H1 OMC. %NL%
+The laser source is a NdYAG NPRO providing a 1064nm wavelength laser beam. %NL%
+A beam splitter sends some fraction \com{how much} of the light through an electro-optic modulator (EOM) which is driven at by RF oscillator \#1. %NL%
+This introduces two RF sidebands which will be used for cavity length control. %NL%
+The other path of light is director to an acouso-optic modulator (AOM). %NL%
+The light is double passed though the AOM and and receives a frequency shift which is twice the frequency of RF oscillator \#2. %NL%
+The light from the two paths are recombined before being injected into an optical fiber. %NL%
+The frequency makeup of the combined beam includes the original carrier frequency, two RF sidebands and a frequency shifted subcarrier.
 
-\subsection{Cavity losses}
+The light exiting the other end of the optical fiber is incident on the input coupling mirror of the OMC cavity. %NL%
+The promptly reflected beam is detected on a photodetector where the photocurrent is demodulated at the frequency of RF oscillator \#1. %NL%
+Choosing the correct demodulation phase provides a laser frequency error signal which is fed back to the frequency actuator of the laser. %NL%
+The control system is able to maintain resonance of the laser in the OMC. %NL%
+The laser transmitted through the OMC is detected on a second photodetector, as well as on a CCD sensor.
+
+Measurement of the cavity FSR is acheived by varying the frequency of the subcarrier and measuring the OMC transmitted power. %NL%
+The central maximum of the cavity resonance will occur when the shifted subcarrier frequency is equal to the FSR.
+
+Similarly, the higher order mode frequency shift is measured by varying the subcarrier frequency until the subcarrier is resonant on a higher order mode of the OMC. %NL%
+Coupling of the subcarrier beam into the HOMs is enhanced if slight misalignments are introduced on the input beam. %NL%
+The order of the mode is determined by the image recorded by the CCD in transmission.
+
+\com{data here.}
+
+These data were taken with the OMC at room temperature. %NL%
+It was discovered that the HOM spacing varied with the temperature of the thermal length actuator. %NL%
+\com{Talk more about this? %NL%
+it's own short section?}
 
 \subsection{Finesse}
 
-\subsection{Calibrated PZT response}
+The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity Finesse. %NL%
+The transmission as a function of frequency is
+\begin{equation}
+1+1=2.
+\end{equation}
 
-\com{DC response and frequency response.}
+\com{data here.}
+
+\subsection{Cavity losses}
+The intra-cavity loss of the OMC was infered by using 3 photodetectors. %NL%
+One measuring a sample of the input light, one measuring the reflected light, and one measuring the transmitted light. %NL%
+Care was taken to ensure that the three photodetectors were calibrated relative to each other.
+
+\com{data here.}
+
+\subsection{PZT actuator response}
+The PZT length actuator of the OMC was calibrated using by using the PZT to sweep the cavity through both carrier and subcarrier resonances while recording the PZT voltage. %NL%
+The frequency spacing of the carrier and subcarrier is used to calibrated the PZT length actuation coefficient.
+
+\com{PZT sweep figure here.}
+
+The frequency response of the PZT actuator was measured at the error signal of the cavity frequency locking loop while driving the OMC PZT. %NL%
+The effects of the control loop have been removed from the data.
+
+\com{TF here.}
 
 \section{Opto-thermal-mechanical feedback issues in the OMC}
 
