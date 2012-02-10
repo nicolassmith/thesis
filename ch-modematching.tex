@@ -1,14 +1,31 @@
 \chapter{Automatic mode matching of an output mode cleaner}
+In order for a laser beam to resonant in an optical cavity, it is necessary that the transverse profile of the wavefronts of the incident beam overlap with the wavefronts of the resonant mode in the cavity. %NL%
+If this is not the case, subsequent round trip reflections around the cavity will not interfere constructively with the incident wave and resonance will not occur. %NL%
+This is usually manifested in the incoming wavefronts having either the wrong transverse beam size, or the wrong wavefront radius of curvature. %NL%
+These incongruities are commonly referred to as a mode mismatch. %NL%
+In general, some component of the incident beam will overlap with the cavity mode so some resonance is possible, but the incorrectly matched components are largely reflected from the cavity. %NL%
+In the case of an output mode cleaner, mode mismatch of the signal field will lead to a reduction in the final detected signal to noise ratio, much as is the case with misalignment.
 
 \section{Mode matching in the modal picture}
+As we have seen in section \ref{sec:alignmentsomething}, if a beam incident on a cavity is misaligned, the beam will have components in the n+m=1 order modes when decomposed into the modal basis of that cavity. %NL%
+Another way of saying this is that the n+m=1 modes carry the alignment (or misalignment) information about the beam. %NL%
+Mode matching is analogous to this situation where instead of the n+m=1 components which represent misalignment, the n+m=2 components are the ones responsible for mode mismatching.
 
+One notable difference to alignment is that due to the Gouy phase shift being proportional to the mode order, the rotation of the mismatching mode is twice that of the alignment mode, with respect to the \TEM{00} mode.
 \com{Describe how the n+m=2 modes rotate as 2*gouy phase.}
 
 \section{Mode matching degrees of freedom}
 
+\com{Show that beam waist shifting and beam size changing makes 20/02 modes}
+
 \com{Try to develop some intuition about the 11 mode.}
 
 \section{Sensing mode mismatch of a beam incident on a cavity}
+In order to sense mode mismatching, one needs a sensor which mixes the \TEM{00} mode with the n+m=2 order modes. %NL%
+By analogy to split quandrant photodetectors used for sensing alignment one may construct a split photodetector with a geometry that provides overlap between the \TEM{00} and n+m=2 modes. %NL%
+This is often acheived using so-called bull's-eye photodetectors.\com{cite some bullseye paper.}
+
+\com{make a figure showing an example of the bullseye, also maybe show what the pupil matrix looks like}
 
 \section{Mode matching actuators}
 
