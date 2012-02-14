@@ -239,16 +239,17 @@ so for example for a photodetector split along the $y$ axis, $p(x,y)=1$ for $x>0
 % show how this is equivalent to an operator
 
 In the language of transverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisely, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} \com{Instead of a footnote, how about a figure comparing split photodiode to a linear weighted photodiode.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components.
+\com{this section is not finished, maybe needs SNR formalism.}
 
 % explain the ideal 10 and 20 detectors (what is the ideal 20 detector?) Maybe calculate some matrix elements of a real bullseye detector.
 % maybe put the numerical values of split detector into appendix
 
-\section{Application to complicated optical systems}
+\section{Vector space model of the output mode cleaner}
 The true utility of this formalism arises when the optical system contains paths that branch and loop onto themselves, as is the case with resonant cavities. %NL%
 The fact that the operators can simultaneously handle the transverse modes and frequency components reduces much of the complexity of the problem through abstraction.
 
 %a simple ring cavity
-In figure \ref{fig:ringcav} \com{add figure} we see a schematic diagram of a four mirror ring cavity. %NL%
+In figure \ref{fig:omcmodal} \com{add figure} we see a schematic diagram of a four mirror ring cavity. %NL%
 Every interaction of the laser field is handled by an operator. %NL%
 This includes transmission through an optic, reflection from an optic, and propagation through free space. %NL%
 
