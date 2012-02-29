@@ -15,12 +15,34 @@ It is therefore desireable to be able to separate the junk light from the signal
 A natural form of spatial filter exists in the form of a critically coupled resonant optical cavity. %NL%
 When placed at the output of the interferometer we refer to such a cavity as the output mode cleaner (OMC).
 
+\infobox{The benefits of an OMC}{
+\begin{itemize}
+\item Reduce shot noise from HOM carrier fields
+\item Reduce shot noise from RF sidebands
+\item Reduce audio frequency noise from RF sidebands
+\end{itemize}
+}
 It can be useful to point out that interferometers based on both RF and DC readout can benefit from an OMC \com{readouts discussed in previous chapter}. %NL%
 Both the GEO and Virgo interferometers have used OMCs in an RF readout configuration, and LIGO experimented with an OMC before using DC readout \cite{some things}. %NL%
-But it is especially important for a DC readout interferometer to use an OMC. %NL%
-This is because any audio frequency modulation of fields that are not the local oscillator or signal will contaminate the readout. %NL%
-You do not have the benefit of the frequency selection of the RF readout to selectively omit unwanted audio modulation. %NL%
-It is also necessary that the light provided by the differential arm offset dominates the DC power present on the detection photodiode, otherwise DC power from other fields (such as the RF sidebands) will contribute to photon shot noise without increasing the signal strength.
+An OMC is especially important for a DC readout interferometer because any audio frequency modulation of fields that are not the local oscillator or signal will contaminate the readout. %NL%
+Also, there is not benefit of the frequency selection of the RF readout to selectively omit unwanted audio modulation. %NL%
+An OMC may also be used to ensure the light provided by the differential arm offset dominates the DC power present on the detection photodiode, otherwise DC power from other fields (such as the RF sidebands) will contribute to photon shot noise without increasing the signal strength. %NL%
+
+
+Thus, for an interferometer which employs DC readout, the OMC should efficiently strip the HOM field components of the carrier field as well as the RF sidebands. %NL%
+This is achieved by creating a high finesse cavity that is controlled to resonate on the desired (carrier) field. %NL%
+The transmission of the off-resonant fields is goverened by the cavity finesse $\mathcal{F}$, explicitly the transmission is
+\begin{equation}
+Fineese-transmission,
+\end{equation}
+where.
+
+The HOM field components experience an effective frequency shift relative to the \TEM{00} carrier field due to the Gouy phase shift. %NL%
+The effective frequency shift is given by
+\begin{equation}
+gouy-freq-shift,
+\end{equation}
+where. %NL%
 
 
 

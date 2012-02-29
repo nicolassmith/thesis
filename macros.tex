@@ -29,3 +29,17 @@
 %%% mode: latex
 %%% TeX-master: "main"
 %%% End: 
+
+
+% infobox!
+%%%% Custom Command for floating Infoboxes
+%%%% usage: \infobox{<title>}{<text>}
+\usepackage{sty/picins}                 
+\newcommand{\infobox}[2]{
+    \parpic(0.4\textwidth,0pt)[rf]{
+        \parbox[b]{0.38\textwidth}{
+             \bigskip {\bf #1}  \small{{{\sffamily #2}}} \bigskip
+        }
+    }
+    \bigskip
+}
