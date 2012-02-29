@@ -11,12 +11,18 @@ The unmatched light at the antisymmetric port will exist as higher order modes (
 The presence of this light on a photodetector will contribute photon shot noise. %NL%
 Also, if the coupling is time dependent, the time variation of the junk light directly contaminate the signal with noise.
 
-It is therefore desireable 
-\com{Both RF and DC readout will benefit from OMC (HOM)}
+It is therefore desireable to be able to separate the junk light from the signal rich audio frequency fields originating in the arm cavities. %NL%
+A natural form of spatial filter exists in the form of a critically coupled resonant optical cavity. %NL%
+When placed at the output of the interferometer we refer to such a cavity as the output mode cleaner (OMC).
 
-\com{DC readout, local oscillator must dominate at PD, OMC is necessary}
+It can be useful to point out that interferometers based on both RF and DC readout can benefit from an OMC \com{readouts discussed in previous chapter}. %NL%
+Both the GEO and Virgo interferometers have used OMCs in an RF readout configuration, and LIGO experimented with an OMC before using DC readout \cite{some things}. %NL%
+But it is especially important for a DC readout interferometer to use an OMC. %NL%
+This is because any audio frequency modulation of fields that are not the local oscillator or signal will contaminate the readout. %NL%
+You do not have the benefit of the frequency selection of the RF readout to selectively omit unwanted audio modulation. %NL%
+It is also necessary that the light provided by the differential arm offset dominates the DC power present on the detection photodiode, otherwise DC power from other fields (such as the RF sidebands) will contribute to photon shot noise without increasing the signal strength.
 
-\com{DC readout was used
+
 
 \section{Optical and mechanical design of the OMC}
 
