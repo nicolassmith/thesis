@@ -40,6 +40,7 @@ where.
 The HOM field components experience an effective frequency shift relative to the \TEM{00} carrier field due to the Gouy phase shift. %NL%
 The effective frequency shift is given by
 \begin{equation}
+\label{eqn:gouyshift}
 gouy-freq-shift,
 \end{equation}
 where. %NL%
@@ -47,6 +48,36 @@ where. %NL%
 
 
 \section{Optical and mechanical design of the OMC}
+
+\subsection{Cavity optics}
+The design of the OMC was chosen to be a four mirror bowtie cavity \com{cite something}. %NL%
+This choice was made over that of a two mirror linear cavity so that there was spatial separation of the reflected beam. %NL%
+An even number of mirrors was chosen such that the horizontal and vertical HOMs would experience the same overall phase shift and thus experience nearly the same frequency offset from resonance, reducing the chances of an accidental HOM resonance.
+
+\com{make diagram of tombstones/omc bench}
+The OMC optics are bonded with \com{vacseal} expoxy onto custom designed \com{fused silica} optics mounts, called tombstones. %NL%
+The tombstones were then bonded to a slab of \com{ULE}. %NL%
+This arrangement fixed the cavity length to the desired value and was designed to be stable agains thermal variation. %NL%
+The microscopic cavity length was controlled using a pair of actuators. %NL%
+A fast PZT between one of the optics and its tombstone acted as a low range (\com{1/10 FSR}) high bandwidth (\com{5kHz}) length actuator. %NL%
+Long range (\com{sev FSR}) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately reffered to as the OTAS.\footnote{OMC Thermal Actuation System}\com{OTAS diagram?}
+
+A mode cleaner cavity is puporsefully designed such that HOMs do not ocuppy a degenerate resonance with the resonant \TEM{00} mode. %NL%
+The Gouy shift (given in Eq. %NL%
+(\ref{eqn:gouyshift}) ) for a linear cavity is determined by the cavity geometry as 
+\begin{equation}
+gouy-gfactor
+\end{equation}
+where $g=1-L/R$ for a cavity of length $L$ and mirror radius of curvature $R$ \com{OMC is ring cavity with $p=2L$}. %NL%
+is known as the \emp{cavity g-factor}. %NL%
+An extensive analysis was done by \com{Waldman} to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components trhough the OMC.\com{cite some waldman thing}
+
+
+\com{aux optics/sensors}
+
+\com{sus}
+
+\com{mode matching telescope}
 
 \section{Characterization of the H1 OMC}
 
