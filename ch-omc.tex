@@ -48,6 +48,10 @@ where. %NL%
 
 
 \section{Optical and mechanical design of the OMC}
+Prior to Enhanced LIGO, experiments we performed using a OMC borrowed from the GEO600 interferometer to investigate the difficulties in using an OMC with LIGO. %NL%
+Noise introduced from jitter of the OMC input beam due to air currents and mechanical vibrations spoiled the sensitivity of the LIGO detector when the OMC was used. %NL%
+This meant that one of the most obvious lessons learned from these investigations was the need to house the OMC in a low vibration environment. %NL%
+For Enhanced LIGO, it was decided that the OMC would be housed inside the vacuum system and would be isolated from vibrations of the environment through the use of a seismically isolated optics table as well as a suspension system to provide passive filtering of vibrations.
 
 \subsection{Cavity optics}
 The design of the OMC was chosen to be a four mirror bowtie cavity \com{cite something}. %NL%
@@ -56,7 +60,7 @@ An even number of mirrors was chosen such that the horizontal and vertical HOMs 
 
 \com{make diagram of tombstones/omc bench}
 The OMC optics are bonded with \com{vacseal} expoxy onto custom designed \com{fused silica} optics mounts, called tombstones. %NL%
-The tombstones were then bonded to a slab of \com{ULE}. %NL%
+The tombstones were then bonded to a slab of \com{ULE}, which we will refer to as the \emph{OMC breadboard}. %NL%
 This arrangement fixed the cavity length to the desired value and was designed to be stable agains thermal variation. %NL%
 The microscopic cavity length was controlled using a pair of actuators. %NL%
 A fast PZT between one of the optics and its tombstone acted as a low range (\com{1/10 FSR}) high bandwidth (\com{5kHz}) length actuator. %NL%
@@ -72,12 +76,42 @@ where $g=1-L/R$ for a cavity of length $L$ and mirror radius of curvature $R$ \c
 is known as the \emph{cavity g-factor}. %NL%
 An extensive analysis was done by \com{Waldman} to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components trhough the OMC.\com{cite some waldman thing}
 
+\subsection{Sensors and auxilliary optics}
+The gravitational wave signal readout is derived from the OMC trasmitted power. %NL%
+The light trasmitted by the OMC is split by a near 50/50 beam splitter and detected on two photodiodes. %NL%
+Both the beam splitter and photodiodes are located on the OMC breadboard. %NL%
+The beamsplitter is glued to a tombstone similar to that of the cavity optics. %NL%
+The photodiodes were attached to tombstones via a sandwich of metal plates screwed together around the tombstone. %NL%
+This arrangement ensured that the OMC transmitted beam would not drift relative to the readout detectors.
 
-\com{aux optics/sensors}
+A steering mirror on the OMC breadboard transmitted a small sample of the incoming beam allowing the input pointing to be analyzed by two quadrant photodetectors (QPDs). %NL%
+A 50/50 beam splitter ditributed equal amounts of the input beam to the two QPDs. %NL%
+The QPDs were located at different distances from the beam splitter to allow both beam angle and lateral position to be measured.
 
-\com{sus}
+\subsection{Suspension system}
+The OMC breadboard was suspended from a two stage vibration isolation suspension. %NL%
+On the optics table was a large \com{steel} frame which housed the OMC. %NL%
+A intermediate mass stage was suspended from the frame by two pendulum wires attached to the ends of blade springs. %NL%
+The OMC breadboard was then suspended by four more wires attached to blade springs from the intermediate mass stage. %NL%
+Servo control provided feedback damping of the suspension eigenmodes. %NL%
+All actuation and sensing was performed on the intermediate stage, with actuation provided by electromagnetic coil actuators attached to the cage which applied forces to permanent magnets attached to the intermediate mass. %NL%
+The actuator module also housed the sensing system which consisted of LED shadow sensors which measured the position of protruding flags attached to the magnets used for actuation.
 
-\com{mode matching telescope}
+\subsection{Mode matching telescope}
+The beam exiting the interferometer from the antisymmetric port was directed through a beam steering and mode matching telescope. %NL%
+The purpose of such a telescope is to correctly align and focus the beam exiting the interferometer to maximize the transmission of the gravitational wave signal through the OMC.
+
+The steering optics were housed in a single pendulum suspension system. %NL%
+The suspension and optics were collectively refered to as \emph{Tip-Tilt optics}. %NL%
+The mounting and suspension of the beam steering optics underwent several modifications during the Enhanced LIGO project (see Chapter \ref{ch:jitter}). %NL%
+The final configuration consisted of three highly reflective curved mirrors. %NL%
+Two suspended by a single pendulum stage, with vertical isolation provided by blade springs, and a coil-magnet/shadow sensor system similar to that used in the OMC suspension. %NL%
+The actuator system allowed feedback control of the optic angle for active beam alignment. %NL%
+The third was housed in a similar suspension system, but without any sensing or actuation capabilities.
+
+\subsection{Vibration isolation table}
+The Tip-Tilts and OMC suspension frame were all housed in a single vacuum chamber and situated on top of a actively controlled seismic isolation table, the HAM-ISI.\footnote{HAM chamber Internal Seimic Isolation system} The HAM-ISI employed a single stage of passive vibration isolation, coupled with active feedback control using inertial sensors as the primary error signal. %NL%
+A thorough account of the HAM-ISI design and performance can be found \com{Jeff's thesis?}.
 
 \section{Characterization of the H1 OMC}
 
