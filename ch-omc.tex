@@ -38,16 +38,6 @@ T=\frac{1}{1+\frac{4}{\pi^2}\mathcal{F}^2\sin{}^2\phi},
 \end{equation}
 where \com{things}.
 
-The HOM field components experience an effective frequency shift relative to the \TEM{00} carrier field due to the Gouy phase shift. %NL%
-The effective frequency shift is given by
-\begin{equation}
-\label{eqn:gouyshift}
-gouy-freq-shift,
-\end{equation}
-where. %NL%
-
-
-
 \section{Optical and mechanical design of the OMC}
 Prior to Enhanced LIGO, experiments we performed using a OMC borrowed from the GEO600 interferometer to investigate the difficulties in using an OMC with LIGO. %NL%
 Noise introduced from jitter of the OMC input beam due to air currents and mechanical vibrations spoiled the sensitivity of the LIGO detector when the OMC was used. %NL%
@@ -68,13 +58,17 @@ A fast PZT between one of the optics and its tombstone acted as a low range (\co
 Long range (\com{sev FSR}) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately reffered to as the OTAS.\footnote{OMC Thermal Actuation System}\com{OTAS diagram?}
 
 A mode cleaner cavity is puporsefully designed such that HOMs do not ocuppy a degenerate resonance with the resonant \TEM{00} mode. %NL%
-The Gouy shift (given in Eq. %NL%
-(\ref{eqn:gouyshift}) ) for a linear cavity is determined by the cavity geometry as 
+Cavities are commonly characterized by their stability $g$-parameter.\footnote{Linear cavities are sometimes given two $g$-parameters, one for each mirror (labeled 1 and 2). %NL%
+The OMC is symmetric so in our case $g=\sqrt{g_1g_2}=g_1=g_2$ for mirrors 1 and 2.} The Gouy shift (given in Eq. %NL%
+(\ref{eqn:gouyshift}) ) accumulated in the cavity is determined by the cavity geometry as 
 \begin{equation}
-gouy-gfactor
+\label{eqn:gouyg}
+\cos(\eta)=g
 \end{equation}
-where $g=1-L/R$ for a cavity of length $L$ and mirror radius of curvature $R$ \com{OMC is ring cavity with $p=2L$}. %NL%
-is known as the \emph{cavity g-factor}. %NL%
+where the $g$-parameter is usually given by $g=1-L/R$ for a linear cavity of length $L$ and mirror radius of curvature $R$. %NL%
+The OMC is not a linear cavity, and it travels the length of the cavity only once during a full round trip. %NL%
+To avoid confusion we will use the \emph{perimeter}, $p$, to denote the full round trip length. %NL%
+One may substitute $2L=p$ in most formulae for linear cavities. %NL%
 An extensive analysis was done by \com{Waldman} to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components trhough the OMC.\com{cite some waldman thing}
 
 \subsection{Sensors and auxilliary optics}
@@ -132,31 +126,80 @@ Choosing the correct demodulation phase provides a laser frequency error signal 
 The control system is able to maintain resonance of the laser in the OMC. %NL%
 The laser transmitted through the OMC is detected on a second photodetector, as well as on a CCD sensor.
 
-\subsection{Cavity FSR and finesse}
-Measurement of the cavity FSR is acheived by varying the frequency of the subcarrier and measuring the OMC transmitted power. %NL%
-The central maximum of the cavity resonance will occur when the shifted subcarrier frequency is equal to the FSR.
+\subsection{Free spectral range}
+Resonance occurs in the cavity when the total round trip phase of the incident laser beam as it propagates thorugh the cavity is an integer multiple of $2\pi$. %NL%
+In terms of the frequency of the laser beam, this occurs at multiples of what is called the \emph{free spectral range} (FSR). %NL%
+The FSR is related to the round trip cavity perimeter $p$ by $\mathrm{FSR}=c/p$.
 
-The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity Finesse. %NL%
-Recall the transmission as a function of frequency is given in Equation \ref{eqn:finesse}.
-\begin{figure}
-  \begin{center}
-  \leavevmode
-  \includegraphics{figs-omc/FSRfit.pdf}
-  \end{center}
-  \caption{Measurement of the OMC FSR and cavity finesse. Fitted parameters give an FSR of $278.097 \pm 0.001$MHz and a finesse of $367\pm2$.}
-  \label{fig:FSRfit}
-\end{figure}
+The technique used to measure the cavity FSR involved locking the laser frequency so the carrier was resonant in the OMC while varying the frequency of the subcarrier and measuring the OMC transmitted power. %NL%
+The OMC trasnmitted power will be maximized when the subcarrier is seperated from the carrier by a multiple of the FSR.
+
+The RF freqeuncy generator was tuned to maximize the subcarrier transmission. %NL%
+The error was just estimated by the smallest frequency step which did not cause a noticible change in transmission. %NL%
+The measured FSR is
+\begin{equation}
+\mathrm{FSR}=278.288\pm0.001\text{MHz}.
+\end{equation}
+This corresponds to a cavity perimeter of 1.077m.
 
 \subsection{Higher order mode spacing}
 Similarly, the higher order mode frequency shift is measured by varying the subcarrier frequency until the subcarrier is resonant on a higher order mode of the OMC. %NL%
 Coupling of the subcarrier beam into the HOMs is enhanced if slight misalignments are introduced on the input beam. %NL%
-The order of the mode is determined by the image recorded by the CCD in transmission.
+The identity of the higher order mode is determined by the image recorded by the CCD in transmission.
+
+The HOM field components experience an effective frequency shift relative to the \TEM{00} carrier field due to the Gouy phase shift. %NL%
+The effective frequency shift is given by
+\begin{equation}
+\label{eqn:gouyshift}
+(m+n)\eta=\pi\frac{\Delta f}{\mathrm{FSR}}\mod \pi
+\end{equation}
+where $m$ and $n$ are the \TEM{mn} mode indicies, $\Delta f$ is the frequency shift, and $\eta$ is the Gouy phase shift. %NL%
+
+
+Table \ref{tab:HOM} shows the measurements for several higher order mode frequency shifts. %NL%
+Notice that the horizontal and vertical modes experience slightly different Gouy shifts in the cavity. %NL%
+This is due to the astigmatism introduced in the cavity by non-normal incidence on the cavity mirrors. %NL%
+One may use the measured $g$-parameters to estimate the radius of curvature of the curved optics of the OMC. %NL%
+If we take the average value of the measured $g$s, this implies a radius of curvature of 1.96m, which is close to the specification of 2m.
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{lll|ll}
+      \hline
+      $m$ & $n$ & $\Delta f$ & $\eta$ & $g$ \\
+      \hline
+      0 & 1 & -489.60 MHz & 0.2407$\pi$ & 0.7275\\
+      1 & 0 & -489.12 MHz & 0.2424$\pi$ & 0.7238\\
+      0 & 4 &  267.96 MHz & 0.2407$\pi$ & 0.7274\\
+      4 & 0 &  269.60 MHz & 0.2422$\pi$ & 0.7242\\
+      \hline
+    \end{tabular}
+  \caption{$m$ is horizontal}
+  \label{tab:HOM}
+  \end{center}
+\end{table}
 
 These data were taken with the OMC at room temperature. %NL%
 It was discovered that the HOM spacing varied with the temperature of the thermal length actuator. %NL%
 \com{Talk more about this? %NL%
 it's own short section?}
 \com{data here.}
+
+\subsection{Cavity finesse}
+The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity Finesse. %NL%
+Recall the transmission as a function of frequency is given in Equation \ref{eqn:finesse}. %NL%
+In the experiment, a triangle wave was used to sweep the subcarrier offset frequency while the OMC transmission was monitored. %NL%
+These signals were digitized and recorded. %NL%
+The recorded transmission versus frequency shift data is shown in Figure \ref{fig:FSRfit} along with a curve fit. %NL%
+The fitting parameters return a cavity finesse of $367\pm2$.
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-omc/FSRfit.pdf}
+  \end{center}
+  \caption{Measurement of the OMC FSR and cavity finesse. Fitted parameters give a finesse of $367\pm2$.}
+  \label{fig:FSRfit}
+\end{figure}
 
 \subsection{Cavity losses}
 The intra-cavity loss of the OMC was infered by using 3 photodetectors. %NL%
