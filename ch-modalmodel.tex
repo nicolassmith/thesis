@@ -11,6 +11,14 @@ This chapter will describe a formalism which treats the laser field components p
 This treatment allows the analysis of complicated optical paths, which include paths that loop onto themselves (as in the case of resonant cavities) to be reduced to a problem of matrix manipulation. %NL%
 This is is highly powerful technique which is used extensively in modeling the behavior of gravitational-wave interferometers \cite{Vinet1986,Hefetz:97,Sigg:00}.
 
+At this point in the discussion, a bird's eye view of the technique is useful. %NL%
+In essence what this formalism provides is a significant abstraction and abbreviation of the effects of opical components (mirrors, modulators, etc.) on the the field components that make up a laser beam. %NL%
+In the case of the transverse electric-magnetic (TEM) spatial modes of a laser field, a calculation of how a mirror which is rotated about some axis perpendicular to the beam redistributes energy from one field component to another may involve complicated overlap integrals involving the Hermite-Gaussian profiles of the beam modes. %NL%
+Such a calculation is difficult to calculate and represent on paper in a concise and transparent way. %NL%
+The strength of this technique is that all of these complicated integrals are \emph{baked in} to the linear operators which represent optical components, so to speak. %NL%
+All of the involved integral math is performed in the construction of the operators, and is hidden from view when the optical system as a whole is considered. %NL%
+What is left is just a problem of linear algebra.
+
 \section{Frequency components of a laser field}
 \label{sec:freqspace}
 To just get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated in frequency by $\pm\Omega$. %NL%
