@@ -6,10 +6,10 @@ function FSRfitFig()
 load FSRfinessemeas.mat
 fReal = 2*freq;
 
-realFSR = 278.288;
-fitFSR = 278.097;
+realFSR = 0.288; %mod 278
+fitFSR = 0.097;
 
-fReal = (fReal-278)*realFSR/fitFSR+278;
+fReal = fReal+realFSR-fitFSR;
 
 % This function was automatically generated on 08-Mar-2012 15:12:32
 % and subsequently modified.
@@ -31,6 +31,7 @@ axes(ax_); hold on;
 h_ = line(fReal,trans,'Parent',ax_,'Color',[0.333333 0 0.666667],...
     'LineStyle','none', 'LineWidth',1,...
     'Marker','.', 'MarkerSize',7);
+set(f_,'Visible','Off');
 xlim_(1) = min(xlim_(1),min(fReal));
 xlim_(2) = max(xlim_(2),max(fReal));
 legh_(end+1) = h_;
@@ -47,7 +48,9 @@ if ~all( ok_ )
     warning( 'GenerateMFile:IgnoringNansAndInfs', ...
         'Ignoring NaNs and Infs in data' );
 end
-st_ = [0.02 0.05 370.0 278.0]; % fit starting point
+
+
+st_ = [0.02 0.05 370.0 278.1]; % fit starting point
 set(fo_,'Startpoint',st_);
 ft_ = fittype('offset+gain/(1+4/pi^2*F^2*sin(f/FSR*pi)^2)',...
     'dependent',{'y'},'independent',{'f'},...

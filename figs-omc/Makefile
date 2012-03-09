@@ -7,7 +7,7 @@ all : matlab
 matlab : $(matlabplots)
 
 FSRfit.pdf : FSRfitFig.m
-	$(MATLAB) -r "FSRfitFig; quit;"
+	$(MATLAB) -r "try; FSRfitFig; catch; end; quit;"
 
 .PHONY : all matlab clean matlab-clean reallyclean
 .SECONDARY : 
