@@ -3,7 +3,7 @@
 *.rej
 *.aux
 *.dvi
-*.pdf
+/*.pdf
 *~
 .*~
 *.blg
