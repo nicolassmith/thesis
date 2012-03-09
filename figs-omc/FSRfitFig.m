@@ -5,6 +5,11 @@ function FSRfitFig()
 % get the data ready
 load FSRfinessemeas.mat
 fReal = 2*freq;
+%nopcha
+realFSR = 278.288;
+fitFSR = 278.097;
+
+fReal = (fReal-278)*realFSR/fitFSR+278;
 
 % This function was automatically generated on 08-Mar-2012 15:12:32
 % and subsequently modified.
