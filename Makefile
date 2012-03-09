@@ -30,14 +30,14 @@ ch-%.pdf : ch-%.tex $(maindeps)
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	mv ch-$*-temp.pdf ch-$*.pdf
 
-chfigs : 
+chfigs :
+	touch chfigs
 	for dir in $(figdirs) ; do \
 		cd $$dir ; \
 		make ; \
-		cd .. ; \
 	done
 
-.PHONY : view clean pdf chfigs reallyclean thisclean reallyclean-recursive clean-recursive
+.PHONY : view clean pdf reallyclean thisclean reallyclean-recursive clean-recursive
 .SECONDARY : 
 
 view : $(main).pdf
@@ -54,17 +54,16 @@ clean-recursive :
 	for dir in $(figdirs) ; do \
 		cd $$dir ; \
 		make clean; \
-		cd .. ; \
 	done
 
 reallyclean-recursive : 
 	for dir in $(figdirs) ; do \
 		cd $$dir ; \
 		make reallyclean; \
-		cd .. ; \
 	done
 
 thisclean : 
 	-rm -f *.log *.orig *.rej *.aux *.dvi *.pdf *~ *.blg *.lof *.lot *.bbl *.toc .*~ *.out
 	-rm -rf _region_.*
 	-rm -rf auto
+	-rm -rf chfigs
