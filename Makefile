@@ -6,9 +6,11 @@ bib = mainb
 viewer = evince
 figdirs = figs-omc
 
+figs = $(addprefix figs-omc/,FitFSR.pdf)
+
 chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
-maindeps = $(main).tex macros.tex $(bibdep) chfigs
+maindeps = $(main).tex macros.tex $(bibdep) $(figs)
 texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
 maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters)
 
@@ -30,14 +32,16 @@ ch-%.pdf : ch-%.tex $(maindeps)
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	mv ch-$*-temp.pdf ch-$*.pdf
 
-chfigs :
-	touch chfigs
+$(figs) : look
 	for dir in $(figdirs) ; do \
 		cd $$dir ; \
 		make ; \
 	done
 
-.PHONY : view clean pdf reallyclean thisclean reallyclean-recursive clean-recursive
+look :
+	true
+
+.PHONY : view clean pdf reallyclean thisclean reallyclean-recursive clean-recursive look
 .SECONDARY : 
 
 view : $(main).pdf
@@ -66,4 +70,4 @@ thisclean :
 	-rm -f *.log *.orig *.rej *.aux *.dvi *.pdf *~ *.blg *.lof *.lot *.bbl *.toc .*~ *.out
 	-rm -rf _region_.*
 	-rm -rf auto
-	-rm -rf chfigs
+
