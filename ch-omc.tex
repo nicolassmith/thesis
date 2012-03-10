@@ -69,7 +69,9 @@ where the $g$-parameter is usually given by $g=1-L/R$ for a linear cavity of len
 The OMC is not a linear cavity, and it travels the length of the cavity only once during a full round trip. %NL%
 To avoid confusion we will use the \emph{perimeter}, $p$, to denote the full round trip length. %NL%
 One may substitute $2L=p$ in most formulae for linear cavities. %NL%
-An extensive analysis was done by \com{Waldman} to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components trhough the OMC.\com{cite some waldman thing}
+An extensive analysis was done by \com{Waldman} to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components trhough the OMC.\com{cite some waldman thing} The final design of the OMC was chosen to have a perimeter length of 1.042m, with 2m radius of curvature curved optics. %NL%
+This gives a $g$-parameter of 0.7395 and a Gouy phase shift of $0.235\pi$ radians. %NL%
+This implies that the fourth-order HOMs will accumulate almost $\pi$ radians relative to the \TEM{00} mode and be somewhat close to resonance.
 
 \subsection{Sensors and auxilliary optics}
 The gravitational wave signal readout is derived from the OMC trasmitted power. %NL%
@@ -174,7 +176,7 @@ If we take the average value of the measured $g$s, this implies a radius of curv
       4 & 0 &  269.60 MHz & 0.2422$\pi$ & 0.7242\\
       \hline
     \end{tabular}
-  \caption{$m$ is horizontal}
+  \caption[Higher order mode frequency shifts in the OMC]{Higher order mode frequency shifts in the OMC. The frequency shift measured by varying the subcarrier separation from the resonating carrier. The $m$ index is the horizontal mode order. Negative frequency shifts were acheived by using the -1 diffraction order of the AOM.}
   \label{tab:HOM}
   \end{center}
 \end{table}
@@ -187,26 +189,51 @@ it's own short section?}
 
 \subsection{Cavity finesse}
 The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity Finesse. %NL%
-Recall the transmission as a function of frequency is given in Equation \ref{eqn:finesse}. %NL%
 In the experiment, a triangle wave was used to sweep the subcarrier offset frequency while the OMC transmission was monitored. %NL%
 These signals were digitized and recorded. %NL%
-The recorded transmission versus frequency shift data is shown in Figure \ref{fig:FSRfit} along with a curve fit. %NL%
+The recorded transmission versus frequency shift data are shown in Figure \ref{fig:FSRfit}. %NL%
+The curve fit model used was Equation \ref{eqn:finesse} with $\phi=\pi \Delta f/\mathrm{FSR}$ and a arbitrary scaling and offset. %NL%
 The fitting parameters return a cavity finesse of $367\pm2$.
 \begin{figure}
   \begin{center}
   \leavevmode
   \includegraphics{figs-omc/FSRfit.pdf}
   \end{center}
-  \caption{Measurement of the OMC FSR and cavity finesse. Fitted parameters give a finesse of $367\pm2$.}
+  \caption[Measurement of the OMC transmission profile.]{Measurement of the OMC transmission profile. Subcarrier transmission while varying frequency offset. The width of the transmission peak is used to determine the cavity finesse. Fitted parameters give a finesse of $367\pm2$.}
   \label{fig:FSRfit}
 \end{figure}
 
 \subsection{Cavity losses}
 The intra-cavity loss of the OMC was infered by using 3 photodetectors. %NL%
 One measuring a sample of the input light, one measuring the reflected light, and one measuring the transmitted light. %NL%
-Care was taken to ensure that the three photodetectors were calibrated relative to each other.
+Both the reflection and transmission photodiodes were calibrated relative to the input diode. %NL%
+\com{figure showing calibration and measurement.} The calibration of the reflection diode was acheived by leaving the input and reflection diodes in place and blocking the beam inside the cavity. %NL%
+The relative power readings of the diodes were then recorded and the ratio gives the reflection calibration. %NL%
+One must also take into account the known transmission of the OMC input coupling mirror. %NL%
+This calibration is done without moving the beam to be used during the measurement and mitigates systematic errors due to variations in the sensitivity of the surface of the diodes. %NL%
+The trasnmission diode, however needed to be moved during calibration to measure the power incident on the cavity. %NL%
+The trasnmission diode was also calibrated relative to the input diode.
 
-\com{data here.}
+This technique measures the light incident on the cavity, reflected from the cavity, and transmitted by the cavity. %NL%
+Any light which is missing is assumed to be absorbed and constitutes cavity losses. %NL%
+Table \ref{tab:lossmeas} shows the data taken to determine the cavity losses. %NL%
+The cavity transmission was measured to be approximately 96\perc{}.
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{lll|l}
+      \hline
+      Input (V) & Reflection (V) & Transmission (V) & Transmission Fraction \\
+      \hline
+      0.95 & 1.51 & 0.53 & 0.965 \\
+      0.903 & 1.44 &0.498 & 0.958\\
+      \hline
+    \end{tabular}
+  \caption[Measurements of the OMC intra-cavity losses.]{Measurements of the OMC intra-cavity losses. All units are calibrated in Volts measured by the input PD.}
+  \label{tab:lossmeas}
+  \end{center}
+\end{table}
+
 
 \com{talk about degredation seen by squeezers}
 
