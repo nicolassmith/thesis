@@ -189,7 +189,7 @@ it's own short section?}
 
 \subsection{Cavity finesse}
 The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity Finesse. %NL%
-In the experiment, a triangle wave was used to sweep the subcarrier offset frequency while the OMC transmission was monitored. %NL%
+In the experiment, a sawtooth wave was used to sweep the subcarrier offset frequency while the OMC transmission was monitored. %NL%
 These signals were digitized and recorded. %NL%
 The recorded transmission versus frequency shift data are shown in Figure \ref{fig:FSRfit}. %NL%
 The curve fit model used was Equation \ref{eqn:finesse} with $\phi=\pi \Delta f/\mathrm{FSR}$ and a arbitrary scaling and offset. %NL%
@@ -240,8 +240,15 @@ The cavity transmission was measured to be approximately 96\perc{}.
 \subsection{PZT actuator response}
 The PZT length actuator of the OMC was calibrated using by using the PZT to sweep the cavity through both carrier and subcarrier resonances while recording the PZT voltage. %NL%
 The frequency spacing of the carrier and subcarrier is used to calibrated the PZT length actuation coefficient.
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-omc/pztdccal.pdf}
+  \end{center}
+  \caption[PZT sweep]{pzt sweep}
+  \label{fig:pztsweep}
+\end{figure}
 
-\com{PZT sweep figure here.}
 
 The frequency response of the PZT actuator was measured at the error signal of the cavity frequency locking loop while driving the OMC PZT. %NL%
 The effects of the control loop have been removed from the data.
