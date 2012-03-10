@@ -1,13 +1,16 @@
 
 MATLAB = matlab -nodesktop -nosplash
-matlabplots = FSRfit.pdf
+matlabplots = FSRfit.pdf pztdccal.pdf
 
 all : matlab
 
 matlab : $(matlabplots)
 
 FSRfit.pdf : FSRfitFig.m
-	-$(MATLAB) -r "try; FSRfitFig; catch; end; quit;"
+	-$(MATLAB) -r "try; $(basename $<); catch; end; quit;"
+
+pztdccal.pdf : pztdccal.m
+	-$(MATLAB) -r "try; $(basename $<); catch; end; quit;"
 
 .PHONY : all matlab clean matlab-clean reallyclean
 .SECONDARY : 
