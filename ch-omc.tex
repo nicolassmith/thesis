@@ -238,22 +238,35 @@ The cavity transmission was measured to be approximately 96\perc{}.
 \com{talk about degredation seen by squeezers}
 
 \subsection{PZT actuator response}
-The PZT length actuator of the OMC was calibrated using by using the PZT to sweep the cavity through both carrier and subcarrier resonances while recording the PZT voltage. %NL%
-The frequency spacing of the carrier and subcarrier is used to calibrated the PZT length actuation coefficient.
+The PZT length actuator of the OMC was calibrated using by using applying a voltage to the PZT to sweep the cavity through both carrier and subcarrier resonances. %NL%
+The subcarrier frequency offset was chosen to be close to one FSR seperated from the carrier. %NL%
+The separation was $1\mathrm{FSR}+3.8$MHz. %NL%
+In terms of a change in cavity length, this is 14.5nm, which is twice the distance moved by the mirror. %NL%
+Given the known frequency separation of the carrier and subcarrier, a determintation of the voltage offset between resonances can be used to calibrate the PZT. %NL%
+The data taken are show in Figure \ref{fig:pztsweep}, and the mean offset of the central three ramps is 19.8V. %NL%
+Thus the PZT calibration is $\frac{14.5\text{nm}}{2}\frac{1}{19.8\text{V}}=0.37\text{nm}/\text{V}$.
 \begin{figure}
   \begin{center}
   \leavevmode
   \includegraphics{figs-omc/pztdccal.pdf}
   \end{center}
-  \caption[PZT sweep]{pzt sweep}
+  \caption[Measurement of the OMC PZT actuator calibration.]{Measurement of the OMC PZT actuator calibration. Both the carrier and subcarrier can be seen passing through resonance.}
   \label{fig:pztsweep}
 \end{figure}
 
+The high frequency response of the OMC PZT actuator was measured by locking the cavity on resonance for the carrier, and applying a periodic drive to the PZT. %NL%
+The cavity locking error signal was used as a length response readout. %NL%
+Figure \ref{fig:pzttf} shows the measured transfer function.
 
-The frequency response of the PZT actuator was measured at the error signal of the cavity frequency locking loop while driving the OMC PZT. %NL%
-The effects of the control loop have been removed from the data.
+\begin{figure}
+  \begin{center}
+  \leavevmode
+%  \includegraphics{figs-omc/pztdccal.pdf}
+  \end{center}
+  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response.}
+  \label{fig:pzttf}
+\end{figure}
 
-\com{TF here.}
 
 \section{Opto-thermal-mechanical feedback issues in the OMC}
 
