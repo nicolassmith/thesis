@@ -31,12 +31,14 @@ An OMC may also be used to ensure the light provided by the differential arm off
 
 Thus, for an interferometer which employs DC readout, the OMC should efficiently strip the HOM field components of the carrier field as well as the RF sidebands. %NL%
 This is achieved by creating a high finesse cavity that is controlled to resonate on the desired (carrier) field. %NL%
-The transmission of the off-resonant fields is goverened by the cavity finesse $\mathcal{F}$, explicitly the transmission is
+Ideally, being a critically coupled optical cavity, light incident on the OMC is totally transmitted on resonance. %NL%
+The transmission of the off-resonant fields is goverened by the cavity finesse $\mathcal{F}$, explicitly the normalized transmission is
 \begin{equation}
 \label{eqn:finesse}
 T=\frac{1}{1+\frac{4}{\pi^2}\mathcal{F}^2\sin{}^2\phi},
 \end{equation}
-where \com{things}.
+where $\mathcal{F}$ is known as the \emph{cavity finesse} and $\phi$ is the detuning from resonance. %NL%
+In terms of a frequency detuning of $\Delta f$ of the incident light, $\phi = \pi \Delta f / \mathrm{FSR}$.
 
 \section{Optical and mechanical design of the OMC}
 Prior to Enhanced LIGO, experiments we performed using a OMC borrowed from the GEO600 interferometer to investigate the difficulties in using an OMC with LIGO. %NL%
@@ -51,16 +53,14 @@ An even number of mirrors was chosen such that the horizontal and vertical HOMs 
 
 \com{make diagram of tombstones/omc bench}
 The OMC optics are bonded with \com{vacseal} expoxy onto custom designed \com{fused silica} optics mounts, called tombstones. %NL%
-The tombstones were then bonded to a slab of \com{ULE}, which we will refer to as the \emph{OMC breadboard}. %NL%
+The tombstones were then bonded to a slab of Corning ULE Glass\footnote{The dimensions of the OMC breadboard are 450mm$\times$150mm$\times$39mm}, which we will refer to as the \emph{OMC breadboard}. %NL%
 This arrangement fixed the cavity length to the desired value and was designed to be stable agains thermal variation. %NL%
 The microscopic cavity length was controlled using a pair of actuators. %NL%
-A fast PZT between one of the optics and its tombstone acted as a low range (\com{1/10 FSR}) high bandwidth (\com{5kHz}) length actuator. %NL%
-Long range (\com{sev FSR}) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately reffered to as the OTAS.\footnote{OMC Thermal Actuation System}\com{OTAS diagram?}
+A fast PZT between one of the optics and its tombstone acted as a low range (1/10 FSR) high bandwidth (5kHz) length actuator. %NL%
+Long range (several FSR) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately reffered to as the OTAS.\footnote{OMC Thermal Actuation System}\com{OTAS diagram?}
 
 A mode cleaner cavity is puporsefully designed such that HOMs do not ocuppy a degenerate resonance with the resonant \TEM{00} mode. %NL%
-Cavities are commonly characterized by their stability $g$-parameter.\footnote{Linear cavities are sometimes given two $g$-parameters, one for each mirror (labeled 1 and 2). %NL%
-The OMC is symmetric so in our case $g=\sqrt{g_1g_2}=g_1=g_2$ for mirrors 1 and 2.} The Gouy shift (\com{referenced before given?} given in Eq. %NL%
-(\ref{eqn:gouyshift}) ) accumulated in the cavity is determined by the cavity geometry as \com{citation}
+Cavities are commonly characterized by their stability $g$-parameter.\footnote{Asymmetric cavities are often given two $g$-parameters, one for each mirror (labeled 1 and 2) and $g=\sqrt{g_1 g_2}$.} The Gouy shift accumulated in the cavity is determined by the cavity geometry as \com{citation}
 \begin{equation}
 \label{eqn:gouyg}
 \cos(\eta)=g
@@ -192,14 +192,14 @@ The frequency profile of the transmitted peak when the subcarrier is shifted thr
 In the experiment, a sawtooth wave was used to sweep the subcarrier offset frequency while the OMC transmission was monitored. %NL%
 These signals were digitized and recorded. %NL%
 The recorded transmission versus frequency shift data are shown in Figure \ref{fig:FSRfit}. %NL%
-The curve fit model used was Equation \ref{eqn:finesse} with $\phi=\pi \Delta f/\mathrm{FSR}$ and a arbitrary scaling and offset. %NL%
+The curve fit model used was Equation \ref{eqn:finesse} with $\phi=\pi \Delta f/\mathrm{FSR}$ and an arbitrary scaling and offset. %NL%
 The fitting parameters return a cavity finesse of $367\pm2$.
 \begin{figure}
   \begin{center}
   \leavevmode
   \includegraphics{figs-omc/FSRfit.pdf}
   \end{center}
-  \caption[Measurement of the OMC transmission profile.]{Measurement of the OMC transmission profile. Subcarrier transmission while varying frequency offset. The width of the transmission peak is used to determine the cavity finesse. Fitted parameters give a finesse of $367\pm2$. \com{aquamarine dots, burt orange line}}
+  \caption[Measurement of the OMC transmission profile.]{Measurement of the OMC transmission profile. Subcarrier transmission while varying frequency offset. The width of the transmission peak is used to determine the cavity finesse. Fitted parameters give a finesse of $367\pm2$.}
   \label{fig:FSRfit}
 \end{figure}
 
@@ -223,7 +223,7 @@ Table \ref{tab:lossmeas} shows the data taken to determine the cavity losses. %N
   \begin{center}
     \begin{tabular}{lll|l}
       \hline
-      Input (V) & Reflection (V) & Transmission (V) & Transmission Fraction \\
+      Input (V) & Reflection (V) & Transmission (V) & Transmission Efficiency \\
       \hline
       0.95 & 1.51 & 0.53 & 0.965 \\
       0.903 & 1.44 &0.498 & 0.958\\

@@ -13,7 +13,7 @@ This is is highly powerful technique which is used extensively in modeling the b
 
 At this point in the discussion, a bird's eye view of the technique is useful. %NL%
 In essence what this formalism provides is a significant abstraction and abbreviation of the effects of opical components (mirrors, modulators, etc.) on the the field components that make up a laser beam. %NL%
-In the case of the transverse electric-magnetic (TEM) spatial modes of a laser field, a calculation of how a mirror which is rotated about some axis perpendicular to the beam redistributes energy from one field component to another may involve complicated overlap integrals involving the Hermite-Gaussian profiles of the beam modes. %NL%
+In the case of the transverse electric-magnetic (TEM) spatial modes of a laser field, a calculation of how a mirror, which is rotated about some axis perpendicular to the beam, redistributes energy from one field component to another may involve complicated overlap integrals involving the Hermite-Gaussian profiles of the beam modes. %NL%
 Such a calculation is difficult to calculate and represent on paper in a concise and transparent way. %NL%
 The strength of this technique is that all of these complicated integrals are \emph{baked in} to the linear operators which represent optical components, so to speak. %NL%
 All of the involved integral math is performed in the construction of the operators, and is hidden from view when the optical system as a whole is considered. %NL%
@@ -146,24 +146,17 @@ In this representation,
 0 & 0 & 0 
 \me
 \right)
-=
-\ms
-\cos {2\Theta_x} & -i\sin{2\Theta_x}& 0 \\
--i\sin {2\Theta_x} & \cos{2\Theta_x}& 0 \\
-0 & 0 & 1 \\
-\me ,
-\end{equation}
-and for small $\Theta_x$,\footnote{Note that $\theta_x$ being small is also required by the paraxial approximation.}
-\[
 \approx
 \ms
 1-2\Theta_x^2 & -2i\Theta_x& 0 \\
 -2i\Theta_x & 1-2\Theta_x^2& 0 \\
 0 & 0 & 1 \\
 \me .
-\]
+\end{equation}
+The last approximation being valid for small $\Theta_x$,\footnote{Note that $\theta_x$ being small is also required by the paraxial approximation.}
 So for small misalignments, the effect of rotating a mirror is to take energy from the \TEM{00} component of the field, and transfer it to the \TEM{10} component, the opposite also being true when the initial field already has a non-zero \TEM{10} component. %NL%
-It is also useful to note that the resulting \TEM{10} field has a quadrature which is rotated by $\pi/2$ with respect to the initial \TEM{00} field.
+It is also useful to note that the resulting \TEM{10} field has a quadrature which is rotated by $\pi/2$ with respect to the initial \TEM{00} field. %NL%
+Or in other words, the amplitude of the \TEM{10} field is in the \emph{phase direction} relative to the \TEM{00} amplitude.
 
 \section{The combined vector space}
 To treat the general problem of laser fields propagating through an optical system, it will be useful to consider both frequency and modal components simultaneously. %NL%
@@ -216,41 +209,62 @@ In terms of the electric field we may write the time averaged power incident on 
 \begin{equation}
 \bar{P}=\frac{\epsilon_0 c}{2}\int \! \! \dd t \int \! \! \dd A|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
 \end{equation}
+This fits nicely into our formalism because one can view the average power detected at a photodiode as the squared-norm of the state vector of the laser field. %NL%
+Often, however, one may use a photodetector to measure certain frequency components of the power, as well as information about the spatial distribution of the beam. %NL%
+Here we outline how to treat such signals in this formalism.
+
 The time dependent components of the laser power can be thought of as the mixing of different frequency components of the electric field. %NL%
 To achieve this in the vector space formalism, we must use an operator which has matrix elements connecting different frequency components. %NL%
 For demodulation at frequency $\omega_d$, the  operator takes the form: 
 \begin{equation}
-\oper{D}(\omega_d) = \sum_{rs} \vect{r} \delta(\omega_r,\omega_s-\omega_d) \form{s},
+\label{eqn:fdemodoperator}
+\oper{D}(\omega_d) = \sum_{rs} \vect{r} \delta(\omega_r,\omega_s-\omega_d) + \delta(\omega_r,\omega_s+\omega_d)\form{s},
 \end{equation}
 where we use a delta function defined as
 \begin{equation}
-\delta(x,y) = 
+\delta(\alpha,\beta) = 
 \begin{cases}
-0 & \text{if $x \neq y$}, \\
-1 & \text{if $x = y$}.
+0 & \text{if $\alpha \neq \beta$}, \\
+1 & \text{if $\alpha = \beta$}.
 \end{cases}
 \end{equation}
-
-\com{power at a given frequency? Make sure it's real valued.}
+Note that there is a special case where $\omega_d=0$ where $\oper{D}(\omega_d)$ is the identity operator, which does not follow from Equation \ref{eqn:fdemodoperator} and must be handled seperately.
 
 Photodetectors are sometimes split into many segments, such as is the case with a so called quadrant photo-detector (QPD). %NL%
 In the case of a QPD, the face of the photodetector is split into four equal segments as seen in figure \ref{fig:QPD}. %NL%
 \com{make QPD figure.} Different linear combinations of the photocurrents of these segments can yield different information about the laser beam. %NL%
 For example, the vertical displacement of a beam can be determined by subtracting current of the top segments from the bottom segments.
 
-The shape and linear combination of the photodiode segments is treated in the literature\cite{Hefetz:97} as a pupil function $p(x,y)$, \com{how does hefetz do the units?} where the photodiode measures
+The shape and linear combination of the photodiode segments is treated in the literature\cite{Hefetz:97} as a pupil function $p(x,y)$,  where the photodiode measures a signal
 \begin{equation}
-P=\iint\limits_{\text{PD area}}E^\dagger(x,y)p(x,y)E(x,y)\dd x \dd y,
+S=\frac{\epsilon_0 c}{2}\int \! %NL%
+\! %NL%
+\dd t \iint\limits_{\text{PD area}}E^\dagger(x,y)p(x,y)E(x,y)\dd x \dd y,
 \end{equation}
 so for example for a photodetector split along the $y$ axis, $p(x,y)=1$ for $x>0$ and $-1$ for $x<0$.
 
 % show how this is equivalent to an operator
 
-In the language of transverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisely, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} \com{Instead of a footnote, how about a figure comparing split photodiode to a linear weighted photodiode.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components.
-\com{this section is not finished, maybe needs SNR formalism.}
+In the language of transverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisely, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} \com{Instead of a footnote, how about a figure comparing split photodiode to a linear weighted photodiode.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components. %NL%
+So we may expand the demodulation operator to include spatial components. %NL%
+The spatial matrix elements of the demodulation operator are:
+\begin{equation}
+\matrixel{mn}{\oper{D}(\Omega)}{kl}=\iint\limits_{\text{PD area}}U_{mn}^\dagger(x,y)p(x,y)U_{kl}(x,y)\dd x \dd y,
+\end{equation}
+where the ``variable'' %NL%
+$\Omega$ is just supposed to contain all the information of the pupil function.
 
-% explain the ideal 10 and 20 detectors (what is the ideal 20 detector?) Maybe calculate some matrix elements of a real bullseye detector.
-% maybe put the numerical values of split detector into appendix
+The frequency, spatial, and polarization parts of the demodulation operator and combined simply with a tensor product,
+\begin{equation}
+\oper{D}(\Omega,\omega_d) = \oper{D}(\Omega)_{\text{modal}}\otimes\oper{D}(\omega_d)_{\text{frequency}}\otimes\oper{I}_{\text{polarization}},
+\end{equation}
+where $\oper{I}$ is the identity operator.
+
+Once the demodulation operator is constructed, the signal measured by the photodetector is just
+\begin{equation}
+S=\frac{\epsilon_0 c}{2}\matrixel{E}{\oper{D}(\Omega,\omega_d)}{E}.
+\end{equation}
+In terms of the quantum mechanical analogy, the signal measured on a photodetector is jus the expectation value of it's demodulation operator.
 
 \section{Vector space model of the output mode cleaner}
 The true utility of this formalism arises when the optical system contains paths that branch and loop onto themselves, as is the case with resonant cavities. %NL%
@@ -263,6 +277,5 @@ This includes transmission through an optic, reflection from an optic, and propa
 
 
 Because we are considering a linear system, the resulting field at a given point in the path is just the sum of the field components at that point. %NL%
-In the case of a single mirror with a front and back side, the field propagating away from the front side of the optic is simply the sum of the field incident from the front, then reflected with the field incident from the back and transmitted. %NL%
 \com{here we should essentially have eq 1 from sigg/mavalvala}
 
