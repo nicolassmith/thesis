@@ -11,6 +11,9 @@ fitFSR = 0.097;
 
 fReal = fReal+realFSR-fitFSR;
 
+dotcolor = ['b4'; 'f2'; '00'];
+linecolor = ['03'; '42'; '6a'];
+
 % This function was automatically generated on 08-Mar-2012 15:12:32
 % and subsequently modified.
 
@@ -28,7 +31,7 @@ axes(ax_); hold on;
 
 
 % --- Plot data 
-h_ = line(fReal,trans,'Parent',ax_,'Color',[0.333333 0 0.666667],...
+h_ = line(fReal,trans,'Parent',ax_,'Color',hex2dec(dotcolor)'/255,...
     'LineStyle','none', 'LineWidth',1,...
     'Marker','.', 'MarkerSize',7);
 set(f_,'Visible','Off');
@@ -68,7 +71,7 @@ confint(cf_)
 h_ = plot(cf_,'fit',0.95);
 set(f_,'Visible','Off');
 legend off;  % turn off legend from plot method call
-set(h_(1),'Color',[1 0 0],...
+set(h_(1),'Color',hex2dec(linecolor)'/255,...
     'LineStyle','-', 'LineWidth',2,...
     'Marker','none', 'MarkerSize',6);
 legh_(end+1) = h_(1);
