@@ -3,7 +3,7 @@ ap-chapters = ap-miscon ap-matrices ap-notes
 main = main
 auxiliary = cover contents
 bib = mainb
-viewer = evince
+viewer = xpdf
 figdirs = figs-omc figs-modalmodel
 
 chapters = $(main-chapters) $(ap-chapters)
@@ -28,6 +28,7 @@ matfigs = $(matfigs-omc)
 # fig rules
 %.pdf : %.svg
 	inkscape --export-area-page --export-pdf=$@ $<
+#	convert -density 10000 $< -resize 10000% $@
 
 MATLAB = matlab -nodesktop -nosplash
 
