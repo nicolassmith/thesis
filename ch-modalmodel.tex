@@ -112,12 +112,11 @@ It is only the presence of misalignments and distortions that cause significant 
 Choosing the common Hermite-Gaussian basis, we can use basis vectors which are separable into the mode order of the beam along the $x$ and $y$ transverse axes of the beam. %NL%
 A general field vector can be decomposed in the modal space as
 \begin{equation}
-\vect{E} = \sum_{m,n=0}^\infty A_{mn}\vect{nm}\doteq\sum_{m,n=0}^\infty A_{mn}U_m(x,z)U_n(y,z)e^{-ikz},
+\vect{E} = \sum_{m,n=0}^\infty A_{mn}\vect{mn}\doteq\sum_{m,n=0}^\infty A_{mn}U_m(x,z)U_n(y,z)e^{-ikz},
 \end{equation}
-where $U_m(x,z)$ is the $m$th 1-D Hermite-Gauss mode (see \ref{ap:HGmode}). %NL%
-The basis modes are also referred to as the Transverse Electric and Magnetic modes of order $mn$ (\TEM{mn}).
-
-\com{Let's also talk about the inner product.}
+where $U_m(x,z)$ is the $m$th 1-D Hermite-Gaussian mode (see \ref{ap:HGmode}). %NL%
+The basis modes are also referred to as the Transverse Electric and Magnetic modes of order $mn$ (\TEM{mn}). %NL%
+The Hermite-Gaussian modes form a complete orthonormal set of basis functions, therefore the inner product is $\inprod{mn}{kl}=\delta_{mk}\delta_{nl}$.
 
 In the modal space, a simple example operator would be a mirror that has been tilted by an angle $\theta_x$ about the y axis. %NL%
 Due to the mirror misalignment, the phase of the beam at the plane of the mirror has been advanced on one side and retarded on the other side, relative to the aligned beam. %NL%
