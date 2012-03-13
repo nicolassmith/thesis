@@ -1,4 +1,4 @@
-function FSRfitFig()
+function finesseFit()
 % Function to make OMC FSR plot for my thesis
 % nicolas smith
 
@@ -85,4 +85,4 @@ set(h_,'Interpreter','none');
 xlabel(ax_,'Frequency Offset (MHz)');               
 ylabel(ax_,'Transmission');
 
-export_fig('FSRfit.pdf','-painters')
+export_fig('finesseFit.pdf','-painters')

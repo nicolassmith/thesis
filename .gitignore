@@ -3,7 +3,7 @@
 *.rej
 *.aux
 *.dvi
-/*.pdf
+*.pdf
 *~
 .*~
 *.blg
@@ -14,3 +14,6 @@ _region_.*
 auto/*
 *.toc
 *.out
+
+# reinclude matlab figures
+!figs-omc/*.pdf

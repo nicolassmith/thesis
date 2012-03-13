@@ -19,15 +19,23 @@ pdf : $(main).pdf
 figs-modalmodel = $(addprefix figs-modalmodel/,QPD.pdf omcmodal.pdf)
 ch-modalmodel.pdf : $(figs-modalmodel)
 
+matfigs-omc = $(addprefix figs-omc/,pzttf.pdf finesseFit.pdf pztdccal.pdf)
+ch-omc.pdf : $(matfigs-omc)
+
 figs = $(figs-modalmodel)
+matfigs = $(matfigs-omc)
 
 # fig rules
 %.pdf : %.svg
 	inkscape --export-area-page --export-pdf=$@ $<
 
+MATLAB = matlab -nodesktop -nosplash
+
+%.pdf : %.m
+	$(MATLAB) -r "run $<; quit;"
 
 # main rules
-$(main).pdf : $(maindeps) $(maininclude) $(figs)
+$(main).pdf : $(maindeps) $(maininclude) $(figs) $(matfigs)
 	pdflatex $<
 	-bibtex $(main)
 	pdflatex $<
@@ -43,7 +51,7 @@ ch-%.pdf : ch-%.tex $(maindeps)
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	mv ch-$*-temp.pdf ch-$*.pdf
 
-.PHONY : view clean pdf reallyclean thisclean reallyclean-recursive clean-recursive look figs
+.PHONY : view clean pdf reallyclean
 .SECONDARY : 
 
 view : $(main).pdf
@@ -58,3 +66,5 @@ clean :
 	-rm -rf auto
 	-rm -rf $(figs)
 
+reallyclean : clean
+	-rm -rf $(matfigs)
