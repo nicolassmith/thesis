@@ -128,14 +128,10 @@ This can be represented as a phase multiplication of $\exp[-2ik\theta_x x]$. %NL
 \end{equation}\com{double check this factor of 2 in the exp}
 where $\delta_{mn}$ is the Kroneker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, or the ratio of the misalignment angle to the beam divergence angle. %NL%
 One can see that the $k$ index is connected to the $m$ index that differs by one mode number, this will provide the correct transfer of energy from the \TEM{00} mode to the \TEM{10} mode as discussed above. %NL%
-We can use a matrix representation with three components representing the \TEM{00}, \TEM{10} and \TEM{01} amplitudes, explicitly for field $\vect{E}$ and operator $\oper{O}$:
-\begin{align}
-\vect{E} &\doteq \ms \inprod{00}{E} \\ \inprod{10}{E} \\ \inprod{01}{E} \me
-& \oper{O} &\doteq \ms 
-\matrixel{00}{\oper{O}}{00} & \matrixel{00}{\oper{O}}{10} & \matrixel{00}{\oper{O}}{01} \\
-\matrixel{10}{\oper{O}}{00} & \matrixel{10}{\oper{O}}{10} & \matrixel{10}{\oper{O}}{01} \\
-\matrixel{01}{\oper{O}}{00} & \matrixel{01}{\oper{O}}{10} & \matrixel{01}{\oper{O}}{01} \me
-\end{align}
+We can use a matrix representation with three components representing the \TEM{00}, \TEM{10} and \TEM{01} amplitudes, explicitly for field $\vect{E}$:
+\begin{equation}
+\vect{E} \doteq \ms \inprod{00}{E} \\ \inprod{10}{E} \\ \inprod{01}{E} \me
+\end{equation}
 
 In this representation, 
 \begin{equation}
@@ -229,10 +225,17 @@ where we use a delta function defined as
 \end{cases}
 \end{equation}
 Note that there is a special case where $\omega_d=0$ where $\oper{D}(\omega_d)$ is the identity operator, which does not follow from Equation \ref{eqn:fdemodoperator} and must be handled seperately.
-
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-modalmodel/QPD.pdf}
+  \end{center}
+  \caption[Diagram of a quadrant photodiode]{Diagram of a quadrant photodiode. The beam is pictured centered on the diode. As the beam is displaced vertically, more photocurrent will be measured by the top two segments than the bottom two. Subtracting the bottom photocurrents from the top ones will provide a measurement of the vertical beam position.}
+  \label{fig:QPD}
+\end{figure}
 Photodetectors are sometimes split into many segments, such as is the case with a so called quadrant photo-detector (QPD). %NL%
 In the case of a QPD, the face of the photodetector is split into four equal segments as seen in figure \ref{fig:QPD}. %NL%
-\com{make QPD figure.} Different linear combinations of the photocurrents of these segments can yield different information about the laser beam. %NL%
+Different linear combinations of the photocurrents of these segments can yield different information about the laser beam. %NL%
 For example, the vertical displacement of a beam can be determined by subtracting current of the top segments from the bottom segments.
 
 The shape and linear combination of the photodiode segments is treated in the literature\cite{Hefetz:97} as a pupil function $p(x,y)$,  where the photodiode measures a signal
@@ -245,7 +248,7 @@ so for example for a photodetector split along the $y$ axis, $p(x,y)=1$ for $x>0
 
 % show how this is equivalent to an operator
 
-In the language of transverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisely, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} \com{Instead of a footnote, how about a figure comparing split photodiode to a linear weighted photodiode.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components. %NL%
+In the language of transverse spatial modes, a split photodetector is measuring the mixing of the \TEM{00} mode with the \TEM{10} mode.\footnote{More precisely, it measures the mixing of all even modes to odd modes and vice versa, with the primary contribution coming from the modes which differ by one mode order.} So in order to model this in the vector space framework, we will need to generalize the demodulation operator to have matrix elements between spatial modes as well as frequency components. %NL%
 So we may expand the demodulation operator to include spatial components. %NL%
 The spatial matrix elements of the demodulation operator are:
 \begin{equation}
@@ -260,18 +263,25 @@ The frequency, spatial, and polarization parts of the demodulation operator and 
 \end{equation}
 where $\oper{I}$ is the identity operator.
 
-Once the demodulation operator is constructed, the signal measured by the photodetector is just
+Once the demodulation operator is constructed, the signal measured by the photodetector is
 \begin{equation}
 S=\frac{\epsilon_0 c}{2}\matrixel{E}{\oper{D}(\Omega,\omega_d)}{E}.
 \end{equation}
-In terms of the quantum mechanical analogy, the signal measured on a photodetector is jus the expectation value of it's demodulation operator.
+In terms of the quantum mechanical analogy, the signal measured on a photodetector is just the expectation value of it's demodulation operator.
 
 \section{Vector space model of the output mode cleaner}
 The true utility of this formalism arises when the optical system contains paths that branch and loop onto themselves, as is the case with resonant cavities. %NL%
 The fact that the operators can simultaneously handle the transverse modes and frequency components reduces much of the complexity of the problem through abstraction.
-
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-modalmodel/omcmodal.pdf}
+  \end{center}
+  \caption[Diagram of vector space model of the OMC]{Diagram of vector space model of the OMC}
+  \label{fig:omcmodal}
+\end{figure}
 %a simple ring cavity
-In figure \ref{fig:omcmodal} \com{add figure} we see a schematic diagram of a four mirror ring cavity. %NL%
+In figure \ref{fig:omcmodal} we see a schematic diagram of a four mirror ring cavity. %NL%
 Every interaction of the laser field is handled by an operator. %NL%
 This includes transmission through an optic, reflection from an optic, and propagation through free space. %NL%
 

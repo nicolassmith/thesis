@@ -4,13 +4,11 @@ main = main
 auxiliary = cover contents
 bib = mainb
 viewer = evince
-figdirs = figs-omc
-
-figs = $(addprefix figs-omc/,FitFSR.pdf)
+figdirs = figs-omc figs-modalmodel
 
 chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
-maindeps = $(main).tex macros.tex $(bibdep) $(figs)
+maindeps = $(main).tex macros.tex $(bibdep) figs
 texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
 maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters)
 
@@ -32,7 +30,7 @@ ch-%.pdf : ch-%.tex $(maindeps)
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	mv ch-$*-temp.pdf ch-$*.pdf
 
-$(figs) : look
+figs : look
 	for dir in $(figdirs) ; do \
 		cd $$dir ; \
 		make ; \
@@ -41,7 +39,7 @@ $(figs) : look
 look :
 	true
 
-.PHONY : view clean pdf reallyclean thisclean reallyclean-recursive clean-recursive look
+.PHONY : view clean pdf reallyclean thisclean reallyclean-recursive clean-recursive look figs
 .SECONDARY : 
 
 view : $(main).pdf
