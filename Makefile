@@ -8,13 +8,26 @@ figdirs = figs-omc figs-modalmodel
 
 chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
-maindeps = $(main).tex macros.tex $(bibdep) figs
+maindeps = $(main).tex macros.tex $(bibdep)
 texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
 maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters)
 
+# default rule
 pdf : $(main).pdf
 
-$(main).pdf : $(maindeps) $(maininclude)
+# chapter figs section
+figs-modalmodel = $(addprefix figs-modalmodel/,QPD.pdf omcmodal.pdf)
+ch-modalmodel.pdf : $(figs-modalmodel)
+
+figs = $(figs-modalmodel)
+
+# fig rules
+%.pdf : %.svg
+	inkscape --export-area-page --export-pdf=$@ $<
+
+
+# main rules
+$(main).pdf : $(maindeps) $(maininclude) $(figs)
 	pdflatex $<
 	-bibtex $(main)
 	pdflatex $<
@@ -30,15 +43,6 @@ ch-%.pdf : ch-%.tex $(maindeps)
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	mv ch-$*-temp.pdf ch-$*.pdf
 
-figs : look
-	for dir in $(figdirs) ; do \
-		cd $$dir ; \
-		make ; \
-	done
-
-look :
-	true
-
 .PHONY : view clean pdf reallyclean thisclean reallyclean-recursive clean-recursive look figs
 .SECONDARY : 
 
@@ -48,24 +52,9 @@ view : $(main).pdf
 view-% : ch-%.pdf
 	$(viewer) $< 2> /dev/null &
 
-reallyclean : reallyclean-recursive thisclean
-
-clean : clean-recursive thisclean
-
-clean-recursive : 
-	for dir in $(figdirs) ; do \
-		cd $$dir ; \
-		make clean; \
-	done
-
-reallyclean-recursive : 
-	for dir in $(figdirs) ; do \
-		cd $$dir ; \
-		make reallyclean; \
-	done
-
-thisclean : 
+clean : 
 	-rm -f *.log *.orig *.rej *.aux *.dvi *.pdf *~ *.blg *.lof *.lot *.bbl *.toc .*~ *.out
 	-rm -rf _region_.*
 	-rm -rf auto
+	-rm -rf $(figs)
 
