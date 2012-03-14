@@ -3,7 +3,7 @@ ap-chapters = ap-miscon ap-matrices ap-notes
 main = main
 auxiliary = cover contents
 bib = mainb
-viewer = xpdf
+viewer = evince
 figdirs = figs-omc figs-modalmodel
 
 chapters = $(main-chapters) $(ap-chapters)
