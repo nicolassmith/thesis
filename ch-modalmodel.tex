@@ -286,5 +286,20 @@ We may write down an expression for the field inside the cavity as follows
 Here, $\oper{G}$ is the operator representing one full round trip through the cavity, starting with the propagation from mirror 1 to mirror 2, $\oper{T}_1$ is the operator for transmission through mirror 1, and $\vect{E}_{\text{cavity'}}$ is the cavity field due to the previous round trip of the light. %NL%
 When the system has reached a stationary state, $\vect{E}_{\text{input}}=\vect{E}_{\text{cavity'}}$.\footnote{Note that this does not only include fields static in time, but also any peiodically changing fields that are represented in our vector space.} In this case we may solve for the field in the cavity:
 \begin{equation}
-\vect{E}_{\text{cavity}} = \left(\oper{I}-\oper{G}\right)^{-1}\oper{T}_1\vect{E}_{\text{input}}
+\vect{E}_{\text{cavity}} = \left(\oper{I}-\oper{G}\right)^{-1}\oper{T}_1\vect{E}_{\text{input}}.
 \end{equation}
+The round trip operator is 
+\begin{equation}
+\oper{G} = \oper{P}_{1\rightarrow 2}\oper{M}_2\oper{P}_{2\rightarrow 3}\oper{M}_3\oper{P}_{3\rightarrow 4}\oper{M}_4\oper{P}_{4\rightarrow 1}\oper{M}_1,
+\end{equation}
+where $\oper{P}_{j\rightarrow j+1}$ is the free space propagation operator from mirror $j$ to $j+1$, and $\oper{M}_k$ is the reflection operator for mirror $k$.
+
+By definition, the mirror operators are all diagonal when the system is aligned. %NL%
+Also the propagation operators are diagonal by construction. %NL%
+The diagonal matrix elements of $\oper{G}$ vary in their phase from one field component to the next. %NL%
+Thus one can see that when these matrix elements have a phase close to an integer multiple of $2\pi$, the cavity field of those component will be enhanced. %NL%
+This is of course just the expected resonance behavior. %NL%
+As the length of the cavity is changed (which modifies the propagation operators) different field components will come in and out of resonance. %NL%
+This includes both frequency components and higher order mode components, indeed different firequency components of different higher order mode components as well!
+
+\com{maybe just a segue to the next chap?}
