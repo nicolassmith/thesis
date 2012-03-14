@@ -1,9 +1,3 @@
-
-%%% Local Variables: 
-%%% mode: pdflatex
-%%% TeX-master: "main"
-%%% End: 
-
 \chapter{Vector space model of optical systems}
 
 \section{Introduction}
@@ -285,6 +279,12 @@ Every interaction of the laser field is handled by an operator. %NL%
 This includes transmission through an optic, reflection from an optic, and propagation through free space. %NL%
 
 
-Because we are considering a linear system, the resulting field at a given point in the path is just the sum of the field components at that point. %NL%
-\com{here we should essentially have eq 1 from sigg/mavalvala}
-
+We may write down an expression for the field inside the cavity as follows
+\begin{equation}
+\vect{E}_{\text{cavity}} = \oper{T}_1\vect{E}_{\text{input}}+\oper{G}\vect{E}_{\text{cavity'}}.
+\end{equation}
+Here, $\oper{G}$ is the operator representing one full round trip through the cavity, starting with the propagation from mirror 1 to mirror 2, $\oper{T}_1$ is the operator for transmission through mirror 1, and $\vect{E}_{\text{cavity'}}$ is the cavity field due to the previous round trip of the light. %NL%
+When the system has reached a stationary state, $\vect{E}_{\text{input}}=\vect{E}_{\text{cavity'}}$.\footnote{Note that this does not only include fields static in time, but also any peiodically changing fields that are represented in our vector space.} In this case we may solve for the field in the cavity:
+\begin{equation}
+\vect{E}_{\text{cavity}} = \left(\oper{I}-\oper{G}\right)^{-1}\oper{T}_1\vect{E}_{\text{input}}
+\end{equation}
