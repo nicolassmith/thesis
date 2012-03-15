@@ -120,22 +120,35 @@ The Tip-Tilts and OMC suspension frame were all housed in a single vacuum chambe
 A thorough account of the HAM-ISI design and performance can be found \com{Jeff's thesis?}.
 
 \section{Characterization of the H1 OMC}
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-omc/interrogator.pdf}
+  \end{center}
+  \caption[Block diagram of OMC characterization setup.]{Block diagram of OMC characterization setup, also known as the OMC interrogator. The setup provides single mode laser light with RF sidebands for reflection locking, as well as a subcarrier with a tunable frequency.}
+  \label{fig:interrogator}
+\end{figure}
 
-\com{Show diagram of OMC interrogator, and desribe experimental setup.}
-Figure \ref{fig:OMCintdiagram} shows a diagram of the experimental setup used to measure several parameters of the H1 OMC. %NL%
+Figure \ref{fig:interrogator} shows a diagram of the experimental setup used to measure several parameters of the OMC which was installed on the H1 LIGO interferometer in Hanford, WA. %NL%
 The laser source is a NdYAG NPRO providing a 1064nm wavelength laser beam. %NL%
-A beam splitter sends some fraction \com{how much} of the light through an electro-optic modulator (EOM) which is driven at by RF oscillator \#1. %NL%
-This introduces two RF sidebands which will be used for cavity length control. %NL%
+The polarization is rotated by a half-wave plate (QWP). %NL%
+A polarizing beam splitter (PBS) sends some fraction of the light through an electro-optic modulator (EOM) which is driven at by RF oscillator \#2. %NL%
+The fraction transmitted by the PBS is tuned by changing the angle of the HWP. %NL%
+The EOM introduces two RF sidebands which will be used for cavity length control. %NL%
 The other path of light is director to an acouso-optic modulator (AOM). %NL%
-The light is double passed though the AOM and and receives a frequency shift which is twice the frequency of RF oscillator \#2. %NL%
+The light is double passed though the AOM and and receives a frequency shift which is twice the frequency of RF oscillator \#1. %NL%
+A quarter-wave plate (QWP) causes the polarization to rotate 90\degree{} after double passing, causing both paths to now be in the same polarization. %NL%
 The light from the two paths are recombined before being injected into an optical fiber. %NL%
 The frequency makeup of the combined beam includes the original carrier frequency, two RF sidebands and a frequency shifted subcarrier.
 
 The light exiting the other end of the optical fiber is incident on the input coupling mirror of the OMC cavity. %NL%
-The promptly reflected beam is detected on a photodetector where the photocurrent is demodulated at the frequency of RF oscillator \#1. %NL%
-Choosing the correct demodulation phase provides a laser frequency error signal which is fed back to the frequency actuator of the laser. %NL%
+A small sample of the input beam is incident on a photodetector. %NL%
+The promptly reflected beam is detected on a photodetector where the photocurrent is demodulated at the frequency of RF oscillator \#2. %NL%
+The frequency of oscillator \#2 is chosen so that it is outisde of the OMC resonance when the carrier is in resonancne. %NL%
+This provides an error signal which is fed back to the frequency actuator of the laser. %NL%
 The control system is able to maintain resonance of the laser in the OMC. %NL%
-The laser transmitted through the OMC is detected on a second photodetector, as well as on a CCD sensor.
+The laser transmitted through the OMC is detected on another photodetector. %NL%
+A very small sample of the light in the cavity is transmitted through one of the HR mirrors and detected by a CCD sensor.
 
 \subsection{Free spectral range}
 Resonance occurs in the cavity when the total round trip phase of the incident laser beam as it propagates thorugh the cavity is an integer multiple of $2\pi$. %NL%
@@ -156,7 +169,7 @@ This corresponds to a cavity perimeter of 1.077m.
 \subsection{Higher order mode spacing}
 Similarly, the higher order mode frequency shift is measured by varying the subcarrier frequency until the subcarrier is resonant on a higher order mode of the OMC. %NL%
 Coupling of the subcarrier beam into the HOMs is enhanced if slight misalignments are introduced on the input beam. %NL%
-The identity of the higher order mode is determined by the image recorded by the CCD in transmission.
+The identity of the higher order mode is determined by the image recorded by the CCD camera.
 
 The HOM field components experience an effective frequency shift relative to the \TEM{00} carrier field due to the Gouy phase shift. %NL%
 The effective frequency shift is given by

@@ -19,7 +19,7 @@ figs-modalmodel = $(addprefix figs-modalmodel/,QPD.pdf omcmodal.pdf)
 ch-modalmodel.pdf : $(figs-modalmodel)
 
 matfigs-omc = $(addprefix figs-omc/,pzttf.pdf finesseFit.pdf pztdccal.pdf)
-figs-omc = $(addprefix figs-omc/,construction.pdf)
+figs-omc = $(addprefix figs-omc/,construction.pdf interrogator.pdf)
 ch-omc.pdf : $(matfigs-omc) $(figs-omc)
 
 figs-beacon = $(addprefix figs-beacon/,blockdiagtight.pdf ditherarrows.pdf shotSNRtightedited.pdf)
