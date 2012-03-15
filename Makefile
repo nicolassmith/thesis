@@ -4,7 +4,6 @@ main = main
 auxiliary = cover contents
 bib = mainb
 viewer = evince
-figdirs = figs-omc figs-modalmodel
 
 chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
@@ -22,7 +21,10 @@ ch-modalmodel.pdf : $(figs-modalmodel)
 matfigs-omc = $(addprefix figs-omc/,pzttf.pdf finesseFit.pdf pztdccal.pdf)
 ch-omc.pdf : $(matfigs-omc)
 
-figs = $(figs-modalmodel)
+figs-beacon = $(addprefix figs-beacon/,blockdiag.pdf ditherarrows.pdf shotSNRtightedited.pdf)
+ch-beacon.pdf : $(figs-beacon)
+
+figs = $(figs-modalmodel) $(figs-beacon)
 matfigs = $(matfigs-omc)
 
 # fig rules
@@ -34,6 +36,9 @@ MATLAB = matlab -nodesktop -nosplash
 
 %.pdf : %.m
 	$(MATLAB) -r "run $<; quit;"
+
+%.pdf : %.eps
+	convert $< $@
 
 # main rules
 $(main).pdf : $(maindeps) $(maininclude) $(figs) $(matfigs)
