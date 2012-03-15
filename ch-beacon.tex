@@ -6,12 +6,12 @@ When such mode cleaner filter cavities are placed at the output (readout) port o
 The signal-rich optical field may be weak compared to the HOM components. %NL%
 
 
-In this article we describe a solution to the problem of aligning the OMC cavity used at the output port of the 4 kilometer long laser interferometers of the Laser Interferometer Gravitational-wave Observatory (LIGO)\cite{LIGO}. %NL%
+In this chapter we describe a solution to the problem of aligning the OMC cavity. %NL%
 Though we consider the LIGO optical readout here, our scheme applies to any optical system where a signal is encoded as an amplitude modulation of a laser field, and the spatial mode of the signal-induced modulation sideband differs from that of the DC carrier field. %NL%
  In the case of LIGO, the signal is a gravitational wave induced modulation of the optical field, typically at frequencies 10 Hz to 10 kHz shifted from the carrier. %NL%
 
 
-%\section{The alignment problem in a mode cleaner cavity}
+\section{The alignment problem in a mode cleaner cavity}
 %
 Fig. %NL%
 \ref{fig:beaconblockdiag} shows a schematic representation of the readout system we consider. %NL%
@@ -37,25 +37,24 @@ SNR \propto \frac{cs}{\sqrt{c^2 + 2s^2}} \approx s.
 %
 Here we have made the following simplifying assumptions: the carrier field amplitude is much greater than that of the signal field, the signal fields are pure amplitude modulation, and that there is perfect spatial overlap of the carrier and the sidebands after transmission through the OMC. %NL%
 We see that the alignment system that maximizes optical SNR of fields detected after transmission through an OMC simply maximizes the amplitude transmission of the {\it signal field} through the OMC. %NL%
-We do not address contributions to readout noise due to alignment jitter of the beam incident on the OMC in this article. %NL%
-
+\com{mention that beam jitter is another thing to consider.}
 
 To leading order, typical alignment schemes sense the ${\rm TEM}_{01}$ and ${\rm TEM}_{10}$  modes of the carrier field measured in the the OMC eigenmode basis\cite{Anderson1984}. %NL%
 The presence of these modes is interpreted as a misalignment. %NL%
-In this article we will show how to modify a common alignment technique to be sensitive to signal field misalignments, and thus allow one to maximize the SNR of the signal.
+In this chapter we will show how to modify a common alignment technique to be sensitive to signal field misalignments, and thus allow one to maximize the SNR of the signal.
 
 \begin{figure}%[placement t]
   \begin{center}
   \leavevmode
-  \includegraphics{figs-beacon/blockdiag.pdf}
+  \includegraphics{figs-beacon/blockdiagtight.pdf}
   \end{center}
-  \caption{A signal is encoded by interferometry (or any other means) as an amplitude modulation of a laser beam. The beam is then steered by two mirrors which are dithered in angle before passing though a mode cleaner cavity. Alignment signals can be derived by demodulation of the transmitted photocurrent. The misalignment has been grossly exaggerated in the figure.}
+  \caption[Block diagram of dither alignment sensing.]{A signal is encoded by interferometry (or any other means) as an amplitude modulation of a laser beam. The beam is then steered by two mirrors which are dithered in angle before passing though a mode cleaner cavity. Alignment signals can be derived by demodulation of the transmitted photocurrent. The misalignment has been grossly exaggerated in the figure.}
   \label{fig:beaconblockdiag}
 \end{figure}
 
 Consider a single alignment degree of freedom where misalignments of the carrier and the signal fields are represented by one set of misalignment angles $\theta_c$ and $\theta_s$. %NL%
 Dither alignment sensing is commonly achieved by mechano-optical modulation of an angular degree of freedom, e.g by driving steering mirrors that direct the beam into the OMC, as shown in Fig. %NL%
-\ref{fig:blockdiag}. %NL%
+\ref{fig:beaconblockdiag}. %NL%
 Each mirror is dithered in angle with constant amplitude at a given frequency to modulate the input pointing into the cavity. %NL%
 
 
@@ -83,12 +82,12 @@ For the case where the carrier power is much greater than the signal field power
   \leavevmode
   \includegraphics{figs-beacon/ditherarrows.pdf}
   \end{center}
-  \caption{Arrow diagram showing electric fields after transmission through the OMC. In the figure, $f_d$ is the angular dither frequency, $f_b$ is the beacon modulation frequency.}
+  \caption[Arrow diagram of dither alignment signals.]{Arrow diagram showing electric fields after transmission through the OMC. In the figure, $f_d$ is the angular dither frequency, $f_b$ is the beacon modulation frequency.}
   \label{fig:ditherarrows}
 \end{figure}
 %
 
-%\section{``Beacon'' alignment sensing}
+\section{``Beacon'' alignment sensing}
 %\label{sec:beaconalignment}
 
 To better sense the alignment of the signal field one may create a large amplitude modulation of the signal, say by modulating the length of the signal cavity. %NL%
@@ -109,7 +108,7 @@ S_{beacon}=P(f_d+f_b) \propto 2sc\theta_c+2cs\theta_s.
 When this error signal is nulled, the SNR is improved in comparison to standard dither, but sensitivity to the carrier field remains, so the SNR will not be maximized. %NL%
 Because the beacon modulation is small, $S_{beacon}$ will have a higher relative noise level than the standard dither approach.
 
-%\section{Experimental Demonstration of Beacon Alignment Sensing}
+\section{Experimental Demonstration of Beacon Alignment Sensing}
 %
 
 
@@ -131,7 +130,7 @@ The LIGO interferometers are examples of optical systems where a beacon based al
   \leavevmode
   \includegraphics{figs-beacon/shotSNRtightedited.pdf}
   \end{center}
-  \caption{The noise amplitude spectral density of the LIGO H1 detector using two types of alignment schemes. The curves are normalized to a calibration line at 1144 Hz.  The small line structures are resonances of the suspension wires supporting the mirrors. The beacon scheme shows an SNR improvement of about a factor of 3.}
+  \caption[An instance of the noise performance of beacon alignment sensign.]{The noise amplitude spectral density of the LIGO H1 detector using two types of alignment schemes. The curves are normalized to a calibration line at 1144 Hz.  The small line structures are resonances of the suspension wires supporting the mirrors. The beacon scheme shows an SNR improvement of about a factor of 3.}
   \label{fig:shotnoise}
 \end{figure}
 
@@ -145,7 +144,7 @@ A factor of 2.4 is due to an increase of signal strength and the remaining facto
 We propose that the poor performance of the standard technique is due to excess HOMs in addition to the ${\rm TEM}_{01}$ mode associated with misalignment.
 % talk about HOMs that aren't 10/01?
 
-%\section{Optimal alignment sensing of the signal sideband field}
+\section{Optimal alignment sensing of the signal sideband field}
 %\label{sec:optimalalignment}
 It is possible to combine the standard dither signal with the beacon signal to produce a signal which is sensitive to signal field misalignments only. %NL%
 We also make use of the DC transmitted power, $P_{DC} = P(0) \approx c^2$, and the beacon modulation amplitude, $P(f_b) \approx 2cs$. %NL%
@@ -153,8 +152,8 @@ An optimal alignment signal can be constructed as follows:
 %
 \begin{align}
 \label{eq:optsig}
-S_{optimal} &= S_{beacon} - \tfrac{P(f_b)}{2P_{DC}} S_{standard}\\
-\nonumber &\propto 2cs\theta_s+2sc\theta_c-\tfrac{2cs}{2c^2}(2c^2\theta_c) \\
+S_{optimal} &= S_{beacon} - \frac{P(f_b)}{2P_{DC}} S_{standard}\\
+\nonumber &\propto 2cs\theta_s+2sc\theta_c-\frac{2cs}{2c^2}(2c^2\theta_c) \\
 \nonumber &\propto 2cs\theta_s.
 \end{align}
 %
@@ -166,14 +165,14 @@ In this approach, the SNR should be calculated in real time and demodulated at t
 As above, if the beacon amplitude on the photodetector is $P(f_b)$ and the DC power is $P_{DC}$, the optical SNR is
 %
 \begin{equation}
-SNR = \tfrac{P(f_b)}{\sqrt{P_{DC}}}.
+SNR = \frac{P(f_b)}{\sqrt{P_{DC}}}.
 \end{equation}
 %
 Any dither sensing scheme is essentially measuring the partial derivative of a signal with respect to the dithered degree of freedom \cite{Kawabe:94}. %NL%
 Thus, a dither servo which maximizes the SNR will measure a signal proportional to
 %
 \begin{equation}
-\tfrac{\partial}{\partial \theta} \left( \tfrac{P(f_b)}{\sqrt {P_{DC}} } \right) = \tfrac{1}{\sqrt {P_{DC}}} \left( \tfrac{\partial P(f_b)}{\partial \theta} - \tfrac{P(f_b)}{2P_{DC}} \tfrac{\partial P_{DC}}{\partial \theta} \right),
+\frac{\partial}{\partial \theta} \left( \frac{P(f_b)}{\sqrt {P_{DC}} } \right) = \frac{1}{\sqrt {P_{DC}}} \left( \frac{\partial P(f_b)}{\partial \theta} - \frac{P(f_b)}{2P_{DC}} \frac{\partial P_{DC}}{\partial \theta} \right),
 \end{equation}
 %
 which is equivalent to (\ref{eq:optsig}) up to constant factors. %NL%
@@ -185,7 +184,7 @@ If $f_d$ is within the control bandwith, but $f_b$ is not, then the carrier alig
 Sufficient suppression makes the beacon scheme approximately equivalent to the optimal scheme. %NL%
 This was the configuration used by both the L1 and H1 interferometers in the sixth LIGO science run \cite{Tobin}.
 
-%\section{Generalization of optimal signal-sideband alignment to other alignment sensors}
+\section{Generalization of optimal signal-sideband alignment to other alignment sensors}
 
 The technique of using a beacon modulation to sense misalignment of the signal field can be generalized to other types of alignment sensors, for example: split quadrant photodetectors detecting light picked off the beam entering the OMC or split quadrant detectors in reflection of the OMC coupled with frequency or length dithered sidebands, also known as wavefront sensors.
 
@@ -195,7 +194,7 @@ $P_{DC}$ and $P(f_b)$ are defined as in (\ref{eq:optsig}). %NL%
 The generalized signal is:
 %
 \begin{equation}
-G_{optimal} = G_{beacon} - \tfrac{P(f_b)}{2P_{DC}} G_{standard}.
+G_{optimal} = G_{beacon} - \frac{P(f_b)}{2P_{DC}} G_{standard}.
 \end{equation}
 %
 We emphasize that the $G$ signals are derived from the alignment sensor, while the $P$ signals are derived from the OMC transmission.
