@@ -23,7 +23,7 @@ When placed at the output of the interferometer we refer to such a cavity as the
 \end{itemize}
 }
 It can be useful to point out that interferometers based on both RF and DC readout can benefit from an OMC \com{readouts discussed in previous chapter}. %NL%
-Both the GEO and Virgo interferometers have used OMCs in an RF readout configuration, and LIGO experimented with an OMC before using DC readout \cite{some things}. %NL%
+Both the GEO and Virgo interferometers have used OMCs in an RF readout configuration, and LIGO experimented with an OMC before using DC readout \com{cite some things}. %NL%
 An OMC is especially important for a DC readout interferometer because any audio frequency modulation of fields that are not the local oscillator or signal will contaminate the readout. %NL%
 Also, there is not benefit of the frequency selection of the RF readout to selectively omit unwanted audio modulation. %NL%
 An OMC may also be used to ensure the light provided by the differential arm offset dominates the DC power present on the detection photodiode, otherwise DC power from other fields (such as the RF sidebands) will contribute to photon shot noise without increasing the signal strength. %NL%
@@ -51,13 +51,22 @@ The design of the OMC was chosen to be a four mirror bowtie cavity \com{cite som
 This choice was made over that of a two mirror linear cavity so that there was spatial separation of the reflected beam. %NL%
 An even number of mirrors was chosen such that the horizontal and vertical HOMs would experience the same overall phase shift and thus experience nearly the same frequency offset from resonance, reducing the chances of an accidental HOM resonance.
 
-\com{make diagram of tombstones/omc bench}
-The OMC optics are bonded with \com{vacseal} expoxy onto custom designed \com{fused silica} optics mounts, called tombstones. %NL%
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-omc/construction.pdf}
+  \end{center}
+  \caption[Diagram of OMC cavity components]{Diagram of OMC cavity components. Auxilliary optics and sensors are not shown. The tombstones have holes (not pictured) machined in them to allow the laser beam to pass through.}
+  \label{fig:omcconstruction}
+\end{figure}
+
+A diagram of the OMC may be seen in Figure \ref{fig:omcconstruction}. %NL%
+The OMC optics are bonded with Vacseal expoxy onto custom designed fused silica optics mounts, called tombstones. %NL%
 The tombstones were then bonded to a slab of Corning ULE Glass\footnote{The dimensions of the OMC breadboard are 450mm$\times$150mm$\times$39mm}, which we will refer to as the \emph{OMC breadboard}. %NL%
 This arrangement fixed the cavity length to the desired value and was designed to be stable agains thermal variation. %NL%
 The microscopic cavity length was controlled using a pair of actuators. %NL%
 A fast PZT between one of the optics and its tombstone acted as a low range (1/10 FSR) high bandwidth (5kHz) length actuator. %NL%
-Long range (several FSR) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately reffered to as the OTAS.\footnote{OMC Thermal Actuation System}\com{OTAS diagram?}
+Long range (several FSR) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately reffered to as the OTAS.\footnote{OMC Thermal Actuation System}
 
 A mode cleaner cavity is puporsefully designed such that HOMs do not ocuppy a degenerate resonance with the resonant \TEM{00} mode. %NL%
 Cavities are commonly characterized by their stability $g$-parameter.\footnote{Asymmetric cavities are often given two $g$-parameters, one for each mirror (labeled 1 and 2) and $g=\sqrt{g_1 g_2}$.} The Gouy shift accumulated in the cavity is determined by the cavity geometry as \com{citation}
@@ -263,7 +272,7 @@ Figure \ref{fig:pzttf} shows the measured transfer function.
   \leavevmode
   \includegraphics{figs-omc/pzttf.pdf}
   \end{center}
-  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response.}
+  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response. \com{make a nicer figure}}
   \label{fig:pzttf}
 \end{figure}
 

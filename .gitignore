@@ -16,4 +16,6 @@ auto/*
 *.out
 
 # reinclude matlab figures
-!figs-omc/*.pdf
+!figs-omc/pzttf.pdf
+!figs-omc/finesseFit.pdf
+!figs-omc/pztdccal.pdf
