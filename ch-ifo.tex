@@ -41,13 +41,26 @@ For a linear cavity, this happens when the length is equal to an integer number 
 \section{Pound-Drever-Hall reflection locking}
 Pound-Drever-Hall (PDH) reflection locking is a powerful technique by which the resonance condition of a laser incident on an optical cavity may be controlled by use of a feedback control system \cite{PDH}. %NL%
 In this control system, the error signal is a measurement of the detuning of the laser light from resonance. %NL%
-In the case of a fixed cavity, this may be understood as a measurement of the fluctuations in the laser wavelength. %NL%
-We are instead concerned with a very stable laser source and a cavity which may change length due to external influences. %NL%
-In this case, the error signal is better understood as a measurement of the length changes of the cavity.
+In the case of a fixed length cavity, this may be understood as a measurement of the fluctuations in the laser wavelength. %NL%
+We are instead concerned with a very stable laser source and a cavity which may change length due to external influences.\footnote{A gravitational wave changes the phase accumulated in the cavity, which is essentially interchangable with the optical path length of the cavity.} In this case, the error signal is better understood as a measurement of the length changes of the cavity.
 
-\com{length changes are phase modulation, but with enhancement because of resonance}
+As was shown in the previous section, the phase shift of the beam reflected from the resonant cavity is enhanced for fields resonant in the cavity. %NL%
+However, for fields not resonant in the cavity, there is nearly no phase shift of the reflected beam. %NL%
+The PDH sensing technique exploits this fact by contructing an input beam with frequency components that are both resonant and non-resonant. %NL%
+By doing a relative phase measurement of the reflected fields, one may determine length changes of the cavity.
 
-\com{frontal phase modulation, the sidebands act as a phase reference (not resonant) and play the part of the local oscillator.}
+Creation of the input beam is done by sending the beam through an optical modulator. %NL%
+This usually comes in the form of an \emph{electro optic modulator} (EOM), which is an optical device that has a electronically variable optical path length. %NL%
+Applying a periodic electronic signal, usually at radio frequencies (RF), will induce a periodic phase modulation of the laser beam. %NL%
+As will be discussed in Section \ref{sec:freqspace}, the primary result of this phase modulation is to impose new optical fields separated in frequency from the original field by the RF modulation frequency. %NL%
+These new fields are usually refered to as \emph{phase modulated sidebands}, the central frequency component is refered to as the \emph{carrier}.\com{figure with carrier/sidebands and cavity?} The modulation frequency is chosen such that the sidebands are not resonant in the cavity, and thus do not experience a phase shift when the cavity changes length. %NL%
+Comparison of the constant sideband phase with the resonating carrier phase through interferometry yields a very sensitive cavity length measurement. %NL%
+
+
+\com{it's nice that they start as phase sidebands, so there is no signal when perfectly resonating (resonance is actully 180deg phase shift}
+
+\com{moving from resonance rotates the carrier phase, and thus turns phase sidebands into amplitude sidebands, which produce a power modulation}
+\com{heterodyne detection scheme is relative phase measurement}
 
 \section{The Michelson interferometer}
 \com{common mode rejection, with very simple calculation that has contrast defect}
