@@ -74,15 +74,28 @@ The pre-stabilized laser and input optics systems provide the LIGO interferomete
 To provide a phase sensitivity necessary to detect gravitational-wave it will be necessary to play a few tricks to hide our gravitational wave readout system from the noise still present on the input laser.
 
 Using the analogy which treats the laser wavelength as a ruler with which one measures optical path length, there is an intuitive picture which shows why the correct arrangement of a Michelson interferometer may be made insensitive to fluctuations of your ruler. %NL%
-Because the beamsplitter directs the same laser source to each arm, it is obvious that fluctuations in the
+Because the beamsplitter directs the same laser source to each arm, it is obvious that fluctuations of the laser wavelength (our ruler) will be identical in both arms. %NL%
+This is a problem if one desires to measure the average length of the two arms, fluctuations in your ruler will directly cause fluctuations in your measurement. %NL%
+If, instead, the differential arm length change is the desired measurement, ruler length fluctuations are supressed. %NL%
+This may be shown quantitatively if we consider the propagation of the laser fields in the michelson interferometer.
 \com{michelson figure}
 
+\com{common mode rejection, with very simple calculation that has contrast defect. say that it's usually called laser frequency noise}
 
-\com{common mode rejection, with very simple calculation that has contrast defect}
+\com{90\degree{} is good for GWs}
+
+\section{Michelson with arm-cavities}
+One may exploit the common mode rejection of laser noise provided by the Michelson interferometer, while taking advantage of the high phase sensitivity of a resonant cavity, by joining the two designs. %NL%
+The LIGO detectors acheive this by converting both arms of the Michelson each into resonant cavities. %NL%
+This is heuristically similar to making a Michelson with much longer arms due to the phase gain of the arm cavities.
 
 \com{common mode servo}
 
-\com{90\degree{} is good for GWs}
+There is an additional trick one may play once the effort has been spent to build a two-armed interferometer. %NL%
+We saw above that the common arm length of the interferometer may be difficult to measure due to laser frequency noise, thus you have effectively two interferometers, one of which is being largely unused. %NL%
+
+
+\com{df/f=dl/l}
 
 \section{Power recycling}
 \com{Power enhancement}
@@ -90,10 +103,6 @@ Because the beamsplitter directs the same laser source to each arm, it is obviou
 \com{coupled-cavity carrier filtering}
 
 \com{somewhere a figure of all LIGO}
-
-\section{Power recycled michelson with fabry perot arms}
-
-\com{schnupp assy}
 
 \com{old style now! aLIGO has srm}
 
