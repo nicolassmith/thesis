@@ -17,16 +17,14 @@ It is these broadband laser interferometer based gravitational wave antenn\ae{} 
 \section{Measurement of optical phase}
 In Chapter \ref{ch:gws} we introduced the idea that the waveform of a passing gravitational wave is imprinted on the phase of photons. %NL%
 The frequency of ocillation of a laser with a wavelength of 1.064$\upmu$m is 2.8$\times 10^{14}$Hz. %NL%
-There is no technology, currently concieved, which can directly measure the phase of electromagnetic waves at optical frequencies. %NL%
+There is no technology, currently concieved, with which one can directly measure the phase of electromagnetic waves at optical frequencies. %NL%
 One may, however, convert the change of phase of the electromagnetic wave into a change of amplitude by means of the phenomenon of interference. %NL%
-This is acheived by superposing two electromagnetic waves and measuring the power of the resulting wave, which is straightforward withe use of a photodetector (PD). %NL%
+This is acheived by superposing two electromagnetic waves and measuring the power of the resulting wave, which is straightforward with the use of a photodetector (PD). %NL%
 
 
 A device which exploits interference to measure phase changes of light is refered to as an \emph{interferometer}. %NL%
 Modern interferometers use one or multiple lasers as the source of light. %NL%
-Laser light is very well equipped for interferometry. %NL%
-Laser light is highly phase coherent compared to other light sources. %NL%
-Also, a laser beam can often approach the minimum beam divergence physically allowed. %NL%
+Laser light is very well equipped for interferometry, is highly phase coherent compared to other light sources and a laser beam can often approach the minimum beam divergence physically allowed. %NL%
 Types of interferometers include: Fabry-Perot, Michelson, Mach-Zehnder etc.
 
 \section{Resonant optical cavity}
@@ -82,6 +80,7 @@ This may be shown quantitatively if we consider the propagation of the laser fie
 
 \com{common mode rejection, with very simple calculation that has contrast defect. say that it's usually called laser frequency noise}
 
+\com{shot noise of michelson, show why to use the dark fringe}
 \com{90\degree{} is good for GWs}
 
 \section{Michelson with arm-cavities}
@@ -89,15 +88,27 @@ One may exploit the common mode rejection of laser noise provided by the Michels
 The LIGO detectors acheive this by converting both arms of the Michelson each into resonant cavities. %NL%
 This is heuristically similar to making a Michelson with much longer arms due to the phase gain of the arm cavities.
 
-\com{common mode servo}
+The resonance condition enforced by the control systems is that a half-odd integer number of wavelengths fit in the length of the cavity, or $L=n\lambda/2$ for some large integer $n$. %NL%
+In terms of the optical frequency $f$ this is $L=nc/f$. %NL%
+Thus if the control system holds the cavity on resonance by modifying the laser frequency, $\delta f$, and there is a length change $\delta L$,
+\begin{align}
+\delta L &= -\frac{nc}{f^2}\delta f, \\
+\frac{\delta L}{L} &= -\frac{\delta f}{f}.
+\label{eqn:dfdL}
+\end{align}
+Thus one may stabilize the frequency noise of a laser by locking the laser to some cavity. %NL%
+Provided that the length of the cavity is sufficiently stable, this may be used to reduce the frequency noise of the laser below its intrinsic level. %NL%
+Additionally, according to Equation \ref{eqn:dfdL}, this becomes more effective as the cavity is made longer.
 
-There is an additional trick one may play once the effort has been spent to build a two-armed interferometer. %NL%
-We saw above that the common arm length of the interferometer may be difficult to measure due to laser frequency noise, thus you have effectively two interferometers, one of which is being largely unused. %NL%
-
-
-\com{df/f=dl/l}
+This shows a trick one may play once the effort has been spent to build two arm-cavities. %NL%
+We saw above that the common arm length of the interferometer may be difficult to measure due to laser frequency noise. %NL%
+So it is not pracical to use the common arm mode as a gravitational wave sensor. %NL%
+To not let effectivly half of one's interferometer go to waste, one may exploit this additional opical cavity as a stable length reference. %NL%
+In the case of kilometer scale optical cavities, this provides a very stable frequency \com{quantitative statement here}.
 
 \section{Power recycling}
+Apart from the small fraction of light which is lost due to absorption or scattering, most of the light incident on a michelson interferometer operating on the dark fringe is reflected back from the input port toward the laser. %NL%
+
 \com{Power enhancement}
 
 \com{coupled-cavity carrier filtering}
