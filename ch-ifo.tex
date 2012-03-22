@@ -3,7 +3,7 @@
 \section{Experimental efforts to detect gravitational waves}
 In 1960, Joseph Weber made the suggestion that an aluminum bar could be used as a gravitational wave antenna \cite{bar1}. %NL%
 The idea being that as a burst of gravitational wave passes, it would induce a strain in the bar and excite the resonant mechanical modes of the bar. %NL%
-For reasons detailed elsewhere\cite{bar2,bar3}, the scientific community was never able to verify Weber’s subsequent claims of detection\cite{bar4} although various theories\cite{bar5,bar6} were developed to explain the enormous apparent flux of gravitational wave energy.
+For reasons detailed elsewhere\cite{bar2,bar3}, the scientific community was never able to verify Weber's subsequent claims of detection\cite{bar4} although various theories\cite{bar5,bar6} were developed to explain the enormous apparent flux of gravitational wave energy.
 
 In the subsequent years following Weber’s pioneering work, resonant bar detectors have improved greatly. %NL%
 Modern bar detectors are cryogenically cooled, have much improved seismic isolation and make use of SQUIDs to readout the signal \cite{bar7}.
@@ -110,7 +110,7 @@ This is known as the \emph{common mode servo}.
 
 \section{Power recycling}
 Apart from the small fraction of light which is lost due to absorption or scattering, most of the light incident on a michelson interferometer operating on the dark fringe is reflected back from the input port toward the laser. %NL%
-The solution to this very un-green situation is that the light can be directed back into the interferometer using a technique known as \emph{power recycling}\com{citation}. %NL%
+The solution to this very un-green situation is that the light can be directed back into the interferometer using a technique known as \emph{power recycling}. %NL%
 The most straightforward way to understand power recycling is to consider the interferometer as a kind of mirror. %NL%
 If one places another mirror, called the power recycling mirror (PRM), between the laser and interferometer, the new system forms a resonant cavity. %NL%
 A careful choice of the reflectivity of the power recycling mirror makes this resonant cavity critically coupled, and thus a minimal amount of light is reflected back towards the laser. %NL%
@@ -124,17 +124,17 @@ It so happens that the technique of PDH reflection locking is well adapted for s
 Placing one's photodetectors at the correct ports of the interferometer can provide all needed information for length sensing. %NL%
 The canonical reference on the topic is \citet{Fritschel:01}, but we will provide a short summary.
 
-As seen in figure \com{make figure}, the interferometer is composed of six primary mirrors. %NL%
+As seen in Figure \com{make figure}, the interferometer is composed of six primary mirrors. %NL%
 Theses are the \emph{power recycling mirror} (PRM), the \emph{beamsplitter} (BS) and the arm cavity optics, refered to as the \emph{end test mass} (ETM) and \emph{input test mass} (ITM), one for each arm, labeled X and Y. %NL%
 Only four degrees of freedom are relevent and measurable by their optical path length. %NL%
 In the case of LIGO, the degrees of freedom of all the mirrors are measured relative to the ITMs. %NL%
-The basis chosen to represent theses lengths is shown in figure \com{make me}. %NL%
+The basis chosen to represent theses lengths is shown in Figure \com{make me}. %NL%
 The length degrees of freedom are refered to as the \emph{differential arm length} (DARM), the \emph{common arm length} (CARM), the \emph{power recycling cavity length} (PRC) and the \emph{Michelson length} (MICH).
 
-\com{RF sidebands}
 Due to the optical topology and location of the sensors, the different sensing ports provide information about the various degrees of freedom of the interferometer. %NL%
-As in PDH, the length signal is encoded as an RF amplitude modulation of the photodetector power. %NL%
-This modulation can be in the cosine (in-phase, I) or sine (quadrature-phase, Q) quadratures. %NL%
+As in PDH, the light is phase modulated at RF frequencies before being injected into the interferometer and the length signal is encoded as an RF amplitude modulation of the photodetector power. %NL%
+Photodetectors are located at several output ports of the interferometer. %NL%
+The modulation can be in the cosine (in-phase, I) or sine (quadrature-phase, Q) quadratures. %NL%
 The length degree of freedom with most sensitivity to gravitational waves is DARM, which is the primary signal present at the antisymmetric (AS) port, though the AS port also has some contribution from MICH. %NL%
 MICH is the dominant contribution to the power recycling cavity pickoff (PO) port in the Q phase. %NL%
 The I phase of the PO port, and the reflection (REFL) port, both have a primary contribution from CARM, with a small contribution from PRC. %NL%
@@ -143,22 +143,34 @@ In LIGO this is solved due to the very high gain of the common mode servo. %NL%
 The common mode servo strongly supresses the REFL signal, creating a gain hierarchy with the PO-I signal. %NL%
 The signal which remains in PO-I is purely PRC.
 
-The next generation of interferometers, including Advanced LIGO, will include an additional signal recycling mirror which provides an additional length degree of freedom which further complicates the sensing and control \com{cite aligo isc}.
+The next generation of interferometers, including Advanced LIGO, will include an additional signal recycling mirror which provides an additional length degree of freedom which further complicates the sensing and control \cite{T1000298}.
 
-\com{like RF, the DC AS port is primarily DARM, some MICH}
-\com{before eLIGO, also DARM was RF readout, eLIGO and beyond will use DC readou, there are a few reasons for this...}
+\section{Non-modulated (DC) readout}
+Prior to the beginning of Advanced LIGO, there was a incremental upgrade called Enhanced LIGO. %NL%
+One of the modifications performed during the Enhanced LIGO upgrade was to change the scheme for sensing the DARM degree of freedom. %NL%
+The DC power at the AS port has a quadratic dependance on DARM. %NL%
+Thus if the arm cavities are differentially detuned slightly (on the order of 10 picometers) from resonance, there will be a linear dependence of the DC power from DARM. %NL%
+An alternate picture of the scheme is that in the RF scheme, the RF sidebands are the local oscillator which beats against the gravitational wave sidebands to produce an RF signal, which is a form of heterodyne detection. %NL%
+While in the DC case, the DARM offset produces a local oscillator at the same baseband frequency as the signal sidebands, which is a form of homodyne readout. %NL%
+A photodetector which measures this DC power is an alternative sensor for reading out DARM. %NL%
+DC readout of DARM has been implemented on the GEO600 detector \cite{GEODC}, the Caltech 40 meter prototype interferometer \cite{40mDC}, and for Enhanced LIGO \cite{Tobin}. %NL%
+DC readout of DARM is also part of the baseline design for Advanced LIGO. %NL%
+A very thorough treatment of the subject can be found in Tobin Fricke's PhD dissertation \cite{FrickeThesis}. %NL%
+Here we will cover some of the benefits of such a scheme.
 
-
-\section{The benefits of non-modulated readout}
 Light which resonates in the compound system composed of the arm cavities and the power recycling cavity experiences an effective cavity bandwidth which is much more narrow than the bandwidth of the arm cavities alone. %NL%
 \com{citation, formula?} This narrow bandwidth acts as a effective low pass filter of the laser noise fluctuations on the light. %NL%
 In the LIGO interferometers, the carrier light is resonant in the coupled cavity system and experiences a filter with a corner frequency of approximately 1Hz. %NL%
-The RF sidebands do not resonate in the arm cavities and thus do not experience such dramatic filtering.
+The RF sidebands do not resonate in the arm cavities and thus do not experience such dramatic filtering. %NL%
+The carrier light thus serves as a much quieter local oscillator than the RF sidebands. %NL%
+Thus switching to DC readout can reduce many laser noise couplings.
 
-\com{RF shot noise is higher}
+There is an intrinsic reduction in the shot noise when going from RF to DC readout. %NL%
+The total power on the detector is modulated at twice the frequency of the RF sidebands due to the beating of the upper and lower sidebands with eachother. %NL%
+The RF demodulation of DARM preferentially samples the signal at the peaks of the RF modulation, leading to a shot noise contribution higher than the DC case by a factor of $\sqrt{3/2}$. %NL%
+There is a very nice treatment of this effect in Section 2.9 of Tobin Fricke's dissertation \cite{FrickeThesis}.
 
-\com{easier for sq light injection}
-
-\com{reference tobin's thesis primarily.}
-
-\com{end with segue to OMC ch. For example, show how losses at the output reduce SNR.}
+One of the drawbacks of DC readout is that the audio modulation of any of the optical fields present at the AS port can cause noise in the readout. %NL%
+To mitigate the existence of the fields not necessary for producing the signal, i.e. %NL%
+any fields that are not the local oscillator or the signal fields, one may utilize an output mode cleaner. %NL%
+The output mode cleaner acts as both a spatial and frequency filter of the fields detected at the AS port and will be described in detail in the following chapter.
