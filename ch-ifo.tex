@@ -71,18 +71,48 @@ The pre-stabilized laser and input optics systems provide the LIGO interferomete
 \com{it's still not good enough (quantitative)}. %NL%
 To provide a phase sensitivity necessary to detect gravitational-wave it will be necessary to play a few tricks to hide our gravitational wave readout system from the noise still present on the input laser.
 
+\com{figure here}
 A Michelson interferometer (shown in Figure \com{make fig}) is composed of a beamsplitter, which usually has a power reflectivity of 50\perc{}, and two highly reflecting mirrors in each arm. %NL%
+The laser field propagates down each arm, before reflecting back towards the beamsplitter. %NL%
+The two beams then interfere at the beamsplitter and the intensity of light at the reflection and transmission ports vary with the differential length change of the arms. %NL%
+The power measured exiting each port is:
+\begin{align}
+\frac{P_{\rm{t}}}{P_{\rm{i}}} &= \left(\frac{r_1+r_2}{2}\right)^2\sin^2(k\Delta l)+\left(\frac{r_1-r_2}{2}\right)^2\cos^2(k\Delta l),\\
+\frac{P_{\rm{r}}}{P_{\rm{i}}} &= \left(\frac{r_1+r_2}{2}\right)^2\cos^2(k\Delta l)+\left(\frac{r_1-r_2}{2}\right)^2\sin^2(k\Delta l),
+\end{align}
+for \com{variables}. %NL%
+Thus one may measure the power dependence at one or both ports to measure differential length changes. %NL%
+Figure \com{make figure} shows the power dependence of the transmission port assuming symmetric reflectivities of the two arms. %NL%
+At first glance it might be desirable to make the ``set point'' %NL%
+of the interferometer be the place where the power varies most as a function of the differential length. %NL%
+In this case, halfway between the maximum and minimum of the fringe would have the greatest derivative and thus would maximize the signal measured for any given length change. %NL%
+This ignores, however the dependence of sensing noise on the interferometer set point. %NL%
+Shot noise is a fundamental source of measurement uncertainty due to the random arrival of photons on the photodetector. %NL%
+For a measurement of the transmitted power $P_{\rm t}$, and assuming $r_1=r_2=1$, the amplitude spectral density of the shot noise is:
+\begin{equation}
+N_{\rm{shot}}=\sqrt{2\frac{hc}{\lambda}P_{\rm i}\sin^2(k\Delta l)}.
+\end{equation}
+For a static interferoemeter set point $\Delta l$ with a small length variation $\delta l$, the resulting signal will be
+\begin{equation}
+S=\frac{\partial P}{\partial \Delta l}(\Delta l) \times \delta l = 2\sin{(\Delta l)}\cos{(\Delta l)}\times \delta l
+\end{equation}
+We may then determine the signal to noise ratio (SNR) of measurements of the differential length change of the interferometer. %NL%
+The noise varies as $\sin(\Delta l)$ while the signal varies as $\sin(\Delta l)\cos(\Delta l)$, thus the SNR will vary as $\cos(\Delta l)$. %NL%
+As one can see, the maximum signal to noise is acheived at $\Delta l = m \lambda$, which is (quite counter intuitively!) when no light is on the photodetector. %NL%
+In practice, some small amount of light will need to be on the photodetector so that the signal can overcome other sources of sensing noise. %NL%
+Though, as long as the offset remains small, the SNR approaches the maximum value. %NL%
+Applying this scheme of using a small static offset of the Michelson fringe to the initial LIGO detectors was one of the major upgrades performed in Enhanced LIGO.
+
 Using the analogy which treats the laser wavelength as a ruler with which one measures optical path length, there is an intuitive picture which shows why the correct arrangement of a Michelson interferometer may be made insensitive to fluctuations of your ruler. %NL%
 Because the beamsplitter directs the same laser source to each arm, it is obvious that fluctuations of the laser wavelength (our ruler) will be identical in both arms. %NL%
 This is a problem if one desires to measure the average length of the two arms, fluctuations in your ruler will directly cause fluctuations in your measurement. %NL%
 If, instead, the differential arm length change is the desired measurement, ruler length fluctuations are supressed. %NL%
-This may be shown quantitatively if we consider the propagation of the laser fields in the michelson interferometer.
-\com{michelson figure}
+For these reasons, both amplitude and phase fluctuations of the laser light are common mode and thus supressed when making a differential measurement of the arm lengths.
 
-\com{common mode rejection, with very simple calculation that has contrast defect. say that it's usually called laser frequency noise}
-
-\com{shot noise of michelson, show why to use the dark fringe}
-\com{90\degrees{} is good for GWs}
+To maximize the differential arm phase difference of a gravitational wave, one should choose the angle between the Michelson arms to match the ``shape'' %NL%
+of the waves. %NL%
+As seen in Chapter \ref{ch:gws}, gravitational waves stretch and squish along perpendicular axes. %NL%
+Therefore the most common arrangement of a michelson (90\degrees{}) also happens to be the optimum for detecting gravitational waves.
 
 \section{Michelson with arm-cavities}
 One may exploit the common mode rejection of laser noise provided by the Michelson interferometer, while taking advantage of the high phase sensitivity of a resonant cavity, by joining the two designs. %NL%
