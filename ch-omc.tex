@@ -23,7 +23,7 @@ When placed at the output of the interferometer we refer to such a cavity as the
 \end{itemize}
 }
 It can be useful to point out that interferometers based on both RF and DC readout can benefit from an OMC \com{readouts discussed in previous chapter}. %NL%
-Both the GEO and Virgo interferometers have used OMCs in an RF readout configuration, and LIGO experimented with an OMC before using DC readout \com{cite some things}. %NL%
+Both the GEO and Virgo interferometers have used OMCs in an RF readout configuration, and LIGO experimented with an OMC before using DC readout \cite{G040326}. %NL%
 An OMC is especially important for a DC readout interferometer because any audio frequency modulation of fields that are not the local oscillator or signal will contaminate the readout. %NL%
 Also, there is not benefit of the frequency selection of the RF readout to selectively omit unwanted audio modulation. %NL%
 An OMC may also be used to ensure the light provided by the differential arm offset dominates the DC power present on the detection photodiode, otherwise DC power from other fields (such as the RF sidebands) will contribute to photon shot noise without increasing the signal strength. %NL%
@@ -47,7 +47,7 @@ This meant that one of the most obvious lessons learned from these investigation
 For Enhanced LIGO, it was decided that the OMC would be housed inside the vacuum system and would be isolated from vibrations of the environment through the use of a seismically isolated optics table as well as a suspension system to provide passive filtering of vibrations.
 
 \subsection{Cavity optics}
-The design of the OMC was chosen to be a four mirror bowtie cavity \com{cite something}. %NL%
+The design of the OMC was chosen to be a four mirror bowtie cavity. %NL%
 This choice was made over that of a two mirror linear cavity so that there was spatial separation of the reflected beam. %NL%
 An even number of mirrors was chosen such that the horizontal and vertical HOMs would experience the same overall phase shift and thus experience nearly the same frequency offset from resonance, reducing the chances of an accidental HOM resonance.
 
@@ -69,16 +69,15 @@ A fast PZT between one of the optics and its tombstone acted as a low range (1/1
 Long range (several FSR) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately reffered to as the OTAS.\footnote{OMC Thermal Actuation System}
 
 A mode cleaner cavity is puporsefully designed such that HOMs do not ocuppy a degenerate resonance with the resonant \TEM{00} mode. %NL%
-Cavities are commonly characterized by their stability $g$-parameter.\footnote{Asymmetric cavities are often given two $g$-parameters, one for each mirror (labeled 1 and 2) and $g=\sqrt{g_1 g_2}$.} The Gouy shift accumulated in the cavity is determined by the cavity geometry as \com{citation}
+Cavities are commonly characterized by their stability $g$-parameter.\footnote{Asymmetric cavities are often given two $g$-parameters, one for each mirror (labeled 1 and 2) and $g=\sqrt{g_1 g_2}$.} The Gouy shift accumulated in the cavity is determined by the cavity geometry as
 \begin{equation}
 \label{eqn:gouyg}
-\cos(\eta)=g
+\cos(\eta)=g,
 \end{equation}
-where the $g$-parameter is usually given by $g=1-L/R$ for a linear cavity of length $L$ and mirror radius of curvature $R$. %NL%
-The OMC is not a linear cavity, and it travels the length of the cavity only once during a full round trip. %NL%
+where the $g$-parameter is usually given by $g=1-L/R$ for a linear cavity of length $L$ and mirror radius of curvature $R$.\cite{T080208} The OMC is not a linear cavity, and it travels the length of the cavity only once during a full round trip. %NL%
 To avoid confusion we will use the \emph{perimeter}, $p$, to denote the full round trip length. %NL%
 One may substitute $2L=p$ in most formulae for linear cavities. %NL%
-An extensive analysis was done by \com{Waldman} to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components trhough the OMC.\com{cite some waldman thing} The final design of the OMC was chosen to have a perimeter length of 1.042m, with 2m radius of curvature curved optics. %NL%
+An extensive analysis was done by Sam Waldman to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components trhough the OMC.\cite{T080144} The final design of the OMC was chosen to have a perimeter length of 1.042m, with 2m radius of curvature curved optics. %NL%
 This gives a $g$-parameter of 0.7395 and a Gouy phase shift of $0.235\pi$ radians. %NL%
 This implies that the fourth-order HOMs will accumulate almost $\pi$ radians relative to the \TEM{00} mode and be somewhat close to resonance.
 
@@ -96,7 +95,7 @@ The QPDs were located at different distances from the beam splitter to allow bot
 
 \subsection{Suspension system}
 The OMC breadboard was suspended from a two stage vibration isolation suspension. %NL%
-On the optics table was a large \com{steel} frame which housed the OMC. %NL%
+On the optics table was a large steel frame which housed the OMC. %NL%
 A intermediate mass stage was suspended from the frame by two pendulum wires attached to the ends of blade springs. %NL%
 The OMC breadboard was then suspended by four more wires attached to blade springs from the intermediate mass stage. %NL%
 Servo control provided feedback damping of the suspension eigenmodes. %NL%
@@ -117,7 +116,7 @@ The third was housed in a similar suspension system, but without any sensing or 
 
 \subsection{Vibration isolation table}
 The Tip-Tilts and OMC suspension frame were all housed in a single vacuum chamber and situated on top of a actively controlled seismic isolation table, the HAM-ISI.\footnote{HAM chamber Internal Seimic Isolation system} The HAM-ISI employed a single stage of passive vibration isolation, coupled with active feedback control using inertial sensors as the primary error signal. %NL%
-A thorough account of the HAM-ISI design and performance can be found \com{Jeff's thesis?}.
+A thorough account of the HAM-ISI design and performance can be found \cite{P1200020}.
 
 \section{Characterization of the H1 OMC}
 \begin{figure}
@@ -204,10 +203,10 @@ If we take the average value of the measured $g$s, this implies a radius of curv
 \end{table}
 
 These data were taken with the OMC at room temperature. %NL%
-It was discovered that the HOM spacing varied with the temperature of the thermal length actuator. %NL%
-\com{Talk more about this? %NL%
-it's own short section?}
-\com{data here.}
+It was later discovered that the HOM spacing varied with the temperature of the thermal length actuator. %NL%
+With high enough temperature, this would bring the fourth order modes in coincidence resonance with the \TEM{00} mode! %NL%
+We postulated that this was due to a change in the effective radius of curvature of the OTAS mirror as the OTAS expanded. %NL%
+To mitigate this, the temperature was kept low during operation.
 
 \subsection{Cavity finesse}
 The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity Finesse. %NL%
@@ -229,7 +228,7 @@ The fitting parameters return a cavity finesse of $367\pm2$.
 The intra-cavity loss of the OMC was infered by using 3 photodetectors. %NL%
 One measuring a sample of the input light, one measuring the reflected light, and one measuring the transmitted light. %NL%
 Both the reflection and transmission photodiodes were calibrated relative to the input diode. %NL%
-\com{figure showing calibration and measurement.} The calibration of the reflection diode was acheived by leaving the input and reflection diodes in place and blocking the beam inside the cavity. %NL%
+The calibration of the reflection diode was acheived by leaving the input and reflection diodes in place and blocking the beam inside the cavity. %NL%
 The relative power readings of the diodes were then recorded and the ratio gives the reflection calibration. %NL%
 One must also take into account the known transmission of the OMC input coupling mirror. %NL%
 This calibration is done without moving the beam to be used during the measurement and mitigates systematic errors due to variations in the sensitivity of the surface of the diodes. %NL%
@@ -239,7 +238,8 @@ The trasnmission diode was also calibrated relative to the input diode.
 This technique measures the light incident on the cavity, reflected from the cavity, and transmitted by the cavity. %NL%
 Any light which is missing is assumed to be absorbed and constitutes cavity losses. %NL%
 Table \ref{tab:lossmeas} shows the data taken to determine the cavity losses. %NL%
-\com{what is the calculation} The cavity transmission was measured to be approximately 96\perc{}.
+The transmission efficiency is defined to be $P_{\text{transmission}}/(P_{\text{input}}-P_{\text{reflection}})$. %NL%
+The cavity transmission efficiency was measured to be approximately 96\perc{}.
 
 \begin{table}
   \begin{center}
@@ -256,8 +256,7 @@ Table \ref{tab:lossmeas} shows the data taken to determine the cavity losses. %N
   \end{center}
 \end{table}
 
-
-\com{talk about degredation seen by squeezers}
+In September 2010, during the Sixth LIGO Science run, it was discovered that the output efficiency of the H1 interferometer had somehow degraded to worse than 80\%. After the end of the Science Run, this efficiency was determined to originate in the OMC. The cause of the degradation was that the position of the OTAS had become mechanically displaced. The reason of the displacement is not known but seems to have occured simultaneously with a site wide power outage at the LIGO Hanford Observatory. The beam clearance of the OTAS was very tight and the displacement caused significant beam clipping, leading to absorption in the OMC cavity.\cite{T1100562}
 
 \subsection{PZT actuator response}
 The PZT length actuator of the OMC was calibrated using by using applying a voltage to the PZT to sweep the cavity through both carrier and subcarrier resonances. %NL%
