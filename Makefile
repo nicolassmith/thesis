@@ -3,7 +3,7 @@ ap-chapters = ap-miscon ap-matrices ap-notes
 main = main
 auxiliary = cover contents
 bib = mainb
-viewer = evince
+viewer = okular
 
 chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
