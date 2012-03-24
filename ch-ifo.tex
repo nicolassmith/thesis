@@ -45,10 +45,19 @@ E_{\rm{cav}}=\frac{t_1}{1 - r_1 r_2 e^{i 2 k L}} E_{\rm i}.
 \end{equation}
 The reflected field is
 \begin{equation}
-E_{\rm{r}}=-r_1 E_{\rm i} + t_1r_2 e^{i 2 k L} E_{\rm{cav}}=
+E_{\rm{r}}=-r_1 E_{\rm i} + t_1r_2 e^{i 2 k L} E_{\rm{cav}}=\frac{-r_1+(r_1^2+t_1^2)e^{i2kL}r_2}{1-r_1r_2e^{i2kL}}E_{\rm i}.
 \end{equation}
-\com{finsh equations}
+Assuming no loss of the input mirror ($r_1^2+t_1^2=1$), the cavity field contains a factor of $r_2-r_1$ on resonance. %NL%
+Thus the sign of the reflected field on resonance depends on the relative magnitudes of the reflectivities of the cavity mirrors. %NL%
+In fact, when the reflectivities are equal, one has perfect impedence mathcing and no field is relfected. %NL%
 
+\infobox{Coupling conditoin of a resonant cavity}{
+\begin{itemize}
+\item $r_1<r_2$: Overcoupled, reflected field changes sign on resonance.
+\item $r_1>r_2$: Undercoupled, no sign change on resonance.
+\item $r_1=r_2$: Critically coupled, no field reflected on resonance.
+\end{itemize}
+}
 \com{introduce the idea of over/under/critically coupled, undercoupled is not used much because mostly doesn't penetrate}
 
 \com{phase gain is sometimes thought of multiple bounces in the arm (in particle picture)}
