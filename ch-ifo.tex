@@ -34,6 +34,21 @@ As a steady state is approached, the light already in the cavity may interfere w
 When the circulating field is in phase with the incident pumping field, \emph{resonance} occurs. %NL%
 For a linear cavity, this happens when the length is equal to an integer number of half-wavelengths of the light \cite{Siegman}.
 
+\com{words}\com{and figure}
+\begin{equation}
+E_{\rm{cav}}=t_1 E_{\rm i} + r_1 r_2 e^{i 2 k L} E_{\rm{cav}},
+\end{equation}
+where $r_j$ and $t_j$ are the amplitude reflection and transmission coefficients of the cavity mirrors. %NL%
+This allows us to solve for the intra-cavity field
+\begin{equation}
+E_{\rm{cav}}=\frac{t_1}{1 - r_1 r_2 e^{i 2 k L}} E_{\rm i}.
+\end{equation}
+The reflected field is
+\begin{equation}
+E_{\rm{r}}=-r_1 E_{\rm i} + t_1r_2 e^{i 2 k L} E_{\rm{cav}}=
+\end{equation}
+\com{finsh equations}
+
 \com{introduce the idea of over/under/critically coupled, undercoupled is not used much because mostly doesn't penetrate}
 
 \com{phase gain is sometimes thought of multiple bounces in the arm (in particle picture)}
@@ -94,7 +109,7 @@ N_{\rm{shot}}=\sqrt{2\frac{hc}{\lambda}P_{\rm i}\sin^2(k\Delta l)}.
 \end{equation}
 For a static interferoemeter set point $\Delta l$ with a small length variation $\delta l$, the resulting signal will be
 \begin{equation}
-S=\frac{\partial P}{\partial \Delta l}(\Delta l) \times \delta l = 2\sin{(\Delta l)}\cos{(\Delta l)}\times \delta l
+S=\frac{\partial P_{\rm i}}{\partial \Delta l}(\Delta l) \times \delta l = 2P_{\rm i}\sin{(\Delta l)}\cos{(\Delta l)}\times \delta l
 \end{equation}
 We may then determine the signal to noise ratio (SNR) of measurements of the differential length change of the interferometer. %NL%
 The noise varies as $\sin(\Delta l)$ while the signal varies as $\sin(\Delta l)\cos(\Delta l)$, thus the SNR will vary as $\cos(\Delta l)$. %NL%
@@ -107,7 +122,8 @@ Using the analogy which treats the laser wavelength as a ruler with which one me
 Because the beamsplitter directs the same laser source to each arm, it is obvious that fluctuations of the laser wavelength (our ruler) will be identical in both arms. %NL%
 This is a problem if one desires to measure the average length of the two arms, fluctuations in your ruler will directly cause fluctuations in your measurement. %NL%
 If, instead, the differential arm length change is the desired measurement, ruler length fluctuations are supressed. %NL%
-For these reasons, both amplitude and phase fluctuations of the laser light are common mode and thus supressed when making a differential measurement of the arm lengths.
+For these reasons, both amplitude and phase fluctuations of the laser light are common mode and thus supressed when making a differential measurement of the arm lengths. %NL%
+This is covered quantitatively in Section 10.4 of Malik Rakhmanov's thesis \cite{Rakhmanov}.
 
 To maximize the differential arm phase difference of a gravitational wave, one should choose the angle between the Michelson arms to match the ``shape'' %NL%
 of the waves. %NL%
@@ -188,8 +204,8 @@ DC readout of DARM is also part of the baseline design for Advanced LIGO. %NL%
 A very thorough treatment of the subject can be found in Tobin Fricke's PhD dissertation \cite{FrickeThesis}. %NL%
 Here we will cover some of the benefits of such a scheme.
 
-Light which resonates in the compound system composed of the arm cavities and the power recycling cavity experiences an effective cavity bandwidth which is much more narrow than the bandwidth of the arm cavities alone. %NL%
-\com{citation, formula?} This narrow bandwidth acts as a effective low pass filter of the laser noise fluctuations on the light. %NL%
+Light which resonates in the compound system composed of the arm cavities and the power recycling cavity experiences an effective cavity bandwidth which is much more narrow than the bandwidth of the arm cavities alone \cite{Rakhmanov}. %NL%
+This narrow bandwidth acts as a effective low pass filter of the laser noise fluctuations on the light. %NL%
 In the LIGO interferometers, the carrier light is resonant in the coupled cavity system and experiences a filter with a corner frequency of approximately 1Hz. %NL%
 The RF sidebands do not resonate in the arm cavities and thus do not experience such dramatic filtering. %NL%
 The carrier light thus serves as a much quieter local oscillator than the RF sidebands. %NL%
