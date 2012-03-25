@@ -50,18 +50,31 @@ E_{\rm{r}}=-r_1 E_{\rm i} + t_1r_2 e^{i 2 k L} E_{\rm{cav}}=\frac{-r_1+(r_1^2+t_
 Assuming no loss of the input mirror ($r_1^2+t_1^2=1$), the cavity field contains a factor of $r_2-r_1$ on resonance. %NL%
 Thus the sign of the reflected field on resonance depends on the relative magnitudes of the reflectivities of the cavity mirrors. %NL%
 In fact, when the reflectivities are equal, one has perfect impedence mathcing and no field is relfected. %NL%
+The case of $r_2>r_1$ is known as overcoupled, and the reflected field changes sign when passing through resonance. %NL%
+When $r_2<r_1$, there is no sign change, and this is known as undercoupled. %NL%
+The case when no field is reflected ($r_2=r_1$) is known as critically coupled. %NL%
+The LIGO arm cavities (Section \ref{sec:armcav}) are an example of strongly overcoupled cavities, while the output mode cleaner (Chapter \ref{ch:omc}) is a critically coupled cavity. %NL%
+Undercoupled cavities are more rare because the majority of the light does not penetrate the cavity and thus does not provide a very sensative measurement.
 
-\infobox{Coupling conditoin of a resonant cavity}{
-\begin{itemize}
-\item $r_1<r_2$: Overcoupled, reflected field changes sign on resonance.
-\item $r_1>r_2$: Undercoupled, no sign change on resonance.
-\item $r_1=r_2$: Critically coupled, no field reflected on resonance.
-\end{itemize}
-}
-\com{introduce the idea of over/under/critically coupled, undercoupled is not used much because mostly doesn't penetrate}
+The phase change on reflection is enhanced relative to the phase change inside the cavity. %NL%
+For a change of the intracavity phase $\phi = k L$, the phase of the reflected field will change as
+\begin{equation}
+\phi_r=2\tan^{-1}\left(\frac{2\mathcal{F}}{\pi}\phi\right),
+\end{equation}
+\com{where...} The phase of the reflected field has a steep variation compared to the intracavoty phase. Colloquially this can be viewed in the particle picture of light that the photons bounce around in the cavity many times before exiting and thus experience an accumulated phase gain many times that of a single round trip.
 
-\com{phase gain is sometimes thought of multiple bounces in the arm (in particle picture)}
-
+%\infobox{Coupling conditoin of a resonant cavity}{
+%\begin{wrapfigure}{r}{.4\textwidth}
+%\begin{tabular}{|p{5cm}|}
+%Coupling condition of a resonant cavity\\
+%\begin{itemize}
+%\item $r_1<r_2$: Overcoupled, reflected field changes sign on resonance.
+%\item $r_1>r_2$: Undercoupled, no sign change on resonance.
+%\item $r_1=r_2$: Critically coupled, no field reflected on resonance.
+%\end{itemize}
+%\end{tabular}
+%\end{wrapfigure}
+%}
 \section{Pound-Drever-Hall reflection locking}
 Pound-Drever-Hall (PDH) reflection locking is a powerful technique by which the resonance condition of a laser incident on an optical cavity may be controlled by use of a feedback control system \cite{PDH}. %NL%
 In this control system, the error signal is a measurement of the detuning of the laser light from resonance. %NL%
@@ -140,6 +153,7 @@ As seen in Chapter \ref{ch:gws}, gravitational waves stretch and squish along pe
 Therefore the most common arrangement of a michelson (90\degrees{}) also happens to be the optimum for detecting gravitational waves.
 
 \section{Michelson with arm-cavities}
+\label{sec:armcav}
 One may exploit the common mode rejection of laser noise provided by the Michelson interferometer, while taking advantage of the high phase sensitivity of a resonant cavity, by joining the two designs. %NL%
 The LIGO detectors acheive this by converting both arms of the Michelson each into resonant cavities. %NL%
 This is heuristically similar to making a Michelson with much longer arms due to the phase gain of the arm cavities.
