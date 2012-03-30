@@ -25,7 +25,10 @@ ch-omc.pdf : $(matfigs-omc) $(figs-omc)
 figs-beacon = $(addprefix figs-beacon/,blockdiagtight.pdf ditherarrows.pdf shotSNRtightedited.pdf)
 ch-beacon.pdf : $(figs-beacon)
 
-figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc)
+figs-ifo = $(addprefix figs-ifo/,resonantcav.pdf michelson.pdf prfpmi.pdf)
+ch-ifo.pdf : $(figs-ifo)
+
+figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo)
 matfigs = $(matfigs-omc)
 
 # fig rules

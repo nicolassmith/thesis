@@ -34,7 +34,16 @@ As a steady state is approached, the light already in the cavity may interfere w
 When the circulating field is in phase with the incident pumping field, \emph{resonance} occurs. %NL%
 For a linear cavity, this happens when the length is equal to an integer number of half-wavelengths of the light \cite{Siegman}.
 
-\com{words}\com{and figure}
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-ifo/resonantcav.pdf}
+  \end{center}
+  \caption[Diagram of a resonant cavity and control system]{Diagram of a resonant cavity and control system. \com{say more}}
+  \label{fig:resonantcav}
+\end{figure}
+
+\com{words} seen in Figure \ref{fig:resonantcav}.
 \begin{equation}
 E_{\rm{cav}}=t_1 E_{\rm i} + r_1 r_2 e^{i 2 k L} E_{\rm{cav}},
 \end{equation}
@@ -90,8 +99,9 @@ Creation of the input beam is done by sending the beam through an optical modula
 This usually comes in the form of an \emph{electro optic modulator} (EOM), which is an optical device that has a electronically variable optical path length. %NL%
 Applying a periodic electronic signal, usually at radio frequencies (RF), will induce a periodic phase modulation of the laser beam. %NL%
 As will be discussed in Section \ref{sec:freqspace}, the primary result of this phase modulation is to impose new optical fields separated in frequency from the original field by the RF modulation frequency. %NL%
-These new fields are usually refered to as \emph{phase modulated sidebands}, the central frequency component is refered to as the \emph{carrier}.\com{figure with carrier/sidebands and cavity? %NL%
-also put modulation/demodulation block diagram} The modulation frequency is chosen such that the sidebands are not resonant in the cavity, and thus do not experience a phase shift when the cavity changes length. %NL%
+These new fields are usually refered to as \emph{phase modulated sidebands}, the central frequency component is refered to as the \emph{carrier}. %NL%
+Figure \ref{fig:resonantcav} shows a typical arrangement of a PDH control system. %NL%
+The modulation frequency is chosen such that the sidebands are not resonant in the cavity, and thus do not experience a phase shift when the cavity changes length. %NL%
 Comparison of the constant sideband phase with the resonating carrier phase through interferometry yields a very sensitive cavity length measurement. %NL%
 
 
@@ -108,8 +118,16 @@ The pre-stabilized laser and input optics systems provide the LIGO interferomete
 \com{it's still not good enough (quantitative)}. %NL%
 To provide a phase sensitivity necessary to detect gravitational-wave it will be necessary to play a few tricks to hide our gravitational wave readout system from the noise still present on the input laser.
 
-\com{figure here}
-A Michelson interferometer (shown in Figure \com{make fig}) is composed of a beamsplitter, which usually has a power reflectivity of 50\perc{}, and two highly reflecting mirrors in each arm. %NL%
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-ifo/michelson.pdf}
+  \end{center}
+  \caption[Diagram of a Michelson interferometer.]{Diagram of Michelson interferometer. Photodetectors are arranged to measure the transmitted power, $P_{\rm t}$, and the reflected power, $P_{\rm t}$. The interferometer is operated near a dark fringe on transmission, and most of the light is directed to the reflection photodetector.}
+  \label{fig:michelson}
+\end{figure}
+
+A Michelson interferometer (shown in Figure \ref{fig:michelson}) is composed of a beamsplitter, which usually has a power reflectivity of 50\perc{}, and two highly reflecting mirrors in each arm. %NL%
 The laser field propagates down each arm, before reflecting back towards the beamsplitter. %NL%
 The two beams then interfere at the beamsplitter and the intensity of light at the reflection and transmission ports vary with the differential length change of the arms. %NL%
 The power measured exiting each port is:
@@ -119,7 +137,7 @@ The power measured exiting each port is:
 \end{align}
 for \com{variables}. %NL%
 Thus one may measure the power dependence at one or both ports to measure differential length changes. %NL%
-Figure \com{make figure} shows the power dependence of the transmission port assuming symmetric reflectivities of the two arms. %NL%
+The power dependence at the transmission port is periodic with differential length changes of the interferometer. %NL%
 At first glance it might be desirable to make the ``set point'' %NL%
 of the interferometer be the place where the power varies most as a function of the differential length. %NL%
 In this case, halfway between the maximum and minimum of the fringe would have the greatest derivative and thus would maximize the signal measured for any given length change. %NL%
@@ -183,21 +201,28 @@ The solution to this very un-green situation is that the light can be directed b
 The most straightforward way to understand power recycling is to consider the interferometer as a kind of mirror. %NL%
 If one places another mirror, called the power recycling mirror (PRM), between the laser and interferometer, the new system forms a resonant cavity. %NL%
 A careful choice of the reflectivity of the power recycling mirror makes this resonant cavity critically coupled, and thus a minimal amount of light is reflected back towards the laser. %NL%
-Thus more light is usable for measurement in the interferometer and this has a benefitial effect on the sensitivty by increasing the effective input power and reducing shot noise.
+\com{how much light is in the amrs as a result?} Thus more light is usable for measurement in the interferometer and this has a benefitial effect on the sensitivty by increasing the effective input power and reducing shot noise.
 
 \section{Sensing and control of a power recycled Michelson interferometer with arm-cavities}
-\com{somewhere a figure of all LIGO}
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-ifo/prfpmi.pdf}
+  \end{center}
+  \caption[Diagram of a power-recycled Fabry-Perot Michelson interferometer.]{Diagram of a power-recycled Fabry-Perot Michelson interferometer. \com{more, and finish figure}}
+  \label{fig:prfpmi}
+\end{figure}
 The optical setup of the full LIGO interferometer is quite a bit more complicated than that of a single cavity. %NL%
 To maintain the resonance condition of the entire interferometer, it is necessary to sense and control four independent length degrees of freedom. %NL%
 It so happens that the technique of PDH reflection locking is well adapted for sensing the length degrees of freedom of more complicated interferometers. %NL%
 Placing one's photodetectors at the correct ports of the interferometer can provide all needed information for length sensing. %NL%
 The canonical reference on the topic is \citet{Fritschel:01}, but we will provide a short summary.
 
-As seen in Figure \com{make figure}, the interferometer is composed of six primary mirrors. %NL%
+As seen in Figure \ref{fig:prfpmi}, the interferometer is composed of six primary mirrors. %NL%
 Theses are the \emph{power recycling mirror} (PRM), the \emph{beamsplitter} (BS) and the arm cavity optics, refered to as the \emph{end test mass} (ETM) and \emph{input test mass} (ITM), one for each arm, labeled X and Y. %NL%
 Only four degrees of freedom are relevent and measurable by their optical path length. %NL%
 In the case of LIGO, the degrees of freedom of all the mirrors are measured relative to the ITMs. %NL%
-The basis chosen to represent theses lengths is shown in Figure \com{make me}. %NL%
+The basis chosen to represent theses lengths is shown in Figure \ref{fig:prfpmi}. %NL%
 The length degrees of freedom are refered to as the \emph{differential arm length} (DARM), the \emph{common arm length} (CARM), the \emph{power recycling cavity length} (PRC) and the \emph{Michelson length} (MICH).
 
 Due to the optical topology and location of the sensors, the different sensing ports provide information about the various degrees of freedom of the interferometer. %NL%
