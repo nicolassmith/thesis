@@ -156,7 +156,8 @@ The noise varies as $\sin(\Delta l)$ while the signal varies as $\sin(\Delta l)\
 As one can see, the maximum of the magnitude of the signal to noise is acheived at $\Delta l = m \lambda$ for $m \in \mathbb{Z}$, which is (quite counter intuitively!) when no light is on the photodetector. %NL%
 In practice, some small amount of light will need to be on the photodetector so that the signal can overcome other sources of sensing noise. %NL%
 Though, as long as the offset remains small, the SNR approaches the maximum value. %NL%
-Applying this scheme of using a small static offset of the Michelson fringe to the initial LIGO detectors was one of the major upgrades performed in Enhanced LIGO.
+Applying this scheme of using a small static offset of the Michelson fringe to the initial LIGO detectors was one of the major upgrades performed in Enhanced LIGO. %NL%
+Other benefits of using this technique over a RF demodulation style technique is discussed in Section \ref{sec:dcreadout}.
 
 Using the analogy which treats the laser wavelength as a ruler with which one measures optical path length, there is an intuitive picture which shows why the correct arrangement of a Michelson interferometer may be made insensitive to fluctuations of your ruler. %NL%
 Because the beamsplitter directs the same laser source to each arm, it is obvious that fluctuations of the laser wavelength (our ruler) will be identical in both arms. %NL%
@@ -241,6 +242,7 @@ The next generation of interferometers, including Advanced LIGO, will include an
 This adds an additional length degree of freedom which further complicates the sensing and control \cite{T1000298}.
 
 \section{Non-modulated (DC) readout}
+\label{sec:dcreadout}
 Prior to the beginning of Advanced LIGO, there was a incremental upgrade called Enhanced LIGO. %NL%
 One of the modifications performed during the Enhanced LIGO upgrade was to change the scheme for sensing the DARM degree of freedom. %NL%
 The DC power at the AS port has a quadratic dependance on DARM. %NL%
