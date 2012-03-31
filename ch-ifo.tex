@@ -29,25 +29,26 @@ Types of interferometers include: Fabry-Perot, Michelson, Mach-Zehnder etc.
 
 \section{Resonant optical cavity}
 A resonant cavity, sometimes refered to as a Fabry-Perot (FP) cavity, is constructed with two partially transmitting mirrors placed in series. %NL%
-When light is incident on the front, or input, mirror some is transmitted into the cavity. %NL%
+When light is incident on the front, or input, mirror, some of that light is transmitted into the cavity. %NL%
 As a steady state is approached, the light already in the cavity may interfere with new light which is being pumped through the input mirror. %NL%
 When the circulating field is in phase with the incident pumping field, \emph{resonance} occurs. %NL%
-For a linear cavity, this happens when the length is equal to an integer number of half-wavelengths of the light \cite{Siegman}.
+Assuming plane waves and a linear cavity, this happens when the length is equal to an integer number of half-wavelengths of the light \cite{Siegman}.
 
 \begin{figure}
   \begin{center}
   \leavevmode
   \includegraphics{figs-ifo/resonantcav.pdf}
   \end{center}
-  \caption[Diagram of a resonant cavity and control system]{Diagram of a resonant cavity and control system. \com{say more}}
+  \caption[Diagram of a resonant cavity and control system]{Diagram of a resonant cavity and control system. In this representation, the cavity is held on resonance by feeding back to the position of the end mirror. Alternatively, resonance can be acheived by feeding back to the laser frequency, causing the laser wavelength to follow the length of the cavity.}
   \label{fig:resonantcav}
 \end{figure}
 
-\com{words} seen in Figure \ref{fig:resonantcav}.
+We may consider the interference condition after steady state has been acheived as there being a intracavity field, $E_{\rm{cav}}$, which is made up of some of the input light, $E_{\rm i}$ which has been transmitted, and some cavity light which has made a round trip path through the cavity. %NL%
+The arrangement of the fields may be seen in Figure \ref{fig:resonantcav}.
 \begin{equation}
 E_{\rm{cav}}=t_1 E_{\rm i} + r_1 r_2 e^{i 2 k L} E_{\rm{cav}},
 \end{equation}
-where $r_j$ and $t_j$ are the amplitude reflection and transmission coefficients of the cavity mirrors. %NL%
+where $r_j$ and $t_j$ are the amplitude reflection and transmission coefficients of the cavity mirrors, for $j=\{1,2\}$ with 1 being the label of the input mirror, and 2 being the label of the end mirror. %NL%
 This allows us to solve for the intra-cavity field
 \begin{equation}
 E_{\rm{cav}}=\frac{t_1}{1 - r_1 r_2 e^{i 2 k L}} E_{\rm i}.
@@ -70,7 +71,10 @@ For a change of the intracavity phase $\phi = k L$, the phase of the reflected f
 \begin{equation}
 \phi_r=2\tan^{-1}\left(\frac{2\mathcal{F}}{\pi}\phi\right),
 \end{equation}
-\com{where...} The phase of the reflected field has a steep variation compared to the intracavoty phase. Colloquially this can be viewed in the particle picture of light that the photons bounce around in the cavity many times before exiting and thus experience an accumulated phase gain many times that of a single round trip.
+where $\mathcal{F}$ is known as the \emph{cavity finesse} and has the approximate value $\mathcal{F}\approx \pi\frac{\sqrt{r_1r_2}}{1-r_1r_2}$ where the approximation is valid for $\{r_1,r_2\}\approx 1$. %NL%
+For large values of the finesse, the phase of the reflected field has a steep variation compared to the intracavity phase. %NL%
+A very typical cavity may have a value of the finesse which is a few hundred. %NL%
+Colloquially this can be viewed in the particle picture of light that the photons bounce around in the cavity many times before exiting and thus experience an accumulated phase gain many times that of a single round trip.
 
 %\infobox{Coupling conditoin of a resonant cavity}{
 %\begin{wrapfigure}{r}{.4\textwidth}
@@ -115,8 +119,7 @@ Demodulating the power recorded by a photodetector in reflection will provide th
 
 \section{The Michelson interferometer}
 The pre-stabilized laser and input optics systems provide the LIGO interferometers with an extremely stable light source with which to measure phase pertubations. %NL%
-\com{it's still not good enough (quantitative)}. %NL%
-To provide a phase sensitivity necessary to detect gravitational-wave it will be necessary to play a few tricks to hide our gravitational wave readout system from the noise still present on the input laser.
+To provide a phase sensitivity necessary to detect gravitational waves it will be necessary to play a few tricks to hide our gravitational wave readout system from the noise still present on the input laser.
 
 \begin{figure}
   \begin{center}
@@ -132,10 +135,10 @@ The laser field propagates down each arm, before reflecting back towards the bea
 The two beams then interfere at the beamsplitter and the intensity of light at the reflection and transmission ports vary with the differential length change of the arms. %NL%
 The power measured exiting each port is:
 \begin{align}
-\frac{P_{\rm{t}}}{P_{\rm{i}}} &= \left(\frac{r_1+r_2}{2}\right)^2\sin^2(k\Delta l)+\left(\frac{r_1-r_2}{2}\right)^2\cos^2(k\Delta l),\\
-\frac{P_{\rm{r}}}{P_{\rm{i}}} &= \left(\frac{r_1+r_2}{2}\right)^2\cos^2(k\Delta l)+\left(\frac{r_1-r_2}{2}\right)^2\sin^2(k\Delta l),
+\frac{P_{\rm{t}}}{P_{\rm{BS}}} &= \left(\frac{r_1+r_2}{2}\right)^2\sin^2(kl_-)+\left(\frac{r_1-r_2}{2}\right)^2\cos^2(kl_-),\\
+\frac{P_{\rm{r}}}{P_{\rm{BS}}} &= \left(\frac{r_1+r_2}{2}\right)^2\cos^2(kl_-)+\left(\frac{r_1-r_2}{2}\right)^2\sin^2(kl_-),
 \end{align}
-for \com{variables}. %NL%
+where $r_{1,2}$ are the amplitude reflectivities of the mirrors, $k=2\pi/\lambda$ is the wavenumber of the light, $P_{\rm{BS}}$ is the power incident on the beamsplitter, and $l_-$ is the difference of the lengths of the rwo arms. %NL%
 Thus one may measure the power dependence at one or both ports to measure differential length changes. %NL%
 The power dependence at the transmission port is periodic with differential length changes of the interferometer. %NL%
 At first glance it might be desirable to make the ``set point'' %NL%
@@ -145,15 +148,16 @@ This ignores, however the dependence of sensing noise on the interferometer set 
 Shot noise is a fundamental source of measurement uncertainty due to the random arrival of photons on the photodetector. %NL%
 For a measurement of the transmitted power $P_{\rm t}$, and assuming $r_1=r_2=1$, the amplitude spectral density of the shot noise is:
 \begin{equation}
-N_{\rm{shot}}=\sqrt{2\frac{hc}{\lambda}P_{\rm i}\sin^2(k\Delta l)}.
+\label{eqn:michshotnoise}
+N_{\rm{shot}}=\sqrt{2\frac{hc}{\lambda}P_{\rm i}\sin^2(kl_-)}.
 \end{equation}
-For a static interferoemeter set point $\Delta l$ with a small length variation $\delta l$, the resulting signal will be
+For a static interferoemeter set point $l_-$ with a small length variation $\delta l$, the resulting signal will be
 \begin{equation}
-S=\frac{\partial P_{\rm i}}{\partial \Delta l}(\Delta l) \times \delta l = 2P_{\rm i}\sin{(\Delta l)}\cos{(\Delta l)}\times \delta l
+S=\frac{\partial P_{\rm i}}{\partial l_-}(l_-) \times \delta l = 2P_{\rm i}\sin{(kl_-)}\cos{(kl_-)}\times k\delta l
 \end{equation}
 We may then determine the signal to noise ratio (SNR) of measurements of the differential length change of the interferometer. %NL%
-The noise varies as $\sin(\Delta l)$ while the signal varies as $\sin(\Delta l)\cos(\Delta l)$, thus the SNR will vary as $\cos(\Delta l)$. %NL%
-As one can see, the maximum of the magnitude of the signal to noise is acheived at $\Delta l = m \lambda$ for $m \in \mathbb{Z}$, which is (quite counter intuitively!) when no light is on the photodetector. %NL%
+The noise varies as $|\sin(kl_-)|$ while the signal varies as $\sin(kl_-)\cos(kl_-)$, thus the SNR will vary as $\cos(kl_-)$. %NL%
+As one can see, the maximum of the magnitude of the signal to noise is acheived at $kl_- = m \lambda$ for $m \in \mathbb{Z}$, which is (quite counter intuitively!) when no light is on the photodetector. %NL%
 In practice, some small amount of light will need to be on the photodetector so that the signal can overcome other sources of sensing noise. %NL%
 Though, as long as the offset remains small, the SNR approaches the maximum value. %NL%
 Applying this scheme of using a small static offset of the Michelson fringe to the initial LIGO detectors was one of the major upgrades performed in Enhanced LIGO. %NL%
@@ -193,7 +197,6 @@ This shows a trick one may play once the effort has been spent to build two arm-
 We saw above that the common arm length of the interferometer may be difficult to measure due to laser frequency noise. %NL%
 So it is not pracical to use the common arm mode as a gravitational wave sensor. %NL%
 To not let effectivly half of one's interferometer go to waste, one may exploit this additional opical cavity as a stable length reference. %NL%
-In the case of kilometer scale optical cavities, this provides a very stable frequency \com{quantitative statement here}. %NL%
 This is known as the \emph{common mode servo}.
 
 \section{Power recycling}
@@ -201,8 +204,9 @@ Apart from the small fraction of light which is lost due to absorption or scatte
 The solution to this very un-green situation is that the light can be directed back into the interferometer using a technique known as \emph{power recycling}. %NL%
 The most straightforward way to understand power recycling is to consider the interferometer as a kind of mirror. %NL%
 If one places another mirror, called the power recycling mirror (PRM), between the laser and interferometer, the new system forms a resonant cavity. %NL%
-A careful choice of the reflectivity of the power recycling mirror makes this resonant cavity critically coupled, and thus a minimal amount of light is reflected back towards the laser. %NL%
-\com{how much light is in the amrs as a result?} Thus more light is usable for measurement in the interferometer and this has a benefitial effect on the sensitivty by increasing the effective input power and reducing shot noise.
+A careful choice of the reflectivity of the power recycling mirror makes this resonant cavity critically coupled, and thus a minimal amount of light is reflected back toward the laser. %NL%
+In the case of LIGO, the power incident on the beam splitter can be enhanced by a factor of around 50, which correspondingly decreases the shot noise as in Equation \ref{eqn:michshotnoise}. %NL%
+
 
 \section{Sensing and control of a power recycled Michelson interferometer with arm-cavities}
 \begin{figure}
