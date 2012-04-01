@@ -16,7 +16,7 @@ The metric satisfies the sourced field equation
 \begin{equation}
 \oper{G}=\frac{8\pi G}{c^4}\oper{T},
 \end{equation}
-where $\oper{G}$ is known as the Einstein tensor and acts as a second-order differential operator on the metric tensor, $G$ is Newton's constant, $c$ is the speed of light, and $\oper{T}$ is the stress-energy tensor which holds information about all forms of energy in the space-time.
+where $\oper{G}$ is known as the Einstein tensor and acts as a second-order differential operator on the metric tensor, $G$ is Newton's constant, $c$ is the speed of light, and $\oper{T}$ is the stress-energy tensor which holds information about all forms of energy in the space-time.\footnote{Further reading on the General Theory of Relativity can be found in \com{Schultz and Carrol}}
 
 \section{The general theory of relativity in the linearized regime}
 
@@ -34,24 +34,24 @@ The total phase measured (modulo $2\pi$) of a photon with frequency $f$ after tr
 \end{equation}
 Along the path, the photon follows a null trajectory ($\dt s^2=0$) and furthermore in \com{equation above} the metric does not mix time and spatial components ($g_{0i}=g_{i0}=0$), thus
 \begin{equation}
-\dd t = c\sqrt{g_{ij}\dd x^i \dd x^j},
+c\dd t = \sqrt{g_{ij}\dd x^i \dd x^j},
 \end{equation}
 where $i$ and $j$ only include spatial components.
 
 Let us consider a simple path made of two segments, propagation from the origin $(0,0,0)$ to a point in the $x$ direction which is $L_x$ away $(L_x,0,0)$, and then back to the origin. %NL%
 The phase along this path is
 \begin{equation}
-\phi_{\text{round trip}}^{\text{x-path}}= 2\pi f \left(\int_0^{L_x}+\int^0_{L_x}\right)\sqrt{g_{xx}}\dd x \approx 4\pi f L_x \left(1+\frac{h_+}{2}\right).
+\phi_{\text{round trip}}^{\text{x-path}}= \frac{2\pi f}{c} \left(\int_0^{L_x}-\int^0_{L_x}\right)\sqrt{g_{xx}}\dd x \approx \frac{4\pi f}{c} L_x \left(1+\frac{h_+}{2}\right).
 \end{equation} 
 The same argument for a path along the $y$ gives
 \begin{equation}
-\phi_{\text{round trip}}^{\text{y-path}} \approx 4\pi f L_y \left(1-\frac{h_+}{2}\right).
+\phi_{\text{round trip}}^{\text{y-path}} \approx \frac{4\pi f}{c} L_y \left(1-\frac{h_+}{2}\right).
 \end{equation} 
 
-Instead, we may choose a path along the line $x=y$, in this case integration is taken along $\dt u = \sqrt{\dt x \dd y}$. %NL%
+Instead, we may choose a path along the line $x=y$, in this case integration is taken along $ u(\sigma) = (\sigma,\sigma,0)$. %NL%
 The phase obtained is
 \begin{equation}
-\phi_{\text{round trip}}^{\text{u-path}} \approx 4\pi f L_u \left(1+\frac{h_\times}{2}\right).
+\phi_{\text{round trip}}^{\text{u-path}} \approx \frac{4\pi f}{c} L_u \left(1+\frac{h_\times}{2}\right).
 \end{equation} 
 Thus the effect of the $h_+$ amplitude is to differentially stretch paths in the $x$ and $y$ directions, while $h_\times$ stretches along axes $45 \degrees$ from $x$ and $y$.
 \section{Sources of gravitational waves}
