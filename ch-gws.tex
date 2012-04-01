@@ -20,9 +20,13 @@ The metric satisfies the sourced field equation
 where $\oper{G}$ is known as the Einstein tensor and acts as a second-order differential operator on the metric tensor, $G$ is Newton's constant, $c$ is the speed of light, and $\oper{T}$ is the stress-energy tensor which holds information about all forms of energy in the space-time.\footnote{Further reading on the General Theory of Relativity can be found in \com{Schultz and Carrol}}
 
 \section{The general theory of relativity in the linearized regime}
+In the weak field limit of Genral Relativity, the metric tensor $\oper{g}$ will be close to the Minkowski metric of Special relativity. %NL%
+Far from sources of gravitational waves, the wave amplitudes will be quite small and thus
+\begin{align}
+g_{\mu \nu}&\approx \eta_{\mu \nu}+h_{\mu \nu}, &|h_{\mu \nu}|\ll 1
+\end{align}
 
-Wave-like solutions to Equation \ref{eqn:einstein} \com{finish}. %NL%
-We are interested in finding \com{finish}.
+Wave-like solutions to Equation \ref{eqn:einstein} will propagate in the absence of any source terms (although they may be created by sources).
 
 \com{gravitational waves}
 \com{get wave equation and the h+ and hx polarizations}
@@ -31,20 +35,20 @@ We are interested in finding \com{finish}.
 Presume we have a device which can measure the phase of a plane electromagnetic wave or alternatively, a photon. %NL%
 The device is not under the influence of any external forces apart from gravity. %NL%
 Suppose we send a photon in a particular direction, we have arranged for the photon to return to us with a system of mirrors and transceivers. %NL%
-The total phase measured (modulo $2\pi$) of a photon with frequency $f$ after traveling along a path $\rm S$ is\footnote{The treatment given in this chapter assumes that the path taken by the photon is short compared to the wavelength of the gravitational wave, known as the `long wavelength approximation.' A fully consisten relativistic treatment is given by \citet{RakhmanovPhoton}.}
+The total phase measured (modulo $2\pi$) of a photon with frequency $f$ after traveling along a path $\rm S$ is\footnote{The treatment given in this chapter assumes that the path taken by the photon is short compared to the wavelength of the gravitational wave, known as the `long wavelength approximation.' A fully consistent relativistic treatment is given by \citet{RakhmanovPhoton}.}
 \begin{equation}
 \phi_{\text{round trip}} = 2\pi f\oint_{\rm S} \dd t.
 \end{equation}
 Along the path, the photon follows a null trajectory ($\dt s^2=0$) and furthermore in \com{equation above} the metric does not mix time and spatial components ($g_{0i}=g_{i0}=0$), thus
 \begin{equation}
-c\dd t = \sqrt{g_{ij}\dd x^i \dd x^j},
+c\dd t = \sqrt{|g_{ij}\dd x^i \dd x^j|},
 \end{equation}
 where $i$ and $j$ only include spatial components.
 
 Let us consider a simple path made of two segments, propagation from the origin $(0,0,0)$ to a point in the $x$ direction which is $L_x$ away $(L_x,0,0)$, and then back to the origin. %NL%
 The phase along this path is
 \begin{equation}
-\phi_{\text{round trip}}^{\text{x-path}}= \frac{2\pi f}{c} \left(\int_0^{L_x}-\int^0_{L_x}\right)\sqrt{g_{xx}}\dd x \approx \frac{4\pi f}{c} L_x \left(1+\frac{h_+}{2}\right).
+\phi_{\text{round trip}}^{\text{x-path}}= \frac{2\pi f}{c} \left(\int_0^{L_x}-\int^0_{L_x}\right)\sqrt{|g_{xx}|}\dd x \approx \frac{4\pi f}{c} L_x \left(1+\frac{h_+}{2}\right).
 \end{equation} 
 The same argument for a path along the $y$ gives
 \begin{equation}
