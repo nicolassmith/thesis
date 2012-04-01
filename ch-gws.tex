@@ -5,7 +5,7 @@
 
 % what is the metric
 Einstein described space-time as a four dimensional manifold which may be completely described by a metric tensor $\oper{g}$. %NL%
-The space-time metric defines a co-variant interval between infinitely seperated events as
+The space-time metric defines a co-variant interval between infinitesimally seperated events as
 \begin{equation}
 \dd s^2 = g_{\mu \nu}\dd x^\mu \dd x^\nu,
 \end{equation}
@@ -26,7 +26,14 @@ Far from sources of gravitational waves, the wave amplitudes will be quite small
 g_{\mu \nu}&\approx \eta_{\mu \nu}+h_{\mu \nu}, &|h_{\mu \nu}|\ll 1
 \end{align}
 
-Wave-like solutions to Equation \ref{eqn:einstein} will propagate in the absence of any source terms (although they may be created by sources).
+We are interested in Wave-like solutions that will propagate in the absence of any source terms (although they may be created by sources), thus $\oper{T}=0$. %NL%
+By convinience we choose what is known as the \emph{transverse traceless} gague \com{write gague?}. %NL%
+Given these simplifications, Equation \ref{eqn:einstein} becomes
+\begin{equation}
+\left(-\frac{\partial^2}{\partial t^2}+\nabla^2\right)h_{\mu \nu}=0
+\end{equation}
+.
+
 
 \com{gravitational waves}
 \com{get wave equation and the h+ and hx polarizations}
@@ -41,7 +48,7 @@ The total phase measured (modulo $2\pi$) of a photon with frequency $f$ after tr
 \end{equation}
 Along the path, the photon follows a null trajectory ($\dt s^2=0$) and furthermore in \com{equation above} the metric does not mix time and spatial components ($g_{0i}=g_{i0}=0$), thus
 \begin{equation}
-c\dd t = \sqrt{|g_{ij}\dd x^i \dd x^j|},
+c\dd t = \sqrt{|g_{ij}|\dd x^i \dd x^j},
 \end{equation}
 where $i$ and $j$ only include spatial components.
 
