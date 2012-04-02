@@ -10,33 +10,51 @@ The space-time metric defines a co-variant interval between infinitesimally sepe
 \dd s^2 = g_{\mu \nu}\dd x^\mu \dd x^\nu,
 \end{equation}
 where $\mu$ and $\nu$ are indicies for the space and time coordinates, and $g_{\mu \nu}$ are the elements of $\oper{g}$. %NL%
-The trajectories of free particles are defined by geodesic paths in the manifold, which may be derived from the metric tensor.
+The trajectories of free particles are defined by geodesic paths in the manifold, which may be derived from the metric tensor\com{cite}.
 
 The metric satisfies the sourced field equation
 \begin{equation}
 \label{eqn:einstein}
 \oper{G}=\frac{8\pi G}{c^4}\oper{T},
 \end{equation}
-where $\oper{G}$ is known as the Einstein tensor and acts as a second-order differential operator on the metric tensor, $G$ is Newton's constant, $c$ is the speed of light, and $\oper{T}$ is the stress-energy tensor which holds information about all forms of energy in the space-time.\footnote{Further reading on the General Theory of Relativity can be found in \com{Schultz and Carrol}}
+where $\oper{G}$ is known as the Einstein tensor and acts as a second-order differential operator acting on the metric tensor, $G$ is Newton's constant, $c$ is the speed of light, and $\oper{T}$ is the stress-energy tensor which holds information about all forms of energy in the space-time.\footnote{Further reading on the General Theory of Relativity can be found in \com{Schultz and Carrol}}
 
 \section{The general theory of relativity in the linearized regime}
-In the weak field limit of Genral Relativity, the metric tensor $\oper{g}$ will be close to the Minkowski metric of Special relativity. %NL%
+In the weak field limit of Genral Relativity, the metric tensor $\oper{g}$ will be close to the Minkowski metric of Special Relativity\com{citation}. %NL%
 Far from sources of gravitational waves, the wave amplitudes will be quite small and thus
 \begin{align}
 g_{\mu \nu}&\approx \eta_{\mu \nu}+h_{\mu \nu}, &|h_{\mu \nu}|\ll 1
 \end{align}
 
 We are interested in Wave-like solutions that will propagate in the absence of any source terms (although they may be created by sources), thus $\oper{T}=0$. %NL%
-By convinience we choose what is known as the \emph{transverse traceless} gague \com{write gague?}. %NL%
+For convinience we choose what is known as the \emph{transverse traceless} gague \com{write gague?}. %NL%
 Given these simplifications, Equation \ref{eqn:einstein} becomes
 \begin{equation}
-\left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}+\nabla^2\right)h_{\mu \nu}=0
+\left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}+\nabla^2\right)h_{\mu \nu}=0.
 \end{equation}
-.
-
-
-\com{gravitational waves}
-\com{get wave equation and the h+ and hx polarizations}
+This is of course the wave equation in three dimensions, which has solutions of the form
+\begin{equation}
+\oper{h}=\oper{A}\exp{(ik_\alpha x^\alpha)}.
+\end{equation}
+Due to symmetries and chosen gague conditions, a wave traveling in the $z$ direction with amplitude $\oper{A}$ has only two independant components\com{citation}
+\begin{align*}
+A_{xx}&=-A_{yy}\equiv h_+,\\
+A_{xy}&=A{yx}\equiv h_\times,
+\end{align*}
+the rest being zero. %NL%
+Thus a wave propagating in the $z$ direction takes the form
+\begin{equation}
+\label{eqn:wavefunc}
+\oper{h} \doteq 
+\ms
+0 & 0 & 0 & 0 \\
+0 & h_+ & h_\times & 0 \\
+0 & h_\times & -h_+ & 0 \\
+0 & 0 & 0 & 0
+\me
+\cos(\omega [z/c- t]).
+\end{equation}
+The following section examines ones of the physical observables of such a wave.
 
 \section{The phase of a photon in the presence of a gravitational wave}
 Presume we have a device which can measure the phase of a plane electromagnetic wave or alternatively, a photon. %NL%
@@ -46,7 +64,7 @@ The total phase measured (modulo $2\pi$) of a photon with frequency $f$ after tr
 \begin{equation}
 \phi_{\text{round trip}} = 2\pi f\oint_{\rm S} \dd t.
 \end{equation}
-Along the path, the photon follows a null trajectory ($\dt s^2=0$) and furthermore in \com{equation above} the metric does not mix time and spatial components ($g_{0i}=g_{i0}=0$), thus
+Along the path, the photon follows a null trajectory ($\dt s^2=0$) and furthermore, according to Equation \ref{eqn:wavefunc}, the metric does not mix time and spatial components ($g_{0i}=g_{i0}=0$), thus
 \begin{equation}
 c\dd t = \sqrt{|g_{ij}|\dd x^i \dd x^j},
 \end{equation}
@@ -62,14 +80,32 @@ The same argument for a path along the $y$ gives
 \phi_{\text{round trip}}^{\text{y-path}} \approx \frac{4\pi f}{c} L_y \left(1-\frac{h_+}{2}\right).
 \end{equation} 
 
-Instead, we may choose a path along the line $x=y$, in this case integration is taken along $ u(\sigma) = (\sigma,\sigma,0)$. %NL%
+Instead, we may choose a path along the line $y=x$, in this case integration is taken along $ u(\sigma) = (\sigma,\sigma,0)$. %NL%
 The phase obtained is
 \begin{equation}
 \phi_{\text{round trip}}^{\text{u-path}} \approx \frac{4\pi f}{c} L_u \left(1+\frac{h_\times}{2}\right).
 \end{equation} 
 Thus the effect of the $h_+$ amplitude is to differentially stretch paths in the $x$ and $y$ directions, while $h_\times$ stretches along axes $45 \degrees$ from $x$ and $y$. %NL%
-
+ The stretching effect is proportional to the unstretched length, and thus is manifested as a strain.
 \com{figure of ring of masses}
 \section{Sources of gravitational waves}
 % just cite some source papers, also maybe give the canonical 10^-21 thing. No calculations.
+Of the known physical forces, gravity is bar far the most feeble. %NL%
+When Einstein first postulated the existence of gravitational waves, he thought their effects would never be detected.
 
+The lowest mass-energy multipole moment that may source gravitational radiation is the mass quadrupole. %NL%
+The lower moments, the mass-energy monopole and dipole are guaranteed constant by energy and momentum conservation respectively \com{cite}.
+
+A system of two bodies in orbit is a splendid source of gravitational radiation. %NL%
+The first evidence of the existence of gravitational radiation came from the Hulse-Taylor pulsar system which showed the characteristic loss of orbital energy due to gravitational wave radiation damping \com{cite}. %NL%
+The waves emitted by this system will have a discouragingly small amplitude of \com{something}. %NL%
+
+
+A more promising prospect for the creation of gravitational waves that may be measurable is that of compact object systems in their final orbits before merger. %NL%
+\com{CBC}
+
+\com{monochromatic, NS}
+
+\com{bursts, SN}
+
+\com{stochastic, BB}
