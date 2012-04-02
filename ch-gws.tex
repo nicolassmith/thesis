@@ -1,33 +1,32 @@
 \chapter{Gravitational waves}
 
-% einstein describes GWs
-\com{Einstein and GR.}
-
 % what is the metric
-Einstein described space-time as a four dimensional manifold which may be completely described by a metric tensor $\oper{g}$. %NL%
+In 1915, Einstein described space-time as a four dimensional manifold which may be completely described by a metric tensor $\oper{g}$. %NL%
 The space-time metric defines a co-variant interval between infinitesimally seperated events as
 \begin{equation}
 \dd s^2 = g_{\mu \nu}\dd x^\mu \dd x^\nu,
 \end{equation}
 where $\mu$ and $\nu$ are indicies for the space and time coordinates, and $g_{\mu \nu}$ are the elements of $\oper{g}$. %NL%
-The trajectories of free particles are defined by geodesic paths in the manifold, which may be derived from the metric tensor\com{cite}.
+The trajectories of free particles are defined by geodesic paths in the manifold, which may be derived from the metric tensor\cite[Chap. %NL%
+3]{carroll2004spacetime}.
 
 The metric satisfies the sourced field equation
 \begin{equation}
 \label{eqn:einstein}
 \oper{G}=\frac{8\pi G}{c^4}\oper{T},
 \end{equation}
-where $\oper{G}$ is known as the Einstein tensor and acts as a second-order differential operator acting on the metric tensor, $G$ is Newton's constant, $c$ is the speed of light, and $\oper{T}$ is the stress-energy tensor which holds information about all forms of energy in the space-time.\footnote{Further reading on the General Theory of Relativity can be found in \com{Schultz and Carrol}}
+where $\oper{G}$ is known as the Einstein tensor and acts as a second-order differential operator acting on the metric tensor, $G$ is Newton's constant, $c$ is the speed of light, and $\oper{T}$ is the stress-energy tensor which holds information about all forms of energy in the space-time.
 
 \section{The general theory of relativity in the linearized regime}
-In the weak field limit of Genral Relativity, the metric tensor $\oper{g}$ will be close to the Minkowski metric of Special Relativity\com{citation}. %NL%
+In the weak field limit of Genral Relativity, the metric tensor $\oper{g}$ will be close to the Minkowski metric of Special Relativity \cite[Chap. %NL%
+7]{carroll2004spacetime}. %NL%
 Far from sources of gravitational waves, the wave amplitudes will be quite small and thus
 \begin{align}
 g_{\mu \nu}&\approx \eta_{\mu \nu}+h_{\mu \nu}, &|h_{\mu \nu}|\ll 1
 \end{align}
 
 We are interested in Wave-like solutions that will propagate in the absence of any source terms (although they may be created by sources), thus $\oper{T}=0$. %NL%
-For convinience we choose what is known as the \emph{transverse traceless} gague \com{write gague?}. %NL%
+For convinience we choose what is known as the \emph{transverse traceless} gague. %NL%
 Given these simplifications, Equation \ref{eqn:einstein} becomes
 \begin{equation}
 \left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}+\nabla^2\right)h_{\mu \nu}=0.
@@ -36,13 +35,14 @@ This is of course the wave equation in three dimensions, which has solutions of 
 \begin{equation}
 \oper{h}=\oper{A}\exp{(ik_\alpha x^\alpha)}.
 \end{equation}
-Due to symmetries and chosen gague conditions, a wave traveling in the $z$ direction with amplitude $\oper{A}$ has only two independant components\com{citation}
+Due to symmetries and chosen gague conditions, a wave traveling in the $z$ direction with amplitude $\oper{A}$ has only two independent components \cite[Chap. %NL%
+9]{schutz1985first}
 \begin{align*}
 A_{xx}&=-A_{yy}\equiv h_+,\\
 A_{xy}&=A{yx}\equiv h_\times,
 \end{align*}
 the rest being zero. %NL%
-Thus a wave propagating in the $z$ direction takes the form
+Thus such a wave takes the form
 \begin{equation}
 \label{eqn:wavefunc}
 \oper{h} \doteq 
@@ -54,7 +54,8 @@ Thus a wave propagating in the $z$ direction takes the form
 \me
 \cos(\omega [z/c- t]).
 \end{equation}
-The following section examines ones of the physical observables of such a wave.
+Waves of this kind were first predicted by Einstein in 1918. %NL%
+Here we explore one of the physical observables of such a wave.
 
 \section{The phase of a photon in the presence of a gravitational wave}
 Presume we have a device which can measure the phase of a plane electromagnetic wave or alternatively, a photon. %NL%
@@ -89,23 +90,32 @@ Thus the effect of the $h_+$ amplitude is to differentially stretch paths in the
  The stretching effect is proportional to the unstretched length, and thus is manifested as a strain.
 \com{figure of ring of masses}
 \section{Sources of gravitational waves}
-% just cite some source papers, also maybe give the canonical 10^-21 thing. No calculations.
 Of the known physical forces, gravity is bar far the most feeble. %NL%
 When Einstein first postulated the existence of gravitational waves, he thought their effects would never be detected.
 
-The lowest mass-energy multipole moment that may source gravitational radiation is the mass quadrupole. %NL%
-The lower moments, the mass-energy monopole and dipole are guaranteed constant by energy and momentum conservation respectively \com{cite}.
+According to General Relativity, the lowest mass-energy multipole moment that may source gravitational radiation is the mass quadrupole. %NL%
+The lower moments, the mass-energy monopole and dipole are guaranteed constant by energy and momentum conservation respectively \cite[Section 7.5]{carroll2004spacetime}.
 
 A system of two bodies in orbit is a splendid source of gravitational radiation. %NL%
-The first evidence of the existence of gravitational radiation came from the Hulse-Taylor pulsar system which showed the characteristic loss of orbital energy due to gravitational wave radiation damping \com{cite}. %NL%
-The waves emitted by this system will have a discouragingly small amplitude of \com{something}. %NL%
+The first evidence of the existence of gravitational radiation came from the Hulse-Taylor pulsar system which showed the characteristic loss of orbital energy due to gravitational wave radiation damping \cite{Taylor1979}. %NL%
+The waves emitted by this system will have a discouragingly small amplitude of $h\approx 10^{-26}$ when they reach Earth, not to mention a period of several hours. %NL%
 
 
 A more promising prospect for the creation of gravitational waves that may be measurable is that of compact object systems in their final orbits before merger. %NL%
-\com{CBC}
+The time scales of such collisions would lead to gravitational waves in the audio frequency band. %NL%
+Of the expected sources, the coalescence of black holes or neutron stars are the ones most likely to produce gravitational wave with enough magnitude to be detected on Earth with modern detectors \cite{CBCrates}. %NL%
+Data taken from the LIGO and Virgo detectors have been analyzed and upper limits of these sources have been set \cite{CBC,CBCblackholes}.
 
-\com{monochromatic, NS}
+It is also possible that an aspherical spinning neutron star will produce waves large enough to be detected. %NL%
+Such waves would be largely monochromatic, with some modulation due to relative motion of the source and the Earth. %NL%
+Currently, the best limit on the contribution of neutron star spin-down of the Crab\cite{crab} and Vela\cite{Vela} pulsars are determined by the lack of gravitational radiation detected by LIGO and Virgo.
 
-\com{bursts, SN}
+There are some transient gravitational wave sources for which no waveform models exist. %NL%
+An example of such a source would be the waves emitted by a supernova explosion. %NL%
+Searches for such unmodeled sources have yielded a strain sensitivity of $\sim 10^{-21} / \sqrt{\rm{Hz}}$, but no waves have yet been detected \cite{bursts}.
 
-\com{stochastic, BB}
+We may one day discover a stationary, broadband source of gravitational radiation. %NL%
+Most cosmological model predict some level of stochastic gravitational wave background \cite{bbn,stochdirectional}. %NL%
+The information gained by detecting such waves will be extremely interesting because if they are of cosmological origin, they would have been created mere fractions of a second after the Big Bang.
+
+Now we must focus on the antenn\ae{} used to detect gravitational radiation.
