@@ -57,22 +57,21 @@ Thus one technique for reducing beam jitter coupling is to design one's optical 
 This of course also reduces their efficiency as an alignment control mirror.
 
 Futhermore, we again see a nonlinear coupling in the form of mixing of the incident misalignment, $\alpha$, and the jitter of the steering mirror, $\theta$. %NL%
-We may suppose that the input alignment has both a DC component and possibly some low frequency wandering motion. %NL%
-If this is coupled with high frequency jitter of the steering mirror, the mixing of frequencies can cause noise in the power transmission at and around the jitter frequency of the steering optic.
+We may suppose that the input alignment has both a DC component and possibly some low frequency (a few to several Hz) wandering motion. %NL%
+If this is coupled with high frequency (i.e. %NL%
+frequencies in the detection band) jitter of the steering mirror, the mixing of frequencies can cause noise in the power transmission at and around the jitter frequency of the steering optic.
 
 \com{introduce bilinear beam jitter in s6}
 \com{show plot similar to tobin's about bilinear coupling}
-\section{The relationship of alignment control and beam jitter}
-% depending on bandwidth, alignment system can remove low/DC or high. Though not if you are using a beacon system. Also beware of fringe wrapping.
-As discussed in Chapter \ref{ch:beacon}, a standard cavity alignment control system is designed to minimize the \TEM{01} and \TEM{10} mode content incident on the cavity. %NL%
-We have also just seen that any misalignment increases the linear coupling of beam jitter noise to the cavity transmission signal. %NL%
-This connection is manifestly clear in the case of a dither alignment servo, where beam jitter is purposely induced on the beam, and the servo obtains optimum alignment by minimizing the coupling of the dither frequency in transmission.
 
-Because the carrier frequency component is often the dominant contribution to the total power of the transmitted signal, it is usually the case 
-
-
-%fluffy
 \section{Mechanical resonances of beam steering optics}
+% Where does HAM6 come into all this?
+The Enhanced LIGO upgrade introduced several modifications to the readout chain of the interferometer. %NL%
+As discussed in Chapter \ref{ch:omc}, with the introduction of the in-vacuum OMC, it was necessary to use new beam steering and modematching optics to couple the beam exiting the interferometer to the OMC cavity. %NL%
+These steering optics, as well as the OMC, were all housed in a single vacuum chamber on top of the prototype HAM ISI platform which is planned to be used copiously in Advanced LIGO. %NL%
+Although it was not fully appreciated at the start of Enhanced LIGO, the new isolation platform provided much reduced vibration isolation at audio frequencies when compared to the isolation tables used in the HAM chambers in Initial LIGO. %NL%
+\com{Jeff's figure}
+
 % Talk about comparison of HAM ISI vs HAM stack
 
 % show original TT0 (mirror on post)
@@ -91,6 +90,28 @@ Because the carrier frequency component is often the dominant contribution to th
 % show figure of performance
 
 % reference to sergey's awesome subtraction stuff
-\section{Modification of modal content of the carrier and audio sidebands}
 
-% fluffy section
+\section{The relationship of alignment control and beam jitter}
+% depending on bandwidth, alignment system can remove low/DC or high. Though not if you are using a beacon system. Also beware of fringe wrapping.
+As discussed in Chapter \ref{ch:beacon}, a standard cavity alignment control system is designed to minimize the \TEM{01} and \TEM{10} mode content incident on the cavity. %NL%
+We have also just seen that any misalignment increases the linear coupling of beam jitter noise to the cavity transmission signal. %NL%
+This connection is manifestly clear in the case of a dither alignment servo, where beam jitter is purposely induced on the beam, and the servo obtains optimum alignment by minimizing the coupling of the dither frequency in transmission. %NL%
+If the DC and low frequencies of the alignment error can be sufficiently supressed by a control system, the beam jitter coupling is consequently reduced.
+
+%Attempts were made in Enhanced LIGO to directly reduce the high frequency beam jitter on the OMC with a high bandwidth alignment servo. For sufficiently high control bandwith, it was seen that an increase in gain would cause an increase in broadband noise in the OMC transmission. One possible mechanism for the increased noise \com{OMC backscatter} \cite{T060303}.
+
+We break this relationship between alignment optimization and jitter coupling minimization when a beacon or optimal style alignment system is used as desribed in Section \ref{sec:beaconalignment}. %NL%
+Because the carrier frequency component is often the dominant contribution to the total power of the transmitted signal, it is usually the case that beam jitter noise orignating from the carrier is dominant over other frequency components. %NL%
+Alignment schemes which optimize the alignment of the audio frequency signal sidebands will disregard the HOM content of the carrier beam, and thus may increase beam jitter coupling. %NL%
+This additional beam jitter coupling may be mitigated by control of the relative modal content of the audio sidebands and the carrier, which will be discussed in the following section.
+
+\section[Modification of modal content of the carrier and audio sidebands]{Modification of modal content of the carrier and audio sidebands\footnote{This section will satisfy as mearly a record of some lore learned during Enhanced LIGO. It is not intended to provide a quantitative model, but merely act as a guide for future efforts.}}
+
+After the implementation of the beacon alignment system in Enhanced LIGO, some beam jitter peaks of unknown origin remained in the sensitive region of the detector. %NL%
+\com{figure?}. %NL%
+It was discovered that the height of these peaks were controlable by modifying the beam position on the antisymmetric port alignment sensor\footnote{In Initial/Enhanced LIGO, this was known as WFS1.} of the main interferometer alignment control system. %NL%
+We postulated that because of offsets in the readout of the interferometer alignment signals, changing the beam position would change the error point offsets of the alignment feedback system of the main interferometer. %NL%
+The antisymmetric port signal primarily feeds back to the differential alignment mode of the ETMs. %NL%
+It was thought that this lead to a redistribution of the modal content of the carrier field exiting the antisymetric port of the interferometer relative to the fields of the audio sidebands. %NL%
+One could imagine that the position of a local minimum, with respect to alignment, of the carrier transmission could be moved into coincidence with the optimal alignment point of the signal fields. %NL%
+Attempts were made to instead directly inject offsets into the alignment error signals to produce the same effect, but they were never as successful as varying the pointing on the alingment sensor.
