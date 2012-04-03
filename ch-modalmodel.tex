@@ -117,9 +117,9 @@ Due to the mirror misalignment, the phase of the beam at the plane of the mirror
 This can be represented as a phase multiplication of $\exp[-2ik\theta_x x]$. %NL%
 \citet{Hefetz:97} show that in the modal basis this is satisfied by the operator
 \begin{equation}
-\oper{M}(\Theta_x) = \exp\left[ -2i\Theta_x\sum_{m,n,k,l=0}^\infty \vect{mn} \delta_{nl} \left( \sqrt k \delta_{m[k-1]}+\sqrt m \delta_{m[k+1]} \right) \form{kl}\right],
-\end{equation}\com{double check this factor of 2 in the exp}
-where $\delta_{mn}$ is the Kroneker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, or the ratio of the misalignment angle to the beam divergence angle. %NL%
+\oper{M}(\Theta_x) = \exp\left[ -i\Theta_x\sum_{m,n,k,l=0}^\infty \vect{mn} \delta_{nl} \left( \sqrt k \delta_{m[k-1]}+\sqrt m \delta_{m[k+1]} \right) \form{kl}\right],
+\end{equation}
+where $\delta_{mn}$ is the Kroneker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, at the beam waist, this is the ratio of the misalignment angle to the beam divergence angle. %NL%
 One can see that the $k$ index is connected to the $m$ index that differs by one mode number, this will provide the correct transfer of energy from the \TEM{00} mode to the \TEM{10} mode as discussed above. %NL%
 We can use a matrix representation with three components representing the \TEM{00}, \TEM{10} and \TEM{01} amplitudes, explicitly for field $\vect{E}$:
 \begin{equation}
@@ -128,7 +128,8 @@ We can use a matrix representation with three components representing the \TEM{0
 
 In this representation, 
 \begin{equation}
-\oper{M}(\Theta_x) \doteq \exp \left( -2i 
+\label{eqn:mirrortilt}
+\oper{M}(\Theta_x) \doteq \exp \left( -i 
 \ms 
 0 & \Theta_x & 0 \\
 \Theta_x & 0 & 0 \\
@@ -137,8 +138,8 @@ In this representation,
 \right)
 \approx
 \ms
-1-2\Theta_x^2 & -2i\Theta_x& 0 \\
--2i\Theta_x & 1-2\Theta_x^2& 0 \\
+1-\frac{1}{2}\Theta_x^2 & -i\Theta_x& 0 \\
+-i\Theta_x & 1-\frac{1}{2}\Theta_x^2& 0 \\
 0 & 0 & 1 \\
 \me .
 \end{equation}

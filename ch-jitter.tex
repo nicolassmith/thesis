@@ -1,16 +1,89 @@
 \chapter{Techniques for reducing output mode cleaner beam jitter noise}
-% possible beam jitter reduction:
-%servo - hard to get bandwidth, especially w beacon
-%alignment setpoint - can conflict with beacon, not optimizing what you really want, maybe modifyable with WFS1 pointing
-%beam jitter reduction is the best bet
+%This was in my opinion the most important noise source that came with the inclusion of the OMC in LIGO
 
+\section{The noise mechanism of beam jitter incident on a high finesse cavity}
+Motion of the beam incident on a high finesse cavity alters the overlap of said beam with the resonant mode of the cavity. %NL%
+This leads to fluctuations in the amount of light which can couple into the cavity and consequently, power fluctuations of the transmitted beam. %NL%
+The power fluctuation can spoil the measurement of the intrinsic amplitude modulation of the beam if the measurement and fluctuations occur at the same frequencies.
+
+For a beam incident on the cavity which has a lateral (perpendicular to the direction of propagation) and angular misalignment, constrained to a plane, we have the following expression for the power transmitted through the cavity
+\begin{equation}
+\label{eqn:simplejitter}
+P\approx P_0\left(1-\left(\frac{\Delta x}{w_0}\right)^2-\left(\frac{\theta}{\theta_d}\right)^2\right),
+\end{equation}
+where $P_0$ is the power transmitted of the aligned beam, $\Delta x$ is the beam waist displacement, $\theta$ is the beam waist tilt, $w_0$ is the beam waist radius, and $\theta_d$ is the divergence angle of the beam. %NL%
+The approximation holds while both the angular and lateral misalignments are small.
+
+Equation \ref{eqn:simplejitter} shows that beam misalignments couple to the transmitted power quadradically. %NL%
+This leads to a few relevant consequences. %NL%
+The coupling of beam jitter to transmitted power is nonlinear, thus frequency components of the beam motion may be mixed together, producing new frequencies in the transmitted power. %NL%
+Also, the linear coupling coefficient of beam jitter to power fluctuations is proportional to the DC beam misalignment. %NL%
+This causes the direct linear coupling of frequency components of beam jitter to power fluctuations to vary as the DC pointing error varies.
+
+Steering optics in the beam path leading to the cavity which are vibrating may transfer vibrations to the laser beam and produce beam jitter noise. %NL%
+Let us investigate beam jitter coupling of an optic in the modal picture. %NL%
+ We will work in a basis of only the \TEM{00} and \TEM{01} modes. %NL%
+Let's assume we have a beam which is dominantly in the \TEM{00} mode as measured in the basis of our cavity, with some small amplitude of \TEM{01} mode. %NL%
+In other words, we begin with a beam which is slightly misaligned.
+\begin{equation}
+\vect{E}_{\text{input}}=E_0\left(\vect{00}+\alpha\vect{01}\right).
+\end{equation}
+The misalignment, $\alpha$ may be do to another steering mirror upstream, or a misalignment of the beam source relative to our cavity axis, for this discussion it is not relevant.
+
+Now we will assume this beam is incident on a steering mirror before it finally enters the cavity. %NL%
+This steering mirror also has a slight misalignment, $\theta$. %NL%
+Equation \ref{eqn:mirrortilt} shows the matrix representing the operator of a mirror which has been tilted from nominal alignment. %NL%
+The beam incident on the cavity is then
+\begin{equation}
+\vect{E}_{\text{incident}}=\oper{M}(\Theta)\vect{E}_{\text{input}},
+\end{equation}
+where, as before, $\Theta=\frac{\theta \pi w(z)}{\lambda}$, while $w(z)$ is the beam width radius at the mirror, and $\lambda$ is the laser wavelength. %NL%
+Because the cavity has a high finesse, when the cavity is resonant on the \TEM{00} mode, only that mode is transmitted. %NL%
+Thus, for the field transmitted by the cavity
+\begin{equation}
+E_{\text{t}}=t_{\text{cavity}}\matrixel{00}{\oper{M}\left(\Theta\right)}{E}_{\text{input}}=t_{\text{cavity}}E_0\left(1-i\frac{\alpha \pi w(z)}{\lambda}\theta\right),
+\end{equation}
+where \com{finish}. %NL%
+This causes a power fluctuation on trasnmission
+\begin{equation}
+\label{eqn:mirrorjitter}
+P=E_t^*E_t=P_0\left(1+\frac{2\pi w(z)}{\lambda}\theta\Im(\alpha)\right).
+\end{equation}
+Only the imaginary part of $\alpha$ contributes to beam jitter noise of our mirror because it represents an error in alignment \emph{angle} not position at the location of the steering mirror $\oper{M}$. %NL%
+
+
+One interesting consequence of Equation \ref{eqn:mirrorjitter} is that for a given mirror, the strength of beam jitter coupling is proportional to $w(z)$, the size of the beam on the optic. %NL%
+Thus one technique for reducing beam jitter coupling is to design one's optical path in such a way that beams are smaller on optics that may produce significant beam jitter. %NL%
+This of course also reduces their efficiency as an alignment control mirror.
+
+Futhermore, we again see a nonlinear coupling in the form of mixing of the incident misalignment, $\alpha$, and the jitter of the steering mirror, $\theta$. %NL%
+We may suppose that the input alignment has both a DC component and possibly some low frequency wandering motion. %NL%
+If this is coupled with high frequency jitter of the steering mirror, the mixing of frequencies can cause noise in the power transmission at and around the jitter frequency of the steering optic.
+
+% show plot similar to tobin's about bilinear coupling
+\section{The relationship of alignment control and beam jitter}
+% depending on bandwidth, alignment system can remove low/DC or high. Though not if you are using a beacon system. Also beware of fringe wrapping.
+
+%fluffy
 \section{Mechanical resonances of beam steering optics}
+% Talk about comparison of HAM ISI vs HAM stack
 
-\section{WFS1 pointing!!!}
+% show original TT0 (mirror on post)
+
+% original TT design, no blades, fat wires
+
+% skinny wires
+
+% blades
+
+% figure showing sensitivity improvement with each susp.
 
 \section{Magnetic field coupling and feedforward subtraction}
+% if you have aux sensors of beam jitter mechanism, you can perform subtraction.
 
-%This was in my opinion the most important noise source that came with the inclusion of the OMC in LIGO
-%The beam steering optics (TipTilts) had their suspensions modified several times to reduce beam jitter noise
-%Ambient magnetic fields coupled to TitTilt magnets to produce n*60Hz beam jitter, a magnetometer and feedforward system was created to reduce this.
-%Will include “sensitivity improvement over time” figure, showing eLIGO sensitivity change with each modification
+% show figure of performance
+
+% reference to sergey's awesome subtraction stuff
+\section{Modification of modal content of the carrier and audio sidebands}
+
+% fluffy section
