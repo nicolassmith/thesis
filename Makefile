@@ -28,8 +28,12 @@ ch-beacon.pdf : $(figs-beacon)
 figs-ifo = $(addprefix figs-ifo/,resonantcav.pdf michelson.pdf prfpmi.pdf)
 ch-ifo.pdf : $(figs-ifo)
 
-figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo)
-matfigs = $(matfigs-omc)
+matfigs-jitter = #$(addprefix figs-jitter/, )
+figs-jitter = $(addprefix figs-jitter/,ham6layout.pdf ttdiag.pdf magffblockdiag.pdf)
+ch-jitter.pdf : $(matfigs-jitter) $(figs-jitter)
+
+figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo) $(figs-jitter)
+matfigs = $(matfigs-omc) $(matfigs-jitter)
 
 # fig rules
 %.pdf : %.svg

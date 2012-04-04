@@ -1,8 +1,10 @@
 \chapter{Techniques for reducing output mode cleaner beam jitter noise}
 %This was in my opinion the most important noise source that came with the inclusion of the OMC in LIGO
 
-\section{The noise mechanism of beam jitter incident on a high finesse cavity}
+% talk about how it was seen by Seiji in 40m cavities, but also by keita with GEO OMC.
 \com{Seiji's jitter paper}\cite{Kawamura:94}
+
+\section{The noise mechanism of beam jitter incident on a high finesse cavity}
 
 Motion of the beam incident on a high finesse cavity alters the overlap of said beam with the resonant mode of the cavity. %NL%
 This leads to fluctuations in the amount of light which can couple into the cavity and consequently, power fluctuations of the transmitted beam. %NL%
@@ -30,7 +32,7 @@ In other words, we begin with a beam which is slightly misaligned.
 \begin{equation}
 \vect{E}_{\text{input}}=E_0\left(\vect{00}+\alpha\vect{01}\right).
 \end{equation}
-The misalignment, $\alpha$ may be do to another steering mirror upstream, or a misalignment of the beam source relative to our cavity axis, for this discussion it is not relevant.
+The misalignment, $\alpha$ may be do to another steering mirror upstream, or a misalignment of the beam source relative to our cavity axis, the precise origin is not critical for this discussion.
 
 Now we will assume this beam is incident on a steering mirror before it finally enters the cavity. %NL%
 This steering mirror also has a slight misalignment, $\theta$. %NL%
@@ -63,8 +65,18 @@ We may suppose that the input alignment has both a DC component and possibly som
 If this is coupled with high frequency (i.e. %NL%
 frequencies in the detection band) jitter of the steering mirror, the mixing of frequencies can cause noise in the power transmission at and around the jitter frequency of the steering optic.
 
-\com{introduce bilinear beam jitter in s6}
-\com{show plot similar to tobin's about bilinear coupling}
+With the introduction of the OMC in Enhanced LIGO, bilinear beamjitter coupling became a much more prominant source of noise. %NL%
+Figure \ref{fig:bilinear} shows how low frequency beam motion mixes with high frequency jitter to produce broad sidebands around beam jitter peaks. %NL%
+This is similar to how beam jitter was discussed by \citet{Tobin}.
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+%  \includegraphics{figs-jitter/bilinear.pdf}
+  \end{center}
+  \caption[add me]{add me}
+  \label{fig:bilinear}
+\end{figure}
 
 \section{Mechanical resonances of beam steering optics}
 When the Enhanced LIGO interferometers were first performing at a sensitivity comparable to the state of the interferometers in the S5 science run, there were large glaring peaks in the sensitivity spectrum. %NL%
@@ -74,42 +86,138 @@ The Enhanced LIGO upgrade introduced several modifications to the readout chain 
 As discussed in Chapter \ref{ch:omc}, with the introduction of the in-vacuum OMC, it was necessary to use new beam steering and modematching optics to couple the beam exiting the interferometer to the OMC cavity. %NL%
 These steering optics, as well as the OMC, were all housed in a single vacuum chamber on top of the prototype HAM ISI platform which is planned to be used copiously in Advanced LIGO. %NL%
 Although it was not fully appreciated at the start of Enhanced LIGO, the new isolation platform provided much reduced vibration isolation at audio frequencies when compared to the isolation tables used in the HAM chambers in Initial LIGO. %NL%
-\com{steering mirrors on table used fine in iLIGO, not eLIGO} \com{Jeff's figure}
+Figure \ref{fig:hamtransmission} shows a comparison of the transmission of ground motion to motion of the HAM table for both the initial LIGO passive isolation system, and the Enhanced LIGO HAM ISI.
 
-\com{figure of optical layout, show TTs, OMC, qpds?}
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-jitter/ham6layout.pdf}
+  \end{center}
+  \caption[add me]{add me \com{don't forget QPDs}}
+  \label{fig:ham6layout}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+%  \includegraphics{figs-jitter/hamtransmission.pdf}
+  \end{center}
+  \caption[add me]{add me. Credit and appreciation for this figure goes to Jeff Kissel.}
+  \label{fig:hamtransmission}
+\end{figure}
+
 The optical layout of the OMC chamber of Enhanced LIGO comprised three steering optics, which also behaved as a mode matching telescope, and the OMC itself. %NL%
 In the initial configuration, the first of these was a mirror on a fixed mount, while the other two were in a Tip-Tilt suspension system with active beam steering. %NL%
+A diagram of the optical layout is shown in Figure \ref{fig:ham6layout}. %NL%
 Diligent work by Robert Schofield determined that some of the largest beam jitter peaks degrading the interferometer sensitivity were due to vibrations of the fixed mirror mount.\com{citation? %NL%
 elog?} To rectify this situations, the fixed mirror mount was replaced with a small mirror suspension similar to the Tip Tilts but without the active steering control. %NL%
-It was refered to as the passive Tip Tilt, or TT0. %NL%
-As seen in Figure \com{make fig}, this was effective at removing the largest peaks, though some new peaks appeared \com{somewhere}.
+Comparison of the old and new designs are shown in Figure \ref{fig:TT0photos}. %NL%
+This new style was refered to as the passive Tip Tilt, or TT0. %NL%
+As seen in Figure \ref{sensimprovement}, this was effective at removing the largest peaks, though some new peaks appeared \com{somewhere}.
 
-\com{pic of before and after photos of TTO}
+\begin{figure}
+  \begin{center}
+  \leavevmode
+%  \includegraphics{figs-jitter/TT0photos.pdf}
+  \end{center}
+  \caption[add me]{add me}
+  \label{fig:TT0photos}
+\end{figure}
 
 The origin of the peaks located in the most sensitive region of the LIGO sensitivity spectrum (``the bucket'') was finally determined by a measurement of the coupling of motion from the table to the pointing of the laser beam itself. %NL%
-The OMC was equipped with a pair of quadrant photodetectors which sampled the beam incident on the OMC. %NL%
+The OMC was equipped with a pair of quadrant photodetectors (QPDs) which sampled the beam incident on the OMC. %NL%
 These QPDs were used to measure the response of the beam motion to motion of the ISI table, which is measured by inertial sensors built into the table. %NL%
-\com{mention figure of Transfer function} The resonances were determined to be the vertical bounce mode of the optic in the suspension. %NL%
+A measurement of the transfer function of table motion to beam motion may be seen in Figure \ref{fig:TTbounceTF}. %NL%
+The resonances were determined to be the vertical bounce mode of the optic in the suspension. %NL%
 \com{justify}
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+%  \includegraphics{figs-jitter/TT0photos.pdf}
+  \end{center}
+  \caption[add me]{add me}
+  \label{fig:TTbounceTF}
+\end{figure}
 
 The Tip Tilt design had originally assumed the vertical restoring force was due only to strethcing tension in the wires. %NL%
 The vertical resonance was expected to lie near the 340Hz violin resonances of the main interferometer test mass suspensions, which were already In fact, the wires had a sufficient gague of \com{big} which caused the break off point of the suspension to be far from the wire clamp. %NL%
-This resulted in the wire taking more of an `S' shape, and giving the wire much more yield, reducing the resonant frequencies and placing them directly in the most sensitive region of LIGO. %NL%
-\com{S shape figure}
+This resulted in the wire taking more of an `S' shape than expected, as shown in Figure \ref{fig:ttdiag}. %NL%
+The bend in the wire resulted in giving the wire much more yield, reducing the resonant frequencies and placing them directly in the most sensitive region of LIGO. %NL%
+\com{maybe talk about matt's fea model.} 
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-jitter/ttdiag.pdf}
+  \end{center}
+  \caption[add me]{add me}
+  \label{fig:ttdiag}
+\end{figure}
 
 The Tip Tilt suspension was first modified by using thinner wires of gague \com{small}. %NL%
 This had the desired effect of reducing the frequency of the bounce resonance to be below the sensitive measurement band, but could not function as a permanent solution due to the fragility of the wires.\footnote{One of the Tip Tilts doubled as a fast beam diverter to protect the OMC photodiodes from the full stored energy of the arm cavities which exits the AS port when the interferometer loses lock. %NL%
 This system would put considerable force on the suspension and after several lock loss cycles it broke one of the Tip Tilt suspension wires.} The ultimate solution was to place the upper wire clamps at the ends of blade springs. %NL%
-This reduced the vertical resonances to \com{something Hz}, outside of the sensitive region, but while still allowing the use of wires with enough strength.
+The new Tip Tilt assembly is shown in Figure \ref{fig:bladephoto}. %NL%
+This reduced the vertical resonances to \com{something Hz}, outside of the sensitive region, but while still allowing the use of wires with enough strength. %NL%
+The sensitivity of the interferometer after this change was made is shown in Figure \ref{fig:sensimprovement}.
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+%  \includegraphics{figs-jitter/hamtransmission.pdf}
+  \end{center}
+  \caption[add me]{add me.}
+  \label{fig:bladephoto}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+%  \includegraphics{figs-jitter/hamtransmission.pdf}
+  \end{center}
+  \caption[add me]{add me. Credit and appreciation for this figure goes to Jeff Kissel.}
+  \label{fig:sensimprovement}
+\end{figure}
 
 Mechanical resonances of optic supports in the beam path should stay in the front of the mind of those investigating sources of beam jitter noise. %NL%
-It certainly helps to have the luxury of an optics table equipped with position sensors and an actuation system.
+Determining the precise source is certainly helped by having the luxury of an optics table equipped with position sensors and an actuation system.
 \section{Magnetic field coupling and feedforward subtraction}
-% if you have aux sensors of beam jitter mechanism, you can perform subtraction.
+Even after the mitigation of mechanical beam jitter on the OMC, there was still significant pollution of the LIGO sensitivity at frequencies surrounding 60Hz. %NL%
+60Hz is the frequency of the AC power distribution system in the U.S.A. %NL%
+and is a well known source of trouble to those attempting to do precision measurement. %NL%
+It is not terribly troublesome if 60Hz interference into one's device is fairly narrow-band. %NL%
+During Enhanced LIGO comissioning however, the 60Hz line was surrounded by broad sidebands which were infered to be caused by beam jitter. %NL%
+This was particularly troubling because of the importance of sensitivity to gravitational wave emission from the Crab pulsar, which is expected to emit gravitational waves at 59.56Hz \cite{Crab}.
 
-% show figure of performance
+The Tip Tilt suspensions utilized permanent magnets affixed to the optics and coil electromagnets for active beam steering control. %NL%
+The four permanent magnets were arranged on the face of the optic as shown in Figure \ref{fig:ttdiag}. %NL%
+The polarities were alternated so that uniform ambient magnetic fields would not cause a force or torque on the optic. %NL%
+Robert Schofield determined that the source of the beam jitter peaks at multiples of 60Hz were in fact due to \emph{gradients} in the ambient magnetic field at those frequencies. %NL%
+He also suggested that the use of a magnetometer sensor outside of the vacuum chamber would provide a signal that could be applied to the Tip Tilt alignment control and cancel the effects of the ambient field.\com{cite robert's elog} In addition, the strength of the permanent dipole magnets used in the Tip Tilts was reduced.
 
-% reference to sergey's awesome subtraction stuff
+A magnetometer was installed and a feedforward control system was implemented in the LIGO realtime system for digital signal processing. %NL%
+The feedforward system read the digitized 3-axis magnetometer signal, performed filtering, and fed the filtered signal to the Tip Tilt pitch and yaw actuators. %NL%
+A diagram of the system may be seen in Figure \ref{fig:magffblockdiag}. %NL%
+
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-jitter/magffblockdiag.pdf}
+  \end{center}
+  \caption[add me]{add me}
+  \label{fig:magffblockdiag}
+\end{figure}
+
+To reduce the 60Hz jitter peak, the signal filtering was tuned to minimize the presence of 60Hz motion measured by the OMC QPDs. %NL%
+When correctly tuned, the feedforward system was able to significantly reduce the magnitude of the sidebands around 60Hz in the LIGO sensitivity spectrum. %NL%
+\com{performance figure}
+
+Such a feedforward servo is beneficial whenever one has a signal which is coherent with the source of high frequency jitter noise. %NL%
+Because of the bilinear coupling of beam jitter, removal of even narrow, single frequency, components of beam motion can reduce broadband sources of noise in one's data. %NL%
+With only the magnetometer signal, it would not be possible to perform off-line subtraction of the sidebands around 60Hz from the final data stream. %NL%
+However, it has been shown \com{by sergei et al} that it is possible to combine several signals, in a nonlinear way, to subtract sources of bilinear-coupled noise from off-line data.\com{citation} This rather impressive technique has already been shown to be well suited for reduction of beam jitter noise.
 
 \section{The relationship of alignment control and beam jitter}
 % depending on bandwidth, alignment system can remove low/DC or high. Though not if you are using a beacon system. Also beware of fringe wrapping.
@@ -125,7 +233,7 @@ Because the carrier frequency component is often the dominant contribution to th
 Alignment schemes which optimize the alignment of the audio frequency signal sidebands will disregard the HOM content of the carrier beam, and thus may increase beam jitter coupling. %NL%
 This additional beam jitter coupling may be mitigated by control of the relative modal content of the audio sidebands and the carrier, which will be discussed in the following section.
 
-\section[Modification of modal content of the carrier and audio sidebands]{Modification of modal content of the carrier and audio sidebands\footnote{This section will satisfy as mearly a record of some lore learned during Enhanced LIGO. It is not intended to provide a quantitative model, but merely act as a guide for future efforts.}}
+\section[Modification of the relative modal content of the carrier and audio sidebands]{Modification of the relative modal content of the carrier and audio sidebands\footnote{This section will satisfy as mearly a record of some lore learned during Enhanced LIGO. It is not intended to provide a quantitative model, but merely act as a guide for future efforts.}}
 
 After the implementation of the beacon alignment system in Enhanced LIGO, some beam jitter peaks of unknown origin remained in the sensitive region of the detector. %NL%
 \com{figure?}. %NL%
