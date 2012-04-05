@@ -18,8 +18,6 @@ set(f_,'Color','White')
 
 set(gca,'MinorGridLineStyle','none') %remove minor grid lines
 set(gca,'LineWidth',2)
-set(gca,'YMinorTick','on')
-
 
 ymin = 1e-10;
 xmax = 1e3;
@@ -35,6 +33,12 @@ fontSize = 12;
 set(gca,'FontSize',fontSize)
 set(get(gca,'XLabel'),'FontSize',fontSize)
 set(get(gca,'YLabel'),'FontSize',fontSize)
+
+title('')
+
+legend('Measurement Coherence','Measured HAM ISI Transmission',...
+    'Modeled HAM ISI Transmission',...
+    'Modeled Passive HAM Stack Transmission','Location','SW')
 
 orient portrait
 
