@@ -73,7 +73,7 @@ This is similar to how beam jitter was discussed by \citet{Tobin}.
 \begin{figure}
   \begin{center}
   \leavevmode
-%  \includegraphics{figs-jitter/bilinear.pdf}
+  \includegraphics{figs-jitter/bilinearplot.pdf}
   \end{center}
   \caption[add me]{add me}
   \label{fig:bilinear}
@@ -103,7 +103,7 @@ Figure \ref{fig:hamtransmission} shows a comparison of the transmission of groun
   \leavevmode
   \includegraphics{figs-jitter/hamtransmission.pdf}
   \end{center}
-  \caption[add me]{add me. The high frequency behavior of the HAM ISI model (green curve) represents true resonant structure and is not attributed to measurement noise. Credit and appreciation for this figure goes to Jeff Kissel.}
+  \caption[add me]{add me. The high frequency behavior of the HAM ISI model (green curve) represents true resonant structure and is not a result of measurement noise. Credit and appreciation for this figure goes to Jeff Kissel.}
   \label{fig:hamtransmission}
 \end{figure}
 
@@ -135,7 +135,7 @@ The resonances were determined to be the vertical bounce mode of the optic in th
 \begin{figure}
   \begin{center}
   \leavevmode
-%  \includegraphics{figs-jitter/TT0photos.pdf}
+  \includegraphics[width=\textwidth]{figs-jitter/TTbounceTF.pdf}
   \end{center}
   \caption[add me]{add me}
   \label{fig:TTbounceTF}
@@ -213,7 +213,16 @@ A diagram of the system may be seen in Figure \ref{fig:magffblockdiag}. %NL%
 
 To reduce the 60Hz jitter peak, the signal filtering was tuned to minimize the presence of 60Hz motion measured by the OMC QPDs. %NL%
 When correctly tuned, the feedforward system was able to significantly reduce the magnitude of the sidebands around 60Hz in the LIGO sensitivity spectrum. %NL%
-\com{performance figure}
+\com{performance Figure \ref{fig:magffperformance}}
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  %\includegraphics{figs-jitter/magffblockdiag.pdf}
+  \end{center}
+  \caption[add me]{add me}
+  \label{fig:magffperformance}
+\end{figure}
 
 Such a feedforward servo is beneficial whenever one has a signal which is coherent with the source of high frequency jitter noise. %NL%
 Because of the bilinear coupling of beam jitter, removal of even narrow, single frequency, components of beam motion can reduce broadband sources of noise in one's data. %NL%

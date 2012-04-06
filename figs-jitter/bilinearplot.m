@@ -1,13 +1,20 @@
-%function bilinearplot()
-exportplot = 0;
+function bilinearplot()
+exportplot = 1;
 grabdata = 0;
 mDV; % load mdv path
+
+% plot things
+highfcenter = 147.25;
+xsize = [-10 10];
 
 duration = 300; %s
 tgrab = 928061805;
 
 % grab data sadness
 statechannels = {'H1:DMT-SNSM_RANGE_1MINAVG','H1:LSC-LA_PTRX_NORM','H1:LSC-LA_PTRY_NORM','H1:LSC-LA_SPOB_NORM'};
+
+%readoutchannels = {'H1:OMC-PD_SUM_OUT_DAQ','H1:OMC-PD_SUM_OUT_DAQ',...
+%    'H1:OMC-PD_TRANS1_OUT_DAQ','H1:OMC-PD_SUM_OUT_DAQ'};
 
 readoutchannels = {'H1:LSC-DARM_ERR','H1:OMC-PD_SUM_OUT_DAQ',...
     'H1:OMC-PD_TRANS1_OUT_DAQ','H1:OMC-PD_TRANS2_OUT_DAQ'};
@@ -33,7 +40,24 @@ asdtime = duration; %seconds
 
 
 transData = lockeddata(7);
-qpdData = lockeddata(9);
+
+jj = 0;   %   3P 4P 3Y 4Y
+for qpdchan = [9 12 10 13];
+    jj = jj+1;
+    qpdData(jj) = lockeddata(qpdchan); %#ok<SAGROW>
+end
+
+qpdcalmat = [-175 1417; 2754 -2551];
+qpdsamp = length(qpdData(1).data);
+qpdDataCal = zeros(4,qpdsamp);
+
+for kk = 1:qpdsamp
+    qpdDataCal(1,kk) = qpdcalmat(1,1)*qpdData(1).data(kk)+qpdcalmat(1,2)*qpdData(2).data(kk);
+    qpdDataCal(2,kk) = qpdcalmat(2,1)*qpdData(1).data(kk)+qpdcalmat(2,2)*qpdData(2).data(kk);
+    qpdDataCal(3,kk) = qpdcalmat(1,1)*qpdData(3).data(kk)+qpdcalmat(1,2)*qpdData(4).data(kk);
+    qpdDataCal(4,kk) = qpdcalmat(2,1)*qpdData(3).data(kk)+qpdcalmat(2,2)*qpdData(4).data(kk);
+    
+end
 
 rate = transData.rate;
 samples = rate*asdtime;
@@ -41,20 +65,63 @@ samples = rate*asdtime;
 binres = transData.rate/(2^log2bins);
 
 transASD = asd(transData.data(1:samples),transData.rate,binres);
-QPDASD = asd(qpdData.data,qpdData.rate,binres);
+jjrange = 1;
+for jj = jjrange
+    QPDASD(jj) = asd(qpdDataCal(jj,:),qpdData(1).rate,binres);  %#ok<AGROW>
+end
 
-figure(1)
-semilogy(transASD.f,transASD.x)
-xlim([140 155])
-ylim([1e-7 0.3e-5])
+f_=figure(1);
+if exportplot
+    set(gcf,'Visible','Off')
+end
+set(f_,'Color','White')
+set(f_,'Units','Pixels','Position',[0 0 600 800])
+
+linewid = 1.5;
+
+subplot(3,1,3)
+set(gcf,'Visible','Off')
+semilogy(transASD.f,transASD.x/mean(transData.data(1:samples)),'LineWidth',linewid)
+xlim(highfcenter+xsize)
+ylim([0.9e-7 0.3e-5]/mean(transData.data(1:samples)))
+ylabel('Transmitted Power (RIN/\surdHz)')
 grid on
+set(gca,'LineWidth',2)
 
-figure(2)
-semilogy(QPDASD.f,QPDASD.x)
+
+%clf
+for jj = jjrange;
+    %figure(1+jj)
+    subplot(3,1,1)
+    if exportplot
+        set(gcf,'Visible','Off')
+    end
+    semilogy(QPDASD(jj).f,QPDASD(jj).x,'LineWidth',linewid)
+    xlim(xsize)
+    ylim([2 600])
+    grid on
+    set(gca,'LineWidth',2)
+    ylabel('Beam Motion (\mum/\surdHz)')
+    
+    %figure(5+jj)
+    subplot(3,1,2)
+    if exportplot
+        set(gcf,'Visible','Off')
+    end
+    semilogy(QPDASD(jj).f,QPDASD(jj).x,'LineWidth',linewid)
+    xlim(highfcenter+xsize)
+    ylim([0.8e-4 2e-3])
+    grid on
+    set(gca,'LineWidth',2)
+    ylabel('Beam Motion (\mum/\surdHz)')
+end
+
+subplot(3,1,3)
+xlabel('Frequency (Hz)')
 
 if exportplot
     set(gcf,'Visible','Off')
     export_fig('bilinearplot.pdf','-painters')
 end
 
-%end
+end
