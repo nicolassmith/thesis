@@ -101,7 +101,7 @@ for jj = jjrange;
     ylim([2 600])
     grid on
     set(gca,'LineWidth',2)
-    ylabel('Beam Motion (\mum/\surdHz)')
+    ylabel('Beam Waist Motion (\mum/\surdHz)')
     
     %figure(5+jj)
     subplot(3,1,2)
@@ -113,7 +113,7 @@ for jj = jjrange;
     ylim([0.8e-4 2e-3])
     grid on
     set(gca,'LineWidth',2)
-    ylabel('Beam Motion (\mum/\surdHz)')
+    ylabel('Beam Waist Motion (\mum/\surdHz)')
 end
 
 subplot(3,1,3)
