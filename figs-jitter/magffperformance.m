@@ -71,13 +71,13 @@ end
 % figures here
 figure(1)
 set(gcf,'Color','White')
-set(gcf,'Units','Pixels','Position',[0 0 650 600])
+set(gcf,'Units','Pixels','Position',[0 0 600 500])
 
 if exportplot
     set(gcf,'Visible','Off')
 end
 
-linewid =2;
+linewid = 2;
 plotfunc = @plot;
 
 oncolor = '4d6993';
@@ -91,8 +91,9 @@ plotfunc(transOffASD.f,transOffASD.x,'Color',convertcolor(offcolor),'LineWidth',
 plotfunc(transOnASD.f,transOnASD.x,'Color',convertcolor(oncolor),'LineWidth',linewid)
 xlim(60+[-5,5])
 %ylim([4e-7 1.5e-4])
-ylim([0.3 2]*1e-7)
+ylim([0 2]*1e-7)
 set(gca,'Xtick',50:70)
+set(gca,'Ytick',[0:2]*1e-7)
 set(gca,'FontSize',12)
 grid on
 set(gca,'LineWidth',2)
@@ -113,12 +114,16 @@ for j = 1:2
     grid on
     set(gca,'LineWidth',2)
     xlim(60+[-2,2])
-    ylabel([labels{j} ' Waist Motion  (\mum/\surdHz)'])
+    %ylabel('Waist Motion  (\mum/\surdHz)')
     xlabel('Frequency (Hz)')
+    title(labels{j})
     
     set(gca,'Xtick',50:70)
     ylim('auto')
 end
+
+subplot(2,2,1)
+ylabel('Waist Motion  (\mum/\surdHz)')
 
 subplot(2,2,3:4)
 legend('Feedforward Enabled','Feedforward Disabled','Location','NW')
