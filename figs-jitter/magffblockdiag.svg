@@ -14,7 +14,7 @@
    version="1.1"
    id="svg4370"
    height="115.5582"
-   width="505.04178">
+   width="507.89084">
   <defs
      id="defs4372">
     <marker
@@ -105,9 +105,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="331.78779"
-     inkscape:cy="172.04014"
+     inkscape:zoom="3.959798"
+     inkscape:cx="464.37705"
+     inkscape:cy="28.836182"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -397,7 +397,7 @@
          y="131.66629"
          x="458.13812"
          id="tspan4495"
-         sodipodi:role="line">Mirror alignment</tspan></text>
+         sodipodi:role="line">Tip Tilt alignment</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
        d="m 133.92857,93.031483 15,0"
@@ -476,7 +476,7 @@
   </g>
   <g
      id="g4341"
-     transform="matrix(0.8845464,0,0,0.8845464,-3.2757209,0.2480534)">
+     transform="matrix(0.8845464,0,0,0.8845464,-3.2757204,0.2480538)">
     <rect
        y="90.922256"
        x="105.81519"
@@ -522,7 +522,7 @@
   </g>
   <g
      id="g4369"
-     transform="matrix(0.8845464,0,0,0.8845464,-12.121185,0.2480534)">
+     transform="matrix(0.8845464,0,0,0.8845464,-12.121185,0.2480538)">
     <rect
        style="fill:none;stroke:#383838;stroke-width:1.83899999;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4309"

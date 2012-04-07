@@ -28,7 +28,7 @@ ch-beacon.pdf : $(figs-beacon)
 figs-ifo = $(addprefix figs-ifo/,resonantcav.pdf michelson.pdf prfpmi.pdf)
 ch-ifo.pdf : $(figs-ifo)
 
-matfigs-jitter = $(addprefix figs-jitter/,hamtransmission.pdf bilinearplot.pdf)
+matfigs-jitter = $(addprefix figs-jitter/,hamtransmission.pdf bilinearplot.pdf magffperformance.pdf)
 figs-jitter = $(addprefix figs-jitter/,ham6layout.pdf ttdiag.pdf magffblockdiag.pdf TTbounceTF.pdf)
 ch-jitter.pdf : $(matfigs-jitter) $(figs-jitter)
 

@@ -16,13 +16,10 @@ statechannels = {'H1:DMT-SNSM_RANGE_1MINAVG','H1:LSC-LA_PTRX_NORM','H1:LSC-LA_PT
 %readoutchannels = {'H1:OMC-PD_SUM_OUT_DAQ','H1:OMC-PD_SUM_OUT_DAQ',...
 %    'H1:OMC-PD_TRANS1_OUT_DAQ','H1:OMC-PD_SUM_OUT_DAQ'};
 
-readoutchannels = {'H1:LSC-DARM_ERR','H1:OMC-PD_SUM_OUT_DAQ',...
-    'H1:OMC-PD_TRANS1_OUT_DAQ','H1:OMC-PD_TRANS2_OUT_DAQ'};
+readoutchannels = {'H1:OMC-PD_TRANS1_OUT_DAQ'};
 
-omcalignchannels = {'H1:OMC-QPD3_P_OUT_DAQ','H1:OMC-QPD3_Y_OUT_DAQ','H1:OMC-QPD3_SUM_IN1_DAQ',...
-    'H1:OMC-QPD4_P_OUT_DAQ','H1:OMC-QPD4_Y_OUT_DAQ','H1:OMC-QPD4_SUM_IN1_DAQ',...
-    'H1:OMC-QPD1_P_OUT_DAQ','H1:OMC-QPD1_Y_OUT_DAQ','H1:OMC-QPD1_SUM_IN1_DAQ',...
-    'H1:OMC-QPD2_P_OUT_DAQ','H1:OMC-QPD2_Y_OUT_DAQ','H1:OMC-QPD2_SUM_IN1_DAQ'};
+omcalignchannels = {'H1:OMC-QPD3_P_OUT_DAQ','H1:OMC-QPD3_Y_OUT_DAQ',...
+    'H1:OMC-QPD4_P_OUT_DAQ','H1:OMC-QPD4_Y_OUT_DAQ'};
                     
 
 allchannels = [statechannels,readoutchannels,omcalignchannels];
@@ -39,12 +36,12 @@ asdtime = duration; %seconds
 
 
 
-transData = lockeddata(7);
+transData = lockeddata(5);
 
 jj = 0;   %   3P 4P 3Y 4Y
-for qpdchan = [9 12 10 13];
+for qpdchan = [6 8 7 9];
     jj = jj+1;
-    qpdData(jj) = lockeddata(qpdchan); %#ok<SAGROW>
+    qpdData(jj) = lockeddata(qpdchan); %#ok<AGROW>
 end
 
 qpdcalmat = [-175 1417; 2754 -2551];
@@ -101,7 +98,7 @@ for jj = jjrange;
     ylim([2 600])
     grid on
     set(gca,'LineWidth',2)
-    ylabel('Beam Motion (\mum/\surdHz)')
+    ylabel('Beam Waist Motion (\mum/\surdHz)')
     
     %figure(5+jj)
     subplot(3,1,2)
@@ -113,7 +110,7 @@ for jj = jjrange;
     ylim([0.8e-4 2e-3])
     grid on
     set(gca,'LineWidth',2)
-    ylabel('Beam Motion (\mum/\surdHz)')
+    ylabel('Beam Waist Motion (\mum/\surdHz)')
 end
 
 subplot(3,1,3)
