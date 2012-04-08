@@ -1,0 +1,35 @@
+% from http://tex.stackexchange.com/questions/47267/breaking-links-and-escaping-characters-in-bibliographies-with-backlinks-and-ocgc
+\makeatletter
+\AtBeginDocument{%
+    \def\Hy@colorlink#1{%
+      \begingroup
+        \ifHy@ocgcolorlinks
+          \def\Hy@ocgcolor{#1}%
+          \pdfliteral page{q}%
+          \pdfliteral page{7 Tr}% Set text mode to clipping-only
+        \else
+          \HyColor@UseColor#1%
+        \fi
+    }%
+    \def\Hy@endcolorlink{%
+      \ifHy@ocgcolorlinks%
+        \pdfliteral page{/OC/OCPrint BDC}%
+        \pdfliteral page{0 0 \strip@pt\pdfpagewidth\space\strip@pt\pdfpageheight\space re}%
+        \pdfliteral page{F}% Fill clipping path (the url's text) with
+                           % current color
+        %
+        \pdfliteral page{EMC/OC/OCView BDC}%
+        \begingroup%
+          \expandafter\HyColor@UseColor\Hy@ocgcolor%
+          \pdfliteral page{0 0 \strip@pt\pdfpagewidth\space\strip@pt\pdfpageheight\space re}%
+          \pdfliteral page{F}% Fill clipping path (the url's text)
+                             % with \Hy@ocgcolor
+        \endgroup%
+        \pdfliteral page{EMC}%
+        \pdfliteral page{0 Tr}% Reset text to normal mode
+        \pdfliteral page{Q}%
+      \fi
+      \endgroup
+    }%
+}
+\makeatother
