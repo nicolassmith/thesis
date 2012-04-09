@@ -72,19 +72,21 @@ if exportplot
     set(gcf,'Visible','Off')
 end
 set(f_,'Color','White')
-set(f_,'Units','Pixels','Position',[0 0 600 800])
+set(f_,'Units','Pixels','Position',[0 0 600 750])
 
+
+convertcolor = @(color) hex2dec(reshape(color,2,3)')'/255;
+linecolor = '0772a1';
 linewid = 1.5;
 
 subplot(3,1,3)
 set(gcf,'Visible','Off')
-semilogy(transASD.f,transASD.x/mean(transData.data(1:samples)),'LineWidth',linewid)
+semilogy(transASD.f,transASD.x/mean(transData.data(1:samples)),'LineWidth',linewid,'Color',convertcolor(linecolor))
 xlim(highfcenter+xsize)
 ylim([0.9e-7 0.3e-5]/mean(transData.data(1:samples)))
 ylabel('Transmitted Power (RIN/\surdHz)')
 grid on
 set(gca,'LineWidth',2)
-
 
 %clf
 for jj = jjrange;
@@ -93,7 +95,7 @@ for jj = jjrange;
     if exportplot
         set(gcf,'Visible','Off')
     end
-    semilogy(QPDASD(jj).f,QPDASD(jj).x,'LineWidth',linewid)
+    semilogy(QPDASD(jj).f,QPDASD(jj).x,'LineWidth',linewid,'Color',convertcolor(linecolor))
     xlim(xsize)
     ylim([2 600])
     grid on
@@ -105,7 +107,7 @@ for jj = jjrange;
     if exportplot
         set(gcf,'Visible','Off')
     end
-    semilogy(QPDASD(jj).f,QPDASD(jj).x,'LineWidth',linewid)
+    semilogy(QPDASD(jj).f,QPDASD(jj).x,'LineWidth',linewid,'Color',convertcolor(linecolor))
     xlim(highfcenter+xsize)
     ylim([0.8e-4 2e-3])
     grid on
