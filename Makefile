@@ -29,7 +29,7 @@ figs-ifo = $(addprefix figs-ifo/,resonantcav.pdf michelson.pdf prfpmi.pdf)
 ch-ifo.pdf : $(figs-ifo)
 
 matfigs-jitter = $(addprefix figs-jitter/,hamtransmission.pdf bilinearplot.pdf magffperformance.pdf sensimprovement.pdf)
-figs-jitter = $(addprefix figs-jitter/,ham6layout.pdf ttdiag.pdf magffblockdiag.pdf TTbounceTF.pdf)
+figs-jitter = $(addprefix figs-jitter/,ham6layout.pdf ttdiag.pdf magffblockdiag.pdf TTbounceTF.pdf TT0photos.pdf)
 ch-jitter.pdf : $(matfigs-jitter) $(figs-jitter)
 
 figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo) $(figs-jitter)
@@ -37,7 +37,7 @@ matfigs = $(matfigs-omc) $(matfigs-jitter)
 
 # fig rules
 %.pdf : %.svg
-	inkscape --export-area-page --export-pdf=$@ $<
+	inkscape --export-area-page --export-dpi=300 --export-pdf=$@ $<
 #	convert -density 10000 $< -resize 10000% $@
 
 MATLAB = matlab -nodesktop -nosplash
