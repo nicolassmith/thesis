@@ -126,7 +126,7 @@ subplot(2,2,1)
 ylabel('Waist Motion  (\mum/\surdHz)')
 
 subplot(2,2,3:4)
-legend('Feedforward Enabled','Feedforward Disabled','Location','NW')
+legend('Feedforward Disabled','Feedforward Enabled','Location','NW')
 
     
 if exportplot
