@@ -1,8 +1,14 @@
 \chapter{Techniques for reducing output mode cleaner beam jitter noise}
-%This was in my opinion the most important noise source that came with the inclusion of the OMC in LIGO
-\com{say how this mechanism doesn't exist without OMC}
-% talk about how it was seen by Seiji in 40m cavities, but also by keita with GEO OMC.
-\com{Seiji's jitter paper}\cite{Kawamura:94}
+When using an OMC in the readout of an interferometer, probably the most important new source of noise to conside is beam jitter noise. %NL%
+A related form of beam jitter noise also exists in the arm cavities of an interferometer \cite{Kawamura:94}. %NL%
+Fluctuations of the output beam are however not generally an issue with an interferometer that does not use an OMC, so long as the beam apertures are always sufficient to prevent beam clipping. %NL%
+
+
+An OMC may perform very well as a spatial filter for unwanted higher order modes, but simultaneously it becomes very sensitive to pointing fluctuations of the input beam. %NL%
+The GEO600 OMC which was tested by LIGO was placed outside of vacuum, and beam jitter noise ruined the sensitivity in most of the measurement band. %NL%
+It was for this reason that the Enhanced LIGO OMC was placed in vacuum \cite{G040326}. %NL%
+Even with this improvement, much time and effort was spent by the commisioning teams in Enhanced LIGO to locate and remove sources of beam jitter noise. %NL%
+This Chapter will cover much of what was learned regarding beam jitter noise during the commissioning of Enhanced LIGO.
 
 \section{The noise mechanism of beam jitter incident on a high finesse cavity}
 
@@ -150,8 +156,8 @@ The resonances were determined to be the bounce (veritcal) and roll (rotation ab
 \end{figure}
 
 The Tip Tilt design had originally assumed the vertical restoring force was due only to strethcing tension in the wires. %NL%
-The vertical resonance was expected to lie near the 340Hz violin resonances of the main interferometer test mass suspensions, which were already In fact, the wires had a sufficient gague of \com{big} which caused the break off point of the suspension to be far from the wire clamp. %NL%
-This resulted in the wire taking more of an `S' shape than expected, as shown in Figure \ref{fig:ttdiag}. %NL%
+The vertical resonance was expected to lie near the 340Hz violin resonances of the main interferometer test mass suspensions, which were already In fact, the wires had a diameter of $380\upmu \rm m$ which was sufficient to cause the break off point of the suspension to be far from the wire clamp. %NL%
+Instead of being straight, the wires took more of an `S' shape, as shown in Figure \ref{fig:ttdiag}. %NL%
 The bend in the wire resulted in giving the wire much more yield, reducing the resonant frequencies and placing them directly in the most sensitive region of LIGO. %NL%
 A finite element analysis of resonances of optics suspended by curved optics was performed by Matt Evans and supported this general theory \cite{mattfea}.
 
@@ -164,9 +170,10 @@ A finite element analysis of resonances of optics suspended by curved optics was
   \label{fig:sensimprovement}
 \end{figure}
 
-The Tip Tilt suspension was first modified by using thinner wires of gague \com{small 0.002"}. %NL%
+The Tip Tilt suspension was first modified by using thinner wires of radius $50 \upmu \rm m$. %NL%
 This had the desired effect of reducing the frequency of the bounce resonance to be below the sensitive measurement band \cite{smallwirecoupling}, but could not function as a permanent solution due to the fragility of the wires.\footnote{One of the Tip Tilts doubled as a fast beam diverter to protect the OMC photodiodes from the full stored energy of the arm cavities which exits the AS port when the interferometer loses lock. %NL%
-This system would put considerable force on the suspension and after several lock loss cycles it broke one of the Tip Tilt suspension wires.\com{.003" after}} The ultimate solution was to place the upper wire clamps at the ends of blade springs. %NL%
+This system would put considerable force on the suspension and after several lock loss cycles it broke one of the Tip Tilt suspension wires. %NL%
+The wire radius was increased to $75 \upmu \rm m$ until the blade spring design was ready for installation.} The ultimate solution was to place the upper wire clamps at the ends of blade springs. %NL%
 The new Tip Tilt assembly is shown in Figure \ref{fig:TT0photos}. %NL%
 This reduced the vertical resonances to near 20Hz \cite{bladebounce,bladebounceLHO}, outside of the sensitive region, but while still allowing the use of wires with enough strength. %NL%
 The sensitivity of the interferometer after this change was made is shown in Figure \ref{fig:sensimprovement}. %NL%
