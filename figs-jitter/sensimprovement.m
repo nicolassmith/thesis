@@ -75,7 +75,7 @@ convertcolor = @(color) hex2dec(reshape(color,2,3)')'/255;
 
 f_ = figure(11);
 set(f_,'Color','White')
-set(f_,'Units','Pixels','Position',[0 0 650 300])
+set(f_,'Units','Pixels','Position',[0 0 600 300])
 
 if exportplot
     set(gcf,'Visible','Off')
