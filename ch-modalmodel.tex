@@ -1,9 +1,8 @@
 \chapter{Vector space model of optical systems}
 \label{ch:modalmodel}
-\section{Introduction}
-This chapter will describe a formalism which treats the laser field components propagating in an optical interferometer as a complex vector space where common optical components, such as mirrors and optical modulators are treated as operators in this space. %NL%
+This chapter describes a formalism that treats the laser field components propagating in an optical interferometer as a complex vector space where common optical components, such as mirrors and optical modulators are treated as operators in this space. %NL%
 This treatment allows the analysis of complicated optical paths, which include paths that loop onto themselves (as in the case of resonant cavities) to be reduced to a problem of matrix manipulation. %NL%
-This is is highly powerful technique which is used extensively in modeling the behavior of gravitational-wave interferometers \cite{Vinet1986,Hefetz:97,Sigg:00}.
+This is is highly powerful technique which is used extensively in modeling the behavior of gravitational-wave interferometers \cite{Vinet1986,Hefetz:97,Sigg:00}, and is useful for some of the concepts discussed in later chapters.
 
 At this point in the discussion, a bird's eye view of the technique is useful. %NL%
 In essence what this formalism provides is a significant abstraction and abbreviation of the effects of opical components (mirrors, modulators, etc.) on the the field components that make up a laser beam. %NL%
@@ -15,7 +14,7 @@ What is left is just a problem of linear algebra.
 
 \section{Frequency components of a laser field}
 \label{sec:freqspace}
-To just get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated in frequency by $\pm\Omega$. %NL%
+To get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components which represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated in frequency by $\pm\Omega$. %NL%
 Consider an electromagnetic wave propagating in the z direction, at some point along the propagation axis, the electric field may be written as
 \begin{align*}
 \geom{E}(t) &= A_0 e^{i\omega_0t}\geom{x} + A_1e^{i(\omega_0+\Omega)t}\geom{x} + A_{-1}e^{i(\omega_0-\Omega)t}\geom{x}\\
