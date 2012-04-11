@@ -1,4 +1,4 @@
-\chapter{Output mode cleaner modematching feedback control}
+\chapter{Output mode cleaner mode matching feedback control}
 \label{ch:modematching}
 % intro
 In interferometers such as LIGO, the power circulating in the resonant optical cavities can reach levels where even small levels of absorption induce deformations and refraction index changes due to deposition of thermal energy\cite{absorptionheating}. %NL%
@@ -7,7 +7,7 @@ The effects of thermal lenses can be mitigated using compensation techniques tha
 
 Thermal distortions of the resonant mode of the interferometer cause a reduction of the coupling efficiency of the laser source to the interferometer mode. %NL%
 To mitigate the effect of input efficiency there have been efforts to adaptively modify the mode of the input beam using optical elements with variable focusing power. %NL%
-Coupled with a sensor to measure the amount of modal mismatch of the input beam, one may construct a servo to optimize the input modematching and maximize the coupling efficiency\cite{Arain:10,fan:104501,Mueller:00}.
+Coupled with a sensor to measure the amount of modal mismatch of the input beam, one may construct a servo to optimize the input mode matching and maximize the coupling efficiency\cite{Arain:10,fan:104501,Mueller:00}.
 
 A similar situation arises if the readout chain of the interferometer includes a so-called output mode cleaner (OMC). %NL%
 The OMC is located between the interferometer and the photodetector measuring the gravitational wave signal, as shown in Figure \ref{fig:mmblockdiag}. %NL%
@@ -43,7 +43,7 @@ A similar argument holds for the actuators.
   \leavevmode
   \includegraphics[width=\textwidth]{figs-modematching/blockdiag}
   \end{center}
-  \caption[Schematic diagram of the optical layout of a modematching feedback control system.]{Schematic diagram of the optical layout of a modematching feedback control system. Abbreviations are explained in the text. Also shown is the segmentation of the bull's-eye photodetector. The spherical mode mismatch signal combination is A-B-C. The astigmatic signal combination is B-C.}
+  \caption[Schematic diagram of the optical layout of a mode matching feedback control system.]{Schematic diagram of the optical layout of a mode matching feedback control system. Abbreviations are explained in the text. Also shown is the segmentation of the bull's-eye photodetector. The spherical mode mismatch signal combination is A-B-C. The astigmatic signal combination is B-C.}
   \label{fig:mmblockdiag}
 \end{figure}
 A schematic diagram of the sensing and actuation system is shown in Figure \ref{fig:mmblockdiag}. %NL%
@@ -52,7 +52,7 @@ The actuators are focusing elements with variable focal length; astigmatism cont
 The laser beam is directed through both actuators and then incident on the input of the cavity. %NL%
 The cavity is critically coupled so the correctly matched light is transmitted maximally through the OMC. %NL%
 The cavity length is held on resonance by a separate control system. %NL%
-The reflected light is directed onto the two mode matching sensors, with Guoy phase telescopes to get good separation of sensed mode quadratures.
+The reflected light is directed onto the two mode matching sensors, with Gouy phase telescopes to get good separation of sensed mode quadratures.
 
 \section{Mode matching sensors}
 The sensors, are annular segmented photodetectors, also known as bull's-eye photodetectors (BPDs) \cite{Mueller:00}. %NL%
@@ -117,9 +117,9 @@ This design would optimize the transmission of the central optical carrier frequ
 In practice, the sensitivity to gravitational-waves depends on the transmission of audio signal sidebands which in principle could occupy differing spatial modes. %NL%
 The amount of mismatch of the carrier and audio sidebands that will be present in an interferometer is difficult to predict. %NL%
 As discussed in Chapter \ref{ch:beacon}, in the first generation of LIGO, automatic alignment systems were developed which optimally sensed the audio sideband mode because the mismatch proved a problem for traditional alignment systems \cite{Smith-Lefebvre:11,Tobin}. %NL%
-Similar mismatch of the bull's-eye mode would contaminate a modematching servo such as that desribed here. %NL%
+Similar mismatch of the bull's-eye mode would contaminate a mode matching servo such as that described here. %NL%
 A solution would involve using the modulation product of the OMC length modulation sidebands with audio sidebands induced in the interferometer arms. %NL%
-These induced sidebands are commonly refered to as the beacon sidebands. %NL%
+These induced sidebands are commonly referred to as the beacon sidebands. %NL%
 This would give a corresponding reduction of SNR by the modulation depth of the beacon sidebands.
 
 \section{Mode matching actuators}
@@ -134,11 +134,11 @@ A fine enough array of elements allows for heating patterns that can control the
 Canuel et al. %NL%
 report on an early prototype made from a BK7 substrate which can provide a variable focusing power with a range of $0.032 \text{m}^{-1} \text{(diopters)}$. %NL%
 The design of Canuel et al. %NL%
-has certain beneficial features which make it suitable for this application: it is vacuum compatible, it is low noise due to the low thermal time constant, and it is simple to modify existing suspended steering mirror designs to accomodate the heating elements. %NL%
+has certain beneficial features which make it suitable for this application: it is vacuum compatible, it is low noise due to the low thermal time constant, and it is simple to modify existing suspended steering mirror designs to accommodate the heating elements. %NL%
 The control bandwidth will be limited by the thermal time constant of these actuators, which should be adequate given that the effects being corrected occur either at thermal time scales or are constant in time.
 
 We may quantify the effect of a perturbation of the focusing power of an optical component by how much of a pure \TEM{00} mode is transferred to the bull's-eye mode for small variations in the focusing power. %NL%
-We will assume a system which is well modematched in the absence of pertubation. %NL%
+We will assume a system which is well mode matched in the absence of perturbation. %NL%
 Given an optical element with additional focusing power $d_{\rm mm}$, the resulting mode mismatch amplitude is
 \begin{equation}
 \label{eq:matrixelement}
