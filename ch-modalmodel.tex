@@ -1,5 +1,5 @@
 \chapter{Vector space model of optical systems}
-
+\label{ch:modalmodel}
 \section{Introduction}
 This chapter will describe a formalism which treats the laser field components propagating in an optical interferometer as a complex vector space where common optical components, such as mirrors and optical modulators are treated as operators in this space. %NL%
 This treatment allows the analysis of complicated optical paths, which include paths that loop onto themselves (as in the case of resonant cavities) to be reduced to a problem of matrix manipulation. %NL%
@@ -91,7 +91,7 @@ So far our example prescribes an elegant way to deal with optical components (e.
 This type of approach is also applicable to the components of the electric field corresponding the the transverse spatial modes of the beam, as shown by \citet{Hefetz:97}.
 
 When the paraxial approximation applies it is possible to expand the electromagnetic field into a superposition of modes represented by a Gaussian function of the transverse coordinate, multiplied by polynomials. %NL%
-Common choices for the polynomial functions are the Hermite or Laguerre polynomials \cite[chap. %NL%
+Common choices for the polynomial functions are the Hermite or Laguerre polynomials \cite[Chap. %NL%
 16]{Siegman}. %NL%
 This formalism associates the modal components with eigenmodes of what is described as the ``perfectly aligned and undistorted optical path''. %NL%
 In other words, this formalism describes how the introduction of misalignments and beam distortions alter a laser beam propagating in the system by treating misalignments (or higher order beam distortions) as matrix elements which transfer energy between different spatial modes. %NL%
@@ -108,8 +108,7 @@ A general field vector can be decomposed in the modal space as
 \begin{equation}
 \vect{E} = \sum_{m,n=0}^\infty A_{mn}\vect{mn}\doteq\sum_{m,n=0}^\infty A_{mn}U_m(x,z)U_n(y,z)e^{-ikz},
 \end{equation}
-where $U_m(x,z)$ is the $m$th 1-D Hermite-Gaussian mode (see \ref{ap:HGmode}). %NL%
-The basis modes are also referred to as the Transverse Electric and Magnetic modes of order $mn$ (\TEM{mn}). %NL%
+where $U_m(x,z)$ is the $m$th 1-D Hermite-Gaussian mode (For example, as defined in \citet{Siegman}.) The basis modes are also referred to as the Transverse Electric and Magnetic modes of order $mn$ (\TEM{mn}). %NL%
 The Hermite-Gaussian modes form a complete orthonormal set of basis functions, therefore the inner product is $\inprod{mn}{kl}=\delta_{mk}\delta_{nl}$.
 
 In the modal space, a simple example operator would be a mirror that has been tilted by an angle $\theta_x$ about the y axis. %NL%
