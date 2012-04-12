@@ -22,8 +22,7 @@ Consider an electromagnetic wave propagating in the z direction, at some point a
 \end{align*}
 where $A_0$, $A_1$ and $A_{-1}$ are the carrier, first order upper sideband and first order lower sideband amplitudes respectively, $k=\omega_0/c$ is the wave-number, and $\geom{x}$ is the \emph{geometrical} basis vector pointing along the axis of polarization. %NL%
 We are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in (\ref{eq:dotequals}) is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
-The right side of the equation is not written in terms of vectors and thus is not truly equal to the left side. %NL%
-The dot can be ignored if one doesn't mind their math to be a bit sloppy.} 
+The right side of the equation is not written in terms of vectors and thus is not truly equal to the left side.} 
 \begin{equation}
 \label{eq:dotequals}
 \vect{E} \doteq \ms A_0 \\ A_1 \\ A_{-1} \me.
@@ -74,14 +73,14 @@ It is then clear that the act of $\oper{\Phi}(\Gamma)$ operating on an input fie
 So far, we have kept our example relatively simple. %NL%
 The vector space we have chosen represents only the first order sidebands generated on the carrier frequency. %NL%
 Also, we have only expanded the effect of phase modulation to terms linear in $\Gamma$. %NL%
-There is, however, no fundamental reason that the analysis cannot be used to arbitrary precision. %NL%
+There is, however, no fundamental reason that the analysis cannot be extended to arbitrary precision. %NL%
 The number of components of the vector space can be expanded to account for an arbitrary number of higher order sidebands, and the matrix elements used for $\oper{\Phi}(\Gamma)$ can take their exact values. %NL%
 The general form of the phase modulation operator is:
 \begin{equation}
 \oper{\Phi}(\Gamma) = \sum_{r,s=-\infty}^\infty\vect{r} i^{s-r} J_{s-r}(\Gamma) \form{s},
 \end{equation}
 where $\vect{r}$ is the basis vector representing the $r$th order sideband component (which includes a $e^{ir\Omega t}$ time dependence), and $J_k(x)$ is the Bessel function of the first kind.\footnote{This can be shown using the so-called Jacobi-Anger identity, $e^{ix\cos\theta}=\sum_{k=-\infty}^\infty i^kJ_k(x)e^{ik\theta}$. %NL%
-Also, $J_{-k}(x)=(-1)^kJ_k(x)$, thus $\oper{\Phi}(\Gamma)$ is symmetric.} The ability to calculate to arbitrary precision will continue to hold true when we expand the treatment to include other components of a propagating laser field, such as the transverse beam modes. %NL%
+Also, $J_{-k}(x)=(-1)^kJ_k(x)$, thus $\oper{\Phi}(\Gamma)$ is symmetric.} The ability to calculate to arbitrary precision will continue to hold true when we expand the treatment to include other components of a propagating laser field, such as the transverse spatial modes. %NL%
 As long as the solutions are converging, the precision is only limited by the choice of when the vector space is truncated, i.e.\ to what order the calculation is taken.
 
 \section{The modal space}
@@ -98,8 +97,8 @@ The misalignments are generally treated as small, and thus, the operators of the
 The misaligned solutions of beam propagation are thus treated as perturbations of the aligned solutions. %NL%
 
 
-The treatment of modes in this formalism is slightly novel due to the fact that, normally, some fundamental Gaussian laser mode is defined to have some beam particular waist $w_0$, and a focused beam with a different beam waist can be written as a series of higher order components with the original beam waist $w_0$. %NL%
-While in this formalism, the fundamental Gaussian mode may have a beam waist value that changes due to the presence of a lens, but the beam on both sides of the lens would be represented by the same modal state vector (modulo some phase rotation due to propagation). %NL%
+The treatment of modes in this formalism is slightly novel due to the fact that, normally, some fundamental Gaussian laser mode is defined to have a particular beam waist $w_0$, and a focused beam with a different beam waist can be written as a series of higher order components with the original beam waist $w_0$. %NL%
+In this formalism, the fundamental Gaussian mode may have a beam waist value that changes due to the presence of a lens, but the beam on both sides of the lens would be represented by the same modal state vector (modulo some phase rotation due to propagation). %NL%
 It is only the presence of misalignments and distortions that cause significant off-diagonal matrix elements.
 
 Choosing the common Hermite-Gaussian basis, we can use basis vectors which are separable into the mode order of the beam along the $x$ and $y$ transverse axes of the beam. %NL%
@@ -107,7 +106,7 @@ A general field vector can be decomposed in the modal space as
 \begin{equation}
 \vect{E} = \sum_{m,n=0}^\infty A_{mn}\vect{mn}\doteq\sum_{m,n=0}^\infty A_{mn}U_m(x,z)U_n(y,z)e^{-ikz},
 \end{equation}
-where $U_m(x,z)$ is the $m$th 1-D Hermite-Gaussian mode (For example, as defined in \citet{Siegman}.) The basis modes are also referred to as the Transverse Electric and Magnetic modes of order $mn$ (\TEM{mn}). %NL%
+where $U_m(x,z)$ is the $m$th 1-D Hermite-Gaussian mode (for example, as defined in \citet{Siegman}.) The basis modes are also referred to as the Transverse Electric and Magnetic modes of order $mn$ (\TEM{mn}). %NL%
 The Hermite-Gaussian modes form a complete orthonormal set of basis functions, therefore the inner product is $\inprod{mn}{kl}=\delta_{mk}\delta_{nl}$.
 
 In the modal space, a simple example operator would be a mirror that has been tilted by an angle $\theta_x$ about the y axis. %NL%
@@ -161,8 +160,9 @@ It is understood that the electric field represented by one of these basis vecto
 \vect{mn;r;p} \doteq e^{\left[ i\left( \omega_0+\omega_r\right)t\right]} U_{mn}\geom{\epsilon}_p,
 \]
 where $\omega_r$ is some mapping from the index $r$ to a set of frequencies; $U_{mn}$ is shorthand for $U_m(x,z)\times U_n(y,z)$; and $\geom{\epsilon}_p$ for $p\in \{1,2\}$ are the polarization unit vectors in the $x$ and $y$ direction, respectively. %NL%
-Note that this treatment handles sidebands slightly different from how they are handled elsewhere, for example, \citet{Sigg:00} treat radio frequency modulation sidebands differently from audio frequency sidebands, and also only treat audio frequency sidebands which are regularly spaced. %NL%
-Using the treatment outlined here in which all sidebands are treated equally and may have arbitrary spacing, we are able to more simply investigate cross modulation products of several modulation sidebands, as well as situations where signal detection frequencies are comparable to modulation frequencies. %NL%
+Note that this treatment handles sidebands slightly different from how they are handled elsewhere. %NL%
+For example, \citet{Sigg:00} treat radio frequency modulation sidebands differently from audio frequency sidebands, and also only treat audio frequency sidebands which are regularly spaced. %NL%
+Using the treatment outlined here in which all sidebands are treated in the same way and may have arbitrary spacing, we are able to more simply investigate cross modulation products of several modulation sidebands, as well as situations where signal detection frequencies are comparable to modulation frequencies. %NL%
 This is accompanied by the sacrifice of potentially having many more matrix elements.
 
 An example of an operator in the combined space is the free space propagation operator:
@@ -186,7 +186,7 @@ The parameter $\eta$ is commonly referred to as the Gouy phase shift. %NL%
 As one can see by the presence of the Kronecker deltas in (\ref{eq:Propagator}), all the components of the input field are directly propagated to the output field without mixing. %NL%
 There is, however a phase shift which depends on the transverse mode order (the Gouy shift) and the wavelength ($\omega_r/c$).
 
-More complicated operators exist which mix simultaneously mode and frequency components. %NL%
+More complicated operators exist which simultaneously mix mode and frequency components. %NL%
 One example is that of a mirror which is dithered at a given frequency in angle. %NL%
 It is in a sense a combination of the misaligned mirror operator in section \ref{sec:modalspace} and the phase modulation operator in section \ref{sec:freqspace}. %NL%
 This operator is derived by \citet{Sigg:00}.
@@ -247,7 +247,7 @@ The spatial matrix elements of the demodulation operator are:
 \matrixel{mn}{\oper{D}(\Omega)}{kl}=\iint\limits_{\text{PD area}}U_{mn}^\dagger(x,y)p(x,y)U_{kl}(x,y)\dd x \dd y,
 \end{equation}
 where the ``variable'' %NL%
-$\Omega$ is just supposed to contain all the information of the pupil function.
+$\Omega$ is just supposed to contain all the information of the pupil function.\footnote{$\Omega$ does not represent an angular frequency in this case.}
 
 The frequency, spatial, and polarization parts of the demodulation operator and combined simply with a tensor product,
 \begin{equation}
@@ -301,4 +301,5 @@ This is of course just the expected resonance behavior. %NL%
 As the length of the cavity is changed (which modifies the propagation operators) different field components will come in and out of resonance. %NL%
 This includes both frequency components and higher order mode components, indeed different frequency components of different higher order mode components as well!
 
-\com{maybe just a segue to the next chap?}
+The following chapter describes an alignment system designed to measure the spatial modes of only a particular frequency component of the laser field. %NL%
+The concepts introduced in this chapter are well suited to describe such a system.
