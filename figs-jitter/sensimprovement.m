@@ -88,7 +88,8 @@ for data = [fixedpost TT0hang thinwires bladescal]
         hold on
 end
 
-legend(legcell,'Location','Best')
+[legh,objh] = legend(legcell,'Location','Best');
+set(objh,'linewidth',2);
 
 xlim([50 1400]);
 ylim([.7e-19 1e-16])

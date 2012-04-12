@@ -10,7 +10,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    sodipodi:docname="magffblockdiag.svg"
-   inkscape:version="0.48.2 r9819"
+   inkscape:version="0.48.0 r9654"
    version="1.1"
    id="svg4370"
    height="115.5582"
@@ -106,19 +106,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="464.37705"
-     inkscape:cy="28.836182"
+     inkscape:cx="253.76025"
+     inkscape:cy="29.341258"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4350"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1024"
-     inkscape:window-height="576"
+     inkscape:window-width="1834"
+     inkscape:window-height="1003"
      inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-y="25"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata4375">
@@ -498,7 +498,7 @@
        x="120.13573"
        style="font-size:10.30661964px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;font-size:9.04418355px"
          y="100.2476"
          x="120.13573"
          id="tspan3083"
@@ -594,7 +594,7 @@
          id="tspan4358"
          x="84.330139"
          y="100.2476"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Trebuchet MS;-inkscape-font-specification:Trebuchet MS">0111001</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;font-size:9.04418355px">0111001</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;stroke:none"
        d="m 124.74448,93.999814 0,1.494319 -2.81622,0 0,3.276005 2.81622,0 0,1.494322 5.40253,-3.161062 -5.40253,-3.103584 z"

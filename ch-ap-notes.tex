@@ -2,6 +2,69 @@
 
 \section{The control vector separation is the Gouy phase separation}
 % also the fact that mode matching is a constraint
+A servo system which is designed to control several degrees of freedom of a system simultaneously must be able to effectively sense and control each degree of freedom independently. %NL%
+The degrees of freedom of the system span a phase space, and the sensors and actuators can be represented as vectors in this space. %NL%
+Where the components of the vectors have amplitudes proportional to the sensitivity of the sensor, or the actuation strength of the actuator, in a given degree of freedom. %NL%
+In order to effectively control one's system, care should be taken to ensure that these vectors sufficiently span the phase space. %NL%
+If any direction does not have coverage, it will either be unsensed, or uncontrolled.
+
+In the case of the alignment of a laser beam, there are four degrees of freedom. %NL%
+These may be parameterized as the beam waist position and beam waist angle in the $x$ and $y$ directions.\footnote{Where $z$ is the direction of propagation.} For good alignment control of a laser beam using steering mirrors, for example into an optical cavity, a common piece of lore is that one must have a steering mirror `close' to the alignment target, and one steering mirror `far' from it. %NL%
+But just what exactly sets the criteria for close and far?
+
+Let us contrain ourselves to a single plane of beam alignment, such that we are only concered with the waist position and angle in the $x$ direction. %NL%
+It can be shown that the field of the beam can be represented as the \TEM{00} field with some small additional \TEM{01} field added when the displacements and misalignments are small \cite{Anderson1984}. %NL%
+To first order in misalignment, the field can be written as
+\begin{equation}
+\label{eqn:shifttilt}
+\vect{E}=\vect{00}+\left(\frac{\delta x}{w_0} + i \frac{\theta}{\theta_d}\right)\vect{01}
+\end{equation}
+where $\vect{mn}$ is the \TEM{mn} eigenmode, $\delta x$ is the beam position displacement, $w_0$ is the beam waist radius, $\theta$ is the beam tilt angle, and $\theta_d=\lambda/(\pi w_0)$ is the divergence angle. %NL%
+Therefore we may frame the problem of controlling the beam position and angle by our ability to control the real and imaginary quadratures of the amplitude of the \TEM{01} component. %NL%
+Thus a `good' alignment system will be one in which the ability of the system to actuate on the real and imaginary quadratures of the \TEM{01} field is well separated.
+
+We will represent our alignment system as two steering mirrors labeled A and B. %NL%
+The mirror first reflects from mirror A, travels some distance, then reflects from mirror B. %NL%
+Considering only the \TEM{00} and \TEM{01} modes, From equation \ref{eqn:mirrortilt} we see that the operator for mirror A is
+\begin{equation}
+%\oper{M}_{\rm A}=\oper{I}-2i\Theta_{\rm A}\left(\vect{00}\form{01}+\vect{01}\form{00}\right),
+\oper{M}_{\rm A} \doteq \ms 1 &-2i\Theta_{\rm A}\\-2i\Theta_{\rm A} & 1\me
+\end{equation}
+where $\Theta_{\rm A}$ is the alignment angle of mirror A, and $\oper{I}$ is the identity operator. %NL%
+A similar expression holds for mirror B.
+
+Between mirrors A and B, we allow the laser to propagate some distance. %NL%
+Along with the propagation phase which is common to all modes, there is the additional Gouy phase $\eta$. %NL%
+The propagation operator is
+\begin{equation}
+%\oper{P}=e^{i\phi}\left(\vect{00}\form{00}+e^{i\eta}\vect{01}\form{01}\right),
+\oper{P}\doteq e^{i\phi}\ms 1&0\\0&e^{i\eta}\me
+\end{equation}
+where $\phi$ is the overall phase common to all modes.
+
+To first order in angles and ignoring the overall phase, the operator of the entire alignment system is
+\begin{equation}
+\oper{M}_{\rm B}\oper{P}\oper{M}_{\rm A}\doteq
+\ms 1 & -2i\left(\Theta_{\rm A}+e^{i\eta}\Theta_{\rm B}\right)\\
+-2i\left(e^{i\eta}\Theta_{\rm A}+\Theta_{\rm B}\right) & e^{i\eta} \me,
+\end{equation}
+if we apply this to a pure \TEM{00} field on the input, the output field is
+\begin{equation}
+\vect{E}_{\rm{out}}=\vect{00}-2i\left(e^{i\eta}\Theta_{\rm A}+\Theta_{\rm B}\right)\vect{01}.
+\end{equation}
+If we compare this to Equation \ref{eqn:shifttilt}, we see that mirror B actuates eclusively on the beam angle, while for mirror A, the amount of position or angle actuation depends on the Gouy phase propagation between the two mirrors, $\eta$. %NL%
+If $\eta=\pi/2$, then mirror A only actuates on position and the two actuators are completely seperated in actuator phase space. %NL%
+In fact, the angle between the actuators in phase space is just $\eta$.
+
+Intuitively, this may be understood by the fact that the \TEM{01} mode has an extra rotation relative to the \TEM{00} mode, this is the Gouy phase. %NL%
+Once one of the mirrors has actuated on the beam, we must let the quadrature that was actuated on rotate away so that we may actuate on the perpendicular quadrature. %NL%
+This rotation is what causes angles in the near field to rotate into positions in the far field. %NL%
+
+
+The treatment of sensing is quite similar, in that case, it is the demodulation operator which connects the \TEM{00} and \TEM{01} modes, and again, the Gouy phase dictates the sensor separation.
+
+As a final thought, if one were designing an actuation system for modes of higher order than \TEM{01}, the optimal control seperation (a phase space angle of $\pi/2$) would occur at $\eta=\frac{1}{m+n}\frac{\pi}{2}$ for the \TEM{mn} mode.
+
 \section{Dither sensing is a measurement of a partial derivative}
 
 \section{Conventions for the coefficient of amplitude transmission and reflectivity of beamsplitters}

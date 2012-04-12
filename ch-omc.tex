@@ -1,7 +1,8 @@
 \chapter{The output mode cleaner}
 \label{ch:omc}
 One of the primary components of the Enhanced LIGO upgrade was the addition of an output mode cleaner or OMC \cite{T060156}. %NL%
-This chapter describes the motivation for installing and OMC and some measurements of the performance of the OMC installed on the H1 interferometer at the LIGO Hanford Observatory.
+This chapter describes the motivation for installing and OMC and some measurements of the performance of the OMC installed on the H1 interferometer at the LIGO Hanford Observatory. %NL%
+\com{add photos to this chapter}
 
 \section{Motivation for an OMC}
 The interferometer is supplied with a beam that has a very nearly pure Gaussian spatial profile thanks to the input mode cleaner. %NL%
@@ -283,23 +284,41 @@ Thus the PZT calibration is $\frac{14.5\text{nm}}{2}\frac{1}{19.8\text{V}}=0.37\
   \label{fig:pztsweep}
 \end{figure}
 
-The high frequency response of the OMC PZT actuator was measured by locking the cavity on resonance for the carrier, and applying a periodic drive to the PZT. %NL%
-The cavity locking error signal was used as a length response readout. %NL%
-Figure \ref{fig:pzttf} shows the measured transfer function.
+%The high frequency response of the OMC PZT actuator was measured by locking the cavity on resonance for the carrier, and applying a periodic drive to the PZT. The cavity locking error signal was used as a length response readout. Figure \ref{fig:pzttf} shows the measured transfer function.
 
+%\begin{figure}
+%  \begin{center}
+%  \leavevmode
+%  \includegraphics{figs-omc/pzttf.pdf}
+%  \end{center}
+%  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response. \com{make a nicer figure}}
+%  \label{fig:pzttf}
+%\end{figure}
 \begin{figure}
   \begin{center}
   \leavevmode
-  \includegraphics{figs-omc/pzttf.pdf}
+  \includegraphics{figs-omc/raddamping.pdf}
   \end{center}
-  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response. \com{make a nicer figure}}
-  \label{fig:pzttf}
+  \caption[Change me]{\com{change me}}
+  \label{fig:raddamping}
 \end{figure}
-
-
 \section{Opto-thermal-mechanical feedback issues in the OMC}
 
 \com{At least include measurements by Tim and I, hopefully can hack a model to explain it.}
 
-\section{OMC throughput efficiency and squeezed light injection}
-\com{just enough words to explain the SNR/losses plot, nice lead in to the following chapters.}
+\com{not electronic, cables not the same, shorted pzt, happened with and without dither}
+
+\com{at the end of the day, it's not a detuned cavity}
+
+\section{OMC performance in Enhanced LIGO and prospects for future interferometers}
+An analysis of the readout sensitivity of the two Enhanced LIGO interferometers was performed by \citet{Tobin}. %NL%
+This analysis showed that both interferometers performed at the expected level of sensitivity when all known output losses were taken into account. %NL%
+The OMCs thus provided the desired outcome of improving the ultimate interferometer sensitivity. %NL%
+One of the major sources of loss for the H1 interferometer was mode mismatching, a solution to this problem for future interferometers is proposed in Chapter \ref{ch:modematching}.
+
+The use of squeezed light to further enhance the readout sensitivity of laser interferometers has recently been demostrated as both feasable and practical on full scale gravitational wave antennae \cite{GEOSqz:11,LIGOSqz}. %NL%
+Output losses, which degrade the readout sensitivity of any interferometer, become even more important when the interferometer employs squeezed light injection. %NL%
+Figure \com{make} shows how losses in the readout chain can degrade the interferometer sensitivity for different levels of squeezed light injection. %NL%
+Two types of output losses that are of particular importance with an OMC are discussed in subsequent chapters. %NL%
+These are alignment losses (Chapter \ref{ch:beacon}) and mode matching losses (Chapter \ref{ch:modematching}).
+
