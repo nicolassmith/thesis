@@ -18,7 +18,7 @@ pdf : $(main).pdf
 figs-modalmodel = $(addprefix figs-modalmodel/,QPD.pdf omcmodal.pdf)
 ch-modalmodel.pdf : $(figs-modalmodel)
 
-matfigs-omc = $(addprefix figs-omc/,pzttf.pdf finesseFit.pdf pztdccal.pdf)
+matfigs-omc = $(addprefix figs-omc/,pzttf.pdf finesseFit.pdf pztdccal.pdf raddamping.pdf)
 figs-omc = $(addprefix figs-omc/,construction.pdf interrogator.pdf)
 ch-omc.pdf : $(matfigs-omc) $(figs-omc)
 
