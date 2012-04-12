@@ -1,5 +1,5 @@
 main-chapters = gws ifo modalmodel omc beacon modematching jitter
-ap-chapters = ap-miscon ap-matrices ap-notes
+ap-chapters = ap-miscon ap-matrices ap-notes ap-gloss
 main = main
 auxiliary = cover contents
 bib = mainb
@@ -32,7 +32,10 @@ matfigs-jitter = $(addprefix figs-jitter/,hamtransmission.pdf bilinearplot.pdf m
 figs-jitter = $(addprefix figs-jitter/,ham6layout.pdf ttdiag.pdf magffblockdiag.pdf TTbounceTF.pdf TT0photos.pdf)
 ch-jitter.pdf : $(matfigs-jitter) $(figs-jitter)
 
-figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo) $(figs-jitter)
+figs-modematching = $(addprefix figs-modematching/,blockdiag.pdf)
+ch-modematching.pdf : $(figs-modematching)
+
+figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo) $(figs-jitter) $(figs-modematching)
 matfigs = $(matfigs-omc) $(matfigs-jitter)
 
 # fig rules

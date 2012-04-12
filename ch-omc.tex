@@ -1,19 +1,23 @@
 \chapter{The output mode cleaner}
 \label{ch:omc}
+One of the primary components of the Enhanced LIGO upgrade was the addition of an output mode cleaner or OMC \cite{T060156}. %NL%
+This chapter describes the motivation for installing and OMC and some measurements of the performance of the OMC installed on the H1 interferometer at the LIGO Hanford Observatory. %NL%
+\com{add photos to this chapter}
 
 \section{Motivation for an OMC}
 The interferometer is supplied with a beam that has a very nearly pure Gaussian spatial profile thanks to the input mode cleaner. %NL%
 The input mode cleaner is a nearly critically coupled resonant optical cavity which filters the beam supplied by the laser before it is delivered to the interferometer input. %NL%
-The interferometer builds up power in the recycling cavity which is delivered to the long arms. %NL%
-The arms further recycle the laser light and this large resonant field acts as the source field which gets modulated by a passing gravitational wave and pumps light into the audio sidebands which are finally detected as a signal. %NL%
-Although the beam delivered by the mode cleaner is spatially very pure, the efficiency of coupling this beam to the final resonant mode of the arm is not ideal. %NL%
-Components of the input light which are not matched to the mode of the arm cavity will not resonate and some of this unmatched light will exit the antisymmetric port along with the signal light. %NL%
+The power recycling cavity builds up power and delivers it to the long arms. %NL%
+The arms further recycle the laser light and this large resonant field acts as the source field that gets modulated by a passing gravitational wave and pumps light into sidebands at the gravitational wave frequency. %NL%
+The gravitational wave signal comprises the beat note of these audio frequency sidebands with a strong coherent field. %NL%
+Although the beam delivered by the input mode cleaner is spatially very pure, the efficiency of coupling this beam to the final resonant mode of the arm cavity is not ideal. %NL%
+Components of the input light that are not matched to the mode of the arm cavity will not resonate and some of this unmatched light will exit the antisymmetric port along with the signal light. %NL%
 The unmatched light at the antisymmetric port will exist as higher order modes (HOM) relative to the arm cavity mode and is often referred to as ``junk light.'' %NL%
 The presence of this light on a photodetector will contribute photon shot noise. %NL%
 Also, if the coupling is time dependent, the time variation of the junk light directly contaminate the signal with noise.
 
-It is therefore desireable to be able to separate the junk light from the signal rich audio frequency fields originating in the arm cavities. %NL%
-A natural form of spatial filter exists in the form of a critically coupled resonant optical cavity. %NL%
+It is, therefore, desirable to be able to separate the junk light from the signal rich audio frequency fields originating in the arm cavities. %NL%
+A critically coupled resonant optical cavity is a natural spatial filter for light. %NL%
 When placed at the output of the interferometer we refer to such a cavity as the output mode cleaner (OMC).
 
 \infobox{The benefits of an OMC}{
@@ -23,32 +27,33 @@ When placed at the output of the interferometer we refer to such a cavity as the
 \item Reduce audio frequency noise from RF sidebands
 \end{itemize}
 }
-It can be useful to point out that interferometers based on both RF and DC readout can benefit from an OMC \com{readouts discussed in previous chapter}. %NL%
+It can be useful to point out that interferometers based on both RF and DC readout can benefit from an OMC. %NL%
 Both the GEO and Virgo interferometers have used OMCs in an RF readout configuration, and LIGO experimented with an OMC before using DC readout \cite{G040326}. %NL%
 An OMC is especially important for a DC readout interferometer because any audio frequency modulation of fields that are not the local oscillator or signal will contaminate the readout. %NL%
-Also, there is not benefit of the frequency selection of the RF readout to selectively omit unwanted audio modulation. %NL%
+Because readout is performed at DC, all audio frequency interference of the fields will directly couple to the signal channel, as opposed to an RF heterodyne scheme where the signal is shifted away from low frequency interference. %NL%
 An OMC may also be used to ensure the light provided by the differential arm offset dominates the DC power present on the detection photodiode, otherwise DC power from other fields (such as the RF sidebands) will contribute to photon shot noise without increasing the signal strength. %NL%
 
 
-Thus, for an interferometer which employs DC readout, the OMC should efficiently strip the HOM field components of the carrier field as well as the RF sidebands. %NL%
-This is achieved by creating a high finesse cavity that is controlled to resonate on the desired (carrier) field. %NL%
+Thus, for an interferometer that employs DC readout, the OMC should efficiently strip the HOM field components of the carrier field as well as the RF sidebands. %NL%
+This is achieved by creating a cavity with a narrow linewidth, capable of transmitting the desired (carrier) field, while filtering out higher frequencies. %NL%
 Ideally, being a critically coupled optical cavity, light incident on the OMC is totally transmitted on resonance. %NL%
-The transmission of the off-resonant fields is goverened by the cavity finesse $\mathcal{F}$, explicitly the normalized transmission is
+The transmission of the off-resonant fields is governed by the cavity finesse $\mathcal{F}$, explicitly the normalized transmission is
 \begin{equation}
 \label{eqn:finesse}
 T=\frac{1}{1+\frac{4}{\pi^2}\mathcal{F}^2\sin{}^2\phi},
 \end{equation}
 where $\mathcal{F}$ is known as the \emph{cavity finesse} and $\phi$ is the detuning from resonance. %NL%
-In terms of a frequency detuning of $\Delta f$ of the incident light, $\phi = \pi \Delta f / \mathrm{FSR}$.
+In terms of a frequency detuning of $\Delta f$ of the incident light, $\phi = \pi \Delta f / \mathrm{FSR}$. %NL%
+The FSR is the frequency spacing of successive resonances, discussed in Section \ref{sec:FSR}.
 
 \section{Optical and mechanical design of the OMC}
 Prior to Enhanced LIGO, experiments we performed using a OMC borrowed from the GEO600 interferometer to investigate the difficulties in using an OMC with LIGO. %NL%
 Noise introduced from jitter of the OMC input beam due to air currents and mechanical vibrations spoiled the sensitivity of the LIGO detector when the OMC was used. %NL%
-This meant that one of the most obvious lessons learned from these investigations was the need to house the OMC in a low vibration environment. %NL%
+Consequently, one of the most obvious lessons learned from these investigations was the need to house the OMC in a low vibration environment. %NL%
 For Enhanced LIGO, it was decided that the OMC would be housed inside the vacuum system and would be isolated from vibrations of the environment through the use of a seismically isolated optics table as well as a suspension system to provide passive filtering of vibrations.
 
 \subsection{Cavity optics}
-The design of the OMC was chosen to be a four mirror bowtie cavity. %NL%
+The design of the OMC was chosen to be a four mirror bow-tie cavity. %NL%
 This choice was made over that of a two mirror linear cavity so that there was spatial separation of the reflected beam. %NL%
 An even number of mirrors was chosen such that the horizontal and vertical HOMs would experience the same overall phase shift and thus experience nearly the same frequency offset from resonance, reducing the chances of an accidental HOM resonance.
 
@@ -57,41 +62,40 @@ An even number of mirrors was chosen such that the horizontal and vertical HOMs 
   \leavevmode
   \includegraphics{figs-omc/construction.pdf}
   \end{center}
-  \caption[Diagram of OMC cavity components]{Diagram of OMC cavity components. Auxilliary optics and sensors are not shown. The tombstones have holes (not pictured) machined in them to allow the laser beam to pass through.}
+  \caption[Diagram of OMC cavity components]{Diagram of OMC cavity components. Auxiliary optics and sensors are not shown. The tombstones have holes (not pictured) machined in them to allow the laser beam to pass through.}
   \label{fig:omcconstruction}
 \end{figure}
 
 A diagram of the OMC may be seen in Figure \ref{fig:omcconstruction}. %NL%
-The OMC optics are bonded with Vacseal expoxy onto custom designed fused silica optics mounts, called tombstones. %NL%
+The OMC optics are bonded with Vacseal epoxy onto custom designed fused silica optics mounts, called tombstones. %NL%
 The tombstones were then bonded to a slab of Corning ULE Glass\footnote{The dimensions of the OMC breadboard are 450mm$\times$150mm$\times$39mm}, which we will refer to as the \emph{OMC breadboard}. %NL%
-This arrangement fixed the cavity length to the desired value and was designed to be stable agains thermal variation. %NL%
+This arrangement fixed the cavity length to the desired value and was designed to be stable against thermal variation. %NL%
 The microscopic cavity length was controlled using a pair of actuators. %NL%
-A fast PZT between one of the optics and its tombstone acted as a low range (1/10 FSR) high bandwidth (5kHz) length actuator. %NL%
-Long range (several FSR) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately reffered to as the OTAS.\footnote{OMC Thermal Actuation System}
+A fast PZT between one of the optics and its tombstone acted as a low range (1/10 of a wavelength) high bandwidth (5kHz) length actuator. %NL%
+Long range (several wavelengths) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately referred to as the OTAS.\footnote{OMC Thermal Actuation System}
 
-A mode cleaner cavity is puporsefully designed such that HOMs do not ocuppy a degenerate resonance with the resonant \TEM{00} mode. %NL%
+A mode cleaner cavity is purposefully designed such that HOMs do not occupy a degenerate resonance with the resonant \TEM{00} mode. %NL%
 Cavities are commonly characterized by their stability $g$-parameter.\footnote{Asymmetric cavities are often given two $g$-parameters, one for each mirror (labeled 1 and 2) and $g=\sqrt{g_1 g_2}$.} The Gouy shift accumulated in the cavity is determined by the cavity geometry as
 \begin{equation}
 \label{eqn:gouyg}
 \cos(\eta)=g,
 \end{equation}
-where the $g$-parameter is usually given by $g=1-L/R$ for a linear cavity of length $L$ and mirror radius of curvature $R$.\cite{T080208} The OMC is not a linear cavity, and it travels the length of the cavity only once during a full round trip. %NL%
+where the $g$-parameter is usually given by $g=1-L/R$ for a linear cavity of length $L$ and mirror radius of curvature $R$.\cite{T080208} The OMC is not a linear cavity, the light travels the length of the cavity only once during a full round trip. %NL%
 To avoid confusion we will use the \emph{perimeter}, $p$, to denote the full round trip length. %NL%
 One may substitute $2L=p$ in most formulae for linear cavities. %NL%
-An extensive analysis was done by Sam Waldman to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components trhough the OMC.\cite{T080144} The final design of the OMC was chosen to have a perimeter length of 1.042m, with 2m radius of curvature curved optics. %NL%
-This gives a $g$-parameter of 0.7395 and a Gouy phase shift of $0.235\pi$ radians. %NL%
+An extensive analysis was done by Sam Waldman to determine the optimal cavity geometry to minimize the transmission of off-resonant HOM and frequency components through the OMC.\cite{T080144} The final design of the OMC was chosen to have a perimeter length of 1.042m, with 2m radius of curvature curved optics, giving a $g$-parameter of 0.7395 and a Gouy phase shift of $0.235\pi$ radians. %NL%
 This implies that the fourth-order HOMs will accumulate almost $\pi$ radians relative to the \TEM{00} mode and be somewhat close to resonance.
 
-\subsection{Sensors and auxilliary optics}
-The gravitational wave signal readout is derived from the OMC trasmitted power. %NL%
-The light trasmitted by the OMC is split by a near 50/50 beam splitter and detected on two photodiodes. %NL%
+\subsection{Sensors and auxiliary optics}
+The gravitational wave signal readout is derived from the OMC transmitted power. %NL%
+The light transmitted by the OMC is split by a near 50/50 beam splitter and detected on two photodiodes. %NL%
 Both the beam splitter and photodiodes are located on the OMC breadboard. %NL%
 The beamsplitter is glued to a tombstone similar to that of the cavity optics. %NL%
 The photodiodes were attached to tombstones via a sandwich of metal plates screwed together around the tombstone. %NL%
 This arrangement ensured that the OMC transmitted beam would not drift relative to the readout detectors.
 
 A steering mirror on the OMC breadboard transmitted a small sample of the incoming beam allowing the input pointing to be analyzed by two quadrant photodetectors (QPDs). %NL%
-A 50/50 beam splitter ditributed equal amounts of the input beam to the two QPDs. %NL%
+A 50/50 beam splitter distributed equal amounts of the input beam to the two QPDs. %NL%
 The QPDs were located at different distances from the beam splitter to allow both beam angle and lateral position to be measured.
 
 \subsection{Suspension system}
@@ -108,15 +112,15 @@ The beam exiting the interferometer from the antisymmetric port was directed thr
 The purpose of such a telescope is to correctly align and focus the beam exiting the interferometer to maximize the transmission of the gravitational wave signal through the OMC.
 
 The steering optics were housed in a single pendulum suspension system. %NL%
-The suspension and optics were collectively refered to as \emph{Tip-Tilt optics}. %NL%
-The mounting and suspension of the beam steering optics underwent several modifications during the Enhanced LIGO project (see Chapter \ref{ch:jitter}). %NL%
+The suspension and optics were collectively referred to as \emph{Tip-Tilt optics}.\footnote{The Tip Tilts were designed by B. %NL%
+Slagmolen of the Australian National University\cite{T0900096}.} The mounting and suspension of the beam steering optics underwent several modifications during the Enhanced LIGO project (see Chapter \ref{ch:jitter}). %NL%
 The final configuration consisted of three highly reflective curved mirrors. %NL%
 Two suspended by a single pendulum stage, with vertical isolation provided by blade springs, and a coil-magnet/shadow sensor system similar to that used in the OMC suspension. %NL%
 The actuator system allowed feedback control of the optic angle for active beam alignment. %NL%
 The third was housed in a similar suspension system, but without any sensing or actuation capabilities.
 
 \subsection{Vibration isolation table}
-The Tip-Tilts and OMC suspension frame were all housed in a single vacuum chamber and situated on top of a actively controlled seismic isolation table, the HAM-ISI.\footnote{HAM chamber Internal Seimic Isolation system} The HAM-ISI employed a single stage of passive vibration isolation, coupled with active feedback control using inertial sensors as the primary error signal. %NL%
+The Tip-Tilts and OMC suspension frame were all housed in a single vacuum chamber and situated on top of a actively controlled seismic isolation table, the HAM-ISI.\footnote{HAM chamber Internal Seismic Isolation system} The HAM-ISI employed a single stage of passive vibration isolation, coupled with active feedback control using inertial sensors as the primary error signal. %NL%
 A thorough account of the HAM-ISI design and performance is given by \citet{P1200020} \com{replace when published}.
 
 \section{Characterization of the H1 OMC}
@@ -129,13 +133,13 @@ A thorough account of the HAM-ISI design and performance is given by \citet{P120
   \label{fig:interrogator}
 \end{figure}
 
-Figure \ref{fig:interrogator} shows a diagram of the experimental setup used to measure several parameters of the OMC which was installed on the H1 LIGO interferometer in Hanford, WA. %NL%
-The laser source is a NdYAG NPRO providing a 1064nm wavelength laser beam. %NL%
-The polarization is rotated by a half-wave plate (QWP). %NL%
+Figure \ref{fig:interrogator} shows a diagram of the experimental setup used to measure several parameters of the OMC that was installed on the H1 LIGO interferometer in Hanford, WA. %NL%
+The laser source is a Nd:YAG NPRO providing a 1064nm wavelength laser beam. %NL%
+The polarization is rotated by a half-wave plate (HWP). %NL%
 A polarizing beam splitter (PBS) sends some fraction of the light through an electro-optic modulator (EOM) which is driven at by RF oscillator \#2. %NL%
 The fraction transmitted by the PBS is tuned by changing the angle of the HWP. %NL%
 The EOM introduces two RF sidebands which will be used for cavity length control. %NL%
-The other path of light is director to an acouso-optic modulator (AOM). %NL%
+The other path of light is director to an acousto-optic modulator (AOM). %NL%
 The light is double passed though the AOM and and receives a frequency shift which is twice the frequency of RF oscillator \#1. %NL%
 A quarter-wave plate (QWP) causes the polarization to rotate 90\degrees{} after double passing, causing both paths to now be in the same polarization. %NL%
 The light from the two paths are recombined before being injected into an optical fiber. %NL%
@@ -144,22 +148,23 @@ The frequency makeup of the combined beam includes the original carrier frequenc
 The light exiting the other end of the optical fiber is incident on the input coupling mirror of the OMC cavity. %NL%
 A small sample of the input beam is incident on a photodetector. %NL%
 The promptly reflected beam is detected on a photodetector where the photocurrent is demodulated at the frequency of RF oscillator \#2. %NL%
-The frequency of oscillator \#2 is chosen so that it is outisde of the OMC resonance when the carrier is in resonancne. %NL%
+The frequency of oscillator \#2 is chosen so that it is outside of the OMC resonance when the carrier is in resonance. %NL%
 This provides an error signal which is fed back to the frequency actuator of the laser. %NL%
 The control system is able to maintain resonance of the laser in the OMC. %NL%
 The laser transmitted through the OMC is detected on another photodetector. %NL%
 A very small sample of the light in the cavity is transmitted through one of the HR mirrors and detected by a CCD sensor.
 
 \subsection{Free spectral range}
-Resonance occurs in the cavity when the total round trip phase of the incident laser beam as it propagates thorugh the cavity is an integer multiple of $2\pi$. %NL%
+\label{sec:FSR}
+Resonance occurs in the cavity when the total round trip phase of the incident laser beam as it propagates through the cavity is an integer multiple of $2\pi$. %NL%
 In terms of the frequency of the laser beam, this occurs at multiples of what is called the \emph{free spectral range} (FSR). %NL%
 The FSR is related to the round trip cavity perimeter $p$ by $\mathrm{FSR}=c/p$.
 
 The technique used to measure the cavity FSR involved locking the laser frequency so the carrier was resonant in the OMC while varying the frequency of the subcarrier and measuring the OMC transmitted power. %NL%
-The OMC trasnmitted power will be maximized when the subcarrier is seperated from the carrier by a multiple of the FSR.
+The OMC transmitted power will be maximized when the subcarrier is separated from the carrier by a multiple of the FSR.
 
-The RF freqeuncy generator was tuned to maximize the subcarrier transmission. %NL%
-The error was just estimated by the smallest frequency step which did not cause a noticible change in transmission. %NL%
+The RF frequency generator was tuned to maximize the subcarrier transmission. %NL%
+The error was just estimated by the smallest frequency step that did not cause a noticeable change in transmission. %NL%
 The measured FSR is
 \begin{equation}
 \mathrm{FSR}=278.288\pm0.001\text{MHz}.
@@ -184,7 +189,7 @@ Table \ref{tab:HOM} shows the measurements for several higher order mode frequen
 Notice that the horizontal and vertical modes experience slightly different Gouy shifts in the cavity. %NL%
 This is due to the astigmatism introduced in the cavity by non-normal incidence on the cavity mirrors. %NL%
 One may use the measured $g$-parameters to estimate the radius of curvature of the curved optics of the OMC. %NL%
-If we take the average value of the measured $g$s, this implies a radius of curvature of 1.96m, which is close to the specification of 2m.
+If we take the average value of the measured $g$, this implies a radius of curvature of 1.96m, which is close to the specification of 2m.
 
 \begin{table}
   \begin{center}
@@ -198,13 +203,13 @@ If we take the average value of the measured $g$s, this implies a radius of curv
       4 & 0 &  269.60 MHz & 0.2422$\pi$ & 0.7242\\
       \hline
     \end{tabular}
-  \caption[Higher order mode frequency shifts in the OMC]{Higher order mode frequency shifts in the OMC. The frequency shift measured by varying the subcarrier separation from the resonating carrier. The $m$ index is the horizontal mode order. Negative frequency shifts were acheived by using the -1 diffraction order of the AOM.}
+  \caption[Higher order mode frequency shifts in the OMC]{Higher order mode frequency shifts in the OMC. The frequency shift measured by varying the subcarrier separation from the resonating carrier. The $m$ index is the horizontal mode order. Negative frequency shifts were achieved by using the -1 diffraction order of the AOM.}
   \label{tab:HOM}
   \end{center}
 \end{table}
 
 These data were taken with the OMC at room temperature. %NL%
-It was later discovered that the HOM spacing varied with the temperature of the thermal length actuator. %NL%
+It was later discovered that the HOM spacing varied with the temperature of the thermal length actuator \cite{OTASmodes}. %NL%
 With high enough temperature, this would bring the fourth order modes in coincidence resonance with the \TEM{00} mode! %NL%
 We postulated that this was due to a change in the effective radius of curvature of the OTAS mirror as the OTAS expanded. %NL%
 To mitigate this, the temperature was kept low during operation.
@@ -221,20 +226,19 @@ The fitting parameters return a cavity finesse of $367\pm2$.
   \leavevmode
   \includegraphics{figs-omc/finesseFit.pdf}
   \end{center}
-  \caption[Measurement of the OMC transmission profile.]{Measurement of the OMC transmission profile. Subcarrier transmission while varying frequency offset. The width of the transmission peak is used to determine the cavity finesse. Fitted parameters give a finesse of $367\pm2$.}
+  \caption[Measurement of the OMC transmission profile.]{Measurement of the OMC transmission profile. The OMC is locked on the carrier, pictured is the transmission while varying frequency offset as the subcarrier passes through resonance. The width of the transmission peak is used to determine the cavity finesse. Fitted parameters give a finesse of $367\pm2$.}
   \label{fig:finesseFit}
 \end{figure}
 
 \subsection{Cavity losses}
-The intra-cavity loss of the OMC was infered by using 3 photodetectors. %NL%
-One measuring a sample of the input light, one measuring the reflected light, and one measuring the transmitted light. %NL%
+The intra-cavity loss of the OMC was inferred by using three photodetectors; one measuring a sample of the input light, one measuring the reflected light, and one measuring the transmitted light. %NL%
 Both the reflection and transmission photodiodes were calibrated relative to the input diode. %NL%
-The calibration of the reflection diode was acheived by leaving the input and reflection diodes in place and blocking the beam inside the cavity. %NL%
+The calibration of the reflection diode was achieved by leaving the input and reflection diodes in place and blocking the beam inside the cavity. %NL%
 The relative power readings of the diodes were then recorded and the ratio gives the reflection calibration. %NL%
 One must also take into account the known transmission of the OMC input coupling mirror. %NL%
-This calibration is done without moving the beam to be used during the measurement and mitigates systematic errors due to variations in the sensitivity of the surface of the diodes. %NL%
-The trasnmission diode, however needed to be moved during calibration to measure the power incident on the cavity. %NL%
-The trasnmission diode was also calibrated relative to the input diode.
+This calibration is done without moving the beam to be used during the measurement and mitigates systematic errors due to variations in the sensitivity over the surface of the diodes. %NL%
+The transmission diode, however needed to be moved during calibration to measure the power incident on the cavity. %NL%
+The transmission diode was also calibrated relative to the input diode.
 
 This technique measures the light incident on the cavity, reflected from the cavity, and transmitted by the cavity. %NL%
 Any light which is missing is assumed to be absorbed and constitutes cavity losses. %NL%
@@ -257,18 +261,18 @@ The cavity transmission efficiency was measured to be approximately 96\perc{}.
   \end{center}
 \end{table}
 
-In September 2010, during the Sixth LIGO Science run, it was discovered that the output efficiency of the H1 interferometer had somehow degraded to worse than 80\perc{}. %NL%
+In September 2010, during the Sixth LIGO Science run, it was discovered that the output efficiency of the H1 interferometer had somehow degraded to below 80\perc{}. %NL%
 After the end of the Science Run, this efficiency was determined to originate in the OMC. %NL%
 The cause of the degradation was that the position of the OTAS had become mechanically displaced. %NL%
-The reason of the displacement is not known but seems to have occured simultaneously with a site wide power outage at the LIGO Hanford Observatory. %NL%
+The reason of the displacement is not known but seems to have occurred simultaneously with a site wide power outage at the LIGO Hanford Observatory. %NL%
 The beam clearance of the OTAS was very tight and the displacement caused significant beam clipping, leading to absorption in the OMC cavity \cite{T1100562}.
 
 \subsection{PZT actuator response}
 The PZT length actuator of the OMC was calibrated using by using applying a voltage to the PZT to sweep the cavity through both carrier and subcarrier resonances. %NL%
-The subcarrier frequency offset was chosen to be close to one FSR seperated from the carrier. %NL%
+The subcarrier frequency offset was chosen to be close to one FSR separated from the carrier. %NL%
 The separation was $1\mathrm{FSR}+3.8$MHz. %NL%
 In terms of a change in cavity length, this is 14.5nm, which is twice the distance moved by the mirror. %NL%
-Given the known frequency separation of the carrier and subcarrier, a determintation of the voltage offset between resonances can be used to calibrate the PZT. %NL%
+Given the known frequency separation of the carrier and subcarrier, a determination of the voltage offset between resonances can be used to calibrate the PZT. %NL%
 The data taken are show in Figure \ref{fig:pztsweep}, and the mean offset of the central three ramps is 19.8V. %NL%
 Thus the PZT calibration is $\frac{14.5\text{nm}}{2}\frac{1}{19.8\text{V}}=0.37\text{nm}/\text{V}$.
 \begin{figure}
@@ -280,23 +284,34 @@ Thus the PZT calibration is $\frac{14.5\text{nm}}{2}\frac{1}{19.8\text{V}}=0.37\
   \label{fig:pztsweep}
 \end{figure}
 
-The high frequency response of the OMC PZT actuator was measured by locking the cavity on resonance for the carrier, and applying a periodic drive to the PZT. %NL%
-The cavity locking error signal was used as a length response readout. %NL%
-Figure \ref{fig:pzttf} shows the measured transfer function.
+%The high frequency response of the OMC PZT actuator was measured by locking the cavity on resonance for the carrier, and applying a periodic drive to the PZT. The cavity locking error signal was used as a length response readout. Figure \ref{fig:pzttf} shows the measured transfer function.
 
-\begin{figure}
-  \begin{center}
-  \leavevmode
-  \includegraphics{figs-omc/pzttf.pdf}
-  \end{center}
-  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response. \com{make a nicer figure}}
-  \label{fig:pzttf}
-\end{figure}
-
+%\begin{figure}
+%  \begin{center}
+%  \leavevmode
+%  \includegraphics{figs-omc/pzttf.pdf}
+%  \end{center}
+%  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response. \com{make a nicer figure}}
+%  \label{fig:pzttf}
+%\end{figure}
 
 \section{Opto-thermal-mechanical feedback issues in the OMC}
 
 \com{At least include measurements by Tim and I, hopefully can hack a model to explain it.}
 
-\section{OMC throughput efficiency and squeezed light injection}
-\com{just enough words to explain the SNR/losses plot, nice lead in to the following chapters.}
+\com{not electronic, cables not the same, shorted pzt, happened with and without dither}
+
+\com{at the end of the day, it's not a detuned cavity}
+
+\section{OMC performance in Enhanced LIGO and prospects for future interferometers}
+An analysis of the readout sensitivity of the two Enhanced LIGO interferometers was performed by \citet{Tobin}. %NL%
+This analysis showed that both interferometers performed at the expected level of sensitivity when all known output losses were taken into account. %NL%
+The OMCs thus provided the desired outcome of improving the ultimate interferometer sensitivity. %NL%
+One of the major sources of loss for the H1 interferometer was mode mismatching, a solution to this problem for future interferometers is proposed in Chapter \ref{ch:modematching}.
+
+The use of squeezed light to further enhance the readout sensitivity of laser interferometers has recently been demostrated as both feasable and practical on full scale gravitational wave antennae \cite{GEOSqz:11,LIGOSqz}. %NL%
+Output losses, which degrade the readout sensitivity of any interferometer, become even more important when the interferometer employs squeezed light injection. %NL%
+Figure \com{make} shows how losses in the readout chain can degrade the interferometer sensitivity for different levels of squeezed light injection. %NL%
+Two types of output losses that are of particular importance with an OMC are discussed in subsequent chapters. %NL%
+These are alignment losses (Chapter \ref{ch:beacon}) and mode matching losses (Chapter \ref{ch:modematching}).
+

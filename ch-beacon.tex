@@ -1,5 +1,9 @@
 \chapter{Optimal alignment sensing of an output mode cleaner}
 \label{ch:beacon}
+One surprise that arose from the Enhanced LIGO project was the difficulty of OMC alignment. %NL%
+During the project, it was learned that the very reason to desire an OMC, e.g.\ the presense of higher order mode (HOM) junk light, is also a source of contamination for a system to correctly align the laser beam into the OMC. %NL%
+This chapter describes what ultimately became the solution to that problem.
+
 A critically coupled optical cavity can attenuate the HOM content of a laser beam. %NL%
 Such cavities also act as temporal filters for reducing laser amplitude and phase noise for frequencies above the cavity linewidth. %NL%
 When such mode cleaner filter cavities are placed at the output (readout) port of an optical system, deriving error signals to control the length and alignment of the Output Mode Cleaner (OMC) cavity poses a particular challenge. %NL%
@@ -37,7 +41,8 @@ SNR \propto \frac{cs}{\sqrt{c^2 + 2s^2}} \approx s.
 %
 Here we have made the following simplifying assumptions: the carrier field amplitude is much greater than that of the signal field, the signal fields are pure amplitude modulation, and that there is perfect spatial overlap of the carrier and the sidebands after transmission through the OMC. %NL%
 We see that the alignment system that maximizes optical SNR of fields detected after transmission through an OMC simply maximizes the amplitude transmission of the {\it signal field} through the OMC. %NL%
-\com{mention that beam jitter is another thing to consider.}
+In considering SNR, this chapter only considers shot noise. %NL%
+Another important noise source involved with OMC alignment is beam jitter noise, described in Chapter \ref{ch:jitter}.
 
 To leading order, typical alignment schemes sense the ${\rm TEM}_{01}$ and ${\rm TEM}_{10}$  modes of the carrier field measured in the the OMC eigenmode basis\cite{Anderson1984}. %NL%
 The presence of these modes is interpreted as a misalignment. %NL%
@@ -114,7 +119,7 @@ Because the beacon modulation is small, $S_{beacon}$ will have a higher relative
 
 The beacon alignment scheme was compared directly to a standard dither scheme using the OMC cavity at the output of the 4 km LIGO Interferometer at Hanford (H1). %NL%
 The readout was arranged as in Fig. %NL%
-\ref{fig:blockdiag}. %NL%
+\ref{fig:beaconblockdiag}. %NL%
 The angular dither frequencies were between 1.5 and 2.5 kHz, while the beacon modulation was a 10 Hz excitation of the differential arm length. %NL%
 
 
@@ -203,4 +208,7 @@ To summarize, we have introduced the concept of using a beacon as a strong modul
 The beacon scheme demonstrates a factor of 3 improvement in SNR for the LIGO H1 detector. %NL%
 Finally, we propose a detection scheme to give optimum SNR when used to align an OMC or filter cavity.
 
-
+\section{Optimal beacon performance in Enhanced LIGO}
+\com{fill me!}
+\com{talk about Matt's measurement, how much junk 10 is there?}
+\com{mention the drum beacon a little too}
