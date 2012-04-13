@@ -294,21 +294,55 @@ Thus the PZT calibration is $\frac{14.5\text{nm}}{2}\frac{1}{19.8\text{V}}=0.37\
 %  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response. \com{make a nicer figure}}
 %  \label{fig:pzttf}
 %\end{figure}
+
+\section{Optical feedback instability in the OMC}
 \begin{figure}
   \begin{center}
   \leavevmode
   \includegraphics{figs-omc/raddamping.pdf}
   \end{center}
-  \caption[Change me]{\com{change me}}
+  \caption[Measurement of ring-up times of optical instability in the OMC.]{Measurement of ring-up times of optical instability in the OMC. The instability ring up time was measured for several values of the cavity detuning. Also plotted is a two-parameter curve fit to the data.\com{fix legend and xlabel}}
   \label{fig:raddamping}
 \end{figure}
-\section{Opto-thermal-mechanical feedback issues in the OMC}
+An issue arose during Enhanced LIGO which hindered the development of an automatic cavity locking system for the OMC. %NL%
+As the OMC was brought into resonance, some kind of dynamical instability would be activated and this would cause signals in the transmitted power at kHz frequencies with amplitudes large enough to saturate the readout electronics. %NL%
+Because the locking servo was based on a transmission dither scheme, these instabilities would pollute the cavity length error signal and prevent locking. %NL%
+The instabilities would not be excited at the very peak of resonance, so for some fraction of the attempts, there would be a successful lock of the cavity. %NL%
+The result of this is that locking the OMC was the only step in the lock acquisition and low noise operation of Enhanced LIGO that was not fully automated during science data taking. %NL%
+The lack of an automatic OMC locking system probably had a detrimental effect on the overall duty cycle of the interferometers, but the magnitude of this effect would be difficult to determine.
 
-\com{At least include measurements by Tim and I, hopefully can hack a model to explain it.}
+The mechanism of the instability was never understood. %NL%
+It had the following characteristics:
+\begin{itemize}
+\item The strength of the instability depended on the circulating cavity power. for small power incident on the OMC (less than 1mW) there was no instability.
+\item The instability was not coupling through the PZT actuator. The instability remained even with the PZT leads were shorted.
+\item There was no instability when the cavity was centered on resonance.
+\item There was instability on either side of cavity resonance.
+\end{itemize}
 
-\com{not electronic, cables not the same, shorted pzt, happened with and without dither}
+There was an attempt to quantify the behavior of this instability by investigating the dependence of the ring-up time of one of the unstable modes with a frequency of 1.1kHz. %NL%
+The OMC was locked detuned from resonance with approximately 9mW of power transmitted through the cavity. %NL%
+The data that were taken are shown in Figure \ref{fig:raddamping} as the ring-up half life, $\tau_{1/2}$, as a function of cavity detuning, $\Delta f/\gamma$, where $\gamma= \frac{1}{2}\frac{\rm{FSR}}{\mathcal{F}}$ is the cavity linewidth.
 
-\com{at the end of the day, it's not a detuned cavity}
+Also shown in Figure \ref{fig:raddamping} is a simple model of the ring-up time. %NL%
+The model comprises a exponential ring-up characterized by an anti-damping term which has the following functional dependence on the detuning:
+\begin{equation}
+\label{eqn:gamma}
+\Gamma(\Delta f)=\frac{2\Delta f/\gamma}{\left[1+\left(\Delta f/\gamma\right)^2\right]^2},
+\end{equation}
+which is just the derivative of the cavity transmission profile (Equation \ref{eqn:finesse}) for small $\Delta f$. %NL%
+Explicitly, the ring-up half life is
+\begin{equation}
+\tau_{1/2}=\tau_0\left(\frac{2\Delta f/\gamma}{\left[1+\left(\Delta f/\gamma\right)^2\right]^2}-\Gamma_0\right)^{-1}.
+\end{equation}
+The best fit of the model to the data is given by $\tau_0=33\pm 6$ms and $\Gamma_0=0.438\pm 0.001$.
+
+Perhaps the most interesting aspect about the model is what mechanism it rules out. %NL%
+An opto-mechanical parametric instability driven by radiation pressure would have a third factor of $\left[1+\left(\Delta f/\gamma\right)^2\right]$ in the denominator for Equation \ref{eqn:gamma}. %NL%
+A curve fit with a model consistent with a radiation pressure instability was also tried, but did not provide a good agreement with the data.
+
+Ultimately this did not pose a problem for the noise performance of the interferometer, because the OMC is always kept on resonance during normal operation, it is not operated detuned. %NL%
+However, it did remain a poorly understood feature of the system and because Advanced LIGO will use the same, or a similar OMC, it likely warrants further investigation.
 
 \section{OMC performance in Enhanced LIGO and prospects for future interferometers}
 An analysis of the readout sensitivity of the two Enhanced LIGO interferometers was performed by \citet{Tobin}. %NL%
