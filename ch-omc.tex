@@ -37,12 +37,12 @@ An OMC may also be used to ensure the light provided by the differential arm off
 Thus, for an interferometer that employs DC readout, the OMC should efficiently strip the HOM field components of the carrier field as well as the RF sidebands. %NL%
 This is achieved by creating a cavity with a narrow linewidth, capable of transmitting the desired (carrier) field, while filtering out higher frequencies. %NL%
 Ideally, being a critically coupled optical cavity, light incident on the OMC is totally transmitted on resonance. %NL%
-The transmission of the off-resonant fields is governed by the cavity finesse $\mathcal{F}$, explicitly the normalized transmission is
+The normalized transmission of the off-resonant fields is given by
 \begin{equation}
 \label{eqn:finesse}
-T=\frac{1}{1+\frac{4}{\pi^2}\mathcal{F}^2\sin{}^2\phi},
+\frac{T}{T_0}=\frac{1}{1+\frac{4}{\pi^2}\mathcal{F}^2\sin{}^2\phi},
 \end{equation}
-where $\mathcal{F}$ is known as the \emph{cavity finesse} and $\phi$ is the detuning from resonance. %NL%
+where $\mathcal{F}$ is known as the \emph{cavity finesse} (see also Section \ref{sec:finesse}) and $\phi$ is the detuning from resonance. %NL%
 In terms of a frequency detuning of $\Delta f$ of the incident light, $\phi = \pi \Delta f / \mathrm{FSR}$. %NL%
 The FSR is the frequency spacing of successive resonances, discussed in Section \ref{sec:FSR}.
 
@@ -215,7 +215,9 @@ We postulated that this was due to a change in the effective radius of curvature
 To mitigate this, the temperature was kept low during operation.
 
 \subsection{Cavity finesse}
-The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity Finesse. %NL%
+\label{sec:finesse}
+The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity finesse. %NL%
+The finesse is defined as the ratio of the spacing between resonances (the FSR) to the full width at half maximum (FWHM) of the resonance. %NL%
 In the experiment, a sawtooth wave was used to sweep the subcarrier offset frequency while the OMC transmission was monitored. %NL%
 These signals were digitized and recorded. %NL%
 The recorded transmission versus frequency shift data are shown in Figure \ref{fig:finesseFit}. %NL%
