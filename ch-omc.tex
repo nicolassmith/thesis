@@ -233,6 +233,7 @@ The fitting parameters return a cavity finesse of $367\pm2$.
 \end{figure}
 
 \subsection{Cavity losses}
+\label{sec:omclosses}
 The intra-cavity loss of the OMC was inferred by using three photodetectors; one measuring a sample of the input light, one measuring the reflected light, and one measuring the transmitted light. %NL%
 Both the reflection and transmission photodiodes were calibrated relative to the input diode. %NL%
 The calibration of the reflection diode was achieved by leaving the input and reflection diodes in place and blocking the beam inside the cavity. %NL%
@@ -341,23 +342,40 @@ The best fit of the model to the data is given by $\tau_0=33\pm 6$ms and $\Gamma
 
 Perhaps the most interesting aspect about the model is what mechanism it rules out. %NL%
 An opto-mechanical parametric instability driven by radiation pressure would have a third factor of $\left[1+\left(\Delta f/\gamma\right)^2\right]$ in the denominator for Equation \ref{eqn:gamma} \cite{Corbitt:7mK}. %NL%
-A curve fit with a model consistent with a radiation pressure instability was also tried, but did not provide a good agreement with the data.
+A curve fit with a model consistent with a radiation pressure instability was also tried, but did not provide a good agreement with the data. %NL%
+So although it seems that the instability is somehow driven by the intra-cavity power, it is not consistent with radiation pressure.
 
 Ultimately this did not pose a problem for the noise performance of the interferometer, because the OMC is always kept on resonance during normal operation, it is not operated detuned. %NL%
 However, it did remain a poorly understood feature of the system and because Advanced LIGO will use the same, or a similar OMC, it likely warrants further investigation.
 
 \section{OMC performance in Enhanced LIGO and prospects for future interferometers}
 
-\com{consider rewrite to account for unsqueezed case better, it is more of the focus of this thesis}
+The ultimate performance of the interferometer is affected by the OMC is several ways. %NL%
+The aibility of the OMC to maximally transmit the gravitational wave signal directly affects the shot-noise limited SNR of the interferometer (this is covered in Section \ref{sec:alignsnr}). %NL%
+Losses inside the OMC will limit the transmission, but these were shown to be low (Section \ref{sec:omclosses}). %NL%
+A more subtle problem is to correctly match the incident beam to the resonant \TEM{00} mode of the OMC, any signal light which is not correctly matched will be rejected. %NL%
+From the point of the readout sensitivity, this is effectively a loss. %NL%
+The two most common forms of cavity mismatch are alignment (Chapter \ref{ch:beacon}) and mode matching (Chapter \ref{ch:modematching}). %NL%
+In addition to signal losses, the addition of an OMC can bring new noise couplings, perhaps the most important being the sensitivity to beam jitter (Chapter \ref{ch:jitter}).
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-omc/squeezeplot.pdf}
+  \end{center}
+  \caption[Interferometer readout SNR gain from squeezing as a function of output losses.]{Interferometer readout SNR gain from squeezing as a function of output losses. Higher levels of squeezing lead to increased sensitivity to output losses, including those from the OMC.}
+  \label{fig:squeezeplot}
+\end{figure}
 
 An analysis of the readout sensitivity of the two Enhanced LIGO interferometers was performed by \citet{Tobin}. %NL%
 This analysis showed that both interferometers performed at the expected level of sensitivity when all known output losses were taken into account. %NL%
 The OMCs thus provided the desired outcome of improving the ultimate interferometer sensitivity. %NL%
-One of the major sources of loss for the H1 interferometer was mode mismatching, a solution to this problem for future interferometers is proposed in Chapter \ref{ch:modematching}.
+One of the major sources of loss for the H1 interferometer was mode mismatching, this was the motivation for the system proposed in Chapter \ref{ch:modematching}.
 
 The use of squeezed light to further enhance the readout sensitivity of laser interferometers has recently been demostrated as both feasable and practical on full scale gravitational wave antennae \cite{GEOSqz:11,LIGOSqz}. %NL%
-Output losses, which degrade the readout sensitivity of any interferometer, become even more important when the interferometer employs squeezed light injection. %NL%
-Figure \com{make} shows how losses in the readout chain can degrade the interferometer sensitivity for different levels of squeezed light injection. %NL%
-Two types of output losses that are of particular importance with an OMC are discussed in subsequent chapters. %NL%
-These are alignment losses (Chapter \ref{ch:beacon}) and mode matching losses (Chapter \ref{ch:modematching}).
+Output losses become even more important when the interferometer employs squeezed light injection. %NL%
+Figure \ref{fig:squeezeplot} shows how losses in the readout chain can degrade the interferometer sensitivity for different levels of squeezed light injection. %NL%
+The prospects of squeezing for future interferometers certainly offer great promise for boosting interferometer sensitivity. %NL%
+Although, these benefits can only be fully exploited if the output losses are maintained at a minimal level. %NL%
+The performance of the OMC is central to realizing these goals.
 
