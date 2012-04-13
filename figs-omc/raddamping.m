@@ -47,12 +47,9 @@ plot(delData,tauData,'LineStyle','none','Marker','.','MarkerSize',15,'MarkerEdge
 set(gca,'LineWidth',1)
 set(gca,'FontSize',12)
 %title('Ringup time of OMC instability vs. OMC detuning')
-ylabel('\tau_1_/_2 (s)')
-xlabel('\delta (linewidths)')
-legend('Measured Data','Two Parameter Fit','Location','Best')
-
-
-
+ylabel('Ring-up half life: \tau_1_/_2 (s)')
+xlabel('Detuning: \Deltaf/\gamma')
+legend('Two Parameter Fit','Measured Data','Location','Best')
 
 if exportplot
     set(gcf,'Visible','Off')
