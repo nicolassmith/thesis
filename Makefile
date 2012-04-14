@@ -1,4 +1,4 @@
-main-chapters = gws ifo modalmodel omc beacon modematching jitter
+main-chapters = gws ifo modalmodel omc beacon modematching jitter conclusion
 ap-chapters = ap-miscon ap-matrices ap-notes ap-gloss
 main = main
 auxiliary = cover contents
