@@ -1,7 +1,8 @@
 \chapter{Additional notes}
 
-\section{The control vector separation is the Gouy phase separation}
+\section{The control vector separation for alignment is the Gouy phase separation}
 % also the fact that mode matching is a constraint
+\label{sec:gouysep}
 A servo system which is designed to control several degrees of freedom of a system simultaneously must be able to effectively sense and control each degree of freedom independently. %NL%
 The degrees of freedom of the system span a phase space, and the sensors and actuators can be represented as vectors in this space. %NL%
 Where the components of the vectors have amplitudes proportional to the sensitivity of the sensor, or the actuation strength of the actuator, in a given degree of freedom. %NL%
@@ -25,12 +26,13 @@ Thus a `good' alignment system will be one in which the ability of the system to
 
 We will represent our alignment system as two steering mirrors labeled A and B. %NL%
 The mirror first reflects from mirror A, travels some distance, then reflects from mirror B. %NL%
-Considering only the \TEM{00} and \TEM{01} modes, From equation \ref{eqn:mirrortilt} we see that the operator for mirror A is
+We will consider a vector space of the \TEM{00} and \TEM{01} modes as basis vectors. %NL%
+From Equation \ref{eqn:mirrortilt} we see that, in this representation, the operator for mirror A is
 \begin{equation}
 %\oper{M}_{\rm A}=\oper{I}-2i\Theta_{\rm A}\left(\vect{00}\form{01}+\vect{01}\form{00}\right),
 \oper{M}_{\rm A} \doteq \ms 1 &-2i\Theta_{\rm A}\\-2i\Theta_{\rm A} & 1\me
 \end{equation}
-where $\Theta_{\rm A}$ is the alignment angle of mirror A, and $\oper{I}$ is the identity operator. %NL%
+where $\Theta_{\rm A}$ is the alignment angle of mirror A. %NL%
 A similar expression holds for mirror B.
 
 Between mirrors A and B, we allow the laser to propagate some distance. %NL%
@@ -46,13 +48,13 @@ To first order in angles and ignoring the overall phase, the operator of the ent
 \begin{equation}
 \oper{M}_{\rm B}\oper{P}\oper{M}_{\rm A}\doteq
 \ms 1 & -2i\left(\Theta_{\rm A}+e^{i\eta}\Theta_{\rm B}\right)\\
--2i\left(e^{i\eta}\Theta_{\rm A}+\Theta_{\rm B}\right) & e^{i\eta} \me,
+-2i\left(e^{i\eta}\Theta_{\rm A}+\Theta_{\rm B}\right) & e^{i\eta} \me.
 \end{equation}
-if we apply this to a pure \TEM{00} field on the input, the output field is
+If we apply this to a pure \TEM{00} field on the input, the output field is
 \begin{equation}
 \vect{E}_{\rm{out}}=\vect{00}-2i\left(e^{i\eta}\Theta_{\rm A}+\Theta_{\rm B}\right)\vect{01}.
 \end{equation}
-If we compare this to Equation \ref{eqn:shifttilt}, we see that mirror B actuates eclusively on the beam angle, while for mirror A, the amount of position or angle actuation depends on the Gouy phase propagation between the two mirrors, $\eta$. %NL%
+Comparing this to Equation \ref{eqn:shifttilt}, we see that mirror B actuates eclusively on the beam angle, while for mirror A, the amount of position or angle actuation depends on the Gouy phase propagation between the two mirrors, $\eta$. %NL%
 If $\eta=\pi/2$, then mirror A only actuates on position and the two actuators are completely seperated in actuator phase space. %NL%
 In fact, the angle between the actuators in phase space is just $\eta$.
 
@@ -61,9 +63,11 @@ Once one of the mirrors has actuated on the beam, we must let the quadrature tha
 This rotation is what causes angles in the near field to rotate into positions in the far field. %NL%
 
 
-The treatment of sensing is quite similar, in that case, it is the demodulation operator which connects the \TEM{00} and \TEM{01} modes, and again, the Gouy phase dictates the sensor separation.
+The treatment of sensing is quite similar, in that case, it is the demodulation operator (Equation \ref{eqn:spacedemod}) which connects the \TEM{00} and \TEM{01} modes, and again, the Gouy phase dictates the sensor separation.
 
-As a final thought, if one were designing an actuation system for modes of higher order than \TEM{01}, the optimal control seperation (a phase space angle of $\pi/2$) would occur at $\eta=\frac{1}{m+n}\frac{\pi}{2}$ for the \TEM{mn} mode.
+As a final thought, if one were designing an actuation system for modes of higher order than \TEM{01}, the propagation operator matrix element for a \TEM{mn} mode would be $e^{(m+n)\eta}$. %NL%
+This would cause the optimal control seperation (a phase space angle of $\pi/2$) to occur at $\eta=\frac{1}{m+n}\frac{\pi}{2}$. %NL%
+Thus, mode matching sensors and actuators, which operate on $m+n=2$ modes, must have  $\eta=\pi/4$ separation for optimal performance.
 
 \section{Dither sensing is a measurement of a partial derivative}
 

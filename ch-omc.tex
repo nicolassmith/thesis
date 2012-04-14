@@ -37,12 +37,12 @@ An OMC may also be used to ensure the light provided by the differential arm off
 Thus, for an interferometer that employs DC readout, the OMC should efficiently strip the HOM field components of the carrier field as well as the RF sidebands. %NL%
 This is achieved by creating a cavity with a narrow linewidth, capable of transmitting the desired (carrier) field, while filtering out higher frequencies. %NL%
 Ideally, being a critically coupled optical cavity, light incident on the OMC is totally transmitted on resonance. %NL%
-The transmission of the off-resonant fields is governed by the cavity finesse $\mathcal{F}$, explicitly the normalized transmission is
+The normalized transmission of the off-resonant fields is given by
 \begin{equation}
 \label{eqn:finesse}
-T=\frac{1}{1+\frac{4}{\pi^2}\mathcal{F}^2\sin{}^2\phi},
+\frac{T}{T_0}=\frac{1}{1+\frac{4}{\pi^2}\mathcal{F}^2\sin{}^2\phi},
 \end{equation}
-where $\mathcal{F}$ is known as the \emph{cavity finesse} and $\phi$ is the detuning from resonance. %NL%
+where $\mathcal{F}$ is known as the \emph{cavity finesse} (see also Section \ref{sec:finesse}) and $\phi$ is the detuning from resonance. %NL%
 In terms of a frequency detuning of $\Delta f$ of the incident light, $\phi = \pi \Delta f / \mathrm{FSR}$. %NL%
 The FSR is the frequency spacing of successive resonances, discussed in Section \ref{sec:FSR}.
 
@@ -129,7 +129,7 @@ A thorough account of the HAM-ISI design and performance is given by \citet{P120
   \leavevmode
   \includegraphics{figs-omc/interrogator.pdf}
   \end{center}
-  \caption[Block diagram of OMC characterization setup.]{Block diagram of OMC characterization setup, also known as the OMC interrogator. The setup provides single mode laser light with RF sidebands for reflection locking, as well as a subcarrier with a tunable frequency.}
+  \caption[Block diagram of OMC characterization setup.]{Block diagram of OMC characterization setup, also known as the OMC interrogator. The setup provides single mode laser light with RF sidebands for reflection locking, as well as a subcarrier with a tunable frequency. \com{make me prettier}}
   \label{fig:interrogator}
 \end{figure}
 
@@ -215,7 +215,9 @@ We postulated that this was due to a change in the effective radius of curvature
 To mitigate this, the temperature was kept low during operation.
 
 \subsection{Cavity finesse}
-The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity Finesse. %NL%
+\label{sec:finesse}
+The frequency profile of the transmitted peak when the subcarrier is shifted through resonance may be used to determine the cavity finesse. %NL%
+The finesse is defined as the ratio of the spacing between resonances (the FSR) to the full width at half maximum (FWHM) of the resonance. %NL%
 In the experiment, a sawtooth wave was used to sweep the subcarrier offset frequency while the OMC transmission was monitored. %NL%
 These signals were digitized and recorded. %NL%
 The recorded transmission versus frequency shift data are shown in Figure \ref{fig:finesseFit}. %NL%
@@ -231,6 +233,7 @@ The fitting parameters return a cavity finesse of $367\pm2$.
 \end{figure}
 
 \subsection{Cavity losses}
+\label{sec:omclosses}
 The intra-cavity loss of the OMC was inferred by using three photodetectors; one measuring a sample of the input light, one measuring the reflected light, and one measuring the transmitted light. %NL%
 Both the reflection and transmission photodiodes were calibrated relative to the input diode. %NL%
 The calibration of the reflection diode was achieved by leaving the input and reflection diodes in place and blocking the beam inside the cavity. %NL%
@@ -294,31 +297,85 @@ Thus the PZT calibration is $\frac{14.5\text{nm}}{2}\frac{1}{19.8\text{V}}=0.37\
 %  \caption[Measurement of the OMC PZT actuator frequency response.]{Measurement of the OMC PZT actuator frequency response. \com{make a nicer figure}}
 %  \label{fig:pzttf}
 %\end{figure}
+
+\section{Optical feedback instability in the OMC}
 \begin{figure}
   \begin{center}
   \leavevmode
   \includegraphics{figs-omc/raddamping.pdf}
   \end{center}
-  \caption[Change me]{\com{change me}}
+  \caption[Measurement of ring-up times of optical instability in the OMC.]{Measurement of ring-up times of optical instability in the OMC. The instability ring up time was measured for several values of the cavity detuning. Also plotted is a two-parameter curve fit to the data.}
   \label{fig:raddamping}
 \end{figure}
-\section{Opto-thermal-mechanical feedback issues in the OMC}
+An issue arose during Enhanced LIGO which hindered the development of an automatic cavity locking system for the OMC. %NL%
+As the OMC was brought into resonance, some kind of dynamical instability would be activated and this would cause signals in the transmitted power at kHz frequencies with amplitudes large enough to saturate the readout electronics. %NL%
+Because the locking servo was based on a transmission dither scheme, these instabilities would pollute the cavity length error signal and prevent locking. %NL%
+The instabilities would not be excited at the very peak of resonance, so for some fraction of the attempts, there would be a successful lock of the cavity. %NL%
+The result of this is that locking the OMC was the only step in the lock acquisition and low noise operation of Enhanced LIGO that was not fully automated during science data taking. %NL%
+The lack of an automatic OMC locking system probably had a detrimental effect on the overall duty cycle of the interferometers, but the magnitude of this effect would be difficult to determine.
 
-\com{At least include measurements by Tim and I, hopefully can hack a model to explain it.}
+The mechanism of the instability was never understood. %NL%
+It had the following characteristics:
+\begin{itemize}
+\item The strength of the instability depended on the circulating cavity power. for small power incident on the OMC (less than 1mW) there was no instability.
+\item The instability was not coupling through the PZT actuator. The instability remained even with the PZT leads were shorted.
+\item There was no instability when the cavity was centered on resonance.
+\item There was instability on either side of cavity resonance.
+\end{itemize}
 
-\com{not electronic, cables not the same, shorted pzt, happened with and without dither}
+There was an attempt to quantify the behavior of this instability by investigating the dependence of the ring-up time of one of the unstable modes with a frequency of 1.1kHz. %NL%
+The OMC was locked detuned from resonance with approximately 9mW of power transmitted through the cavity. %NL%
+The data that were taken are shown in Figure \ref{fig:raddamping} as the ring-up half life, $\tau_{1/2}$, as a function of cavity detuning, $\Delta f/\gamma$, where $\gamma= \frac{1}{2}\frac{\rm{FSR}}{\mathcal{F}}$ is the cavity linewidth.
 
-\com{at the end of the day, it's not a detuned cavity}
+Also shown in Figure \ref{fig:raddamping} is a simple model of the ring-up time. %NL%
+The model comprises a exponential ring-up characterized by an anti-damping term which has the following functional dependence on the detuning:
+\begin{equation}
+\label{eqn:gamma}
+\Gamma(\Delta f)=\frac{2\Delta f/\gamma}{\left[1+\left(\Delta f/\gamma\right)^2\right]^2},
+\end{equation}
+which is just the derivative of the cavity transmission profile (Equation \ref{eqn:finesse}) for small $\Delta f$. %NL%
+Explicitly, the ring-up half life is
+\begin{equation}
+\tau_{1/2}=\tau_0\left(\frac{2\Delta f/\gamma}{\left[1+\left(\Delta f/\gamma\right)^2\right]^2}-\Gamma_0\right)^{-1}.
+\end{equation}
+The best fit of the model to the data is given by $\tau_0=33\pm 6$ms and $\Gamma_0=0.438\pm 0.001$.
+
+Perhaps the most interesting aspect about the model is what mechanism it rules out. %NL%
+An opto-mechanical parametric instability driven by radiation pressure would have a third factor of $\left[1+\left(\Delta f/\gamma\right)^2\right]$ in the denominator for Equation \ref{eqn:gamma} \cite{Corbitt:7mK}. %NL%
+A curve fit with a model consistent with a radiation pressure instability was also tried, but did not provide a good agreement with the data. %NL%
+So although it seems that the instability is somehow driven by the intra-cavity power, it is not consistent with radiation pressure.
+
+Ultimately this did not pose a problem for the noise performance of the interferometer, because the OMC is always kept on resonance during normal operation, it is not operated detuned. %NL%
+However, it did remain a poorly understood feature of the system and because Advanced LIGO will use the same, or a similar OMC, it likely warrants further investigation.
 
 \section{OMC performance in Enhanced LIGO and prospects for future interferometers}
+
+The ultimate performance of the interferometer is affected by the OMC is several ways. %NL%
+The aibility of the OMC to maximally transmit the gravitational wave signal directly affects the shot-noise limited SNR of the interferometer (this is covered in Section \ref{sec:alignsnr}). %NL%
+Losses inside the OMC will limit the transmission, but these were shown to be low (Section \ref{sec:omclosses}). %NL%
+A more subtle problem is to correctly match the incident beam to the resonant \TEM{00} mode of the OMC, any signal light which is not correctly matched will be rejected. %NL%
+From the point of the readout sensitivity, this is effectively a loss. %NL%
+The two most common forms of cavity mismatch are alignment (Chapter \ref{ch:beacon}) and mode matching (Chapter \ref{ch:modematching}). %NL%
+In addition to signal losses, the addition of an OMC can bring new noise couplings, perhaps the most important being the sensitivity to beam jitter (Chapter \ref{ch:jitter}).
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-omc/squeezeplot.pdf}
+  \end{center}
+  \caption[Interferometer readout SNR gain from squeezing as a function of output losses.]{Interferometer readout SNR gain from squeezing as a function of output losses. Higher levels of squeezing lead to increased sensitivity to output losses, including those from the OMC.}
+  \label{fig:squeezeplot}
+\end{figure}
+
 An analysis of the readout sensitivity of the two Enhanced LIGO interferometers was performed by \citet{Tobin}. %NL%
 This analysis showed that both interferometers performed at the expected level of sensitivity when all known output losses were taken into account. %NL%
 The OMCs thus provided the desired outcome of improving the ultimate interferometer sensitivity. %NL%
-One of the major sources of loss for the H1 interferometer was mode mismatching, a solution to this problem for future interferometers is proposed in Chapter \ref{ch:modematching}.
+One of the major sources of loss for the H1 interferometer was mode mismatching, this was the motivation for the system proposed in Chapter \ref{ch:modematching}.
 
 The use of squeezed light to further enhance the readout sensitivity of laser interferometers has recently been demostrated as both feasable and practical on full scale gravitational wave antennae \cite{GEOSqz:11,LIGOSqz}. %NL%
-Output losses, which degrade the readout sensitivity of any interferometer, become even more important when the interferometer employs squeezed light injection. %NL%
-Figure \com{make} shows how losses in the readout chain can degrade the interferometer sensitivity for different levels of squeezed light injection. %NL%
-Two types of output losses that are of particular importance with an OMC are discussed in subsequent chapters. %NL%
-These are alignment losses (Chapter \ref{ch:beacon}) and mode matching losses (Chapter \ref{ch:modematching}).
+Output losses become even more important when the interferometer employs squeezed light injection. %NL%
+Figure \ref{fig:squeezeplot} shows how losses in the readout chain can degrade the interferometer sensitivity for different levels of squeezed light injection. %NL%
+The prospects of squeezing for future interferometers certainly offer great promise for boosting interferometer sensitivity. %NL%
+Although, these benefits can only be fully exploited if the output losses are maintained at a minimal level. %NL%
+The performance of the OMC is central to realizing these goals.
 

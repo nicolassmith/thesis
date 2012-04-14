@@ -16,7 +16,7 @@ Though we consider the LIGO optical readout here, our scheme applies to any opti
 
 
 \section{The alignment problem in a mode cleaner cavity}
-%
+\label{sec:alignsnr}
 Fig. %NL%
 \ref{fig:beaconblockdiag} shows a schematic representation of the readout system we consider. %NL%
 The laser beam incident on the OMC comprises a carrier field and signal sideband fields which must be aligned to the OMC cavity. %NL%
@@ -204,11 +204,22 @@ G_{optimal} = G_{beacon} - \frac{P(f_b)}{2P_{DC}} G_{standard}.
 %
 We emphasize that the $G$ signals are derived from the alignment sensor, while the $P$ signals are derived from the OMC transmission.
 
+\section{Optimal beacon performance in Enhanced LIGO}
+The optimal beacon alignment scheme was employed in Enhanced LIGO by using low frequency angular dithers on the Tip Tilt optics. %NL%
+The angular dithers had a magnitude on the order of microradians, and frequencies of 1-5Hz. %NL%
+The beacon signal was produced by exciting the elastic drum-head vibrational mode of one of the end mirrors.\footnote{First proposed by M.\ Evans.} The frequency of the mode was 9225Hz and it was excited to give an effective cavity length modulation of $2.1\times10^{-14}$m. %NL%
+On the OMC transmission photodetector, this was a relative intensity noise (RIN) of $2\times10^{-5}$.
+
+Data were taken to directly compare the performance of the optical beacon to a standard dither alignment scheme under typical conditions in Enhanced LIGO \cite{mattbeaconmeas}. %NL%
+The data show that while using standard dither, the interferometer had a signal transmission of 95\perc{} when compared to the optimal dither scheme. %NL%
+From this we may estimate the ratio of the magnitude of the misalignment of the carrier field with respect to the signal field. %NL%
+The transmission efficiency may be written as
+\begin{equation}
+\epsilon = 1 - \alpha^2,
+\end{equation}
+where $\alpha$ is the ratio of the amplitude of the misalignment mode to the \TEM{00} mode. %NL%
+In the case of $\epsilon = 95\perc{}$, $\alpha = 0.23$.
+\section{Chapter Summary}
 To summarize, we have introduced the concept of using a beacon as a strong modulation close to signal frequencies to generate alignment signals that lead to increased SNR compared to the standard dither scheme. %NL%
 The beacon scheme demonstrates a factor of 3 improvement in SNR for the LIGO H1 detector. %NL%
 Finally, we propose a detection scheme to give optimum SNR when used to align an OMC or filter cavity.
-
-\section{Optimal beacon performance in Enhanced LIGO}
-\com{fill me!}
-\com{talk about Matt's measurement, how much junk 10 is there?}
-\com{mention the drum beacon a little too}
