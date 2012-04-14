@@ -1,8 +1,7 @@
 \chapter{The output mode cleaner}
 \label{ch:omc}
 One of the primary components of the Enhanced LIGO upgrade was the addition of an output mode cleaner or OMC \cite{T060156}. %NL%
-This chapter describes the motivation for installing and OMC and some measurements of the performance of the OMC installed on the H1 interferometer at the LIGO Hanford Observatory. %NL%
-\com{add photos to this chapter}
+This chapter describes the motivation for installing and OMC and some measurements of the performance of the OMC installed on the H1 interferometer at the LIGO Hanford Observatory.
 
 \section{Motivation for an OMC}
 The interferometer is supplied with a beam that has a very nearly pure Gaussian spatial profile thanks to the input mode cleaner. %NL%
@@ -52,7 +51,7 @@ The FSR is the frequency spacing of successive resonances, discussed in Section 
   \leavevmode
   \includegraphics{figs-omc/omcphoto.pdf}
   \end{center}
-  \caption[Photograph of the OMC.]{Photograph of the OMC. \com{more Credit Sam Waldman.}}
+  \caption[Photograph of the OMC.]{Photograph of the OMC. The strong red line shows the primary beam path. The light red line shows the QPD sample of the input beam. Only shown are the QPD and transmission PD tombstones, the actual photodetectors are not mounted in this photograph. Photograph credit to Sam Waldman.}
   \label{fig:omcphoto}
 \end{figure}
 Prior to Enhanced LIGO, experiments we performed using a OMC borrowed from the GEO600 interferometer to investigate the difficulties in using an OMC with LIGO. %NL%
@@ -85,7 +84,8 @@ An even number of mirrors was chosen such that the horizontal and vertical HOMs 
 
 A diagram of the OMC may be seen in Figure \ref{fig:omcconstruction}. %NL%
 The OMC optics are bonded with Vacseal epoxy onto custom designed fused silica optics mounts, called tombstones. %NL%
-The tombstones were then bonded to a slab of Corning ULE Glass\footnote{The dimensions of the OMC breadboard are 450mm$\times$150mm$\times$39mm}, which we will refer to as the \emph{OMC breadboard}. %NL%
+ The tombstones were then bonded to a slab of Corning ULE Glass\footnote{The dimensions of the OMC breadboard are 450mm$\times$150mm$\times$39mm}, which we will refer to as the \emph{OMC breadboard}, pictured in Figure \ref{fig:omcphoto}. %NL%
+Figure \ref{fig:inputcouplerphoto} shows the OMC input coupler mirror and tombstone, bonded to the breadboard. %NL%
 This arrangement fixed the cavity length to the desired value and was designed to be stable against thermal variation. %NL%
 The microscopic cavity length was controlled using a pair of actuators. %NL%
 A fast PZT between one of the optics and its tombstone acted as a low range (1/10 of a wavelength) high bandwidth (5kHz) length actuator. %NL%
@@ -114,24 +114,26 @@ This arrangement ensured that the OMC transmitted beam would not drift relative 
 
 A steering mirror on the OMC breadboard transmitted a small sample of the incoming beam allowing the input pointing to be analyzed by two quadrant photodetectors (QPDs). %NL%
 A 50/50 beam splitter distributed equal amounts of the input beam to the two QPDs. %NL%
-The QPDs were located at different distances from the beam splitter to allow both beam angle and lateral position to be measured.
+The QPDs were located at different distances from the beam splitter to allow both beam angle and lateral position to be measured. %NL%
+The location of all the OMC sensors can be seen in Figure \ref{fig:omcphoto}.
 
 \subsection{Suspension system}
-\begin{figure}
-  \begin{center}
-  \leavevmode
-  \includegraphics{figs-omc/susphoto.pdf}
-  \end{center}
-  \caption[Photograph of the OMC double pendulum suspension.]{Photograph of the OMC double pendulum suspension.}
-  \label{fig:susphoto}
-\end{figure}
-The OMC breadboard was suspended from a two stage vibration isolation suspension. %NL%
+
+The OMC breadboard was suspended from a two stage vibration isolation suspension, pictured in Figure \ref{fig:susphoto}. %NL%
 On the optics table was a large steel frame which housed the OMC. %NL%
 A intermediate mass stage was suspended from the frame by two pendulum wires attached to the ends of blade springs. %NL%
 The OMC breadboard was then suspended by four more wires attached to blade springs from the intermediate mass stage. %NL%
 Servo control provided feedback damping of the suspension eigenmodes. %NL%
 All actuation and sensing was performed on the intermediate stage, with actuation provided by electromagnetic coil actuators attached to the cage which applied forces to permanent magnets attached to the intermediate mass. %NL%
 The actuator module also housed the sensing system which consisted of LED shadow sensors which measured the position of protruding flags attached to the magnets used for actuation.
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-omc/susphoto.pdf}
+  \end{center}
+  \caption[Photograph of the OMC double pendulum suspension.]{Photograph of the OMC double pendulum suspension. The line sketch shows the upper mass stage, which is obscured in the photograph by the coil actuators.}
+  \label{fig:susphoto}
+\end{figure}
 
 \subsection{Mode matching telescope}
 \begin{figure}
@@ -139,15 +141,16 @@ The actuator module also housed the sensing system which consisted of LED shadow
   \leavevmode
   \includegraphics{figs-omc/ttphoto.pdf}
   \end{center}
-  \caption[Photograph of a Tip Tilt optic.]{Photograph of a Tip Tilt optic.}
-  \label{fig:inputcouplerphoto}
+  \caption[Photograph of a Tip Tilt optic.]{Photograph of a Tip Tilt optic. Shown is the original Tip Tilt design, before being retrofitted with blade springs.}
+  \label{fig:ttphoto}
 \end{figure}
 The beam exiting the interferometer from the antisymmetric port was directed through a beam steering and mode matching telescope. %NL%
 The purpose of such a telescope is to correctly align and focus the beam exiting the interferometer to maximize the transmission of the gravitational wave signal through the OMC.
 
 The steering optics were housed in a single pendulum suspension system. %NL%
-The suspension and optics were collectively referred to as \emph{Tip-Tilt optics}.\footnote{The Tip Tilts were designed by B. %NL%
-Slagmolen of the Australian National University\cite{T0900096}.} The mounting and suspension of the beam steering optics underwent several modifications during the Enhanced LIGO project (see Chapter \ref{ch:jitter}). %NL%
+The suspension and optics were collectively referred to as \emph{Tip-Tilt optics},\footnote{The Tip Tilts were designed by B. %NL%
+Slagmolen of the Australian National University\cite{T0900096}.} one of which is pictured in Figure \ref{fig:ttphoto}. %NL%
+The mounting and suspension of the beam steering optics underwent several modifications during the Enhanced LIGO project (see Chapter \ref{ch:jitter}). %NL%
 The final configuration consisted of three highly reflective curved mirrors. %NL%
 Two suspended by a single pendulum stage, with vertical isolation provided by blade springs, and a coil-magnet/shadow sensor system similar to that used in the OMC suspension. %NL%
 The actuator system allowed feedback control of the optic angle for active beam alignment. %NL%
@@ -155,7 +158,7 @@ The third was housed in a similar suspension system, but without any sensing or 
 
 \subsection{Vibration isolation table}
 The Tip-Tilts and OMC suspension frame were all housed in a single vacuum chamber and situated on top of a actively controlled seismic isolation table, the HAM-ISI.\footnote{HAM chamber Internal Seismic Isolation system} The HAM-ISI employed a single stage of passive vibration isolation, coupled with active feedback control using inertial sensors as the primary error signal. %NL%
-A thorough account of the HAM-ISI design and performance is given by \citet{P1200020} \com{replace when published}.
+A thorough account of the HAM-ISI design and performance is given in Chapter 5 of Jeff Kissel's thesis \cite{kisselthesis}.
 
 \section{Characterization of the H1 OMC}
 \begin{figure}
