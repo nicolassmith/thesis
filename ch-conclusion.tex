@@ -1,15 +1,30 @@
 \chapter{Conclusion}
 \label{ch:conclusion}
 
-OMC betterness
-\com{aLIGO OMC design \cite{T1000276} changes \cite{T0900157}}
+The beginning of the second generation of large scale interferometric gravitational wave antennae has begun. %NL%
+A number of new interferometers are currently in various stages of construction. %NL%
+Advanced LIGO in the United States \com{cite}, with a third site likely in India\com{citation?}, Advanced Virgo in Italy \com{cite}, GEO-HF in Germany \com{cite}, and KAGRA in Japan \com{cite} will comprise a worldwide network of detectors with sensitivity expected to yield several gravitational wave signals of astrophysical origin per year. %NL%
+Achieving the maximum possible sensitivity of these detectors promises to increase the frequency of the detection of signals, and an improvement of the quality of science that can be done with them. %NL%
+Each one of these future detectors will employ an output mode cleaner and stands to benefit from the techniques described in this thesis. %NL%
+Indeed, this benefit will only increase as squeezed light injection becomes common practice among these detectors.
 
-beacon betterness
-\com{stable cavities \cite{T080208}}
+Many of the difficulties experienced with the output mode cleaner in Enhanced LIGO are already being addressed. %NL%
+Changes to the design of the OMC for Advanced LIGO include using a long range PZT for length actuation, eliminating the need for the thermal length actuator (OTAS) and removing the associated issues with small beam clearance in the cavity and thermal dependence of the cavity $g$-parameter \cite{T1000276,T0900157}. %NL%
+Also, the tombstones themselves will be polished and coated to act as the input and output couplers themselves, without the need of separate optic to be bonded. %NL%
+ 
 
-Mode matching betterness
-\com{Mode matching Chapter \ref{ch:modematching}}
+The modal content of the output beam of an interferometer is typically very difficult to model, though there are reasons to believe that the amount of junk light in Advanced LIGO will be reduced compared to Enhanced LIGO. %NL%
+Advanced LIGO will employ a stable power recycling cavity, so higher order modes will be suppressed \cite{T080208}. %NL%
+Also \com{mode healing with SEM?}. %NL%
+For any junk light that remains, an optimal alignment scheme such as the one described in \ref{ch:beacon} will allow maximum signal transmission through the OMC.
 
-Beam jitter betterness
-\com{aLIGO TT design \cite{slagmolen:12}}
-\com{quad design \cite{quaddesign}}
+Enhanced LIGO further cemented the importance of beam jitter noise when using an OMC. %NL%
+Advanced LIGO will employ much advanced seismic isolation platforms \cite{BSCISI} and suspension systems \cite{quaddesign} for the main interferometer test mass optics compared to Enhanced LIGO. %NL%
+This will lead to much reduced low frequency beam motion, and consequently its contribution to beam jitter noise. %NL%
+In addition, the Tip Tilts have been completely redesigned to employ blade springs from the outset, as well as to have longer suspension wires, increasing virbation isolation. %NL%
+In any case, commissioners of Advanced LIGO should expect beam jitter to rear its head sooner or later, and be prepared with the tools to combat it (for example, those described in \ref{ch:jitter})w.
+
+One of the largest sources of output loss for the H1 interferometer in Enhanced LIGO was mode matching \cite{Tobin}. %NL%
+The use of a mode matching servo (as described in Chapter \ref{ch:modematching}) to optimize the signal transmission will minimize such losses in future interferometers.
+
+
