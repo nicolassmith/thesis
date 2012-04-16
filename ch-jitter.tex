@@ -61,8 +61,7 @@ This causes a power fluctuation on transmission
 P=E_t^*E_t=P_0\left(1+\frac{2\pi w(z)}{\lambda}\theta\Im(\alpha)\right),
 \end{equation}
 where $P_0=|t_{\text{cavity}}E_0|^2$. %NL%
-Only the imaginary part of $\alpha$ contributes to beam jitter noise of our mirror because it represents an error in alignment \emph{angle}, not position, at the location of the steering mirror $\oper{M}$. %NL%
-
+Only the imaginary part of $\alpha$ contributes to beam jitter noise of our mirror because it represents an error in alignment \emph{angle}, not position, at the location of the steering mirror $\oper{M}$.
 
 One interesting consequence of Equation \ref{eqn:mirrorjitter} is that for a given mirror, the strength of beam jitter coupling is proportional to $w(z)$, the size of the beam on the optic. %NL%
 Thus one technique for reducing beam jitter coupling is to design one's optical path in such a way that beams are smaller on optics that may produce significant beam jitter. %NL%
@@ -70,8 +69,11 @@ This of course also reduces their efficiency as an alignment control mirror.
 
 Furthermore, we again see a nonlinear coupling in the form of mixing of the incident misalignment, $\alpha$, and the jitter of the steering mirror, $\theta$. %NL%
 We may suppose that the input alignment has both a DC component and possibly some low frequency (a few to several Hz) wandering motion. %NL%
-If this is coupled with high frequency (i.e. %NL%
-frequencies in the detection band) jitter of the steering mirror, the mixing of frequencies can cause noise in the power transmission at and around the jitter frequency of the steering optic.
+If this is coupled with high frequency (i.e.\ frequencies in the detection band) jitter of the steering mirror, the mixing of frequencies can cause noise in the power transmission at and around the jitter frequency of the steering optic.
+
+The bilinear nature of beam jitter can be exploited when trying to determine the source of noise peaks in the OMC transmitted spectrum. %NL%
+If injects a low frequency modulation into the angular control of a steering mirror in the path leading to the OMC, any peaks that originate from beam jitter will produce corresponding sidebands, seperated by the central peak frequency by the injected modulation frequency. %NL%
+This can be used to quickly identify noise peaks as originating from beam jitter, though it does not determine the exact mechanism causing the beam jitter.
 
 \begin{figure}
   \begin{center}
