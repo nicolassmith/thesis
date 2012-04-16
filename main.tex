@@ -24,6 +24,8 @@
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{sty/picins}
 \usepackage{amsmath,amssymb}
+\usepackage{fancyhdr}
+\usepackage{sty/flipbook}
 \pagestyle{plain}
 
 \input{macros}
@@ -37,6 +39,9 @@
 \include{contents}
 
 % chapters here
+\pagestyle{plain}
+\cfoot{\thepage}
+\rfoot{hello footer}
 \include{ch-gws}
 \include{ch-ifo}
 \include{ch-omc}
@@ -45,6 +50,7 @@
 \include{ch-beacon}
 \include{ch-modematching}
 \include{ch-conclusion}
+\rfoot{}
 
 \appendix
 
