@@ -25,7 +25,7 @@
 \usepackage{sty/picins}
 \usepackage{amsmath,amssymb}
 \usepackage{fancyhdr}
-\usepackage{sty/flipbook}
+\usepackage[debug]{sty/flipbook}
 \pagestyle{plain}
 
 \input{macros}
@@ -41,7 +41,12 @@
 % chapters here
 \pagestyle{plain}
 \cfoot{\thepage}
-\rfoot{hello footer}
+
+\fancyfoot[RO]{\begin{picture}(0,0)
+\put(2.5,-2.5){
+\fbImageF{./massring/ring}{pdf}{scale=1}
+}
+\end{picture}}
 \include{ch-gws}
 \include{ch-ifo}
 \include{ch-omc}
@@ -50,7 +55,6 @@
 \include{ch-beacon}
 \include{ch-modematching}
 \include{ch-conclusion}
-\rfoot{}
 
 \appendix
 
@@ -59,6 +63,7 @@
 \include{ch-ap-miscon}
 \include{ch-ap-gloss}
 
+\rfoot{}
 \input{biblio}
 
 \end{document}
