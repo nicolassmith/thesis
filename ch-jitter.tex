@@ -89,14 +89,18 @@ Figure \ref{fig:bilinear} shows how low frequency beam motion mixes with high fr
 This is similar to how beam jitter was discussed by \citet{Tobin}.
 
 \section{Mechanical resonances of beam steering optics}
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \includegraphics{figs-jitter/hamtransmission.pdf}
+  \end{center}
+  \caption[Comparison of vertical vibrational motion transmission of the Initial and Enhanced LIGO HAM chamber isolation systems.]{Comparison of vertical vibrational motion transmission of the Initial and Enhanced LIGO HAM chamber isolation systems. While the low frequency isolation of the HAM ISI is far superior to that of the old passive stack, in the most sensitive region of the interferometer (100-200Hz), the HAM ISI transmits a few orders of magnitude greater than the passive system. The high frequency behavior of the HAM ISI model (green curve) represents true resonant structure and is not a result of measurement noise. Credit and appreciation for this figure goes to Jeff Kissel.}
+  \label{fig:hamtransmission}
+\end{figure}
+
 When the Enhanced LIGO interferometers were first performing at a sensitivity comparable to the state of the interferometers in the S5 science run, there were large glaring peaks in the sensitivity spectrum. %NL%
 It was determined fairly quickly that these were due beam jitter, but the mechanism causing the jitter was unknown.
-
-The Enhanced LIGO upgrade introduced several modifications to the readout chain of the interferometer. %NL%
-As discussed in Chapter \ref{ch:omc}, with the introduction of the in-vacuum OMC, it was necessary to use new beam steering and mode matching optics to couple the beam exiting the interferometer to the OMC cavity. %NL%
-These steering optics, as well as the OMC, were all housed in a single vacuum chamber on top of the prototype HAM ISI platform which is planned to be used copiously in Advanced LIGO. %NL%
-Although it was not fully appreciated at the start of Enhanced LIGO, the new isolation platform provided much reduced vibration isolation at audio frequencies when compared to the isolation tables used in the HAM chambers in Initial LIGO. %NL%
-Figure \ref{fig:hamtransmission} shows a comparison of the transmission of ground motion to motion of the HAM table for both the initial LIGO passive isolation system, and the Enhanced LIGO HAM ISI.
 
 \begin{figure}
   \begin{center}
@@ -107,14 +111,11 @@ Figure \ref{fig:hamtransmission} shows a comparison of the transmission of groun
   \label{fig:ham6layout}
 \end{figure}
 
-\begin{figure}
-  \begin{center}
-  \leavevmode
-  \includegraphics{figs-jitter/hamtransmission.pdf}
-  \end{center}
-  \caption[Comparison of vertical vibrational motion transmission of the Initial and Enhanced LIGO HAM chamber isolation systems.]{Comparison of vertical vibrational motion transmission of the Initial and Enhanced LIGO HAM chamber isolation systems. While the low frequency isolation of the HAM ISI is far superior to that of the old passive stack, in the most sensitive region of the interferometer (100-200Hz), the HAM ISI transmits a few orders of magnitude greater than the passive system. The high frequency behavior of the HAM ISI model (green curve) represents true resonant structure and is not a result of measurement noise. Credit and appreciation for this figure goes to Jeff Kissel.}
-  \label{fig:hamtransmission}
-\end{figure}
+The Enhanced LIGO upgrade introduced several modifications to the readout chain of the interferometer. %NL%
+As discussed in Chapter \ref{ch:omc}, with the introduction of the in-vacuum OMC, it was necessary to use new beam steering and mode matching optics to couple the beam exiting the interferometer to the OMC cavity. %NL%
+These steering optics, as well as the OMC, were all housed in a single vacuum chamber on top of the prototype HAM ISI platform which is planned to be used copiously in Advanced LIGO. %NL%
+Although it was not fully appreciated at the start of Enhanced LIGO, the new isolation platform provided much reduced vibration isolation at audio frequencies when compared to the isolation tables used in the HAM chambers in Initial LIGO. %NL%
+Figure \ref{fig:hamtransmission} shows a comparison of the transmission of ground motion to motion of the HAM table for both the initial LIGO passive isolation system, and the Enhanced LIGO HAM ISI.
 
 The optical layout of the OMC chamber of Enhanced LIGO comprised three steering optics, which also behaved as a mode matching telescope, and the OMC itself. %NL%
 In the initial configuration, the first of these was a mirror on a fixed mount, while the other two were in a Tip-Tilt suspension system with active beam steering. %NL%
@@ -164,7 +165,7 @@ Instead of being straight, the wires took more of an `S' shape, as shown in Figu
 The bend in the wire resulted in giving the wire much more yield, reducing the resonant frequencies and placing them directly in the most sensitive region of LIGO. %NL%
 A finite element analysis of resonances of optics suspended by curved optics was performed by Matt Evans and supported this general theory \cite{mattfea}.
 
-\begin{figure}
+\begin{figure}[h!]
   \begin{center}
   \leavevmode
   \includegraphics{figs-jitter/sensimprovement.pdf}
