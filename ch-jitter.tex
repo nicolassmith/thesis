@@ -52,16 +52,16 @@ where, as before, $\Theta=\frac{\theta \pi w(z)}{\lambda}$, while $w(z)$ is the 
 Because the cavity has a high finesse, when the cavity is resonant on the \TEM{00} mode, only that mode is transmitted. %NL%
 Thus, for the field transmitted by the cavity
 \begin{equation}
-E_{\text{t}}=t_{\text{cavity}}\matrixel{00}{\oper{M}\left(\Theta\right)}{E}_{\text{input}}=t_{\text{cavity}}E_0\left(1-i\frac{ \pi w(z)}{\lambda}\theta\alpha\right),
+E_{\text{t}}=t_{\text{cavity}}\matrixel{00}{\oper{M}\left(\Theta\right)}{E}_{\text{input}}=t_{\text{cavity}}E_0\left(1-i\frac{ 2 \pi w(z)}{\lambda}\theta\alpha\right),
 \end{equation}
 where $t_{\text{cavity}}$ is the amplitude transmission of the cavity. %NL%
 This causes a power fluctuation on transmission
 \begin{equation}
 \label{eqn:mirrorjitter}
-P=E_t^*E_t=P_0\left(1+\frac{2\pi w(z)}{\lambda}\theta\Im(\alpha)\right),
+P=E_t^*E_t=P_0\left(1+\frac{4\pi w(z)}{\lambda}\theta\Im(\alpha)\right),
 \end{equation}
 where $P_0=|t_{\text{cavity}}E_0|^2$. %NL%
-Only the imaginary part of $\alpha$ contributes to beam jitter noise of our mirror because it represents an error in alignment \emph{angle}, not position, at the location of the steering mirror $\oper{M}$.
+To first order, only the imaginary part of $\alpha$ contributes to beam jitter noise of our mirror because it represents an error in alignment \emph{angle}, not position, at the location of the steering mirror $\oper{M}$.
 
 One interesting consequence of Equation \ref{eqn:mirrorjitter} is that for a given mirror, the strength of beam jitter coupling is proportional to $w(z)$, the size of the beam on the optic. %NL%
 Thus one technique for reducing beam jitter coupling is to design one's optical path in such a way that beams are smaller on optics that may produce significant beam jitter. %NL%
