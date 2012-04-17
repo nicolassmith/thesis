@@ -56,6 +56,9 @@ h = legend(cellfun(@(s) strcat(s,legstring),split(' ',num2str(dbs)), ...
 v = get(h,'title');
 set(v,'string','Squeezing Level');
 
+
+set(gcf,'Units','Pixels','Position',[0 0 600 400])
+
 if exportplot
     set(gcf,'Visible','Off')
     export_fig('squeezeplot.pdf','-painters')
