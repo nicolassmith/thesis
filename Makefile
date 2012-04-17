@@ -35,8 +35,11 @@ ch-jitter.pdf : $(matfigs-jitter) $(figs-jitter)
 figs-modematching = $(addprefix figs-modematching/,blockdiag.pdf)
 ch-modematching.pdf : $(figs-modematching)
 
+matfigs-ap-miscon = $(addprefix figs-ap-miscon/,fpmishotnoise.pdf)
+ch-ap-miscon.pdf : $(matfigs-ap-miscon)
+
 figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo) $(figs-jitter) $(figs-modematching)
-matfigs = $(matfigs-omc) $(matfigs-jitter)
+matfigs = $(matfigs-omc) $(matfigs-jitter) $(matfigs-ap-miscon)
 
 # fig rules
 %.pdf : %.svg
