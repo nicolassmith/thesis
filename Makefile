@@ -63,6 +63,8 @@ $(main).pdf : $(maindeps) $(maininclude) $(figs) $(matfigs)
 	-bibtex $(main)
 	makeindex $(main).nlo -s nomencl.ist -o $(main).nls
 	pdflatex $<
+	makeindex $(main).nlo -s nomencl.ist -o $(main).nls
+	pdflatex $<
 	pdflatex $<
 
 # temp is needed because latex goes into some .aux infinite loop without it
