@@ -61,6 +61,7 @@ MATLAB = matlab -nodesktop -nosplash
 $(main).pdf : $(maindeps) $(maininclude) $(figs) $(matfigs)
 	pdflatex $<
 	-bibtex $(main)
+	makeindex $(main).nlo -s nomencl.ist -o $(main).nls
 	pdflatex $<
 	pdflatex $<
 
@@ -90,7 +91,7 @@ view-% : ch-%.pdf
 	$(viewer) $< 2> /dev/null &
 
 clean : 
-	-rm -f *.log *.orig *.rej *.aux *.dvi *.pdf *~ *.blg *.lof *.lot *.bbl *.toc .*~ *.out
+	-rm -f *.log *.orig *.rej *.aux *.dvi *.pdf *~ *.blg *.lof *.lot *.bbl *.toc .*~ *.out *.nlo *.nls *.ilg
 	-rm -rf _region_.*
 	-rm -rf auto
 	-rm -rf $(figs)
