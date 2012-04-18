@@ -5,7 +5,7 @@ This treatment allows the analysis of complicated optical paths, which include p
 This is a powerful technique that is used extensively in modeling the behavior of gravitational-wave interferometers \cite{Vinet1986,Hefetz:97,Sigg:00}, and is useful for some of the concepts discussed in later chapters.
 
 At this point in the discussion, a bird's eye view of the technique is useful. %NL%
-In essence what this formalism provides is a significant abstraction and abbreviation of the effects of opical components (mirrors, modulators, etc.) on the the field components that make up a laser beam. %NL%
+In essence what this formalism provides is a significant abstraction and abbreviation of the effects of optical components (mirrors, modulators, etc.) on the the field components that make up a laser beam. %NL%
 In the case of the transverse electric-magnetic (TEM) spatial modes of a laser field, a calculation of how a mirror, which is rotated about some axis perpendicular to the beam, redistributes energy from one field component to another may require complicated overlap integrals involving the Hermite-Gaussian profiles of the beam modes. %NL%
 Such a calculation is difficult to calculate and and analytical solutions are intractable and unwieldy. %NL%
 The strength of this technique is that all of these complicated integrals are \emph{baked in} to the linear operators which represent optical components, so to speak. %NL%
@@ -116,7 +116,7 @@ This can be represented as a phase multiplication of $\exp[-2ik\theta_x x]$. %NL
 \begin{equation}
 \oper{M}(\Theta_x) = \exp\left[ -i2\Theta_x\sum_{m,n,k,l=0}^\infty \vect{mn} \delta_{nl} \left( \sqrt k \delta_{m[k-1]}+\sqrt m \delta_{m[k+1]} \right) \form{kl}\right],
 \end{equation}
-where $\delta_{mn}$ is the Kroneker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, at the beam waist, this is the ratio of the misalignment angle to the beam divergence angle. %NL%
+where $\delta_{mn}$ is the Kronecker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, at the beam waist, this is the ratio of the misalignment angle to the beam divergence angle. %NL%
 One can see that the $k$ index is connected to the $m$ index that differs by one mode number, this will provide the correct transfer of energy from the \TEM{00} mode to the \TEM{10} mode as discussed above. %NL%
 We can use a matrix representation with three components representing the \TEM{00}, \TEM{10} and \TEM{01} amplitudes, explicitly for field $\vect{E}$:
 \begin{equation}
@@ -216,7 +216,7 @@ where we use a delta function defined as
 1 & \text{if $\alpha = \beta$}.
 \end{cases}
 \end{equation}
-Note that there is a special case where $\omega_d=0$ where $\oper{D}(\omega_d)$ is the identity operator, which does not follow from Equation \ref{eqn:fdemodoperator} and must be handled seperately.
+Note that there is a special case where $\omega_d=0$ where $\oper{D}(\omega_d)$ is the identity operator, which does not follow from Equation \ref{eqn:fdemodoperator} and must be handled separately.
 \begin{figure}
   \begin{center}
   \leavevmode
@@ -284,7 +284,7 @@ We may write down an expression for the field inside the cavity as follows
 \vect{E}_{\text{cavity}} = \oper{T}_1\vect{E}_{\text{input}}+\oper{G}\vect{E}_{\text{cavity'}}.
 \end{equation}
 Here, $\oper{G}$ is the operator representing one full round trip through the cavity, starting with the propagation from mirror 1 to mirror 2, $\oper{T}_1$ is the operator for transmission through mirror 1, and $\vect{E}_{\text{cavity'}}$ is the cavity field due to the previous round trip of the light. %NL%
-When the system has reached a stationary state, $\vect{E}_{\text{input}}=\vect{E}_{\text{cavity'}}$.\footnote{Note that this does not only include fields static in time, but also any peiodically changing fields that are represented in our vector space.} In this case we may solve for the field in the cavity:
+When the system has reached a stationary state, $\vect{E}_{\text{input}}=\vect{E}_{\text{cavity'}}$.\footnote{Note that this does not only include fields static in time, but also any periodically changing fields that are represented in our vector space.} In this case we may solve for the field in the cavity:
 \begin{equation}
 \vect{E}_{\text{cavity}} = \left(\oper{I}-\oper{G}\right)^{-1}\oper{T}_1\vect{E}_{\text{input}}.
 \end{equation}

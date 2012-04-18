@@ -10,10 +10,10 @@ In order to effectively control one's system, care should be taken to ensure tha
 If any direction does not have coverage, it will either be unsensed, or uncontrolled.
 
 In the case of the alignment of a laser beam, there are four degrees of freedom. %NL%
-These may be parameterized as the beam waist position and beam waist angle in the $x$ and $y$ directions.\footnote{Where $z$ is the direction of propagation.} For good alignment control of a laser beam using steering mirrors, for example into an optical cavity, a common piece of lore is that one must have a steering mirror `close' to the alignment target, and one steering mirror `far' from it. %NL%
+These may be parametrized as the beam waist position and beam waist angle in the $x$ and $y$ directions.\footnote{Where $z$ is the direction of propagation.} For good alignment control of a laser beam using steering mirrors, for example into an optical cavity, a common piece of lore is that one must have a steering mirror `close' to the alignment target, and one steering mirror `far' from it. %NL%
 But just what exactly sets the criteria for close and far?
 
-Let us contrain ourselves to a single plane of beam alignment, such that we are only concered with the waist position and angle in the $x$ direction. %NL%
+Let us constrain ourselves to a single plane of beam alignment, such that we are only concerned with the waist position and angle in the $x$ direction. %NL%
 It can be shown that the field of the beam can be represented as the \TEM{00} field with some small additional \TEM{01} field added when the displacements and misalignments are small \cite{Anderson1984}. %NL%
 To first order in misalignment, the field can be written as
 \begin{equation}
@@ -54,8 +54,8 @@ If we apply this to a pure \TEM{00} field on the input, the output field is
 \begin{equation}
 \vect{E}_{\rm{out}}=\vect{00}-2i\left(e^{i\eta}\Theta_{\rm A}+\Theta_{\rm B}\right)\vect{01}.
 \end{equation}
-Comparing this to Equation \ref{eqn:shifttilt}, we see that mirror B actuates eclusively on the beam angle, while for mirror A, the amount of position or angle actuation depends on the Gouy phase propagation between the two mirrors, $\eta$. %NL%
-If $\eta=\pi/2$, then mirror A only actuates on position and the two actuators are completely seperated in actuator phase space. %NL%
+Comparing this to Equation \ref{eqn:shifttilt}, we see that mirror B actuates exclusively on the beam angle, while for mirror A, the amount of position or angle actuation depends on the Gouy phase propagation between the two mirrors, $\eta$. %NL%
+If $\eta=\pi/2$, then mirror A only actuates on position and the two actuators are completely separated in actuator phase space. %NL%
 In fact, the angle between the actuators in phase space is just $\eta$.
 
 Intuitively, this may be understood by the fact that the \TEM{01} mode has an extra rotation relative to the \TEM{00} mode, this is the Gouy phase. %NL%
@@ -66,7 +66,7 @@ This rotation is what causes angles in the near field to rotate into positions i
 The treatment of sensing is quite similar, in that case, it is the demodulation operator (Equation \ref{eqn:spacedemod}) which connects the \TEM{00} and \TEM{01} modes, and again, the Gouy phase dictates the sensor separation.
 
 As a final thought, if one were designing an actuation system for modes of higher order than \TEM{01}, the propagation operator matrix element for a \TEM{mn} mode would be $e^{(m+n)\eta}$. %NL%
-This would cause the optimal control seperation (a phase space angle of $\pi/2$) to occur at $\eta=\frac{1}{m+n}\frac{\pi}{2}$. %NL%
+This would cause the optimal control separation (a phase space angle of $\pi/2$) to occur at $\eta=\frac{1}{m+n}\frac{\pi}{2}$. %NL%
 Thus, mode matching sensors and actuators, which operate on $m+n=2$ modes, must have  $\eta=\pi/4$ separation for optimal performance.
 
 \section{Dither sensing is a measurement of a partial derivative}
@@ -77,11 +77,11 @@ A modulation is injected into the variable $\theta$ such that
 \theta = \theta_0+\alpha \sin[\omega t],
 \end{equation}
 where $\alpha \ll 1$ is the modulation depth, and $\omega$ is the modulation frequency. %NL%
-The resulting behaviour of $P$ is
+The resulting behavior of $P$ is
 \begin{equation}
 P(\theta)=P(\theta_0+\alpha \sin[\omega t])\approx P(\theta_0)+\frac{\partial P}{\partial \theta}(\theta_0)\alpha \sin[\omega t] + \ldots
 \end{equation}
-Thus the amplitude of the $\omega$ frequency component, which can be determined by demodulation, is proportional to the partial derivative of the measured quantity with respect to the controled variable. %NL%
+Thus the amplitude of the $\omega$ frequency component, which can be determined by demodulation, is proportional to the partial derivative of the measured quantity with respect to the controlled variable. %NL%
 This is the basic mechanism behind dither sensing.
 \section{Conventions for the coefficient of amplitude transmission and reflectivity of beamsplitters}
 Imagine a beam with complex electric field amplitude $E_0$ striking a partially reflective boundary. %NL%
@@ -90,7 +90,7 @@ Define the transmitted beam as a complex coefficient, $t$, multiplied by the inc
 Similarly, the reflected beam will be multiplied by $r$. %NL%
 This is shown in Figure \ref{fig:mrfig1}. %NL%
 Note: we make no assumption about the value of these coefficients. %NL%
-At all times we will ignore phase shifts due simply to propogation, so the $ik\delta z$ phase is always divided out.
+At all times we will ignore phase shifts due simply to propagation, so the $ik\delta z$ phase is always divided out.
 
 \begin{figure}
   \begin{center}
@@ -105,12 +105,12 @@ At all times we will ignore phase shifts due simply to propogation, so the $ik\d
 
 Imagine the time reversed process of the two resultant beams. %NL%
 In the phasor space of the electric field, time reversal requires the complex conjugation operation. %NL%
-The blue beam will be split into two beams for which we will use the same coefficients of transmission and reflection as in the case alread considered, because it interacts with the boundary from the same direction. %NL%
+The blue beam will be split into two beams for which we will use the same coefficients of transmission and reflection as in the case already considered, because it interacts with the boundary from the same direction. %NL%
 However, we will assume that the green beam, which is hitting the boundary from the other side, has different coefficients, $t'$ and $r'$. %NL%
 This situation is shown in Figure \ref{fig:mrfig2}.
 
 Now, we make the assumption that this process obeys the principal of time reversal symmetry.\footnote{This also implicitly assumes there are no losses.} Thus the result of the second case should match the initial conditions of the first case. %NL%
-The the two beams above the boundary should intefere destructively, while the two below should reproduce the original input beam. %NL%
+The the two beams above the boundary should interfere destructively, while the two below should reproduce the original input beam. %NL%
 This gives us two equations.
 \begin{align*}
 rr^*+t't^*&=1,\\
