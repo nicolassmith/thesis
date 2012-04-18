@@ -70,10 +70,76 @@ This would cause the optimal control seperation (a phase space angle of $\pi/2$)
 Thus, mode matching sensors and actuators, which operate on $m+n=2$ modes, must have  $\eta=\pi/4$ separation for optimal performance.
 
 \section{Dither sensing is a measurement of a partial derivative}
-
+\label{sec:dithersens}
+Suppose one has a sensor which measures some physical quantity $P$, which depends on a variable $\theta$ which is controlable by some means of actuation. %NL%
+A modulation is injected into the variable $\theta$ such that
+\begin{equation}
+\theta = \theta_0+\alpha \sin[\omega t],
+\end{equation}
+where $\alpha \ll 1$ is the modulation depth, and $\omega$ is the modulation frequency. %NL%
+The resulting behaviour of $P$ is
+\begin{equation}
+P(\theta)=P(\theta_0+\alpha \sin[\omega t])\approx P(\theta_0)+\frac{\partial P}{\partial \theta}(\theta_0)\alpha \sin[\omega t] + \ldots
+\end{equation}
+Thus the amplitude of the $\omega$ frequency component, which can be determined by demodulation, is proportional to the partial derivative of the measured quantity with respect to the controled variable. %NL%
+This is the basic mechanism behind dither sensing.
 \section{Conventions for the coefficient of amplitude transmission and reflectivity of beamsplitters}
+Imagine a beam with complex electric field amplitude $E_0$ striking a partially reflective boundary. %NL%
+The beam will be split into two resultant beams, a transmitted beam and reflected. %NL%
+Define the transmitted beam as a complex coefficient, $t$, multiplied by the incident beam. %NL%
+Similarly, the reflected beam will be multiplied by $r$. %NL%
+Note: we make no assumption about the value of these coefficients. %NL%
+At all times we will ignore phase shifts due simply to propogation, so the $ik\delta z$ phase is always divided out.
+
+\begin{figure}
+  \begin{center}
+  \leavevmode
+  \subfloat[The incident beam.]{\label{fig:mrfig1}\includegraphics{figs-ap-notes/mrfig1.pdf}}
+  ~
+  \subfloat[The time reversed situation.]{\label{fig:mrfig2}\includegraphics{figs-ap-notes/mrfig2.pdf}}
+  \end{center}
+  \caption{Diagram of the interaction of a beam with a beamsplitter.}
+  \label{fig:mrfig}
+\end{figure}
+
+Imagine the time reversed process of the two resultant beams. %NL%
+In the phasor space of the electric field, time reversal requires the complex conjugation operation. %NL%
+The blue beam will be split into two beams for which we will use the same coefficients of transmission and reflection as in the case alread considered, because it interacts with the boundary from the same direction. %NL%
+However, we will assume that the green beam, which is hitting the boundary from the other side, has different coefficients, $t'$ and $r'$.
+
+%\begin{figure}
+%  \begin{center}
+%  \leavevmode
+%  \includegraphics{figs-ap-notes/mrfig2.pdf}
+%  \end{center}
+%  \caption[]{}
+%  \label{fig:mrfig2}
+%\end{figure}
+
+Now, we make the assumption that this process obeys the principal of time reversal symmetry.\footnote{This also implicitly assumes there are no losses.} Thus the result of the second case should match the initial conditions of the first case. %NL%
+The the two beams above the boundary should intefere destructively, while the two below should reproduce the original input beam. %NL%
+This gives us two equations.
+\begin{align*}
+rr^*+t't^*&=1,\\
+t'r^*+r't^*&=0.
+\end{align*}
+Solving for $t$ gives
+\begin{equation}
+t=-ie^{i\phi/2}\sqrt{1-|r|^2},
+\end{equation}
+where $e^{i\phi}\equiv r'/r^*$. %NL%
+The two most common conventions choose $r$ to be real and $\phi$ to either be $\pi$, leading to the $r=-r'$ with $t$ real convention, or $2\pi$, leading to the $r=r'$ with $t=i\tau$ for $\tau$ real convention.
 
 \section{The focusing power of a displaced mirror}
+When optimizing the mode matching of a laser beam into an optical cavity, there are typically two ways to modify the focusing of the beam. %NL%
+One is to change the optical elements for others with a differing focal length, or in some extreme cases, by using optical elements with a variable focusing power (Chapter \ref{ch:modematching}). %NL%
+The second method is to modify the position of the optical elements, this changes the free propagation distance between the elements, and hence, the locations and sizes of the focused beams.
 
+The question to be addressed is ``How does one compare a change in focal length to a change in position of the optic in a quantitatively equivalent way?'' %NL%
+For small perturbations of mode matching, a change in the focus of a beam can be considered as coupling between the \TEM{00} mode with the second order ($m+n=2$) modes of the beam \cite{Anderson1984}. %NL%
+For a variable focusing power, this is given in Equation \ref{eq:matrixelement}. %NL%
+Here we aim to calculate a similar expression for a mirror \com{and a lens?} that has been displaced along the optic axis.
+
+\com{TBD}
 \section{The second order HOMs}
-
+\com{What do the \TEM{02} 20 and 11 modes look like?}

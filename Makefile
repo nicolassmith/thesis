@@ -38,7 +38,10 @@ ch-modematching.pdf : $(figs-modematching)
 matfigs-ap-miscon = $(addprefix figs-ap-miscon/,fpmishotnoise.pdf)
 ch-ap-miscon.pdf : $(matfigs-ap-miscon)
 
-figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo) $(figs-jitter) $(figs-modematching)
+figs-ap-notes =  $(addprefix figs-ap-notes/,mrfig1.pdf mrfig2.pdf)
+ch-ap-notes.pdf : $(figs-ap-notes)
+
+figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo) $(figs-jitter) $(figs-modematching) $(figs-ap-notes)
 matfigs = $(matfigs-omc) $(matfigs-jitter) $(matfigs-ap-miscon)
 
 # fig rules
