@@ -7,7 +7,7 @@ viewer = okular
 
 chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
-maindeps = $(main).tex macros.tex $(bibdep)
+maindeps = $(main).tex macros.tex $(bibdep) massring.touch
 texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
 maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters)
 
@@ -74,6 +74,12 @@ ch-%.pdf : ch-%.tex $(maindeps)
 	pdflatex --jobname=ch-$*-temp "\includeonly{ch-$*}\input{$(main)}"
 	mv ch-$*-temp.pdf ch-$*.pdf
 
+# mass rings rules
+massring.touch : massring/makerings.py
+	cd massring; rm -f *.pdf; ./makerings.py
+	touch massring.touch
+
+
 .PHONY : view clean pdf reallyclean
 .SECONDARY : 
 
@@ -88,6 +94,8 @@ clean :
 	-rm -rf _region_.*
 	-rm -rf auto
 	-rm -rf $(figs)
+	-rm -f massring/*.pdf
+	-rm -f massring.touch
 
 reallyclean : clean
 	-rm -rf $(matfigs)

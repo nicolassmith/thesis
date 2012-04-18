@@ -4,7 +4,7 @@ ubuntu packages:
 texlive
 texlive-latex-extra
 
-for some figures:
-msttcorefonts 
+ring of masses requires svgfig python module:
+http://code.google.com/p/svgfig/
 
 nicolas smith
