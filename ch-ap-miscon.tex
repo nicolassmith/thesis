@@ -36,7 +36,7 @@ So there is no trade-off, an increase in finesse can only benefit the sensitivit
   \leavevmode
   \includegraphics{figs-ap-miscon/fpmishotnoise.pdf}
   \end{center}
-  \caption[]{}
+  \caption[The dependence of shot noise on cavity finesse of a Fabry-Perot Michelson interferometer.]{The dependence of shot noise on cavity finesse of a Fabry-Perot Michelson interferometer. The shot noise is given as an amplitude spectral density scaled to the shot noise of an equivalent Michelson interferometer with no arm cavities.}
   \label{fig:fpmishotnoise}
 \end{figure}
 
@@ -56,7 +56,7 @@ On page 103, about the high frequency regime, he writes, ``Further increase in t
 
 \section{Why LIGO has two arms}
 This misconception is alluded to in Section \ref{sec:michelson}, but is treated here more directly. %NL%
-People who are knowledgeable about LIGO, but are not familiar with the details of the interferometer are often surprised to learn that the main reasons driving the use of a Michelson interferometer, with two long arms, are related to the coupling of technical noise sources, and not because of the fact that gravitational waves stretch along perpendicular axes.
+People who are knowledgeable about LIGO, but are not familiar with the details of the interferometer are often surprised to learn that the main reasons driving the use of a Michelson interferometer are related to the coupling of technical noise sources, and not because of the fact that gravitational waves stretch along perpendicular axes.
 
 A Michelson interferometer with symmetric arms bestows the experimentalist with the powerful gift of \emph{common mode noise rejection}. %NL%
 Technical fluctuations of the laser amplitude and frequency tend to reflect back to the laser, not to the dark fringe of the Michelson. %NL%
@@ -64,8 +64,39 @@ The added benefit of the common mode servo (Section \ref{sec:armcav}) also can b
 Again, this is treated beautifully in Sections 10.1.4 and 12.6 of \citet{saulson1994fundamentals}. %NL%
 
 
-A two-armed interferometer is a significant increase in complexity, though the signal strength is only two times that of a one-armed interferometer. %NL%
+A two-armed interferometer is a significant increase in complexity, though the signal strength, in terms of strain, is only two times that of a one-armed interferometer. %NL%
 It is the massive reduction of noise that makes the complexity worthwile.
 
 \section{With a DARM offset, is LIGO still a null measurement?}
 This is not a misconception {\it per se}, but is an intersting point that deserves a small bit of discussion.
+
+Saulson provides a thorough discussion about what makes an experiment `null' \cite[Chapter 10]{saulson1994fundamentals}. %NL%
+He concludes that a Michelson interferometer for gravitational wave detection is not exactly a null measrement. %NL%
+This is because the experimentalists \emph{do} expect to detect a signal. %NL%
+However, he does conclude that all the virtues of null instruments do exist for a LIGO-like interferometer. %NL%
+The fact that the interferometer is operated on a dark fringe leads to rejection of laser noises. %NL%
+Additionally, the measurement is `chopped' due to the phase modulation sidebands and subsequent demodulation, which move the signal away from sources of low frequency measurement noise.
+
+As discussed in Section \ref{sec:dcreadout}, Enhanced LIGO employed DC readout, as will Advanced LIGO. %NL%
+This technique places a small offset in the arms of the interferometer, and the measurement is not chopped, it is done at DC. %NL%
+What does this mean for the status of LIGO? %NL%
+Will it be out of the null club?
+
+In the most simple sense, LIGO is no longer a null measurement. %NL%
+It is measuring small changes in the DC value of some quantity. %NL%
+The relative intensity noise of the carrier exiting the dark port is on the order of $10^{-7}/\sqrt{\rm{Hz}}$ at the frequencies of interest. %NL%
+It is no longer a chopped measurement, the laser noise must be low at audio frequencies, not only RF frequencies.
+
+The fact is that DC readout remains very close to a dark fringe. %NL%
+The fractional offset is on the order of $10^{-5}$, only 10pm out of a wavelength of $1\upmu \rm m$. %NL%
+So most of the common mode laser noise rejection remains. %NL%
+Though it is the intrinsically low laser noise of moder solid state lasers that really makes DC readout possible.
+
+However, there is a sense in which LIGO still is a null measurement. %NL%
+LIGO does not aim to measure static changes in the metric tensor. %NL%
+The Michelson interferometer, as first designed by Michelson, was looking for DC changes in the light propagation times in the two arms.\footnote{Though they could modulate their signal, by rotating their interferometer.} This is not true for LIGO. %NL%
+LIGO is looking for time dependent variations in light propagation times. %NL%
+The majority of the time that data is taken will be in the absence of waves of sufficient size to cause a signal. %NL%
+Thus the expected value, at the measurement frequencies, is still zero. %NL%
+So even with an offset, LIGO is not in the buisness of measuring a non-zero value, and checking if that is the expected value. %NL%
+In a sense it is measuring a value many times and seeing if the value has changed over time.
