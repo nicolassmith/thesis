@@ -34,7 +34,7 @@ set(gca,'YScale','log')
 ylabel('Shoit Noise ASD compared to Michelson')
 xlabel('f/FSR')
 
-set(gca,'FontSize',14)
+set(gca,'FontSize',12)
 set(gcf,'color','white')
 
 
