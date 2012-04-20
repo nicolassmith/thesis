@@ -9,7 +9,7 @@ chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
 maindeps = $(main).tex macros.tex $(bibdep) massring.touch
 texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
-maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters)
+maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters) abstract.tex
 
 # default rule
 pdf : $(main).pdf
