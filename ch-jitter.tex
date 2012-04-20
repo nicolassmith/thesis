@@ -2,7 +2,7 @@
 \label{ch:jitter}
 When using an OMC in the readout of an interferometer, probably the most important new source of noise to arise is beam jitter. %NL%
 A related form of beam jitter noise also exists in the arm cavities of an interferometer \cite{Kawamura:94}. %NL%
-Fluctuations of the output beam are however not generally an issue with an interferometer that does not use an OMC, so long as the beam apertures are always sufficient to prevent beam clipping. %NL%
+Fluctuations of the output beam are, however, not generally an issue with an interferometer that does not use an OMC, so long as the beam apertures are always sufficient to prevent beam clipping. %NL%
 
 
 An OMC may perform very well as a spatial filter for unwanted higher order modes, but simultaneously it becomes very sensitive to pointing fluctuations of the input beam. %NL%
@@ -71,10 +71,6 @@ Furthermore, we again see a nonlinear coupling in the form of mixing of the inci
 We may suppose that the input alignment has both a DC component and possibly some low frequency (a few to several Hz) wandering motion. %NL%
 If this is coupled with high frequency (i.e.\ frequencies in the detection band) jitter of the steering mirror, the mixing of frequencies can cause noise in the power transmission at and around the jitter frequency of the steering optic.
 
-The bilinear nature of beam jitter can be exploited when trying to determine the source of noise peaks in the OMC transmitted spectrum. %NL%
-If injects a low frequency modulation into the angular control of a steering mirror in the path leading to the OMC, any peaks that originate from beam jitter will produce corresponding sidebands, separated by the central peak frequency by the injected modulation frequency. %NL%
-This can be used to quickly identify noise peaks as originating from beam jitter, though it does not determine the exact mechanism causing the beam jitter.
-
 \begin{figure}
   \begin{center}
   \leavevmode
@@ -87,6 +83,10 @@ This can be used to quickly identify noise peaks as originating from beam jitter
 With the introduction of the OMC in Enhanced LIGO, bilinear beam jitter coupling became a much more prominent source of noise. %NL%
 Figure \ref{fig:bilinear} shows how low frequency beam motion mixes with high frequency jitter to produce broad sidebands around beam jitter peaks. %NL%
 This is similar to how beam jitter was discussed by \citet{Tobin}.
+
+The bilinear nature of beam jitter can be exploited when trying to determine the source of noise peaks in the OMC transmitted spectrum. %NL%
+If injects a low frequency modulation into the angular control of a steering mirror in the path leading to the OMC, any peaks that originate from beam jitter will produce corresponding sidebands, separated by the central peak frequency by the injected modulation frequency. %NL%
+This can be used to quickly identify noise peaks as originating from beam jitter, though it does not determine the exact mechanism causing the beam jitter.
 
 \section{Mechanical resonances of beam steering optics}
 
@@ -113,13 +113,13 @@ It was determined fairly quickly that these were due beam jitter, but the mechan
 
 The Enhanced LIGO upgrade introduced several modifications to the readout chain of the interferometer. %NL%
 As discussed in Chapter \ref{ch:omc}, with the introduction of the in-vacuum OMC, it was necessary to use new beam steering and mode matching optics to couple the beam exiting the interferometer to the OMC cavity. %NL%
+A diagram of the optical layout is shown in Figure \ref{fig:ham6layout}. %NL%
 These steering optics, as well as the OMC, were all housed in a single vacuum chamber on top of the prototype HAM ISI platform which is planned to be used copiously in Advanced LIGO. %NL%
-Although it was not fully appreciated at the start of Enhanced LIGO, the new isolation platform provided much reduced vibration isolation at audio frequencies when compared to the isolation tables used in the HAM chambers in Initial LIGO. %NL%
+The new isolation platform provided much reduced vibration isolation at audio frequencies when compared to the isolation tables used in the HAM chambers in Initial LIGO. %NL%
 Figure \ref{fig:hamtransmission} shows a comparison of the transmission of ground motion to motion of the HAM table for both the initial LIGO passive isolation system, and the Enhanced LIGO HAM ISI.
 
 The optical layout of the OMC chamber of Enhanced LIGO comprised three steering optics, which also behaved as a mode matching telescope, and the OMC itself. %NL%
 In the initial configuration, the first of these was a mirror on a fixed mount, while the other two were in a Tip-Tilt suspension system with active beam steering. %NL%
-A diagram of the optical layout is shown in Figure \ref{fig:ham6layout}. %NL%
 Diligent work by Robert Schofield determined that some of the largest beam jitter peaks degrading the interferometer sensitivity were due to vibrations of the fixed mirror mount \cite{fixedmountpeaks}. %NL%
 To rectify this situations, the fixed mirror mount was replaced with a small mirror suspension similar to the Tip Tilts but without the active steering control. %NL%
 Comparison of the old and new designs are shown in Figure \ref{fig:TT0photos}. %NL%
@@ -139,7 +139,8 @@ The origin of the peaks located in the most sensitive region of the LIGO sensiti
 The OMC was equipped with a pair of quadrant photodetectors (QPDs) which sampled the beam incident on the OMC. %NL%
 These QPDs were used to measure the response of the beam motion to motion of the ISI table, which is measured by inertial sensors built into the table. %NL%
 A measurement of the transfer function of table motion to beam motion may be seen in Figure \ref{fig:TTbounceTF}. %NL%
-The resonances were determined to be the bounce (vertical) and roll (rotation about the beam axis) modes of the Tip Tilt optics \cite{tt1bounce}.
+The resonances were determined to be the bounce (vertical) and roll (rotation about the beam axis) modes of the Tip Tilt optics \cite{tt1bounce}. %NL%
+In fact, at the resonant peaks, the motion of the beam was amplified by factors of $10^3$ to $10^4$ relative to the table motion!
 
 \begin{figure}
   \begin{center}
@@ -159,13 +160,7 @@ The resonances were determined to be the bounce (vertical) and roll (rotation ab
   \label{fig:ttdiag}
 \end{figure}
 
-The Tip Tilt design had originally assumed the vertical restoring force was due only to stretching tension in the wires. %NL%
-The vertical resonance was expected to lie near the 340Hz violin resonances of the main interferometer test mass suspensions, which were already In fact, the wires had a diameter of $380\upmu \rm m$ which was sufficient to cause the break off point of the suspension to be far from the wire clamp. %NL%
-Instead of being straight, the wires took more of an `S' shape, as shown in Figure \ref{fig:ttdiag}. %NL%
-The bend in the wire resulted in giving the wire much more yield, reducing the resonant frequencies and placing them directly in the most sensitive region of LIGO. %NL%
-A finite element analysis of resonances of optics suspended by curved optics was performed by Matt Evans and supported this general theory \cite{mattfea}.
-
-\begin{figure}[h!]
+\begin{figure}
   \begin{center}
   \leavevmode
   \includegraphics{figs-jitter/sensimprovement.pdf}
@@ -174,9 +169,16 @@ A finite element analysis of resonances of optics suspended by curved optics was
   \label{fig:sensimprovement}
 \end{figure}
 
-The Tip Tilt suspension was first modified by using thinner wires of radius $50 \upmu \rm m$. %NL%
+The Tip Tilt design had originally assumed the vertical restoring force was due only to stretching tension in the wires. %NL%
+The vertical resonance was expected to lie near the 340Hz violin resonances of the main interferometer test mass suspensions. %NL%
+The wires had a diameter of $380\upmu \rm m$ which was sufficient to cause the break off point of the suspension to be far from the wire clamp. %NL%
+Instead of being straight, the wires took more of an `S' shape, as shown in Figure \ref{fig:ttdiag}. %NL%
+The bend in the wire resulted in giving the wire much more yield, reducing the resonant frequencies and placing them directly in the most sensitive region of LIGO. %NL%
+A finite element analysis of resonances of optics suspended by curved wires was performed by Matt Evans and supported this general theory \cite{mattfea}.
+
+The Tip Tilt suspension was first modified by using thinner wires of diameter $50 \upmu \rm m$. %NL%
 This had the desired effect of reducing the frequency of the bounce resonance to be below the sensitive measurement band \cite{smallwirecoupling}, but could not function as a permanent solution due to the fragility of the wires.\footnote{One of the Tip Tilts doubled as a fast beam diverter to protect the OMC photodiodes from the full stored energy of the arm cavities which exits the AS port when the interferometer loses lock. %NL%
-This system would put considerable force on the suspension and after several lock loss cycles it broke one of the Tip Tilt suspension wires. %NL%
+This system would put considerable force on the suspension and after several lock loss cycles, it broke one of the Tip Tilt suspension wires. %NL%
 The wire radius was increased to $75 \upmu \rm m$ until the blade spring design was ready for installation.} The ultimate solution was to place the upper wire clamps at the ends of blade springs. %NL%
 The new Tip Tilt assembly is shown in Figure \ref{fig:TT0photos}. %NL%
 This reduced the vertical resonances to near 20Hz \cite{bladebounce,bladebounceLHO}, outside of the sensitive region, but while still allowing the use of wires with enough strength. %NL%
@@ -194,8 +196,7 @@ During Enhanced LIGO commissioning however, the 60Hz line was surrounded by broa
 This was particularly troubling because of the importance of sensitivity to gravitational wave emission from the Crab pulsar, which is expected to emit gravitational waves at 59.56Hz \cite{Crab}.
 
 The Tip Tilt suspensions utilized permanent magnets affixed to the optics and coil electromagnets for active beam steering control. %NL%
-The four permanent magnets were arranged on the face of the optic as shown in Figure \ref{fig:ttdiag}. %NL%
-The polarities were alternated so that uniform ambient magnetic fields would not cause a force or torque on the optic. %NL%
+The polarities were alternated so that uniform ambient magnetic fields would not cause a force or torque on the optic, as shown in Figure \ref{fig:ttdiag}. %NL%
 Robert Schofield determined that the source of the beam jitter peaks at multiples of 60Hz were in fact due to \emph{gradients} in the ambient magnetic field at those frequencies \cite{60Hzgrad}. %NL%
 He also suggested that the use of a magnetometer sensor outside of the vacuum chamber would provide a signal that could be applied to the Tip Tilt alignment control and cancel the effects of the ambient field \cite{60hzff}. %NL%
 In addition, the strength of the permanent dipole magnets used in the Tip Tilts was reduced.

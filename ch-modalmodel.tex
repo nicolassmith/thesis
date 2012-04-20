@@ -1,7 +1,7 @@
 \chapter{Vector space model of optical systems}
 \label{ch:modalmodel}
 This chapter describes a formalism that treats the laser field components propagating in an optical interferometer as a complex vector space where common optical components, such as mirrors and optical modulators are treated as operators in this space. %NL%
-This treatment allows the analysis of complicated optical paths, which include paths that loop onto themselves (as in the case of resonant cavities) to be reduced to a problem of matrix manipulation. %NL%
+This treatment allows the analysis of complicated optical paths, which include paths that loop onto themselves (as is the case of resonant cavities) to be reduced to a problem of matrix manipulation. %NL%
 This is a powerful technique that is used extensively in modeling the behavior of gravitational-wave interferometers \cite{Vinet1986,Hefetz:97,Sigg:00}, and is useful for some of the concepts discussed in later chapters.
 
 At this point in the discussion, a bird's eye view of the technique is useful. %NL%
@@ -14,11 +14,11 @@ What is left is just a problem of linear algebra.
 
 \section{Frequency components of a laser field}
 \label{sec:freqspace}
-To get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components that represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated in frequency by $\pm\Omega$. %NL%
-Consider an electromagnetic wave propagating in the $z$ direction, at some point along the propagation axis, the electric field at $z=0$ may be written as
+To get a flavor of the formalism, consider the simple example where we choose our vector space to just have three components that represent the amplitude of a carrier frequency field at frequency $\omega_0$, as well as two sideband fields separated in frequency by $\pm\omega$. %NL%
+Consider an electromagnetic wave propagating in the $z$ direction, the electric field at $z=0$ may be written as
 \begin{align*}
-\geom{E}(t) &= A_0 e^{i\omega_0t}\geom{x} + A_1e^{i(\omega_0+\Omega)t}\geom{x} + A_{-1}e^{i(\omega_0-\Omega)t}\geom{x}\\
-&= \left( A_0 + A_1 e^{i\Omega t}+A_{-1}e^{-i\Omega t}\right) e^{i\omega_0 t}\geom{x},
+\geom{E}(t) &= A_0 e^{i\omega_0t}\geom{x} + A_1e^{i(\omega_0+\omega)t}\geom{x} + A_{-1}e^{i(\omega_0-\omega)t}\geom{x}\\
+&= \left( A_0 + A_1 e^{i\omega t}+A_{-1}e^{-i\omega t}\right) e^{i\omega_0 t}\geom{x},
 \end{align*}
 where $A_0$, $A_1$ and $A_{-1}$ are the carrier, first order upper sideband and first order lower sideband amplitudes respectively, $k=\omega_0/c$ is the wave-number, and $\geom{x}$ is the \emph{geometrical} basis vector pointing along the axis of polarization. %NL%
 We are interested in the vector representation where this same propagating field is represented as\footnote{The use of $\doteq$ in (\ref{eq:dotequals}) is meant to convey that the expression on the right side is a representation of the vector on the left side in the chosen vector space. %NL%
@@ -30,7 +30,7 @@ The right side of the equation is not written in terms of vectors and thus is no
 
 The basis vectors in this representation are given by the three periodically time varying components of the electric field, namely the carrier, upper and lower sidebands. %NL%
 It is important to emphasize that the vectors used in this formalism are in general not simple euclidean vectors, but rather abstract vectors representing different components of the electric field of an electromagnetic wave. %NL%
-The inner product of two basis vectors is:
+The basis vectors are orthonormal, the inner product of two basis vectors is:
 \[
 \inprod{r}{s} = \int\limits_{\text{many cycles}}\! \! \! \! \! \! \! \! \!
 \dd t \; \: {\left( e^{i\omega_{r}t}\right)^*}e^{i\omega_{s}t} = \delta_{rs},
@@ -41,13 +41,13 @@ In our formalism, the components of the laser field will take the place of the s
 We will use Dirac bra-ket notation because of this strong analogy.\footnote{One significant difference between quantum mechanics and this formalism is that the quantum state vector of a system must always have unit length, to ensure the state has a probability of 1. %NL%
 The length of the vector in this formalism is just a field amplitude, and can take any value.}
 
-Now that we are familiar with using this vector space to represent the desired wave amplitudes, let's examine how we may use an operator to represent some optical component. %NL%
+Now that we are familiar with using this vector space to represent the desired wave amplitudes, let us examine how we may use an operator to represent some optical component. %NL%
 An electro-optic modulator (EOM) can act as a phase modulator for a laser field when a voltage is applied. %NL%
-When a periodic signal is applied at frequency $\Omega$, given an input field amplitude $Ae^{i\omega_0 t}$ (ignoring the $z$ dependence) the output amplitude is
+When a periodic signal is applied at frequency $\omega$, given an input field amplitude $Ae^{i\omega_0 t}$ (ignoring the $z$ dependence) the output amplitude is
 \newcommand{\gammahalf}{\frac{i\Gamma}{2}}
 \begin{equation}
 \label{eq:inputfield}
-Ae^{i\omega_0 t + i\Gamma \cos{\Omega t}}\approx Ae^{i\omega_0 t}\left(1+\gammahalf e^{i\Omega t}+\gammahalf e^{-i\Omega t}\right),
+Ae^{i\omega_0 t + i\Gamma \cos{\omega t}}\approx Ae^{i\omega_0 t}\left(1+\gammahalf e^{i\omega t}+\gammahalf e^{-i\omega t}\right),
 \end{equation}
 where $\Gamma$ is known as the modulation depth and is assumed to be small. %NL%
 One can show that in the example vector space we are considering, this EOM can be represented as the following operator
@@ -79,7 +79,7 @@ The general form of the phase modulation operator is:
 \begin{equation}
 \oper{\Phi}(\Gamma) = \sum_{r,s=-\infty}^\infty\vect{r} i^{s-r} J_{s-r}(\Gamma) \form{s},
 \end{equation}
-where $\vect{r}$ is the basis vector representing the $r$th order sideband component (which includes a $e^{ir\Omega t}$ time dependence), and $J_k(x)$ is the Bessel function of the first kind.\footnote{This can be shown using the so-called Jacobi-Anger identity, $e^{ix\cos\theta}=\sum_{k=-\infty}^\infty i^kJ_k(x)e^{ik\theta}$. %NL%
+where $\vect{r}$ is the basis vector representing the $r$th order sideband component (which includes a $e^{ir\omega t}$ time dependence), and $J_k(x)$ is the Bessel function of the first kind.\footnote{This can be shown using the so-called Jacobi-Anger identity, $e^{ix\cos\theta}=\sum_{k=-\infty}^\infty i^kJ_k(x)e^{ik\theta}$. %NL%
 Also, $J_{-k}(x)=(-1)^kJ_k(x)$, thus $\oper{\Phi}(\Gamma)$ is symmetric.} The ability to calculate to arbitrary precision will continue to hold true when we expand the treatment to include other components of a propagating laser field, such as the transverse spatial modes. %NL%
 As long as the solutions are converging, the precision is only limited by the choice of when the vector space is truncated, i.e.\ to what order the calculation is taken.
 
@@ -88,7 +88,7 @@ As long as the solutions are converging, the precision is only limited by the ch
 So far our example prescribes an elegant way to deal with optical components (e.g.\ the modulator) which transfer energy from one component of the electric field (the carrier) to other components (the sidebands). %NL%
 This type of approach is also applicable to the components of the electric field corresponding the the transverse spatial modes of the beam, as shown by \citet{Hefetz:97}.
 
-When the paraxial approximation applies it is possible to expand the electromagnetic field into a superposition of modes represented by a Gaussian function of the transverse coordinate, multiplied by polynomials. %NL%
+When the paraxial approximation applies, it is possible to expand the electromagnetic field into a superposition of modes represented by a Gaussian function of the transverse coordinate, multiplied by polynomials. %NL%
 Common choices for the polynomial functions are the Hermite or Laguerre polynomials \cite[Chap. %NL%
 16]{Siegman}. %NL%
 This formalism associates the modal components with eigenmodes of what is described as the ``perfectly aligned and undistorted optical path''. %NL%
@@ -116,8 +116,9 @@ This can be represented as a phase multiplication of $\exp[-2ik\theta_x x]$. %NL
 \begin{equation}
 \oper{M}(\Theta_x) = \exp\left[ -i2\Theta_x\sum_{m,n,k,l=0}^\infty \vect{mn} \delta_{nl} \left( \sqrt k \delta_{m[k-1]}+\sqrt m \delta_{m[k+1]} \right) \form{kl}\right],
 \end{equation}
-where $\delta_{mn}$ is the Kronecker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$, at the beam waist, this is the ratio of the misalignment angle to the beam divergence angle. %NL%
-One can see that the $k$ index is connected to the $m$ index that differs by one mode number, this will provide the correct transfer of energy from the \TEM{00} mode to the \TEM{10} mode as discussed above. %NL%
+where $\delta_{mn}$ is the Kronecker delta; and $\Theta_x = \theta_x \pi w(z)/\lambda$ is the normalized misalignment angle for beam width $w(z)$ and wavelength $\lambda$. %NL%
+At the beam waist, $\Theta_x$ is the ratio of the misalignment angle to the beam divergence angle. %NL%
+One can see that the $k$ index is connected to the $m$ index when they differ by one mode number, this will provide the correct transfer of energy from the \TEM{00} mode to the \TEM{10} mode as discussed above. %NL%
 We can use a matrix representation with three components representing the \TEM{00}, \TEM{10} and \TEM{01} amplitudes, explicitly for field $\vect{E}$:
 \begin{equation}
 \vect{E} \doteq \ms \inprod{00}{E} \\ \inprod{10}{E} \\ \inprod{01}{E} \me
@@ -188,7 +189,7 @@ There is, however a phase shift which depends on the transverse mode order (the 
 
 More complicated operators exist which simultaneously mix mode and frequency components. %NL%
 One example is that of a mirror which is dithered at a given frequency in angle. %NL%
-It is in a sense a combination of the misaligned mirror operator in section \ref{sec:modalspace} and the phase modulation operator in section \ref{sec:freqspace}. %NL%
+It is in a sense a combination of the misaligned mirror operator in Section \ref{sec:modalspace} and the phase modulation operator in Section \ref{sec:freqspace}. %NL%
 This operator is derived by \citet{Sigg:00}.
 \section{Photodetection}
 A photodetector is a device which is sensitive to the power in the laser field. %NL%
@@ -302,4 +303,4 @@ This is of course just the expected resonance behavior. %NL%
 As the length of the cavity is changed (which modifies the propagation operators) different field components will come in and out of resonance. %NL%
 This includes both frequency components and higher order mode components, indeed different frequency components of different higher order mode components as well!
 
-The following chapter covers beam jitter noise, one of the most important sources of noise related to the use of an output mode cleaner in the readout chain of an interferometer.
+The following chapters build on the concepts introduced here.

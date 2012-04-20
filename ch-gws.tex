@@ -15,8 +15,9 @@ The space-time metric defines a co-variant interval between infinitesimally sepa
 \dd s^2 = g_{\mu \nu}\dd x^\mu \dd x^\nu,
 \end{equation}
 where $\mu$ and $\nu$ are indices for the space and time coordinates, and $g_{\mu \nu}$ are the elements of $\oper{g}$. %NL%
-The trajectories of free particles are defined by geodesic paths in the manifold, which may be derived from the metric tensor\cite[Chap. %NL%
-3]{carroll2004spacetime}.
+The trajectories of free particles are defined by geodesic paths in the manifold, which may be derived from the metric tensor \cite[Chap. %NL%
+3]{carroll2004spacetime}. %NL%
+These trajectories of objects in the four dimensional manifold are the manifestation of the force of gravity in general relativity.
 
 The metric satisfies the sourced field equation
 \begin{equation}
@@ -26,7 +27,7 @@ The metric satisfies the sourced field equation
 where $\oper{G}$ is known as the Einstein tensor, a second-order differential operator acting on the metric tensor, $G$ is Newton's constant, $c$ is the speed of light, and $\oper{T}$ is the stress-energy tensor which holds information about all forms of energy in the space-time.
 
 \section{The general theory of relativity in the linearized regime}
-In the weak field limit of General Relativity, the metric tensor $\oper{g}$ will be close to the Minkowski metric of Special Relativity \cite[Chap. %NL%
+In the weak field limit of general relativity, the metric tensor $\oper{g}$ will be close to the Minkowski metric of special relativity \cite[Chap. %NL%
 7]{carroll2004spacetime}. %NL%
 Far from sources of gravitational waves, the wave amplitudes will be quite small and thus
 \begin{align}
@@ -34,7 +35,7 @@ g_{\mu \nu}&\approx \eta_{\mu \nu}+h_{\mu \nu}, &|h_{\mu \nu}|\ll 1.
 \end{align}
 where $\eta_{\mu \nu}$ are the components of the Minkowski metric, and $h_{\mu \nu}$ are small perturbations.
 
-We are interested in Wave-like solutions that will propagate in the absence of any source terms (although they may be created by sources), thus $\oper{T}=0$. %NL%
+We are interested in wave-like solutions that will propagate in the absence of any source terms (although they may be created by sources), thus $\oper{T}=0$. %NL%
 For convenience we choose what is known as the \emph{transverse traceless} gauge. %NL%
 Given these simplifications, Equation \ref{eqn:einstein} becomes
 \begin{equation}
@@ -48,7 +49,7 @@ Due to symmetries and chosen gauge conditions, a wave traveling in the $z$ direc
 9]{schutz1985first}
 \begin{align*}
 A_{xx}&=-A_{yy}\equiv h_+,\\
-A_{xy}&=A{yx}\equiv h_\times,
+A_{xy}&=A_{yx}\equiv h_\times,
 \end{align*}
 the rest being zero. %NL%
 Thus such a wave takes the form
@@ -75,14 +76,14 @@ The total phase measured (modulo $2\pi$) of a light pulse with frequency $f$ aft
 \end{equation}
 Along the path, the pulse follows a null trajectory ($\dt s^2=0$) and furthermore, according to Equation \ref{eqn:wavefunc}, the metric does not mix time and spatial components ($g_{0i}=g_{i0}=0$), thus
 \begin{equation}
-c\dd t = \sqrt{|g_{ij}|\dd x^i \dd x^j},
+c\dd t = \sqrt{g_{ij}\dd x^i \dd x^j},
 \end{equation}
 where $i$ and $j$ only include spatial components.
 
 Let us consider a simple path made of two segments, propagation from the origin $(0,0,0)$ to a point in the $x$ direction which is $L_x$ away $(L_x,0,0)$, and then back to the origin. %NL%
 The phase along this path is
 \begin{equation}
-\phi_{\text{round trip}}^{\text{x-path}}= \frac{2\pi f}{c} \left(\int_0^{L_x}-\int^0_{L_x}\right)\sqrt{|g_{xx}|}\dd x \approx \frac{4\pi f}{c} L_x \left(1+\frac{h_+}{2}\right).
+\phi_{\text{round trip}}^{\text{x-path}}= \frac{2\pi f}{c} \left(\int_0^{L_x}-\int^0_{L_x}\right)\sqrt{g_{xx}}\dd x \approx \frac{4\pi f}{c} L_x \left(1+\frac{h_+}{2}\right).
 \end{equation} 
 The same argument for a path along the $y$ gives
 \begin{equation}
@@ -108,20 +109,21 @@ The lower moments, the mass-energy monopole and dipole are guaranteed constant b
 A system of two bodies in orbit is a splendid source of gravitational radiation. %NL%
 The first evidence of the existence of gravitational radiation came from the Hulse-Taylor pulsar system which showed the characteristic loss of orbital energy due to gravitational wave radiation damping \cite{Taylor1979}. %NL%
 The waves emitted by this system will have a discouragingly small amplitude of $h\approx 10^{-26}$ when they reach Earth, not to mention a period of several hours. %NL%
-This system will decay in a time of order $10^8$ years.
+
 
 A compact binary system such as the Hulse-Taylor binary in the final orbits before merger provides a more promising prospect for the creation of gravitational waves that may be measurable on Earth. %NL%
+In particular, the Hulse-Taylor binary system will decay in a time of order $10^8$ years. %NL%
 The time scales of such collisions would lead to gravitational waves in the audio frequency band. %NL%
 Of the expected sources, the coalescence of black holes or neutron stars are the ones most likely to produce gravitational wave with enough magnitude to be detected on Earth with modern detectors \cite{CBCrates}. %NL%
 Data taken from the LIGO and Virgo detectors have been analyzed and upper limits of these sources have been set \cite{CBC,CBCblackholes}.
 
 It is also possible that an aspherical spinning neutron star will produce waves large enough to be detected. %NL%
 Such waves would be largely monochromatic, with some modulation due to relative motion of the source and the Earth. %NL%
-Currently, the best limit on the contribution of neutron star spin-down of the Crab\cite{Crab} and Vela\cite{Vela} pulsars are determined by the lack of gravitational radiation detected by LIGO and Virgo.
+Currently, the best limit on the gravitational radiation damping contribution of neutron star spin-down of the Crab\cite{Crab} and Vela\cite{Vela} pulsars are determined by the lack of gravitational radiation detected by LIGO and Virgo.
 
 There are some transient gravitational wave sources for which no waveform models exist. %NL%
 An example of such a source would be the waves emitted by a supernova explosion. %NL%
-Searches for such unmodeled sources have yielded a strain sensitivity of $\sim 10^{-21} / \sqrt{\rm{Hz}}$, but no waves have yet been detected \cite{bursts}.
+Searches for such unmodeled sources have yielded a strain sensitivity of $\sim 10^{-21} / \sqrt{\rm{Hz}}$ in the LIGO frequency band, but no waves have yet been detected \cite{bursts}.
 
 We may one day discover a stationary, broadband source of gravitational radiation. %NL%
 Most cosmological model predict some level of stochastic gravitational wave background \cite{bbn,stochdirectional}. %NL%

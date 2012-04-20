@@ -22,7 +22,7 @@ In recent years, kilometer scale interferometers have been constructed and opera
 These are the American LIGO interferometers \cite{LIGO}, the German-English GEO600 interferometer \cite{GEO600}, and the Italian-French Virgo interferometer \cite{Virgo}.
 
 \section{Measurement of optical phase}
-In Chapter \ref{ch:gws} we introduced the idea that the waveform of a passing gravitational wave is imprinted on the phase of photons. %NL%
+In Chapter \ref{ch:gws} we introduced the idea that the waveform of a passing gravitational wave is imprinted on the phase of electromagnetic waves. %NL%
 The frequency of oscillation of a laser with a wavelength of 1.064$\upmu$m is 2.8$\times 10^{14}$Hz. %NL%
 There is no technology, currently conceived, with which one can directly measure the phase of electromagnetic waves at optical frequencies. %NL%
 One may, however, convert the change of phase of the electromagnetic wave into a change of amplitude by means of the phenomenon of interference. %NL%
@@ -60,6 +60,8 @@ This allows us to solve for the intra-cavity field
 \begin{equation}
 E_{\rm{cav}}=\frac{t_1}{1 - r_1 r_2 e^{i 2 k L}} E_{\rm i}.
 \end{equation}
+As one can see, when $2kL$ is close to a multiple of $2\pi$, the intracavity field is strongly enhanced. %NL%
+This circumstance is knon as resonance. %NL%
 The reflected field is
 \begin{equation}
 E_{\rm{r}}=-r_1 E_{\rm i} + t_1r_2 e^{i 2 k L} E_{\rm{cav}}=\frac{-r_1+(r_1^2+t_1^2)e^{i2kL}r_2}{1-r_1r_2e^{i2kL}}E_{\rm i}.
@@ -71,7 +73,7 @@ The case of $r_2>r_1$ is known as overcoupled, and the reflected field changes s
 When $r_2<r_1$, there is no sign change, and this is known as undercoupled. %NL%
 The case when no field is reflected ($r_2=r_1$) is known as critically coupled. %NL%
 The LIGO arm cavities (Section \ref{sec:armcav}) are an example of strongly overcoupled cavities, while the output mode cleaner (Chapter \ref{ch:omc}) is a critically coupled cavity. %NL%
-Undercoupled cavities are more rare because the majority of the light does not penetrate the cavity and thus does not provide a very sensitive measurement.
+Undercoupled cavities are more rare because the majority of the light does not penetrate the cavity and thus does not provide for a very sensitive measurement of the cavity.
 
 The phase change on reflection is enhanced relative to the phase change inside the cavity. %NL%
 For a change of the intracavity phase $\phi = k L$, the phase of the reflected field will change as
@@ -80,21 +82,9 @@ For a change of the intracavity phase $\phi = k L$, the phase of the reflected f
 \end{equation}
 where $\mathcal{F}$ is known as the \emph{cavity finesse} and has the approximate value $\mathcal{F}\approx \pi\frac{\sqrt{r_1r_2}}{1-r_1r_2}$ where the approximation is valid for $\{r_1,r_2\}\approx 1$. %NL%
 For large values of the finesse, the phase of the reflected field has a steep variation compared to the intracavity phase. %NL%
-A very typical cavity may have a value of the finesse which is a few hundred. %NL%
-Colloquially this can be viewed in the particle picture of light that the photons bounce around in the cavity many times before exiting and thus experience an accumulated phase gain many times that of a single round trip.
+A very typical cavity may have a finesse of a few hundred. %NL%
+Colloquially this can be viewed as the light making several bounces in the cavity before exiting and thus experience an accumulated phase gain many times that of a single round trip.
 
-%\infobox{Coupling conditoin of a resonant cavity}{
-%\begin{wrapfigure}{r}{.4\textwidth}
-%\begin{tabular}{|p{5cm}|}
-%Coupling condition of a resonant cavity\\
-%\begin{itemize}
-%\item $r_1<r_2$: Overcoupled, reflected field changes sign on resonance.
-%\item $r_1>r_2$: Undercoupled, no sign change on resonance.
-%\item $r_1=r_2$: Critically coupled, no field reflected on resonance.
-%\end{itemize}
-%\end{tabular}
-%\end{wrapfigure}
-%}
 \section{Pound-Drever-Hall reflection locking}
 Pound-Drever-Hall (PDH) reflection locking is a powerful technique by which the resonance condition of a laser incident on an optical cavity may be controlled by use of a feedback control system \cite{PDH}. %NL%
 In this control system, the error signal is a measurement of the detuning of the laser light from resonance. %NL%
@@ -102,11 +92,11 @@ In the case of a fixed length cavity, this may be understood as a measurement of
 We are instead concerned with a very stable laser source and a cavity which may change length due to external influences.\footnote{A gravitational wave changes the phase accumulated in the cavity, which is essentially interchangeable with the optical path length of the cavity.} In this case, the error signal is better understood as a measurement of the length changes of the cavity.
 
 As was shown in the previous section, the phase shift of the beam reflected from the resonant cavity is enhanced for fields resonant in the cavity. %NL%
-However, for fields not resonant in the cavity, there is nearly no phase shift of the reflected beam. %NL%
+However, for fields not resonant in the cavity, there is nearly no phase shift of the reflected beam for a given length change. %NL%
 The PDH sensing technique exploits this fact by constructing an input beam with frequency components that are both resonant and non-resonant. %NL%
 By doing a relative phase measurement of the reflected fields, one may determine length changes of the cavity.
 
-Phase modulation of the input beam is done by sending the beam through an optical modulator. %NL%
+Preparation of the input beam for PDH is done by sending the beam through an optical modulator capable of phase modulation. %NL%
 This usually comes in the form of an \emph{electro optic modulator} (EOM), which is an optical device that has a electronically variable optical path length. %NL%
 Applying a periodic electronic signal, usually at radio frequencies (RF), will induce a periodic phase modulation of the laser beam. %NL%
 As will be discussed in Section \ref{sec:freqspace}, the primary result of this phase modulation is to impose new optical fields separated in frequency from the original field by the RF modulation frequency. %NL%
@@ -154,7 +144,11 @@ of the interferometer be the place where the power varies most as a function of 
 In this case, halfway between the maximum and minimum of the fringe would have the greatest derivative and thus would maximize the signal measured for any given length change. %NL%
 This ignores, however the dependence of sensing noise on the interferometer set point. %NL%
 Shot noise is a fundamental source of measurement uncertainty due to the random arrival of photons on the photodetector. %NL%
-For a measurement of the transmitted power $P_{\rm t}$, and assuming $r_1=r_2=1$, the amplitude spectral density of the shot noise is:
+Generically, a photodetector which measured a power $P$ will measure an amplitude spectral density of shot noise of
+\begin{equation}
+N_{\rm{shot}}=\sqrt{2\frac{hc}{\lambda}P}.
+\end{equation}
+In the case of the Michelson interferometer, for a measurement of the transmitted power $P_{\rm t}$, and assuming $r_1=r_2=1$, the amplitude spectral density of the shot noise is:
 \begin{equation}
 \label{eqn:michshotnoise}
 N_{\rm{shot}}=\sqrt{2\frac{hc}{\lambda}P_{\rm i}\sin^2(kl_-)}.
@@ -197,7 +191,8 @@ Thus if the control system holds the cavity on resonance by modifying the laser 
 \frac{\delta L}{L} &= -\frac{\delta f}{f}.
 \label{eqn:dfdL}
 \end{align}
-Thus one may stabilize the frequency noise of a laser by locking the laser to some cavity. %NL%
+When a laser is locked to a cavity via a control system, the cavity length fluctuations are directly linked to the frequency fluctuations of the laser. %NL%
+Thus one may stabilize the frequency noise of a laser by locking the laser to a cavity. %NL%
 Provided that the length of the cavity is sufficiently stable, this may be used to reduce the frequency noise of the laser below its intrinsic level. %NL%
 Additionally, according to Equation \ref{eqn:dfdL}, this becomes more effective as the cavity is made longer.
 
@@ -261,7 +256,7 @@ The DC power at the AS port has a quadratic dependence on DARM. %NL%
 Thus if the arm cavities are differentially detuned slightly (on the order of 10 picometers) from resonance, there will be a linear dependence of the DC power from DARM. %NL%
 An alternate picture of the scheme is that in the RF scheme, the RF sidebands are the local oscillator which beats against the gravitational wave sidebands to produce an RF signal, which is a form of heterodyne detection. %NL%
 While in the DC case, the DARM offset produces a local oscillator at the same baseband frequency as the signal sidebands, which is a form of homodyne readout. %NL%
-A photodetector which measures this DC power is an alternative sensor for reading out DARM. %NL%
+A photodetector which measures this DC power at the AS port is an alternative sensor for reading out DARM. %NL%
 DC readout of DARM has been implemented on the GEO600 detector \cite{GEODC}, the Caltech 40 meter prototype interferometer \cite{40mDC}, and for Enhanced LIGO \cite{Tobin}. %NL%
 DC readout of DARM is also part of the baseline design for Advanced LIGO. %NL%
 A very thorough treatment of the subject can be found in Tobin Fricke's PhD dissertation \cite{FrickeThesis}. %NL%
@@ -279,7 +274,9 @@ The total power on the detector is modulated at twice the frequency of the RF si
 The RF demodulation of DARM preferentially samples the signal at the peaks of the RF modulation, leading to a shot noise contribution higher than the DC case by a factor of $\sqrt{3/2}$. %NL%
 There is a very nice treatment of this effect in Section 2.9 of Tobin Fricke's dissertation \cite{FrickeThesis}.
 
+An interferometer that employs DC readout is a more attractive candidate for the use of squeezed light injection to improve the interferometer sensitivity. %NL%
+By contrast to an RF readout scheme, an interferometer with DC readout only requires squeezing at audio frequencies, not audio and RF frequencies \cite{dcsqueeze1,dcsqueeze2}.
+
 One of the drawbacks of DC readout is that the audio frequency modulation of any of the optical fields present at the AS port can cause noise in the readout. %NL%
-To mitigate the existence of the fields not necessary for producing the signal, i.e. %NL%
-any fields that are not the local oscillator or the signal fields, one may utilize an output mode cleaner. %NL%
+To mitigate the existence of the fields not necessary for producing the signal, i.e.\ any fields that are not the local oscillator or the signal fields, one may utilize an output mode cleaner. %NL%
 The output mode cleaner acts as both a spatial and frequency filter of the fields detected at the AS port and will be described in detail in the following chapter.

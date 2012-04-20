@@ -4,7 +4,7 @@
 % also the fact that mode matching is a constraint
 \label{sec:gouysep}
 A servo system which is designed to control several degrees of freedom of a system simultaneously must be able to effectively sense and control each degree of freedom independently. %NL%
-The degrees of freedom of the system span a phase space, and the sensors and actuators can be represented as vectors in this space. %NL%
+The degrees of freedom of the system define a phase space, and the sensors and actuators can be represented as vectors in this space. %NL%
 Where the components of the vectors have amplitudes proportional to the sensitivity of the sensor, or the actuation strength of the actuator, in a given degree of freedom. %NL%
 In order to effectively control one's system, care should be taken to ensure that these vectors sufficiently span the phase space. %NL%
 If any direction does not have coverage, it will either be unsensed, or uncontrolled.
@@ -25,7 +25,7 @@ Therefore we may frame the problem of controlling the beam position and angle by
 Thus a `good' alignment system will be one in which the ability of the system to actuate on the real and imaginary quadratures of the \TEM{01} field is well separated.
 
 We will represent our alignment system as two steering mirrors labeled A and B. %NL%
-The mirror first reflects from mirror A, travels some distance, then reflects from mirror B. %NL%
+The beam first reflects from mirror A, travels some distance, then reflects from mirror B. %NL%
 We will consider a vector space of the \TEM{00} and \TEM{01} modes as basis vectors. %NL%
 From Equation \ref{eqn:mirrortilt} we see that, in this representation, the operator for mirror A is
 \begin{equation}
@@ -36,7 +36,7 @@ where $\Theta_{\rm A}$ is the alignment angle of mirror A. %NL%
 A similar expression holds for mirror B.
 
 Between mirrors A and B, we allow the laser to propagate some distance. %NL%
-Along with the propagation phase which is common to all modes, there is the additional Gouy phase $\eta$. %NL%
+Along with the propagation phase which is common to all modes, the \TEM{01} mode experiences the additional Gouy phase $\eta$. %NL%
 The propagation operator is
 \begin{equation}
 %\oper{P}=e^{i\phi}\left(\vect{00}\form{00}+e^{i\eta}\vect{01}\form{01}\right),
