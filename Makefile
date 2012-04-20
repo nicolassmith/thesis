@@ -4,6 +4,7 @@ main = main
 auxiliary = cover contents
 bib = mainb
 viewer = okular
+server = nsmith@ligo.mit.edu:~/public_html/nicolas-thesis-draft.pdf
 
 chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
@@ -83,8 +84,11 @@ massring.touch : massring/makerings.py
 	touch massring.touch
 
 
-.PHONY : view clean pdf reallyclean
+.PHONY : view clean pdf reallyclean upload
 .SECONDARY : 
+
+upload : $(main).pdf
+	scp $< $(server)
 
 view : $(main).pdf
 	$(viewer) $< 2> /dev/null &
