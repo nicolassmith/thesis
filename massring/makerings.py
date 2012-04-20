@@ -15,15 +15,15 @@ circleRadius = 10; #radius of mass circle
 h0 = 0.2; # gravitational wave strain
 period = 20; # wave period (in frames)
 maxFrames = 100; # how many images to make
-frameOffset = 14;
+frameOffset = 13;
 
 edgeLength = massRadius + circleRadius*(1+h0); 
 
 for frame in range(maxFrames):
     # this loops over the frames
-    name = baseName+str(frame+1);
+    name = baseName+str(frame);
     if frame >= period:
-        call(['ln','-s',baseName+str(frame%period+1)+'.pdf',name+'.pdf'])
+        call(['ln','-s',baseName+str(frame%period)+'.pdf',name+'.pdf'])
     else:
         g = SVG('svg',height=str(2*edgeLength)+'px',width=str(2*edgeLength)+'px')
         h = h0*sin(2*pi*(frame+frameOffset)/period);
