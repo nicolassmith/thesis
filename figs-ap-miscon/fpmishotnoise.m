@@ -14,7 +14,7 @@ for jj = 1:length(Finesse)
 end
 
 convertcolor = @(color) hex2dec(reshape(color,2,3)')'/255;
-brightcolor = 'c861d3';
+brightcolor = 'efbef4';
 
 colorlist = kron(convertcolor(brightcolor),((1:length(Finesse)).'/length(Finesse))/2+.5);
 
