@@ -1,6 +1,17 @@
 \chapter{Practical calculations using matrices based on the optical vector space model}
 
 \section{Collapsing a tensor of several indices into a 2D matrix}
+The tensors in the full optical vector space model described in Chapter \ref{ch:modalmodel} are tensors with elements that are referenced with with up to eight indicies. %NL%
+Dealing with eight-dimensional tensors using typical mathematical software environments, such as \mbox{MATLAB} or Mathematica, may be possible, however a far more simple talk would be to re-index the tensors into two dimensional matrices which are more easily dealt with.
+
+For example, we want to take the elements of the free space propagator $\oper{P}$ in Equation \ref{eq:Propagator}, and reduce the number of indices.
+\begin{equation}
+\matrixel{mn;r;p}{\oper{P}}{kl;s;q} = P_{mnrpklsq} \Rightarrow P_{ij}.
+\end{equation}
+Thus we need some function that takes four indices and produces a single collapsed index, and there must be a one-to-one mapping of $klsq$ to $i$ such that a given collapsed index unambiguoisly determines the element in the original vector space. %NL%
+The result of such an excersize is to produce a formula similar to Equation (6) in \citet{Sigg:00}, but we will cover some details here, as well as point out an error in their formula!
+
+In the modal space,
 
 % explain equation (6) in dynamical response. I believe there is a missing factor of 2 on a(r)
 
@@ -9,6 +20,8 @@
 % the modal indices can be traversed diagonally nicely with (m+n)*(m+n+1)/2+n
 
 % to expand, general formula i = p^(r^g[m,n]+r)+p. p^=2
+
+% kron multiplies sub matrices
 
 \section{Define the free space propagator to have no phase rotation for the \TEM{00} carrier.}
 
