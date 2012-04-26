@@ -49,7 +49,7 @@ One may collapse the modal and frequency indices in the following way
 \label{eqn:nopol}
 i = \hat{a}g + a,
 \end{equation}
-where $\hat{a}$ is the number of possible values of $a$, which is in this case the same as $n_f$. %NL%
+where $\hat{a}$ is the number of possible values of $a$, which is, in this case, the same as $n_f$. %NL%
 This collapsed index behaves in the following way for values of $g$ and $a$
 \begin{center}
 \begin{tabular}{ r| c c c | c c c}
@@ -83,6 +83,11 @@ G_{ij}&=\operatorname{Kron}(G_{g_1g_2},G_{a_1a_2})
 all represent the sample tensor multiplication operation, in the abstract tensor space, in the six index component representation, and in the collapsed index matrix representation, respectively. %NL%
 $\operatorname{Kron}(\cdot,\cdot)$ is the kroneker product, and $i$, $g_1$, $a_1$ and $j$, $g_2$, $a_2$ are related as in Equation \ref{eqn:nopol}.
 
+\section{Avoid decimal arithmetic bugs}
+The frequency mixing delta function in the demodulation operator, Equation \ref{eqn:fdemodoperator}, takes the difference of two frequencies and compares that to another frequency. %NL%
+In a numerical calculation, this can lead to bugs when the frequency values cannot be exactly represented as a binary number. %NL%
+To avoid this, one may allow the delta function to take the value 1 when the frequencies being compared are closer than some threshold.
+
 \section{Define the free space propagator to have no phase rotation for the \TEM{00} carrier.}
 
 It is usually desired that when modeling resonant cavities, the default behavior in the steady state is for the carrier frequency component of the laser to be resonant in the cavity. %NL%
@@ -102,10 +107,11 @@ This simplifies the use of Equation \ref{eqn:sigdemodoper}.
 \section{Calculating signal to noise ratios}
 In the language of the vector space model, the shot noise of a full plane photodetector is 
 \begin{equation}
+\label{eqn:modalshotnoise}
 N=\sqrt{2\hbar \omega_0 \inprod{E}{E}},
 \end{equation}
 where $\omega_0$ is the absolute optical angular frequency of the carrier.
 
 In the case of a split detector the situation is the same. %NL%
-As long as the pupil function is $-1$ or $1$ everywhere on the beam, the noise contributes incoherently and with equal weight everywhere. %NL%
+As long as the pupil function is $-1$ or $1$ everywhere on the beam, the noise contributes incoherently and with equal weight everywhere, giving again Equation \ref{eqn:modalshotnoise}. %NL%
 The situation of the noise for any generic pupil function is left as an exercise for the motivated reader.
