@@ -1,37 +1,111 @@
 \chapter{Practical calculations using matrices based on the optical vector space model}
 
 \section{Collapsing a tensor of several indices into a 2D matrix}
-The tensors in the full optical vector space model described in Chapter \ref{ch:modalmodel} are tensors with elements that are referenced with with up to eight indicies. %NL%
+The tensors in the full optical vector space model described in Chapter \ref{ch:modalmodel} are tensors with elements that are referenced with with up to eight indices. %NL%
 Dealing with eight-dimensional tensors using typical mathematical software environments, such as \mbox{MATLAB} or Mathematica, may be possible, however a far more simple talk would be to re-index the tensors into two dimensional matrices which are more easily dealt with.
 
 For example, we want to take the elements of the free space propagator $\oper{P}$ in Equation \ref{eq:Propagator}, and reduce the number of indices.
 \begin{equation}
 \matrixel{mn;r;p}{\oper{P}}{kl;s;q} = P_{mnrpklsq} \Rightarrow P_{ij}.
 \end{equation}
-Thus we need some function that takes four indices and produces a single collapsed index, and there must be a one-to-one mapping of $klsq$ to $i$ such that a given collapsed index unambiguoisly determines the element in the original vector space. %NL%
-The result of such an excersize is to produce a formula similar to Equation (6) in \citet{Sigg:00}, but we will cover some details here, as well as point out an error in their formula!
+Thus we need some function that takes four indices and produces a single collapsed index, and there must be a one-to-one mapping of $klsq$ to $i$ such that a given collapsed index unambiguously determines the element in the original vector space. %NL%
+The result of such an exercise is to produce a formula similar to Equation 6 in \citet{Sigg:00}, but we will cover some details here, as well as point out an error in their formula!
 
-In the modal space,
+One prescription for traversing the modal space is to cover the $m+n$ orders sequentially. %NL%
+Starting with the \TEM{00} mode, then the \TEM{01} and \TEM{10} modes, then \TEM{02}, \TEM{11}, and \TEM{20}, etc. %NL%
+One way to do this is to define a collapsed index as
+\begin{equation*}
+g=(m+n)(m+n+1)/2 + n.
+\end{equation*}
+This leads to an index that counts diagonally through the modal indices like so:
+\begin{center}
+ \begin{tabular}{ r c|c c c l}
+ \multicolumn{5}{r}{$\overbrace{\rule{1.5cm}{0pt}}^{\mbox{$m$}}$} \\
+&  & 0 & 1 & 2 & \\
+ \cline{2-5}
+\multirow{3}{*}{ $n$ $\left\{ \rule{0pt}{1cm} \right. $}
+& 0 & 0 & 1 & 3 & 
+\multirow{3}{*}{ $\left. \rule{0pt}{1cm} \right\}$ $g$}\\ 
+& 1 & 2 & 4 &   \\ 
+& 2 & 5 &   &   \\ 
+\end{tabular} 
+\end{center}
 
-% explain equation (6) in dynamical response. I believe there is a missing factor of 2 on a(r)
+For the frequency index, $r$, one is usually concerned with symmetric upper and lower spaced sidebands where the frequency separations of paired sidebands from the carrier are given by $\omega_{-r} = -\omega_{r}$ and the index traverses the range $-(n_f-1)/2\le r \le (n_f-1)/2$, where $n_f$ is the number of frequency components. %NL%
+The carrier is given by $\omega_0=0$. %NL%
+From $r$, we may construct an index with only positive values as follows
 
-% you want to translate 4 indicies into 1, and it should be a 1 to 1 mapping
+\begin{equation*}
+a= 
+\begin{cases} r, & \text{if $r \ge 0 $,}
+\\
+r+n_f, &\text{if $r < 0$.}
+\end{cases}
+\end{equation*}
+ This definition of $a$ starts at the carrier at $r=0$, then traverses the positive sidebands, before moving through the negative sidebands in reverse.
 
-% the modal indices can be traversed diagonally nicely with (m+n)*(m+n+1)/2+n
+One may collapse the modal and frequency indices in the following way
+\begin{equation}
+\label{eqn:nopol}
+i = \hat{a}g + a,
+\end{equation}
+where $\hat{a}$ is the number of possible values of $a$, which is in this case the same as $n_f$. %NL%
+This collapsed index behaves in the following way for values of $g$ and $a$
+\begin{center}
+\begin{tabular}{ r| c c c | c c c}
+$g$ & \multicolumn{3}{c|}{0} & \multicolumn{3}{c}{1} \\
+\hline
+a & 0 & 1 & 2 & 0 & 1 & 2 \\
+\hline
+i & 0 & 1 & 2 & 3 & 4 & 5
+\end{tabular} 
+\end{center}
+In the preceding case, $n_f=\hat{a}=3$. %NL%
+As one can see, each increment of the value of $g$ shifts the $a$ index and allows it to start counting again.
 
-% to expand, general formula i = p^(r^g[m,n]+r)+p. p^=2
+The polarization index, $p$ may be included in the same way, adding another layer of shifting to the other indices. %NL%
+There are only 2 polarization components, so $\hat{p}=2$. %NL%
+And we will let $p \in \{0,1\}$ for the two polarization states. %NL%
+The total collapsed index is then
+\begin{equation}
+i = \hat{p}(\hat{a}g+a)+p=2n_f\left[\frac{(m+n)(m+n+1)}{2} + n\right]+2a+p.
+\end{equation}
+This is very close to Equation 6 in Sigg and Mavalvala, though the reference is missing a factor of 2 on the $a$ index. %NL%
+If one would rather choose to ignore the polarization index, Equation \ref{eqn:nopol} may be used instead.
 
-% kron multiplies sub matrices
+As a final note on collapsed indices we will note that the translation of the tensor product operation in the eight dimensional representation is represented by a \emph{kroneker product} of matrices in the collapsed matrix space. %NL%
+For example, ignoring the polarization space, the three operations
+\begin{align*}
+\oper{G}&=\oper{G}_{\text{modal}}\otimes \oper{G}_{\text{frequency}}\\
+G_{mnrkls}&=G_{mnkl}\times G_{rs}\\
+G_{ij}&=\operatorname{Kron}(G_{g_1g_2},G_{a_1a_2})
+\end{align*}
+all represent the sample tensor multiplication operation, in the abstract tensor space, in the six index component representation, and in the collapsed index matrix representation, respectively. %NL%
+$\operatorname{Kron}(\cdot,\cdot)$ is the kroneker product, and $i$, $g_1$, $a_1$ and $j$, $g_2$, $a_2$ are related as in Equation \ref{eqn:nopol}.
 
 \section{Define the free space propagator to have no phase rotation for the \TEM{00} carrier.}
 
-% this defines the 'microscopic phase' to be zero, thus 00 carrier mode is always resonant in cavities. The higher order modes get the correct relative Gouy phase and the sidebands get their relative phase rotations. Can define another propagator to have 'microscopic phase' in order to set resonance condition of carrier
+It is usually desired that when modeling resonant cavities, the default behavior in the steady state is for the carrier frequency component of the laser to be resonant in the cavity. %NL%
+In the real world of cavities and lasers, this resonance condition requires a very careful tuning of the length of the cavity, usually in the form of a control system. %NL%
+In the modeled world, however, we may take a convinient shortcut to ensure that the carrier light is resonant by default in any cavity we construct.
+
+The free space propagator operator (Equation \ref{eq:Propagator}) contains a phase rotation common to all components of the field. %NL%
+If one were to remove this phase rotation by construction, by letting $\exp[i(\eta - \omega_0 \Delta z/c)]=1$, this would maintain the correct relative phase rotation of all the other components relative to the carrier, without rotating the carrier. %NL%
+In a sense this defines the `microscopic phase' to be zero, and thus the \TEM{00} carrier component is always resonant in cavities. %NL%
+One may still model detunings of the carrier from resonance by defining a microscopic propagator which applies the correct detuning phase to the carrier.
 
 \section{Units}
-
-% make the electric field have units of sqrt(W). Essentially choose units where epsilon_0 c / 2 = 1
+It is useful to choose a set of units where $\epsilon_0 c/2=1$. %NL%
+This essentially chooses the field components to have units of $\rm{W}^{\frac{1}{2}}$. %NL%
+This simplifies the use of Equation \ref{eqn:sigdemodoper}.
 
 \section{Calculating signal to noise ratios}
-% for pupil function that is all ones, the shot noise doesn't change! that's useful. 
+In the language of the vector space model, the shot noise of a full plane photodetector is 
+\begin{equation}
+N=\sqrt{2\hbar \omega_0 \inprod{E}{E}},
+\end{equation}
+where $\omega_0$ is the absolute optical angular frequency of the carrier.
 
-% general pupil functions? try for 5 minutes to calculate this.
+In the case of a split detector the situation is the same. %NL%
+As long as the pupil function is $-1$ or $1$ everywhere on the beam, the noise contributes incoherently and with equal weight everywhere. %NL%
+The situation of the noise for any generic pupil function is left as an exercise for the motivated reader.
