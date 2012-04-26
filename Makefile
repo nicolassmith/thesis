@@ -4,7 +4,8 @@ main = main
 auxiliary = cover contents
 bib = mainb
 viewer = okular
-server = nsmith@ligo.mit.edu:~/public_html/nicolas-thesis-draft.pdf
+pdfname = nicolas-thesis-draft.pdf
+server = nsmith@ligo.mit.edu:~/public_html/$(pdfname)
 
 chapters = $(main-chapters) $(ap-chapters)
 bibdep = biblio.tex $(bib).bib
@@ -13,7 +14,8 @@ texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
 maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters) abstract.tex
 
 # default rule
-pdf : $(main).pdf
+$(pdfname) : $(main).pdf
+	cp $< $@
 
 # chapter figs section
 figs-modalmodel = $(addprefix figs-modalmodel/,QPD.pdf omcmodal.pdf)
