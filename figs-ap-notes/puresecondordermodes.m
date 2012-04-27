@@ -1,4 +1,4 @@
-function secondordermodes()
+function puresecondordermodes()
 
 exportplot = 1;
 
@@ -32,7 +32,7 @@ crange = [min(v) max(v)];
 theta = 0:.01:2*pi;
 r = 1;
 
-phi = 0.2;
+phi = pi/2;
 
 plotBeam = @(E) contourf(x,y,abs(transverseField(x,y,0,0,E,i,fvec)).^2,v,...
 ...%plotBeam = @(E) contourf(x,y,abs(transverseField(x,y,0,0,E,i,fvec)).^2/abs(transverseField(0,0,0,0,E,i,fvec)).^2,v,...
@@ -91,7 +91,7 @@ colormap(gray)
 
 if exportplot
     set(gcf,'Visible','Off')
-    export_fig('secondordermodes.pdf','-painters')
+    export_fig('puresecondordermodes.pdf','-painters')
 end
 
 end
