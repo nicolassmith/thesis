@@ -42,7 +42,7 @@ matfigs-ap-miscon = $(addprefix figs-ap-miscon/,fpmishotnoise.pdf)
 ch-ap-miscon.pdf : $(matfigs-ap-miscon)
 
 figs-ap-notes =  $(addprefix figs-ap-notes/,mrfig1.pdf mrfig2.pdf)
-matfigs-ap-notes = $(addprefix figs-ap-notes/,secondordermodes.pdf)
+matfigs-ap-notes = $(addprefix figs-ap-notes/,secondordermodes.pdf puresecondordermodes.pdf)
 ch-ap-notes.pdf : $(figs-ap-notes) $(matfigs-ap-notes)
 
 figs = $(figs-modalmodel) $(figs-beacon) $(figs-omc) $(figs-ifo) $(figs-jitter) $(figs-modematching) $(figs-ap-notes)
