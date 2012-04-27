@@ -39,7 +39,7 @@ plotBeam = @(E) contourf(x,y,abs(transverseField(x,y,0,0,E,i,fvec)).^2,v,...
     'EdgeColor','none','LineStyle','none');
 
 figure(1)
-scale = 200;
+scale = 175;
 set(gcf,'Units','Pixels','Position',[0 0 2*scale 2*scale])
 set(gcf,'color','white')
 
@@ -47,16 +47,17 @@ if exportplot
     set(gcf,'Visible','Off')
 end
 
-linestyle = 'r';
+linestyle = 'w--';
 
 subplot(2,2,1)
 plotBeam(E)
 hold on
-plot(r*cos(theta),r*sin(theta),linestyle)
+h = plot(r*cos(theta),r*sin(theta),linestyle);
 %axis square
 caxis(crange)
 set(gca,'Units','Pixels','Position',[0 scale scale scale])
 axis off
+%set(h,'LineWidth',2)
 
 subplot(2,2,2)
 plotBeam(E*cos(phi)+sin(phi)*bullseye)
