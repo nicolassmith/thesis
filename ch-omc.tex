@@ -94,7 +94,8 @@ A fast PZT between one of the optics and its tombstone acted as a low range (1/1
 Long range (several wavelengths) actuation was provided by one cavity mirror situated at the end of an aluminum tube heated by a ceramic heating element, affectionately referred to as the OTAS.\footnote{OMC Thermal Actuation System}
 
 A mode cleaner cavity is purposefully designed such that HOMs do not occupy a degenerate resonance with the resonant \TEM{00} mode. %NL%
-Cavities are commonly characterized by their stability $g$-parameter.\footnote{Asymmetric cavities are often given two $g$-parameters, one for each mirror (labeled 1 and 2) and $g=\sqrt{g_1 g_2}$.} The Gouy shift accumulated in the cavity is determined by the cavity geometry as
+Cavities are commonly characterized by their stability $g$-parameter.\footnote{Asymmetric cavities are often given two $g$-parameters, one for each mirror (labeled 1 and 2) and $g=\sqrt{g_1 g_2}$.} The Gouy phase shift, $\eta$, is the phase shift of a focused \TEM{00} beam relative to a plane electromagnetic wave. %NL%
+The Gouy shift in the cavity is determined by the cavity geometry as
 \begin{equation}
 \label{eqn:gouyg}
 \cos(\eta)=g,
@@ -180,7 +181,7 @@ The polarization is rotated by a half-wave plate (HWP). %NL%
 A polarizing beam splitter (PBS) sends some fraction of the light through an electro-optic modulator (EOM) which is driven at by RF oscillator \#2. %NL%
 The fraction transmitted by the PBS is tuned by changing the angle of the HWP. %NL%
 The EOM introduces two RF sidebands which will be used for cavity length control. %NL%
-The other path of light is director to an acousto-optic modulator (AOM). %NL%
+The other path of light is directed to an acousto-optic modulator (AOM). %NL%
 The light is double passed though the AOM and and receives a frequency shift which is twice the frequency of RF oscillator \#1. %NL%
 A quarter-wave plate (QWP) causes the polarization to rotate 90\degrees{} after double passing, causing both paths to now be in the same polarization. %NL%
 The light from the two paths are recombined before being injected into an optical fiber. %NL%
@@ -210,7 +211,8 @@ The measured FSR is
 \begin{equation}
 \mathrm{FSR}=278.288\pm0.001\text{MHz}.
 \end{equation}
-This corresponds to a cavity perimeter of 1.077m.
+This corresponds to a cavity perimeter of 1.077m. %NL%
+The length differs from the design value, though the purpose of the design was that the fourth order modes are close to, but outside of resonance, as measured in the following section.
 
 \subsection{Higher order mode spacing}
 Similarly, the higher order mode frequency shift is measured by varying the subcarrier frequency until the subcarrier is resonant on a higher order mode of the OMC \cite{Uehara:95}. %NL%
@@ -322,7 +324,7 @@ The beam clearance of the OTAS was very tight and the displacement caused signif
   \caption[Measurement of the OMC PZT actuator calibration.]{Measurement of the OMC PZT actuator calibration. Both the carrier and subcarrier can be seen passing through resonance.}
   \label{fig:pztsweep}
 \end{figure}
-The PZT length actuator of the OMC was calibrated using by using applying a voltage to the PZT to sweep the cavity through both carrier and subcarrier resonances. %NL%
+The PZT length actuator of the OMC was calibrated by applying a voltage to the PZT to sweep the cavity through both carrier and subcarrier resonances. %NL%
 The subcarrier frequency offset was chosen to be close to one FSR separated from the carrier. %NL%
 The separation was $1\mathrm{FSR}+3.8$MHz. %NL%
 In terms of a change in cavity length, this is 14.5nm, which is twice the distance moved by the mirror. %NL%
@@ -383,7 +385,7 @@ However, it did remain a poorly understood feature of the system and because Adv
 
 \section{OMC performance in Enhanced LIGO and prospects for future interferometers}
 
-The ultimate performance of the interferometer is affected by the OMC is several ways. %NL%
+The ultimate performance of the interferometer is affected by the OMC in several ways. %NL%
 The ability of the OMC to maximally transmit the gravitational wave signal directly affects the shot-noise limited SNR of the interferometer (this is covered in Section \ref{sec:alignsnr}). %NL%
 Losses inside the OMC will limit the transmission, but these were shown to be low (Section \ref{sec:omclosses}). %NL%
 A more subtle problem is to correctly match the incident beam to the resonant \TEM{00} mode of the OMC, any signal light which is not correctly matched will be rejected. %NL%

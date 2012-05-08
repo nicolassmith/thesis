@@ -7,7 +7,7 @@ This is a powerful technique that is used extensively in modeling the behavior o
 At this point in the discussion, a bird's eye view of the technique is useful. %NL%
 In essence what this formalism provides is a significant abstraction and abbreviation of the effects of optical components (mirrors, modulators, etc.) on the the field components that make up a laser beam. %NL%
 In the case of the transverse electric-magnetic (TEM) spatial modes of a laser field, a calculation of how a mirror, which is rotated about some axis perpendicular to the beam, redistributes energy from one field component to another may require complicated overlap integrals involving the Hermite-Gaussian profiles of the beam modes. %NL%
-Such a calculation is difficult to calculate and and analytical solutions are intractable and unwieldy. %NL%
+Such a calculation is difficult to calculate and analytical solutions are intractable and unwieldy. %NL%
 The strength of this technique is that all of these complicated integrals are \emph{baked in} to the linear operators which represent optical components, so to speak. %NL%
 All of the involved integral math is performed in the construction of the operators, and is hidden from view when the optical system as a whole is considered. %NL%
 What is left is just a problem of linear algebra.
@@ -86,7 +86,7 @@ As long as the solutions are converging, the precision is only limited by the ch
 \section{The modal space}
 \label{sec:modalspace}
 So far our example prescribes an elegant way to deal with optical components (e.g.\ the modulator) which transfer energy from one component of the electric field (the carrier) to other components (the sidebands). %NL%
-This type of approach is also applicable to the components of the electric field corresponding the the transverse spatial modes of the beam, as shown by \citet{Hefetz:97}.
+This type of approach is also applicable to the components of the electric field corresponding to the transverse spatial modes of the beam, as shown by \citet{Hefetz:97}.
 
 When the paraxial approximation applies, it is possible to expand the electromagnetic field into a superposition of modes represented by a Gaussian function of the transverse coordinate, multiplied by polynomials. %NL%
 Common choices for the polynomial functions are the Hermite or Laguerre polynomials \cite[Chap. %NL%
@@ -182,8 +182,7 @@ using parameters
 \eta &= \arctan \left( \frac{(z_{\text{end}}-z_0)\lambda}{\pi w_0^2}\right)- 
         \arctan \left( \frac{(z_{\text{start}}-z_0)\lambda}{\pi w_0^2}\right)
 \end{align*}
-for starting and ending positions $z_{\text{start}}$ and $z_{\text{end}}$, where $z_0$ is the position of the beam waist, and $w_0$ is the beam radius at the waist. %NL%
-The parameter $\eta$ is commonly referred to as the Gouy phase shift. %NL%
+for starting and ending positions $z_{\text{start}}$ and $z_{\text{end}}$, where $z_0$ is the position of the beam waist, $w_0$ is the beam radius at the waist, and $\eta$ is the Gouy phase shift. %NL%
 As one can see by the presence of the Kronecker deltas in (\ref{eq:Propagator}), all the components of the input field are directly propagated to the output field without mixing. %NL%
 There is, however a phase shift which depends on the transverse mode order (the Gouy shift) and the wavelength ($\omega_r/c$).
 
@@ -193,7 +192,7 @@ It is in a sense a combination of the misaligned mirror operator in Section \ref
 This operator is derived by \citet{Sigg:00}.
 \section{Photodetection}
 A photodetector is a device which is sensitive to the power in the laser field. %NL%
-This is typically photodiode which converts the laser power into an electric current. %NL%
+This is typically a photodiode which converts the laser power into an electric current. %NL%
 In terms of the electric field we may write the time averaged power incident on a photodiode as
 \begin{equation}
 \bar{P}=\frac{\epsilon_0 c}{2}\int \! \! \dd t \int \! \! \dd A|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
