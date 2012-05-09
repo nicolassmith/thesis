@@ -32,10 +32,10 @@ The basis vectors in this representation are given by the three periodically tim
 It is important to emphasize that the vectors used in this formalism are in general not simple euclidean vectors, but rather abstract vectors representing different components of the electric field of an electromagnetic wave. %NL%
 The basis vectors are orthonormal, the inner product of two basis vectors is:
 \[
-\inprod{r}{s} = \int\limits_{\text{many cycles}}\! \! \! \! \! \! \! \! \!
+\inprod{r}{s} = \frac{1}{T}\int\limits_{\text{many cycles}}\! \! \! \! \! \! \! \! \!
 \dd t \; \: {\left( e^{i\omega_{r}t}\right)^*}e^{i\omega_{s}t} = \delta_{rs},
 \]
-where $\omega_r$ is the sideband frequency of the $r$th sideband. %NL%
+where $\omega_r$ is the sideband frequency of the $r$th sideband, and $T$ is the total integrated time, removed for normalization. %NL%
 This treatment is analogous to the formalism of quantum mechanics in which the quantum state of a system is defined by a vector in a space spanned by a set of orthonormal basis state vectors. %NL%
 In our formalism, the components of the laser field will take the place of the state vectors. %NL%
 We will use Dirac bra-ket notation because of this strong analogy.\footnote{One significant difference between quantum mechanics and this formalism is that the quantum state vector of a system must always have unit length, to ensure the state has a probability of 1. %NL%
@@ -195,7 +195,7 @@ A photodetector is a device which is sensitive to the power in the laser field. 
 This is typically a photodiode which converts the laser power into an electric current. %NL%
 In terms of the electric field we may write the time averaged power incident on a photodiode as
 \begin{equation}
-\bar{P}=\frac{\epsilon_0 c}{2}\int \! \! \dd t \int \! \! \dd A|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
+\bar{P}=\frac{\epsilon_0 c}{2}\int \! \! \frac{\dd t}{T} \int \! \! \dd A|E^2|=\frac{\epsilon_0 c}{2}\inprod{E}{E}.
 \end{equation}
 This fits nicely into our formalism because one can view the average power detected at a photodiode as the squared-norm of the state vector of the laser field. %NL%
 Often, however, one may use a photodetector to measure certain frequency components of the power, as well as information about the spatial distribution of the beam. %NL%
@@ -206,7 +206,7 @@ To achieve this in the vector space formalism, we must use an operator which has
 For demodulation at frequency $\omega_d$, the  operator takes the form: 
 \begin{equation}
 \label{eqn:fdemodoperator}
-\oper{D}(\omega_d) = \sum_{rs} \vect{r} \delta(\omega_r,\omega_s-\omega_d) + \delta(\omega_r,\omega_s+\omega_d)\form{s},
+\oper{D}(\omega_d) = \sum_{rs} \vect{r} \left[ \delta(\omega_r,\omega_s-\omega_d) + \delta(\omega_r,\omega_s+\omega_d)\right] \form{s},
 \end{equation}
 where we use a delta function defined as
 \begin{equation}
@@ -256,12 +256,12 @@ The frequency, spatial, and polarization parts of the demodulation operator and 
 \end{equation}
 where $\oper{I}$ is the identity operator.
 
-Once the demodulation operator is constructed, the signal measured by the photodetector is
+Once the demodulation operator is constructed, the signal amplitude at frequency $\omega_d$ measured by the photodetector with segmentation $\Omega$ is
 \begin{equation}
 \label{eqn:sigdemodoper}
 S=\frac{\epsilon_0 c}{2}\matrixel{E}{\oper{D}(\Omega,\omega_d)}{E}.
 \end{equation}
-In terms of the quantum mechanical analogy, the signal measured on a photodetector is just the expectation value of it's demodulation operator.
+In terms of the quantum mechanical analogy, the signal measured on a photodetector is just the expectation value of its demodulation operator.
 
 \section{Vector space model of the output mode cleaner}
 The true utility of this formalism arises when the optical system contains paths that branch and loop onto themselves, as is the case with resonant cavities. %NL%
@@ -285,7 +285,7 @@ We may write down an expression for the field inside the cavity as follows
 \vect{E}_{\text{cavity}} = \oper{T}_1\vect{E}_{\text{input}}+\oper{G}\vect{E}_{\text{cavity'}}.
 \end{equation}
 Here, $\oper{G}$ is the operator representing one full round trip through the cavity, starting with the propagation from mirror 1 to mirror 2, $\oper{T}_1$ is the operator for transmission through mirror 1, and $\vect{E}_{\text{cavity'}}$ is the cavity field due to the previous round trip of the light. %NL%
-When the system has reached a stationary state, $\vect{E}_{\text{input}}=\vect{E}_{\text{cavity'}}$.\footnote{Note that this does not only include fields static in time, but also any periodically changing fields that are represented in our vector space.} In this case we may solve for the field in the cavity:
+When the system has reached a stationary state, $\vect{E}_{\text{cavity}}=\vect{E}_{\text{cavity'}}$.\footnote{Note that this does not only include fields static in time, but also any periodically changing fields that are represented in our vector space.} In this case we may solve for the field in the cavity:
 \begin{equation}
 \vect{E}_{\text{cavity}} = \left(\oper{I}-\oper{G}\right)^{-1}\oper{T}_1\vect{E}_{\text{input}}.
 \end{equation}
