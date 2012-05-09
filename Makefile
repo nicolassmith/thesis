@@ -13,8 +13,10 @@ maindeps = $(main).tex macros.tex $(bibdep) massring.touch
 texchapters = $(addsuffix .tex,$(addprefix ch-,$(chapters)))
 maininclude = $(addsuffix .tex,$(auxiliary)) $(texchapters) abstract.tex
 
+allmaindeps = $(maindeps) $(maininclude) $(figs) $(matfigs)
+
 # default rule
-$(pdfname) : $(main).pdf
+$(pdfname) : $(main).pdf $(allmaindeps) 
 	cp $< $@
 
 # chapter figs section
@@ -62,7 +64,7 @@ MATLAB = matlab -nodesktop -nosplash
 	convert $< $@
 
 # main rules
-$(main).pdf : $(maindeps) $(maininclude) $(figs) $(matfigs)
+$(main).pdf : $(allmaindeps)
 	pdflatex $<
 	-bibtex $(main)
 	makeindex $(main).nlo -s nomencl.ist -o $(main).nls
@@ -93,7 +95,7 @@ massring.touch : massring/makerings.py
 upload : $(main).pdf
 	scp $< $(server)
 
-view : $(main).pdf
+view : $(pdfname)
 	$(viewer) $< 2> /dev/null &
 
 view-% : ch-%.pdf
