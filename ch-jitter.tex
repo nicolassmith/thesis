@@ -181,7 +181,8 @@ This had the desired effect of reducing the frequency of the bounce resonance to
 This system would put considerable force on the suspension and after several lock loss cycles, it broke one of the Tip Tilt suspension wires. %NL%
 The wire radius was increased to $75 \upmu \rm m$ until the blade spring design was ready for installation.} The ultimate solution was to place the upper wire clamps at the ends of blade springs. %NL%
 The new Tip Tilt assembly is shown in Figure \ref{fig:TT0photos}. %NL%
-This reduced the vertical resonances to near 20Hz \cite{bladebounce,bladebounceLHO}, outside of the sensitive region, but while still allowing the use of wires with enough strength. %NL%
+This reduced the vertical resonances to near 20Hz \cite{bladebounce,bladebounceLHO}, outside of the sensitive region,\footnote{The Tip-Tilt will be further redesigned for Advanced LIGO, where 20Hz is expected to be in the sensitive region. %NL%
+This is discussed in Chapter \ref{ch:conclusion}.} but while still allowing the use of wires with enough strength. %NL%
 The sensitivity of the interferometer after this change was made is shown in Figure \ref{fig:sensimprovement}. %NL%
 Some amount of high frequency acoustic coupling was re-introduced with the blade springs, likely due to strong passive damping of the vertical eigenmodes with Viton rubber \cite{G1100330}, though it was not a limiting noise source.
 
@@ -193,7 +194,7 @@ Even after the mitigation of mechanical beam jitter on the OMC, there was still 
 and is a well known source of trouble to those attempting to do precision measurement. %NL%
 It is not terribly troublesome if 60Hz interference into one's device is fairly narrow-band. %NL%
 During Enhanced LIGO commissioning however, the 60Hz line was surrounded by broad sidebands which were inferred to be caused by beam jitter. %NL%
-This was particularly troubling because of the importance of sensitivity to gravitational wave emission from the Crab pulsar, which is expected to emit gravitational waves at 59.56Hz \cite{Crab}.
+This was particularly troubling because of the importance of sensitivity to gravitational wave emission from the Crab pulsar, which, if it is a strong emitter, is expected to emit gravitational waves at 59.56Hz \cite{Crab}.
 
 The Tip Tilt suspensions utilized permanent magnets affixed to the optics and coil electromagnets for active beam steering control. %NL%
 The polarities were alternated so that uniform ambient magnetic fields would not cause a force or torque on the optic, as shown in Figure \ref{fig:ttdiag}. %NL%
@@ -254,6 +255,6 @@ After the implementation of the beacon alignment system in Enhanced LIGO, some b
 It was discovered that the height of these peaks were controllable by modifying the beam position on the antisymmetric port alignment sensor\footnote{In Initial/Enhanced LIGO, this was known as WFS1.} of the main interferometer alignment control system. %NL%
 We postulated that because of offsets in the readout of the interferometer alignment signals, changing the beam position would change the error point offsets of the alignment feedback system of the main interferometer. %NL%
 The antisymmetric port signal primarily feeds back to the differential alignment mode of the ETMs. %NL%
-It was thought that this lead to a redistribution of the modal content of the carrier field exiting the antisymmetric port of the interferometer relative to the fields of the audio sidebands. %NL%
+It was thought that this led to a redistribution of the modal content of the carrier field exiting the antisymmetric port of the interferometer relative to the fields of the audio sidebands. %NL%
 One could imagine that the position of a local minimum, with respect to alignment, of the carrier transmission could be moved into coincidence with the optimal alignment point of the signal fields. %NL%
 Attempts were made to instead directly inject offsets into the alignment error signals to produce the same effect, but they were never as successful as varying the pointing on the alignment sensor.
