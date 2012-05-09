@@ -114,9 +114,7 @@ When this error signal is nulled, the SNR is improved in comparison to standard 
 Because the beacon modulation is small, $S_{beacon}$ will have a higher relative noise level than the standard dither approach.\footnote{This is a statement about the noise in the alignment signal itself, however \emph{using} this as the alignment error signal will improve the SNR of the gravitational-wave channel.}
 
 \section{Experimental Demonstration of Beacon Alignment Sensing}
-%
-
-
+\label{sec:beacexp}
 The beacon alignment scheme was compared directly to a standard dither scheme using the OMC cavity at the output of the 4 km LIGO Interferometer at Hanford (H1). %NL%
 The readout was arranged as in Fig. %NL%
 \ref{fig:beaconblockdiag}. %NL%
@@ -187,7 +185,7 @@ This also shows that this signal is nulled at maximum SNR.
 In gravitational-wave detectors, the OMC transmission is often held constant by a control system. %NL%
 If $f_d$ is within the control bandwidth, but $f_b$ is not, then the carrier alignment sidebands will be suppressed. %NL%
 Sufficient suppression makes the beacon scheme approximately equivalent to the optimal scheme. %NL%
-This was the configuration used by both the L1 and H1 interferometers in the sixth LIGO science run \cite{Tobin}.
+This was the configuration used by both the L1 and H1 interferometers in the sixth LIGO science run \cite{Tobin}, discussed in Section \ref{sec:eligooptbeac}.
 
 \section{Generalization of optimal signal-sideband alignment to other alignment sensors}
 
@@ -205,6 +203,7 @@ G_{optimal} = G_{beacon} - \frac{P(f_b)}{2P_{DC}} G_{standard}.
 We emphasize that the $G$ signals are derived from the alignment sensor, while the $P$ signals are derived from the OMC transmission.
 
 \section{Optimal beacon performance in Enhanced LIGO}
+\label{sec:eligooptbeac}
 The optimal beacon alignment scheme was employed in Enhanced LIGO by using low frequency angular dithers on the Tip Tilt optics. %NL%
 The angular dithers had a magnitude on the order of microradians, and frequencies of 1-5Hz. %NL%
 The beacon signal was produced by exciting the elastic drum-head vibrational mode of one of the end mirrors.\footnote{First proposed by M.\ Evans.} The frequency of the mode was 9225 Hz and it was excited to give an effective cavity length modulation of $2.1\times10^{-14}$ m. %NL%
@@ -219,6 +218,11 @@ The transmission efficiency may be written as
 \end{equation}
 where $\alpha$ is the ratio of the amplitude of the misalignment mode to the \TEM{00} mode. %NL%
 In the case of $\epsilon = 95\perc{}$, $\alpha = 0.23$.
+
+The standard dither signal simply chooses a local maximum of the transmitted power. %NL%
+This can sometimes be quite far from the optimal signal location if there are significant side lobes on the beam, as seen in Section \ref{sec:beacexp}. %NL%
+The measurement given in this section was first optimized with the optimal beacon alignment, then handed over to the standard dither scheme. %NL%
+This allowed the standard dither scheme to choose a local maximum which happened to be fairly close to the true signal maximum.
 \section{Chapter Summary}
 To summarize, we have introduced the concept of using a beacon as a strong modulation close to signal frequencies to generate alignment signals that lead to increased SNR compared to the standard dither scheme. %NL%
 The beacon scheme demonstrates a factor of 3 improvement in SNR for the LIGO H1 detector. %NL%
