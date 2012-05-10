@@ -4,7 +4,7 @@ main = main
 auxiliary = cover contents
 bib = mainb
 viewer = okular
-pdfname = nicolas-thesis-draft.pdf
+pdfname = nicolas-thesis.pdf
 server = nsmith@ligo.mit.edu:~/public_html/$(pdfname)
 
 chapters = $(main-chapters) $(ap-chapters)
