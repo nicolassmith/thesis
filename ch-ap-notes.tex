@@ -71,7 +71,7 @@ Thus, mode matching sensors and actuators, which operate on $m+n=2$ modes, must 
 
 \section{Dither sensing is a measurement of a partial derivative}
 \label{sec:dithersens}
-Suppose one has a sensor which measures some physical quantity $P$, which depends on a variable $\theta$ which is controlable by some means of actuation. %NL%
+Suppose one has a sensor which measures some physical quantity $P$, which depends on a variable $\theta$ which is controllable by some means of actuation. %NL%
 A modulation is injected into the variable $\theta$ such that
 \begin{equation}
 \theta = \theta_0+\alpha \sin[\omega t],
@@ -127,17 +127,40 @@ The two most common conventions choose $r$ to be real and $\phi$ to either be $\
 \label{sec:modecleanap}
 This section will attempt to illuminate just how a resonant cavity can be used to `clean' the mode of a laser beam.
 
-% there are some set of eigenmodes of cavities, where after a complete round trip, the amplitude of the mode is maintained, perhaps with a scaling due to losses, and with some amount of total phase shift. covered in seigman
+Chapter 14 of \citet{Siegman} explains the mathematical peculiarities of defining resonant eigenmodes for open optical cavities like the OMC. %NL%
+For the sake of this discussion we will assume that, for a given cavity, one may define an orthonormal set of resonant eigenmodes. %NL%
+Being eigenmodes, they have the property that after one round trip in the cavity, the transverse profile of the mode is unchanged. %NL%
+There may be an overall scaling due to losses, and some overall phase shift which may be mode-dependent. %NL%
 
-% For cavities with spherical mirrors, these modes are nearly the TEM modes of free space propagation, with a particular waist size
 
-% a given TEM mode characterized by a waist size experienced a phase shift, in addition to the normal phase shift of a plane wave. For the TEMmn mode in the HG basis, this shift is delta \eta(1+m+n) where eta is defined as, (in terms of waist position).
+For cavities that use spherical mirrors, these modes are nearly the \TEM{} modes of free space propagation, characterized by a beam waist size and position, defined by the cavity geometry.
 
-% A critically coupled cavity has the property that when light resonates, it is maximally transmitted. When it is far from resonance (outside the linewidth of the cavity), it is maximally reflected.
+The modes experience a phase shift due to propagation in addition to the standard $\exp(-ikz)$ phase shift of a plane wave. %NL%
+If we chose the Hermite-Gaussian mode basis, the \TEM{mn} mode experiences a phase shift of $\exp(i\eta(z)[1+m+n])$. %NL%
+$\eta(z)$ is the Gouy phase shift and is defined as
+\begin{equation}
+\eta(z) = \arctan\left(\frac{2[z-z0]}{kw_0^2}\right),
+\end{equation}
+where $z0$ is the position of the beam waist, $k$ is the wavenumber, and $w_0$ is the beam waist radius.
 
-% The total gouy phase in one round trip is cos eta_c=g? Resonance of the TEM00 mode occurs when the total round trip phase of that mode (kp+eta_c) is equal to 2pi. For TEMmn resonance, the plane wave phase must shift by an amount eta_c(m+n) relative to the TEM00 resonance. So delta L = blah or delta f = blah. Coincident resonances may occur when delta f = j*FSR.
+A mode cleaner is a critically coupled cavity. %NL%
+This gives the cavity the attribute light which is centered on resonance is maximally transmitted. %NL%
+Perfect impedance matching ensures that no light is reflected. %NL%
+Light which is far from resonance (separated from resonance by many times the linewidth) is maximally reflected. %NL%
+Very little is transmitted, though it is not zero, for a lossless cavity with finesse $\mathcal{F}$ at perfect anti-resonance, the transmission is $1/(1+4\mathcal{F}^2/\pi^2)$.
 
-% a mode cleaner is designed so that the desired mode (usually TEM00) can be held on resonance, while the undesirable modes are far from resonance. In most cases the amplitude of the HOMs is decreasing with increasing order. There will always be coincident resoances for sufficiently high order modes, one must design the mode cleaner such that the modes that do have coincident resonance are of sufficiently small amplitude that they don't cause problems.
+The total Gouy phase shift after one cavity round trip $\eta_{\rm{rt}}$ is given by Equation \ref{eqn:gouyg}. %NL%
+Resonance of a mode occurs when the total phase accumulated, the plane wave phase and the Gouy phase, in a round trip is a multiple of $2\pi$. %NL%
+For the \TEM{00} mode, this is when $\exp(i[\eta_{\rm{rt}}-kp])=1$ (for a cavity with perimeter $p$). %NL%
+Relative to the \TEM{00} mode, resonance of the \TEM{mn} mode occurs when the plane wave phase shift cancels the relative Gouy phase shift, or $\Delta(kp)=[m+n]\eta(z)$. %NL%
+In terms of a frequency shift, this gives Equation \ref{eqn:gouyshift}. %NL%
+For a HOM with frequency shift $\Delta f$, coincidence resonance occurs when $\Delta f$ is close to a multiple of the FSR (within a few cavity linewidths).
+
+The mode cleaner is controlled to hold a desired mode on resonance (usually the \TEM{00} mode), while the frequency shifts of the HOMs keep them far from resonance. %NL%
+In most cases the amplitude of the HOMs decreases with increasing order. %NL%
+There will always be coincident resonances for sufficiently high order modes, thus one must design the mode cleaner (based on knowledge of the input beam) such that the coincident modes are of sufficiently small amplitude so as not to cause problems.
+
+Thus a mode cleaner may be used to maximally transmit the \TEM{00} mode, while reflecting modes of higher orders.
 
 \section{The second order HOMs}
 \label{sec:secondordermodes}
