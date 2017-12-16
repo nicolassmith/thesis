@@ -1,6 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-from svgfig import * 
+from svgfig.svg import SVG 
 from math import *
 from subprocess import call
 
@@ -17,7 +17,7 @@ period = 20; # wave period (in frames)
 maxFrames = 100; # how many images to make
 frameOffset = 13;
 
-edgeLength = massRadius + circleRadius*(1+h0); 
+edgeLength = massRadius + circleRadius*(1+h0);
 
 for frame in range(maxFrames):
     # this loops over the frames

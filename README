@@ -3,6 +3,7 @@ My PhD thesis.
 ubuntu packages:
 texlive
 texlive-latex-extra
+inkscape
 
 ring of masses requires svgfig python module:
 http://code.google.com/p/svgfig/
